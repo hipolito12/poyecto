@@ -1,5 +1,5 @@
 ﻿
-namespace WinFormsApp1
+namespace UI.Desktop
 {
     partial class Form1
     {

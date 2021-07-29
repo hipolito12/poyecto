@@ -11,7 +11,7 @@ using capaNegocios;
 
 
 
-namespace WinFormsApp1
+namespace UI.Desktop
 {
     public partial class Form1 : Form
     {
