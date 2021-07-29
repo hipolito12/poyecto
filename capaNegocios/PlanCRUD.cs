@@ -1,48 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Data.SqlClient;
 using System.Data;
+using datos;
 
 
 namespace capaNegocios
 {
-    class PlanCRUD
+   public  class PlanCRUD
     {
 
-        private plan P = new plan();
+        private Plan pla = new Plan();
 
 
         public DataTable muestra()
         {
             DataTable tabla = new DataTable();
-            tabla = M.listado();
+            tabla = pla.listadop();
             return tabla;
 
         }
 
-        public void add(string desc, string total, string semanal, string plan)
+        public void addp(string desc,  string espe)
         {
 
 
-            M.insertt(desc, Convert.ToInt32(total), Convert.ToInt32(semanal), Convert.ToInt32(plan));
+            pla.insertp(desc, Convert.ToInt32(espe));
 
 
 
         }
 
-        public void Edita(string desc, string total, string semanal, string plan, string id)
+        public void Editap(string desc, string esp, string id)
         {
-            M.update(desc, Convert.ToInt32(total), Convert.ToInt32(semanal), Convert.ToInt32(plan), Convert.ToInt32(id));
+            pla.updatep(desc, Convert.ToInt32(esp), Convert.ToInt32(id));
         }
 
-        public void Elimina(string id)
+        public void Eliminap(string id)
         {
-            M.Eliminar(Convert.ToInt32(id));
+            pla.Eliminarp(Convert.ToInt32(id));
         }
 
     }
 }
 
-
-    }
-}

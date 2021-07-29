@@ -57,7 +57,7 @@ namespace WinFormsApp1
             // descripcion
             // 
             this.descripcion.AutoSize = true;
-            this.descripcion.Location = new System.Drawing.Point(637, 176);
+            this.descripcion.Location = new System.Drawing.Point(630, 173);
             this.descripcion.Name = "descripcion";
             this.descripcion.Size = new System.Drawing.Size(71, 15);
             this.descripcion.TabIndex = 2;
