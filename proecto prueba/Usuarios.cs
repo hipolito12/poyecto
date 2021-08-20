@@ -23,7 +23,7 @@ namespace datos
         public DataTable listadoUsuario()
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "MostrarMaterias";
+            comando.CommandText = "ListarUsuarios";
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
             tabla.Load(leer);
@@ -32,7 +32,7 @@ namespace datos
         }
 
 
-        public void insertUsuario(string idper, string nombre,string nombreU,string apellido ,string clave, string cambia, int habilit,string email)
+        public void insertUsuario(string idper, string nombre,string nombreU,string apellido ,string clave, bool cambia, bool habilit,string email)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "insertarUsuario";
@@ -41,7 +41,7 @@ namespace datos
             comando.Parameters.AddWithValue("@nombreU", nombreU);
             comando.Parameters.AddWithValue("@apellido", apellido);
             comando.Parameters.AddWithValue("@nombre", nombre);
-            comando.Parameters.AddWithValue("@calve", clave);
+            comando.Parameters.AddWithValue("@clave", clave);
             comando.Parameters.AddWithValue("@cambia", cambia);
             comando.Parameters.AddWithValue("@habilitado", habilit);
             comando.Parameters.AddWithValue("@email", email);
@@ -51,7 +51,7 @@ namespace datos
         }
 
 
-        public void updateUsuario(string idper, string nombre, string nombreU, string apellido, string clave, string cambia, int habilit, string email,int id)
+        public void updateUsuario(string idper, string nombre, string nombreU, string apellido, string clave, bool cambia, bool habilit, string email,int id)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "updateUsuario";
@@ -60,7 +60,7 @@ namespace datos
             comando.Parameters.AddWithValue("@nombreU", nombreU);
             comando.Parameters.AddWithValue("@apellido", apellido);
             comando.Parameters.AddWithValue("@nombre", nombre);
-            comando.Parameters.AddWithValue("@calve", clave);
+            comando.Parameters.AddWithValue("@clave", clave);
             comando.Parameters.AddWithValue("@cambia", cambia);
             comando.Parameters.AddWithValue("@habilitado", habilit);
             comando.Parameters.AddWithValue("@email", email); ;

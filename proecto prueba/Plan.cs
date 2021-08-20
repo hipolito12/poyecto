@@ -7,7 +7,7 @@ using System.Configuration;
 
 
 
-namespace datos
+ namespace datos
 
 {
     public class Plan
@@ -17,9 +17,6 @@ namespace datos
             SqlDataReader leer;
             DataTable tabla = new DataTable();
             SqlCommand comando = new SqlCommand();
-
-            int total, semanal, plan;
-            string desc;
 
 
 

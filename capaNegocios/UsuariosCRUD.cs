@@ -9,7 +9,7 @@ using System.Data;
 
 namespace capaNegocios
 {
-    class UsuariosCRUD
+  public  class UsuariosCRUD
     {
 
         private Usuarios U =  new Usuarios();
@@ -23,22 +23,22 @@ namespace capaNegocios
 
         }
 
-        public void addp(string idper, string nombre, string nombreU, string apellido, string clave, string cambia, int habilit, string email)
+        public void addU(string idper, string nombre, string nombreU, string apellido, string clave, bool cambia, bool habilit, string email)
         {
+            
 
-
-            U.insertUsuario(idper, nombre, nombreU,apellido,clave,cambia,Convert.ToInt32(habilit), email );
+            U.insertUsuario( idper, nombre, nombreU,apellido,clave,cambia,habilit, email );
 
 
 
         }
 
-        public void Editapstring (string idper, string nombre, string nombreU, string apellido, string clave, string cambia, int habilit, string email, string id)
+        public void EditarU (string idper, string nombre, string nombreU, string apellido, string clave, bool cambia, bool habilit, string email, string id)
         {
-            U.updateUsuario(idper, nombre, nombreU, apellido, clave, cambia, Convert.ToInt32(habilit), email, Convert.ToInt32(id));
+            U.updateUsuario(idper, nombre, nombreU, apellido, clave, cambia, habilit, email, Convert.ToInt32(id));
         }
 
-        public void Eliminap(string id)
+        public void Eliminar(string id)
         {
             U.EliminarUsuario(Convert.ToInt32(id));
         }

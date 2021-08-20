@@ -71,7 +71,7 @@ namespace UI.Desktop
             // Descripcion
             // 
             this.Descripcion.AutoSize = true;
-            this.Descripcion.Location = new System.Drawing.Point(512, 176);
+            this.Descripcion.Location = new System.Drawing.Point(489, 151);
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.Size = new System.Drawing.Size(64, 15);
             this.Descripcion.TabIndex = 3;
@@ -86,7 +86,7 @@ namespace UI.Desktop
             // 
             // txtdescripcion
             // 
-            this.txtdescripcion.Location = new System.Drawing.Point(592, 173);
+            this.txtdescripcion.Location = new System.Drawing.Point(592, 143);
             this.txtdescripcion.Name = "txtdescripcion";
             this.txtdescripcion.Size = new System.Drawing.Size(185, 23);
             this.txtdescripcion.TabIndex = 6;
