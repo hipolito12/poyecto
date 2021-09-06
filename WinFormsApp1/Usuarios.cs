@@ -7,7 +7,8 @@ using System.Text;
 using System.Windows.Forms;
 using capaNegocios;
 using System.Data.SqlClient;
-using System.Data;
+
+
 
 namespace UI.Desktop
 {
@@ -26,7 +27,8 @@ namespace UI.Desktop
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+          
+            
 
             Usuarios1 formul = new Usuarios1();
 
@@ -79,6 +81,11 @@ namespace UI.Desktop
             formul.Show();
             mostrarUsuarios();
 
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

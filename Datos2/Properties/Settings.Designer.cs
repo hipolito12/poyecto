@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UI.Desktop2.Properties {
+namespace Datos2.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,7 +26,8 @@ namespace UI.Desktop2.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-NSKK8Q3;Initial Catalog=tp2;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-NSKK8Q3;Initial Catalog=tp2;Integrated Security=True;Multiple" +
+            "ActiveResultSets=True;Application Name=EntityFramework")]
         public string tp2ConnectionString {
             get {
                 return ((string)(this["tp2ConnectionString"]));

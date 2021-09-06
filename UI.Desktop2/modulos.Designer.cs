@@ -29,84 +29,208 @@ namespace UI.Desktop2
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(modulos));
             this.btnAlta = new System.Windows.Forms.Button();
             this.btnBAJA = new System.Windows.Forms.Button();
             this.btnEDIT = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idmoduloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descmoduloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ejecutaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modulosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tp2DataSet = new UI.Desktop2.tp2DataSet();
+            this.tp2DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.modulosTableAdapter = new UI.Desktop2.tp2DataSetTableAdapters.modulosTableAdapter();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnrefresh = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modulosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tp2DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tp2DataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
+            // btnAlta
+            // 
+            this.btnAlta.Location = new System.Drawing.Point(422, 290);
+            this.btnAlta.Name = "btnAlta";
+            this.btnAlta.Size = new System.Drawing.Size(214, 23);
+            this.btnAlta.TabIndex = 2;
+            this.btnAlta.Text = "Alta";
+            this.btnAlta.UseVisualStyleBackColor = true;
+            this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
+            // 
+            // btnBAJA
+            // 
+            this.btnBAJA.Location = new System.Drawing.Point(422, 341);
+            this.btnBAJA.Name = "btnBAJA";
+            this.btnBAJA.Size = new System.Drawing.Size(214, 23);
+            this.btnBAJA.TabIndex = 3;
+            this.btnBAJA.Text = "Baja";
+            this.btnBAJA.UseVisualStyleBackColor = true;
+            this.btnBAJA.Click += new System.EventHandler(this.btnBAJA_Click);
+            // 
+            // btnEDIT
+            // 
+            this.btnEDIT.Location = new System.Drawing.Point(422, 389);
+            this.btnEDIT.Name = "btnEDIT";
+            this.btnEDIT.Size = new System.Drawing.Size(214, 23);
+            this.btnEDIT.TabIndex = 4;
+            this.btnEDIT.Text = "Editar";
+            this.btnEDIT.UseVisualStyleBackColor = true;
+            this.btnEDIT.Click += new System.EventHandler(this.btnEDIT_Click);
+            // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 12);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idmoduloDataGridViewTextBoxColumn,
+            this.descmoduloDataGridViewTextBoxColumn,
+            this.ejecutaDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.modulosBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(554, 275);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.Size = new System.Drawing.Size(349, 263);
+            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // idmoduloDataGridViewTextBoxColumn
+            // 
+            this.idmoduloDataGridViewTextBoxColumn.DataPropertyName = "id_modulo";
+            this.idmoduloDataGridViewTextBoxColumn.HeaderText = "id_modulo";
+            this.idmoduloDataGridViewTextBoxColumn.Name = "idmoduloDataGridViewTextBoxColumn";
+            this.idmoduloDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descmoduloDataGridViewTextBoxColumn
+            // 
+            this.descmoduloDataGridViewTextBoxColumn.DataPropertyName = "desc_modulo";
+            this.descmoduloDataGridViewTextBoxColumn.HeaderText = "desc_modulo";
+            this.descmoduloDataGridViewTextBoxColumn.Name = "descmoduloDataGridViewTextBoxColumn";
+            // 
+            // ejecutaDataGridViewTextBoxColumn
+            // 
+            this.ejecutaDataGridViewTextBoxColumn.DataPropertyName = "ejecuta";
+            this.ejecutaDataGridViewTextBoxColumn.HeaderText = "ejecuta";
+            this.ejecutaDataGridViewTextBoxColumn.Name = "ejecutaDataGridViewTextBoxColumn";
+            // 
+            // modulosBindingSource
+            // 
+            this.modulosBindingSource.DataMember = "modulos";
+            this.modulosBindingSource.DataSource = this.tp2DataSet;
+            this.modulosBindingSource.CurrentChanged += new System.EventHandler(this.modulosBindingSource_CurrentChanged);
+            // 
+            // tp2DataSet
+            // 
+            this.tp2DataSet.DataSetName = "tp2DataSet";
+            this.tp2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tp2DataSetBindingSource
+            // 
+            this.tp2DataSetBindingSource.DataSource = this.tp2DataSet;
+            this.tp2DataSetBindingSource.Position = 0;
+            this.tp2DataSetBindingSource.CurrentChanged += new System.EventHandler(this.tp2DataSetBindingSource_CurrentChanged);
+            // 
+            // modulosTableAdapter
+            // 
+            this.modulosTableAdapter.ClearBeforeFill = true;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(577, 12);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(384, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(321, 251);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // btnAlta
+            // btnrefresh
             // 
-            this.btnAlta.Location = new System.Drawing.Point(623, 302);
-            this.btnAlta.Name = "btnAlta";
-            this.btnAlta.Size = new System.Drawing.Size(214, 23);
-            this.btnAlta.TabIndex = 2;
-            this.btnAlta.Text = "Alta";
-            this.btnAlta.UseVisualStyleBackColor = true;
+            this.btnrefresh.Location = new System.Drawing.Point(33, 290);
+            this.btnrefresh.Name = "btnrefresh";
+            this.btnrefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnrefresh.TabIndex = 7;
+            this.btnrefresh.Text = "refrescar";
+            this.btnrefresh.UseVisualStyleBackColor = true;
+            this.btnrefresh.Click += new System.EventHandler(this.btnrefresh_Click);
             // 
-            // btnBAJA
+            // textBox1
             // 
-            this.btnBAJA.Location = new System.Drawing.Point(623, 353);
-            this.btnBAJA.Name = "btnBAJA";
-            this.btnBAJA.Size = new System.Drawing.Size(214, 23);
-            this.btnBAJA.TabIndex = 3;
-            this.btnBAJA.Text = "Baja";
-            this.btnBAJA.UseVisualStyleBackColor = true;
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.modulosBindingSource, "desc_modulo", true));
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.modulosBindingSource, "desc_modulo", true));
+            this.textBox1.Location = new System.Drawing.Point(897, 430);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 8;
             // 
-            // btnEDIT
+            // textBox2
             // 
-            this.btnEDIT.Location = new System.Drawing.Point(623, 404);
-            this.btnEDIT.Name = "btnEDIT";
-            this.btnEDIT.Size = new System.Drawing.Size(214, 23);
-            this.btnEDIT.TabIndex = 4;
-            this.btnEDIT.Text = "Editar";
-            this.btnEDIT.UseVisualStyleBackColor = true;
+            this.textBox2.AcceptsReturn = true;
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.modulosBindingSource, "id_modulo", true));
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.modulosBindingSource, "id_modulo", true));
+            this.textBox2.Location = new System.Drawing.Point(897, 357);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 9;
+            // 
+            // textBox3
+            // 
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.modulosBindingSource, "ejecuta", true));
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.modulosBindingSource, "ejecuta", true));
+            this.textBox3.Location = new System.Drawing.Point(897, 392);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 10;
             // 
             // modulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(910, 450);
+            this.ClientSize = new System.Drawing.Size(700, 407);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnrefresh);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnEDIT);
             this.Controls.Add(this.btnBAJA);
             this.Controls.Add(this.btnAlta);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dataGridView1);
             this.Name = "modulos";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.modulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modulosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tp2DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tp2DataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnAlta;
         private System.Windows.Forms.Button btnBAJA;
         private System.Windows.Forms.Button btnEDIT;
+        private System.Windows.Forms.BindingSource tp2DataSetBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idmoduloDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descmoduloDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ejecutaDataGridViewTextBoxColumn;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnrefresh;
+        public System.Windows.Forms.BindingSource modulosBindingSource;
+        public tp2DataSetTableAdapters.modulosTableAdapter modulosTableAdapter;
+        public tp2DataSet tp2DataSet;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }
 

@@ -16,12 +16,12 @@ namespace CapaNegocios2
             mo.cargaModulos(desc, ejec);
         }
 
-        public void Deletemodulo(int id)
+        public void Deletemodulo(string id)
         {
             mo.EliminaModulo(Convert.ToInt32(id));
         }
 
-        public void Updatemodulo(string desc, int id, string ejec)
+        public void Updatemodulo(string desc, string id, string ejec)
         {
             mo.EditarModulo(desc, Convert.ToInt32(id), ejec);
         }

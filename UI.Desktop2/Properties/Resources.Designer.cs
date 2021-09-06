@@ -69,25 +69,5 @@ namespace UI.Desktop2.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Que_debes_saber_antes_de_adoptar_un_gatito {
-            get {
-                object obj = ResourceManager.GetObject("Que_debes_saber_antes_de_adoptar_un_gatito", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Que_debes_saber_antes_de_adoptar_un_gatito1 {
-            get {
-                object obj = ResourceManager.GetObject("Que_debes_saber_antes_de_adoptar_un_gatito1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
