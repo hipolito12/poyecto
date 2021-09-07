@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cursos.Designer.cs">
+      <DependentUpon>cursos.cs</DependentUpon>
+    </Compile>
     <Compile Include="database\alumnos_inscripciones.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -159,6 +165,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>tp2DataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="cursos.resx">
+      <DependentUpon>cursos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Docentes Cursos.resx">
       <DependentUpon>Docentes Cursos.cs</DependentUpon>
     </EmbeddedResource>

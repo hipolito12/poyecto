@@ -53,6 +53,7 @@
     <Compile Include="alumnos_inscripciones.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="curso.cs" />
     <Compile Include="docentes.cs" />
     <Compile Include="modulo.cs" />
     <Compile Include="comisiones.cs">
