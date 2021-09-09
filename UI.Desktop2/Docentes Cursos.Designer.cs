@@ -32,16 +32,16 @@ namespace UI.Desktop2
             this.components = new System.ComponentModel.Container();
             this.docentes_cursosTableAdapter1 = new UI.Desktop2.tp2DataSetTableAdapters.docentes_cursosTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id_dictado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_docente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.docentescursosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tp2DataSet = new UI.Desktop2.tp2DataSet();
             this.btnalta = new System.Windows.Forms.Button();
             this.btnbaja = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnRefrescar = new System.Windows.Forms.Button();
-            this.id_dictado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_docente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docentescursosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tp2DataSet)).BeginInit();
@@ -64,9 +64,34 @@ namespace UI.Desktop2
             this.dataGridView1.DataSource = this.docentescursosBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(443, 302);
+            this.dataGridView1.Size = new System.Drawing.Size(444, 302);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // id_dictado
+            // 
+            this.id_dictado.DataPropertyName = "id_dictado";
+            this.id_dictado.HeaderText = "id_dictado";
+            this.id_dictado.Name = "id_dictado";
+            this.id_dictado.ReadOnly = true;
+            // 
+            // id_curso
+            // 
+            this.id_curso.DataPropertyName = "id_curso";
+            this.id_curso.HeaderText = "id_curso";
+            this.id_curso.Name = "id_curso";
+            // 
+            // id_docente
+            // 
+            this.id_docente.DataPropertyName = "id_docente";
+            this.id_docente.HeaderText = "id_docente";
+            this.id_docente.Name = "id_docente";
+            // 
+            // cargo
+            // 
+            this.cargo.DataPropertyName = "cargo";
+            this.cargo.HeaderText = "cargo";
+            this.cargo.Name = "cargo";
             // 
             // docentescursosBindingSource
             // 
@@ -117,31 +142,6 @@ namespace UI.Desktop2
             this.btnRefrescar.Text = "Refrescar";
             this.btnRefrescar.UseVisualStyleBackColor = true;
             this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
-            // 
-            // id_dictado
-            // 
-            this.id_dictado.DataPropertyName = "id_dictado";
-            this.id_dictado.HeaderText = "id_dictado";
-            this.id_dictado.Name = "id_dictado";
-            this.id_dictado.ReadOnly = true;
-            // 
-            // id_curso
-            // 
-            this.id_curso.DataPropertyName = "id_curso";
-            this.id_curso.HeaderText = "id_curso";
-            this.id_curso.Name = "id_curso";
-            // 
-            // id_docente
-            // 
-            this.id_docente.DataPropertyName = "id_docente";
-            this.id_docente.HeaderText = "id_docente";
-            this.id_docente.Name = "id_docente";
-            // 
-            // cargo
-            // 
-            this.cargo.DataPropertyName = "cargo";
-            this.cargo.HeaderText = "cargo";
-            this.cargo.Name = "cargo";
             // 
             // Docentes_Cursos
             // 

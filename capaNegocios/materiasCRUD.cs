@@ -8,7 +8,7 @@ namespace capaNegocios
 
     public class materiasCRUD
     {
-        private CRUD M = new CRUD();
+        private Materia M = new Materia();
 
 
         public DataTable muestra()

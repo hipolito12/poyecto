@@ -61,6 +61,12 @@
     <Compile Include="cursos.Designer.cs">
       <DependentUpon>cursos.cs</DependentUpon>
     </Compile>
+    <Compile Include="cursos1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cursos1.Designer.cs">
+      <DependentUpon>cursos1.cs</DependentUpon>
+    </Compile>
     <Compile Include="database\alumnos_inscripciones.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -139,6 +145,12 @@
     <Compile Include="Docentes Cursos.Designer.cs">
       <DependentUpon>Docentes Cursos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="modulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,8 +180,14 @@
     <EmbeddedResource Include="cursos.resx">
       <DependentUpon>cursos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="cursos1.resx">
+      <DependentUpon>cursos1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Docentes Cursos.resx">
       <DependentUpon>Docentes Cursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modulos.resx">
       <DependentUpon>modulos.cs</DependentUpon>

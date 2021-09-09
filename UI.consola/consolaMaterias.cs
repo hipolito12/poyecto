@@ -2,7 +2,7 @@
 using datos;
 namespace UI.consola
 {
-    public class consolaMaterias : CRUD
+    public class consolaMaterias : Materia
     {
         public void Menu()
         {
@@ -18,7 +18,7 @@ namespace UI.consola
 
             int option;
             option = Convert.ToInt32(Console.ReadLine());
-            CRUD a = new CRUD();
+            Materia a = new Materia();
             switch (option)
             {
                 case 1:

@@ -10,7 +10,7 @@ namespace datos
 
 
 
-    public class CRUD
+    public class Materia
     {
         private CD_Conexion conexion = new CD_Conexion();
         SqlDataReader leer;
