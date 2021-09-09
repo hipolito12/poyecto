@@ -24,13 +24,14 @@ namespace UI.Desktop2
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            try { 
+            try {
+               if( textBox1.Text.Length == 0 || textBox1.Text.Length == null) ;
             }
-            catch(Exception e)
+            catch(Exception en)
+           
             {
-                {
-                    MessageBox.Show("ocurrio" ,e);
-                }
+                  
+            }
         }
     }
 }
