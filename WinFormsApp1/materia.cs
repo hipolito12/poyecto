@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using capaNegocios;
-
+using
+System.Data.SqlClient;
 
 
 namespace UI.Desktop
 {
-    public partial class Form1 : Form
+    public partial class materia : Form
     {
         materiasCRUD k = new materiasCRUD();
         private string idmateria= null;
@@ -28,7 +29,7 @@ namespace UI.Desktop
             plant.Text = "";
             
         }
-        public Form1()
+        public materia()
         {
             InitializeComponent();
         }
@@ -89,11 +90,15 @@ namespace UI.Desktop
                     limpiarForm();
                     Editar = false;
                 }
+                catch (SqlException odbcEx)
+                {
+
+                }
                 catch (Exception ex)
                 {
                     MessageBox.Show("no se pudo editar los datos por: " + ex);
                 }
-           
+                
             }
             if (dataGridView1.SelectedRows.Count > 0)
             {
