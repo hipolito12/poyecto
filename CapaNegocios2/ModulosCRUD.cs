@@ -5,7 +5,7 @@ using Datos2;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace CapaNegocios2
+namespace CapaNegocios
 {
     public class ModulosCRUD
     {

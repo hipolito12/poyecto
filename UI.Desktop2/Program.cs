@@ -16,7 +16,7 @@ namespace UI.Desktop2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Docentes_Cursos());
+            Application.Run(new Materia());
         }
     }
 }

@@ -18,6 +18,7 @@ namespace Datos2
             cus.anio_calendario = anio;
             cus.id_materia = idmateria;
             en.cursos.Add(cus);
+          
             en.SaveChanges();
 
 

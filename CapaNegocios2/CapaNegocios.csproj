@@ -7,8 +7,8 @@
     <ProjectGuid>{B4B5449C-429C-4ECB-9FEF-4BD3B584D9E4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CapaNegocios2</RootNamespace>
-    <AssemblyName>CapaNegocios2</AssemblyName>
+    <RootNamespace>CapaNegocios</RootNamespace>
+    <AssemblyName>CapaNegocios</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -43,13 +43,16 @@
   <ItemGroup>
     <Compile Include="CursosCRUD.cs" />
     <Compile Include="docentes_cursos-CRUD.cs" />
+    <Compile Include="Materia_n.cs" />
     <Compile Include="ModulosCRUD.cs" />
+    <Compile Include="Plan_.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuario_.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Datos2\Datos2.csproj">
+    <ProjectReference Include="..\Datos2\CapaDatos.csproj">
       <Project>{fc614a7a-db96-4226-bbe3-daf487ed8af1}</Project>
-      <Name>Datos2</Name>
+      <Name>CapaDatos</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

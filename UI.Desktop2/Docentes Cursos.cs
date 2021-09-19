@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.Desktop2;
 using UI.Desktop2.database;
-using CapaNegocios2;
+using CapaNegocios;
 
 namespace UI.Desktop2
 {

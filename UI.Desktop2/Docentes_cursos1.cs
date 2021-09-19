@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CapaNegocios2;
+using CapaNegocios;
 using System.Windows.Forms;
 
 namespace UI.Desktop2

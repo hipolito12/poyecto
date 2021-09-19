@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaNegocios2;
+using CapaNegocios;
 using System.Data.SqlClient;
 using UI.Desktop2.database;
 
