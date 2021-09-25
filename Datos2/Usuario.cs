@@ -35,7 +35,7 @@ namespace Datos2
             usu.nombre_usuario = nombreU;
             usu.habilitado = habilit;
             usu.clave = clave;
-            en.usuarios.Add(usu);
+            en.Entry(usu).State = System.Data.Entity.EntityState.Modified;
             en.SaveChanges();
         }
 

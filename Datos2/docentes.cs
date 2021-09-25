@@ -47,12 +47,7 @@ namespace Datos2
 
 
              }
-        public static void Main(string[] args)
-
-        {
-
-
-        }
+      
 
 
     }

@@ -16,7 +16,7 @@ namespace UI.Desktop2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Materia());
+            Application.Run(new Personas());
         }
     }
 }

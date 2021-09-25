@@ -30,12 +30,10 @@ namespace UI.Desktop2
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lblidmateria = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtidmateria = new System.Windows.Forms.TextBox();
             this.txtdescripcion = new System.Windows.Forms.TextBox();
             this.txtHs_Semanales = new System.Windows.Forms.TextBox();
             this.TXTHs_Totales = new System.Windows.Forms.TextBox();
@@ -47,15 +45,6 @@ namespace UI.Desktop2
             ((System.ComponentModel.ISupportInitialize)(this.planesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tp2DataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblidmateria
-            // 
-            this.lblidmateria.AutoSize = true;
-            this.lblidmateria.Location = new System.Drawing.Point(275, 142);
-            this.lblidmateria.Name = "lblidmateria";
-            this.lblidmateria.Size = new System.Drawing.Size(52, 13);
-            this.lblidmateria.TabIndex = 0;
-            this.lblidmateria.Text = "IDmateria";
             // 
             // label2
             // 
@@ -92,13 +81,6 @@ namespace UI.Desktop2
             this.label5.Size = new System.Drawing.Size(45, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "ID_Plan";
-            // 
-            // txtidmateria
-            // 
-            this.txtidmateria.Location = new System.Drawing.Point(352, 142);
-            this.txtidmateria.Name = "txtidmateria";
-            this.txtidmateria.Size = new System.Drawing.Size(120, 20);
-            this.txtidmateria.TabIndex = 5;
             // 
             // txtdescripcion
             // 
@@ -158,18 +140,16 @@ namespace UI.Desktop2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 223);
+            this.ClientSize = new System.Drawing.Size(510, 236);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboidplan);
             this.Controls.Add(this.TXTHs_Totales);
             this.Controls.Add(this.txtHs_Semanales);
             this.Controls.Add(this.txtdescripcion);
-            this.Controls.Add(this.txtidmateria);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblidmateria);
             this.Name = "Materias1";
             this.Text = "Materias1";
             this.Load += new System.EventHandler(this.Materias1_Load);
@@ -185,7 +165,6 @@ namespace UI.Desktop2
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        public System.Windows.Forms.TextBox txtidmateria;
         public System.Windows.Forms.TextBox txtdescripcion;
         public System.Windows.Forms.TextBox txtHs_Semanales;
         public System.Windows.Forms.TextBox TXTHs_Totales;
@@ -194,6 +173,5 @@ namespace UI.Desktop2
         private tp2DataSetTableAdapters.planesTableAdapter planesTableAdapter;
         public System.Windows.Forms.ComboBox comboidplan;
         private System.Windows.Forms.Button button1;
-        public System.Windows.Forms.Label lblidmateria;
     }
 }

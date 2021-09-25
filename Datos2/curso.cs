@@ -3,48 +3,82 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Data.SqlClient;
+using System.Data;
 namespace Datos2
 {
-    public class curso
+   
+    public class curso_
     {
-        Entidades en = new Entidades();
-        cursos cus = new cursos();
-       
+        conexioncs conexion = new conexioncs();
+        SqlDataReader leer;
+        DataTable tabla = new DataTable();
+        SqlCommand comando = new SqlCommand();
+        public Entidades entidad = new Entidades();
+        /*public void ADDcursometodoviejo(int idmateria, int idComision, int anio, int cupo) 
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "insertar_curso";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@descrip", desc);
+            comando.Parameters.AddWithValue("@semanales", semanal);
+            comando.Parameters.AddWithValue("@totales", total);
+            comando.Parameters.AddWithValue("@idplan", plan);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+        }*/
+
+
+
+
         public void ADDcursos( int idmateria, int idComision, int anio, int cupo)
         {
-            cus.cupo = cupo;
-            cus.id_comision = idComision;
-            cus.anio_calendario = anio;
-            cus.id_materia = idmateria;
-            en.cursos.Add(cus);
-          
-            en.SaveChanges();
-
-
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "insertar_curso";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idmateria", idmateria);
+            comando.Parameters.AddWithValue("@cupo", cupo);
+            comando.Parameters.AddWithValue("@aniocal", anio);
+            comando.Parameters.AddWithValue("@idcomision", idComision);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
         }
 
 
         public void editCursos(int idmateria, int idComision, int anio, int cupo, int idcurso)
         {
-            cursos cU = en.cursos.Where( c => c.id_comision == idComision && c.anio_calendario== anio && c.id_curso== idcurso && c.id_materia== idmateria).First();
-
-            cU.cupo = cupo;
-            cU.id_comision = idComision;
-            cU.anio_calendario = anio;
-            cU.id_materia = idmateria;
-            cU.id_curso = idcurso;
-            en.cursos.Add(cU);
-            en.SaveChanges();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "editar_curso";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idcurso", idmateria);
+            comando.Parameters.AddWithValue("@idmateria", idmateria);
+            comando.Parameters.AddWithValue("@cupo", cupo);
+            comando.Parameters.AddWithValue("@anio", anio);
+            comando.Parameters.AddWithValue("@idcom", idComision);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
         }
     
-        public void DleteCusrsos(int com , int anio, int curso, int materia)
+        public void DleteCusrsos(int idcurso )
         {
-            cursos cu = en.cursos.Where(c => c.id_comision == com && c.anio_calendario == anio && c.id_curso == curso && c.id_materia == materia).First();
-            en.cursos.Remove(cu);
-            en.SaveChanges();
+            cursos cu = entidad.cursos.Where(c => c.id_curso == idcurso).First();
+            entidad.cursos.Remove(cu);
+            entidad.SaveChanges();
 
+        
+        
         }
+
+
+
+
+
+
+        
+
     }
 
 

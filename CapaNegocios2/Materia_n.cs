@@ -19,7 +19,7 @@ namespace CapaNegocios
      
         public void EditarMaterias(string descmat,string idmateria ,string hssemanales, string hstotales, string idplan) 
         {
-            mate.Editmaterias(Convert.ToInt32(idmateria), descmat, Convert.ToInt32(hssemanales), Convert.ToInt32(hstotales), Convert.ToInt32(idplan));
+            mate.Editmaterias( descmat, Convert.ToInt32(hssemanales), Convert.ToInt32(hstotales), Convert.ToInt32(idplan), Convert.ToInt32(idmateria));
         
         }
 

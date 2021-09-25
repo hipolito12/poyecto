@@ -63,12 +63,7 @@ public class modulo
             return tabla;
         }
 
-       public static void Main(string[] args)
-
-        {
-           
-           
-        }
+     
     }
 
 }

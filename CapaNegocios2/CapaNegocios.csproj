@@ -43,10 +43,13 @@
   <ItemGroup>
     <Compile Include="CursosCRUD.cs" />
     <Compile Include="docentes_cursos-CRUD.cs" />
+    <Compile Include="Especialidad.cs" />
     <Compile Include="Materia_n.cs" />
     <Compile Include="ModulosCRUD.cs" />
+    <Compile Include="Personas.cs" />
     <Compile Include="Plan_.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="t.cs" />
     <Compile Include="Usuario_.cs" />
   </ItemGroup>
   <ItemGroup>

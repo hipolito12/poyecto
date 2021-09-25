@@ -25,7 +25,7 @@ namespace Datos2
             pl.id_especialidad = espe;
             pl.desc_plan = desc;
             pl.id_plan = id;
-            en.planes.Add(pl);
+            en.Entry(pl).State = System.Data.Entity.EntityState.Modified;
             en.SaveChanges();
 
         }

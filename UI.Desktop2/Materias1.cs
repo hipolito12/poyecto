@@ -20,7 +20,8 @@ namespace UI.Desktop2
             InitializeComponent();
             meterdatos();
         }
-        public bool estado; 
+        public bool estado;
+        public string IDmateria;
         private void txtIDPLAN_TextChanged(object sender, EventArgs e)
         {
            
@@ -38,27 +39,15 @@ namespace UI.Desktop2
            
 
 
-            meterdatos() ;  
+           // meterdatos() ;  
         }
 
 
-        public void meterdatos() 
-        { planes p = new planes();
-            Entidad en = new Entidad();
-          var  vari = en.planes;
-            
-            foreach (var per in vari )
-            { 
-                var variab= per.id_plan;
-                planes pla = en.planes.Where(pl=> pl.id_plan ==  variab).First();
-                string descripcion = pla.desc_plan;
-                this.comboidplan.Items.Add(descripcion).ToString();
-            }
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string mid = txtidmateria.Text;
+            //string mid = txtidmateria.Text;
             Materia_n ma = new Materia_n();
             if (estado == true)//Agrega
             {
@@ -66,10 +55,12 @@ namespace UI.Desktop2
                 ma.agregarmateria(txtdescripcion.Text,txtHs_Semanales.Text,TXTHs_Totales.Text, ID.ToString());
 
             }
-            else //Edita
+            if(estado == false)//edita
             {
+                Materia maf = new Materia();
+              
                 int ID = buscaid(comboidplan.Text);
-                ma.EditarMaterias(txtdescripcion.Text, mid,txtHs_Semanales.Text, TXTHs_Totales.Text, ID.ToString());
+                ma.EditarMaterias(txtdescripcion.Text, IDmateria ,txtHs_Semanales.Text, TXTHs_Totales.Text,ID.ToString());
                 
             }
         }
@@ -79,7 +70,25 @@ namespace UI.Desktop2
             planes pl = new planes();
             planes pla= en.planes.Where(plan=> plan.desc_plan== desc).First();
             int ID =pla.id_plan;
+            Console.WriteLine(ID);
             return ID;
         }
+
+        public void meterdatos()
+        {
+            planes p = new planes();
+            Entidad en = new Entidad();
+            var vari = en.planes;
+
+            foreach (var per in vari)
+            {
+                var variab = per.id_plan;
+                planes pla = en.planes.Where(pl => pl.id_plan == variab).First();
+                string descripcion = pla.desc_plan;
+                this.comboidplan.Items.Add(descripcion).ToString();
+            }
+        }
+
+
     }
 }
