@@ -12,7 +12,7 @@ namespace CapaNegocios
         Personas_ per = new Personas_();
         public void addpersonas(string nombre, string apellido, string direccion, string email, string telefono, string fechan, string legajo, string tipo_persona, string  id_plan)
         {
-            per.agregarPersonas(nombre, apellido, direccion, email, telefono, fechan, Convert.ToInt32 (legajo),Convert.ToInt32 (tipo_persona), Convert.ToInt32 (id_plan) );
+            per.agregarPersonas(nombre, apellido, direccion, email, telefono, Convert.ToDateTime( fechan), Convert.ToInt32 (legajo),Convert.ToInt32 (tipo_persona), Convert.ToInt32 (id_plan) );
         }
 
 

@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using capaNegocios;
+using 
 using System.Data.SqlClient;
 
 
@@ -14,7 +14,7 @@ namespace UI.Desktop
 {
     public partial class Usuarios : Form
     {
-        UsuariosCRUD u = new UsuariosCRUD();
+        usua
         public Usuarios()
         {
             InitializeComponent();

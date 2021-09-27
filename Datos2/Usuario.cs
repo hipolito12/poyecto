@@ -20,12 +20,23 @@ namespace Datos2
             u.nombre_usuario = nombreU;
             u.habilitado = habilit;
             u.clave = clave;
+            en.usuarios.Add(u);
+            en.SaveChanges();
+
         }
-    
-    
+      /*  public string personaid(string mail, string dire,string nombre) 
+        {
+            var s = en.personas.Where(pe=> pe.email==mail && pe.direccion == dire && pe.nombre==nombre ).First();
+                return s.id_plan.ToString();
+        }*/
+        public int ultimoregidtro() 
+        {int k  = en.personas.Max(pers => pers.id_persona);
+            return k; 
+        }
         public void EditUsuario(int idUsuarios,int idper, string nombre, string nombreU, string apellido, string clave, bool cambia, bool habilit, string email) 
         {
             usuarios usu = en.usuarios.Where(UsU=> UsU.id_usuario == idUsuarios ).First();
+           
             usu.id_usuario = idUsuarios;
             usu.apellido = apellido;
             usu.email = email;
