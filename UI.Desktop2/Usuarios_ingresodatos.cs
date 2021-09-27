@@ -41,8 +41,8 @@ namespace UI.Desktop2
                
 
                 Usuario_ u = new Usuario_();
-              //  string ide = u.idpersona(txtnombre.Text,);
-              
+                //  string ide = u.idpersona(txtnombre.Text,);
+                string ide = "  ";
                 u.agregegarUsuarios(ide,txtnombre.Text,txtusuario.Text,txtapelliod.Text,txtclave.Text,chkcambiaclave.Checked,chkhabilitado.Checked,txtemail.Text);
             }
            
