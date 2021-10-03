@@ -163,11 +163,29 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login\Alumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Alumnos.Designer.cs">
+      <DependentUpon>Alumnos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Profesores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Profesores.Designer.cs">
+      <DependentUpon>Profesores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Suprer_Admins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Suprer_Admins.Designer.cs">
+      <DependentUpon>Suprer_Admins.cs</DependentUpon>
     </Compile>
     <Compile Include="Materia.cs">
       <SubType>Form</SubType>
@@ -249,8 +267,17 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login\Alumnos.resx">
+      <DependentUpon>Alumnos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Profesores.resx">
+      <DependentUpon>Profesores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Suprer_Admins.resx">
+      <DependentUpon>Suprer_Admins.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Materia.resx">
       <DependentUpon>Materia.cs</DependentUpon>

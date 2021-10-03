@@ -59,6 +59,7 @@
     <Compile Include="curso.cs" />
     <Compile Include="docentes.cs" />
     <Compile Include="Especilidades.cs" />
+    <Compile Include="Login.cs" />
     <Compile Include="Materia_.cs" />
     <Compile Include="modulo.cs" />
     <Compile Include="comisiones.cs">
