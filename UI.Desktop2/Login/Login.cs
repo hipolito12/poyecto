@@ -69,7 +69,7 @@ namespace UI.Desktop2.Login
             switch (tup.Item2) 
             {
                 case 0:  Suprer_Admins sa = new Suprer_Admins(); sa.ShowDialog(); sa.richTextBox1.Text = $"Bienvenido {tup.Item1}";    break;
-                case 1:  Profesores p = new Profesores(); p.ShowDialog();   p.richTextBox1.Text = $"Bienvenido {tup.Item1}"; ;  break;
+                case 1:  Profesores p = new Profesores(); p.ShowDialog();   p.richTextBox1.Text = $"Bienvenido {tup.Item1}";   break;
                 case 2: Alumnos al = new Alumnos(); al.ShowDialog(); al.texto.Text = $"Bienvenido {tup.Item1}"; break;
             }
         }

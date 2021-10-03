@@ -16,5 +16,17 @@ namespace UI.Desktop2.Login
         {
             InitializeComponent();
         }
+
+        private void contextMenuStrip2_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Alumnos al = new Alumnos();
+            al.Close();
+            
+        }
     }
 }
