@@ -92,5 +92,10 @@ namespace UI.Desktop2
         {
 
         }
+
+        private void comboComision_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -9,9 +9,15 @@ using System.Data;
 
 namespace CapaNegocios
 {
-    class Plan_
+  public  class Plan_
     {
+
         Plan p = new Plan();
+
+        public List<string> cargargarcombos() 
+        {
+            return p.cargarCB();
+        }
         public void agregarplan(string desc, string espe)
         {
             

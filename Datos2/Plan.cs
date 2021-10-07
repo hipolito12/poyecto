@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace Datos2
 {
@@ -36,7 +37,21 @@ namespace Datos2
             en.planes.Remove(pl);
             en.SaveChanges();
         }
-    
+
+
+        public List<string> cargarCB() 
+        {
+            especialidades esp = new especialidades();
+            Entidades en = new Entidades();
+            List<string> lc = new List<string>();
+            var es = en.especialidades;
+            foreach (var k in es) 
+            {
+                
+                lc.Add(k.desc_especialidad);
+            }
+            return lc;
+        }
     }
 
 

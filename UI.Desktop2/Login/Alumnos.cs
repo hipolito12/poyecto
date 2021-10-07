@@ -28,5 +28,40 @@ namespace UI.Desktop2.Login
             al.Close();
             
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+                //TO DO
+        }
+
+        private void btnmaterias_Click(object sender, EventArgs e)
+        {
+            Materia mat = new Materia();
+            mat.ShowDialog();
+        }
+
+        private void btnmodulos_Click(object sender, EventArgs e)
+        {
+            modulos mod = new modulos();
+            mod.ShowDialog();
+        }
+
+        private void btnPlanes_Click(object sender, EventArgs e)
+        {
+            //TO DO
+        }
+
+        private void btnespecialidades_Click(object sender, EventArgs e)
+        {
+            Especialidades ESP = new Especialidades();
+            ESP.ShowDialog();
+
+        }
+
+        private void btnCursos_Click(object sender, EventArgs e)
+        {
+            cursos cur = new cursos();
+            cur.ShowDialog();
+        }
     }
 }

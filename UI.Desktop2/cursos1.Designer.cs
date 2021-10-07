@@ -105,6 +105,7 @@ namespace UI.Desktop2
             this.comboComision.Name = "comboComision";
             this.comboComision.Size = new System.Drawing.Size(121, 21);
             this.comboComision.TabIndex = 7;
+            this.comboComision.SelectedIndexChanged += new System.EventHandler(this.comboComision_SelectedIndexChanged);
             // 
             // button1
             // 

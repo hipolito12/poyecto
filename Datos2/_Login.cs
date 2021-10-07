@@ -22,12 +22,18 @@ namespace Datos2
             {
                 throw e;
             }
-            int usuario_persona = Convert.ToInt32(us.id_persona);
-            person = enti.personas.Find(usuario_persona);
-            int k = person.tipo_persona;
-            string nom = person.nombre;
             
-            return (nom,k);
+            if (us != null) 
+            {
+                int usuario_persona = Convert.ToInt32(us.id_persona);
+                person = enti.personas.Find(usuario_persona);
+                int k = person.tipo_persona;
+                string nom = person.nombre;
+                return (nom, k);
+            }
+            else { return ("-1", -1); }
+            
+          
         }
 
         public bool verifica(string usuario, string contra) 

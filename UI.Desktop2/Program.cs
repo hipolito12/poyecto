@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using UI.Desktop2.Login;
 namespace UI.Desktop2
 {
     static class Program
@@ -16,7 +16,7 @@ namespace UI.Desktop2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Personas());
+            Application.Run(new Login.Login());
         }
     }
 }
