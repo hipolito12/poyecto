@@ -48,7 +48,8 @@ namespace UI.Desktop2.Login
 
         private void btnPlanes_Click(object sender, EventArgs e)
         {
-            //TO DO
+            Planes_ pla = new Planes_();
+            pla.Show();
         }
 
         private void btnespecialidades_Click(object sender, EventArgs e)

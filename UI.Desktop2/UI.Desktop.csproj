@@ -236,12 +236,6 @@
     <Compile Include="PlanesIngresoDatos.Designer.cs">
       <DependentUpon>PlanesIngresoDatos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Planes_.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Planes_.Designer.cs">
-      <DependentUpon>Planes_.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tp2DataSet.Designer.cs">
@@ -260,6 +254,12 @@
     </Compile>
     <Compile Include="Usuarios_ingresodatos.Designer.cs">
       <DependentUpon>Usuarios_ingresodatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Plan_.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Plan_.Designer.cs">
+      <DependentUpon>_Plan_.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="cursos.resx">
       <DependentUpon>cursos.cs</DependentUpon>
@@ -315,9 +315,6 @@
     <EmbeddedResource Include="PlanesIngresoDatos.resx">
       <DependentUpon>PlanesIngresoDatos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Planes_.resx">
-      <DependentUpon>Planes_.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -333,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios_ingresodatos.resx">
       <DependentUpon>Usuarios_ingresodatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Plan_.resx">
+      <DependentUpon>_Plan_.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="database\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
