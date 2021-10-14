@@ -47,46 +47,67 @@ namespace UI.Desktop2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //string mid = txtidmateria.Text;
-            Materia_n ma = new Materia_n();
-            if (estado == true)//Agrega
+            try
             {
-                int ID = buscaid(comboidplan.Text);
-                ma.agregarmateria(txtdescripcion.Text,txtHs_Semanales.Text,TXTHs_Totales.Text, ID.ToString());
+                if (txtdescripcion.Text == null || comboidplan.Text == null || txtdescripcion.Text == null || txtHs_Semanales.Text == null)
+                {
+                    MessageBox.Show($"error:hay campos vacios, verifiquelos!");
 
+                }
+                //string mid = txtidmateria.Text;
+                Materia_n ma = new Materia_n();
+                if (estado == true)//Agrega
+                {
+                    int ID = buscaid(comboidplan.Text);
+                    ma.agregarmateria(txtdescripcion.Text, txtHs_Semanales.Text, TXTHs_Totales.Text, ID.ToString());
+
+                }
+                if (estado == false)//edita
+                {
+                    Materia maf = new Materia();
+
+                    int ID = buscaid(comboidplan.Text);
+                    ma.EditarMaterias(txtdescripcion.Text, IDmateria, txtHs_Semanales.Text, TXTHs_Totales.Text, ID.ToString());
+
+                }
             }
-            if(estado == false)//edita
-            {
-                Materia maf = new Materia();
-              
-                int ID = buscaid(comboidplan.Text);
-                ma.EditarMaterias(txtdescripcion.Text, IDmateria ,txtHs_Semanales.Text, TXTHs_Totales.Text,ID.ToString());
-                
-            }
+            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
         }
     
        private int buscaid(string desc) 
-        { Entidad en = new Entidad();
-            planes pl = new planes();
-            planes pla= en.planes.Where(plan=> plan.desc_plan== desc).First();
-            int ID =pla.id_plan;
-            Console.WriteLine(ID);
-            return ID;
+
+        {
+            int ID;
+           
+            
+                Entidad en = new Entidad();
+                planes pl = new planes();
+                 planes pla = en.planes.Where(plan => plan.desc_plan == desc).First();
+                 ID = pla.id_plan;
+                Console.WriteLine(ID);
+                return ID;
+            
+            
+         
         }
 
         public void meterdatos()
         {
-            planes p = new planes();
-            Entidad en = new Entidad();
-            var vari = en.planes;
-
-            foreach (var per in vari)
+            try
             {
-                var variab = per.id_plan;
-                planes pla = en.planes.Where(pl => pl.id_plan == variab).First();
-                string descripcion = pla.desc_plan;
-                this.comboidplan.Items.Add(descripcion).ToString();
+                planes p = new planes();
+                Entidad en = new Entidad();
+                var vari = en.planes;
+
+                foreach (var per in vari)
+                {
+                    var variab = per.id_plan;
+                    planes pla = en.planes.Where(pl => pl.id_plan == variab).First();
+                    string descripcion = pla.desc_plan;
+                    this.comboidplan.Items.Add(descripcion).ToString();
+                }
             }
+            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
         }
 
 

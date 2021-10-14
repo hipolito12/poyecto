@@ -39,7 +39,8 @@ namespace UI.Desktop2
         private void btnalta_Click(object sender, EventArgs e)
         {
             profesores_modulos dc1 = new profesores_modulos();
-            dc1.btnEDT.Enabled = false;
+            
+            dc1.estado = true;
             dc1.txtdictado.Visible = false;
             dc1.lblcargo.Visible = false;
             dc1.Show();
@@ -48,13 +49,15 @@ namespace UI.Desktop2
         private void button3_Click(object sender, EventArgs e)
         {
             profesores_modulos pm = new profesores_modulos();
+            pm.estado = false;
             if (dataGridView1.SelectedRows.Count > 0)
             {
+
                 pm.txtcargos.Text = dataGridView1.CurrentRow.Cells["cargo"].Value.ToString();
                 pm.txtCurso.Text = dataGridView1.CurrentRow.Cells["id_curso"].Value.ToString();
                 pm.txtdictado.Text= dataGridView1.CurrentRow.Cells["id_dictado"].Value.ToString();
                 pm.txtdocente.Text = dataGridView1.CurrentRow.Cells["id_docente"].Value.ToString();
-                pm.btnalta.Enabled = false;
+                
                 pm.Show();
                 
             }
@@ -63,15 +66,19 @@ namespace UI.Desktop2
 
         private void btnbaja_Click(object sender, EventArgs e)
         {
-            docentes_cursos_CRUD dcc = new docentes_cursos_CRUD();
-            if (dataGridView1.SelectedRows.Count > 0)
+            try
             {
-                dynamic idc = dataGridView1.CurrentRow.Cells["id_curso"].Value.ToString();
-                var idd = dataGridView1.CurrentRow.Cells["id_docente"].Value.ToString();
-                dcc.DELETEdocentesCURSO(idc, idd);
-                this.docentes_cursosTableAdapter1.Fill(this.tp2DataSet.docentes_cursos);
+                docentes_cursos_CRUD dcc = new docentes_cursos_CRUD();
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    dynamic idc = dataGridView1.CurrentRow.Cells["id_curso"].Value.ToString();
+                    var idd = dataGridView1.CurrentRow.Cells["id_docente"].Value.ToString();
+                    dcc.DELETEdocentesCURSO(idc, idd);
+                    this.docentes_cursosTableAdapter1.Fill(this.tp2DataSet.docentes_cursos);
+                }
+                else { MessageBox.Show("selecciona fila"); }
             }
-            else { MessageBox.Show("selecciona fila"); }
+            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
 
         }
     }

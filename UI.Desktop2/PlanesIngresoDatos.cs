@@ -25,6 +25,11 @@ namespace UI.Desktop2
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+
+            if (richdescripcion.Text==null || comboBox1.Text== null ) 
+            {
+                MessageBox.Show("campos vacios, verifiquelos");
+            }
             if (estado == true && richdescripcion.Text != null) 
             {
                 try
@@ -47,14 +52,18 @@ namespace UI.Desktop2
 
         private void carga_combo()
         {
-           
-            int pos=0;
-            foreach (var k in Pl.cargargarcombos()) 
+            try
             {
-                comboBox1.Items.Add(k);
-                posiciones.Add(k,pos);
-                pos++;
+
+                int pos = 0;
+                foreach (var k in Pl.cargargarcombos())
+                {
+                    comboBox1.Items.Add(k);
+                    posiciones.Add(k, pos);
+                    pos++;
+                }
             }
+            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
         }
 
         private void PlanesIngresoDatos_Load(object sender, EventArgs e)

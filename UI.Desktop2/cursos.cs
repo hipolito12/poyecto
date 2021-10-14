@@ -51,14 +51,18 @@ namespace UI.Desktop2
 
         private void btbElimina_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            try
             {
-                CursosCRUD curses = new CursosCRUD();
-                string idcurso = dataGridView1.CurrentRow.Cells["idcursos"].Value.ToString();
-                curses.elimminarcurso(idcurso);
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    CursosCRUD curses = new CursosCRUD();
+                    string idcurso = dataGridView1.CurrentRow.Cells["idcursos"].Value.ToString();
+                    curses.elimminarcurso(idcurso);
 
+                }
+                else { MessageBox.Show("seleccione columna"); }
             }
-            else { MessageBox.Show("seleccione columna"); }
+            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

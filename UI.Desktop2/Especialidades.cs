@@ -45,12 +45,21 @@ namespace UI.Desktop2
 
         private void btnBAJA_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            try
             {
-                string id = dataGridView1.CurrentRow.Cells["idespecialidad"].Value.ToString();
-                Especialidad  espes= new Especialidad();
-                espes.delete_especialidad(id);
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    string id = dataGridView1.CurrentRow.Cells["idespecialidad"].Value.ToString();
+                    Especialidad espes = new Especialidad();
+                    espes.delete_especialidad(id);
+                }
             }
+            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
+        }
+
+        private void refresh_Click(object sender, EventArgs e)
+        {
+            this.especialidadesTableAdapter.Fill(this.tp2DataSet.especialidades);
         }
     }
 }

@@ -36,22 +36,30 @@ namespace UI.Desktop2
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (estado == true) 
-            {
-               
 
-                Usuario_ u = new Usuario_();
-                //  string ide = u.idpersona(txtnombre.Text,);
-                string ide = "  ";
-                u.agregegarUsuarios(ide,txtnombre.Text,txtusuario.Text,txtapelliod.Text,txtclave.Text,chkcambiaclave.Checked,chkhabilitado.Checked,txtemail.Text);
+            if (estado == true)
+            {
+                try
+                {
+
+
+                    Usuario_ u = new Usuario_();
+                    //  string ide = u.idpersona(txtnombre.Text,);
+                    string ide = "  ";
+                    u.agregegarUsuarios(ide, txtnombre.Text, txtusuario.Text, txtapelliod.Text, txtclave.Text, chkcambiaclave.Checked, chkhabilitado.Checked, txtemail.Text);
+                }
+                catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
             }
-           
+
             if (estado == false) 
             {
-                
-                Usuario_ u = new Usuario_();
-               
-                u.editUsuarios( idusuario,id, txtnombre.Text, txtusuario.Text, txtapelliod.Text, txtclave.Text, chkcambiaclave.Checked, chkhabilitado.Checked, txtemail.Text);
+                try
+                {
+                    Usuario_ u = new Usuario_();
+
+                    u.editUsuarios(idusuario, id, txtnombre.Text, txtusuario.Text, txtapelliod.Text, txtclave.Text, chkcambiaclave.Checked, chkhabilitado.Checked, txtemail.Text);
+                }
+                catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
             }
         }
 

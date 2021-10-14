@@ -57,7 +57,7 @@ namespace UI.Desktop2
         private void btnAlta_Click(object sender, EventArgs e)
         {
             Modulos1 md1 = new Modulos1();
-            md1.btnEDITAR.Visible = false;
+            md1.estado = true;
             md1.Show();
             //mostrarmodulos();
           
@@ -65,16 +65,20 @@ namespace UI.Desktop2
 
         private void btnEDIT_Click(object sender, EventArgs e)
         {
-            
-            Modulos1 md1 = new Modulos1();
-            if (dataGridView1.SelectedRows.Count>0 )
+            try
             {
-                md1.txtdesc.Text = textBox1.Text;
-                md1.txtEjecuta.Text = textBox3.Text;
-                md1.txtID.Text = textBox2.Text;
-                md1.btnagregar.Visible = false;
-                md1.Show();
+                Modulos1 md1 = new Modulos1();
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    md1.estado = false;
+                    md1.txtdesc.Text = textBox1.Text;
+                    md1.txtEjecuta.Text = textBox3.Text;
+                    md1.txtID.Text = textBox2.Text;
+                    md1.btnaceptar.Visible = false;
+                    md1.Show();
+                }
             }
+            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
 
         }
 

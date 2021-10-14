@@ -31,18 +31,18 @@ namespace UI.Desktop2
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idespecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descespecialidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.especialidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tp2DataSet = new UI.Desktop2.tp2DataSet();
             this.btnAlta = new System.Windows.Forms.Button();
             this.btnModificacion = new System.Windows.Forms.Button();
             this.btnBAJA = new System.Windows.Forms.Button();
             this.refresh = new System.Windows.Forms.Button();
-            this.tp2DataSet = new UI.Desktop2.tp2DataSet();
-            this.especialidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.especialidadesTableAdapter = new UI.Desktop2.tp2DataSetTableAdapters.especialidadesTableAdapter();
-            this.idespecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descespecialidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tp2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.especialidadesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tp2DataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -55,61 +55,8 @@ namespace UI.Desktop2
             this.dataGridView1.DataSource = this.especialidadesBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(1, -2);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(379, 195);
+            this.dataGridView1.Size = new System.Drawing.Size(253, 251);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // btnAlta
-            // 
-            this.btnAlta.Location = new System.Drawing.Point(465, 30);
-            this.btnAlta.Name = "btnAlta";
-            this.btnAlta.Size = new System.Drawing.Size(193, 23);
-            this.btnAlta.TabIndex = 1;
-            this.btnAlta.Text = "Alta";
-            this.btnAlta.UseVisualStyleBackColor = true;
-            this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
-            // 
-            // btnModificacion
-            // 
-            this.btnModificacion.Location = new System.Drawing.Point(465, 84);
-            this.btnModificacion.Name = "btnModificacion";
-            this.btnModificacion.Size = new System.Drawing.Size(193, 23);
-            this.btnModificacion.TabIndex = 2;
-            this.btnModificacion.Text = "Modificacion";
-            this.btnModificacion.UseVisualStyleBackColor = true;
-            this.btnModificacion.Click += new System.EventHandler(this.btnModificacion_Click);
-            // 
-            // btnBAJA
-            // 
-            this.btnBAJA.Location = new System.Drawing.Point(465, 132);
-            this.btnBAJA.Name = "btnBAJA";
-            this.btnBAJA.Size = new System.Drawing.Size(193, 23);
-            this.btnBAJA.TabIndex = 3;
-            this.btnBAJA.Text = "Eliminar";
-            this.btnBAJA.UseVisualStyleBackColor = true;
-            this.btnBAJA.Click += new System.EventHandler(this.btnBAJA_Click);
-            // 
-            // refresh
-            // 
-            this.refresh.Location = new System.Drawing.Point(88, 199);
-            this.refresh.Name = "refresh";
-            this.refresh.Size = new System.Drawing.Size(193, 23);
-            this.refresh.TabIndex = 4;
-            this.refresh.Text = "Refresh";
-            this.refresh.UseVisualStyleBackColor = true;
-            // 
-            // tp2DataSet
-            // 
-            this.tp2DataSet.DataSetName = "tp2DataSet";
-            this.tp2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // especialidadesBindingSource
-            // 
-            this.especialidadesBindingSource.DataMember = "especialidades";
-            this.especialidadesBindingSource.DataSource = this.tp2DataSet;
-            // 
-            // especialidadesTableAdapter
-            // 
-            this.especialidadesTableAdapter.ClearBeforeFill = true;
             // 
             // idespecialidad
             // 
@@ -124,11 +71,65 @@ namespace UI.Desktop2
             this.descespecialidadDataGridViewTextBoxColumn.HeaderText = "desc_especialidad";
             this.descespecialidadDataGridViewTextBoxColumn.Name = "descespecialidadDataGridViewTextBoxColumn";
             // 
+            // especialidadesBindingSource
+            // 
+            this.especialidadesBindingSource.DataMember = "especialidades";
+            this.especialidadesBindingSource.DataSource = this.tp2DataSet;
+            // 
+            // tp2DataSet
+            // 
+            this.tp2DataSet.DataSetName = "tp2DataSet";
+            this.tp2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnAlta
+            // 
+            this.btnAlta.Location = new System.Drawing.Point(294, 60);
+            this.btnAlta.Name = "btnAlta";
+            this.btnAlta.Size = new System.Drawing.Size(193, 23);
+            this.btnAlta.TabIndex = 1;
+            this.btnAlta.Text = "Alta";
+            this.btnAlta.UseVisualStyleBackColor = true;
+            this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
+            // 
+            // btnModificacion
+            // 
+            this.btnModificacion.Location = new System.Drawing.Point(294, 114);
+            this.btnModificacion.Name = "btnModificacion";
+            this.btnModificacion.Size = new System.Drawing.Size(193, 23);
+            this.btnModificacion.TabIndex = 2;
+            this.btnModificacion.Text = "Modificacion";
+            this.btnModificacion.UseVisualStyleBackColor = true;
+            this.btnModificacion.Click += new System.EventHandler(this.btnModificacion_Click);
+            // 
+            // btnBAJA
+            // 
+            this.btnBAJA.Location = new System.Drawing.Point(294, 162);
+            this.btnBAJA.Name = "btnBAJA";
+            this.btnBAJA.Size = new System.Drawing.Size(193, 23);
+            this.btnBAJA.TabIndex = 3;
+            this.btnBAJA.Text = "Eliminar";
+            this.btnBAJA.UseVisualStyleBackColor = true;
+            this.btnBAJA.Click += new System.EventHandler(this.btnBAJA_Click);
+            // 
+            // refresh
+            // 
+            this.refresh.Location = new System.Drawing.Point(12, 255);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(193, 23);
+            this.refresh.TabIndex = 4;
+            this.refresh.Text = "Refresh";
+            this.refresh.UseVisualStyleBackColor = true;
+            this.refresh.Click += new System.EventHandler(this.refresh_Click);
+            // 
+            // especialidadesTableAdapter
+            // 
+            this.especialidadesTableAdapter.ClearBeforeFill = true;
+            // 
             // Especialidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 290);
+            this.ClientSize = new System.Drawing.Size(500, 290);
             this.Controls.Add(this.refresh);
             this.Controls.Add(this.btnBAJA);
             this.Controls.Add(this.btnModificacion);
@@ -138,8 +139,8 @@ namespace UI.Desktop2
             this.Text = "Especialidades";
             this.Load += new System.EventHandler(this.Especialidades_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tp2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.especialidadesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tp2DataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

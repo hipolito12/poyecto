@@ -25,62 +25,73 @@ namespace UI.Desktop2
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {  
-            if (estado == true) 
+        {
+            try
             {
-               int idmat= mate[ComboMateria.Text];
-              int  idcom = c[comboComision.Text];
-                CursosCRUD curses = new CursosCRUD();
-                
-                curses.agregarCurso(idmat.ToString(),idcom.ToString(),txtCupo.Text,txtanio.Text);
-                limpiacampos();
+                if (txtanio.Text == null || txtCupo.Text == null || comboComision.Text == null || ComboMateria.Text == null)
+                {
+                    MessageBox.Show("campos vacios, verifique los campos");
+                }
+                if (estado == true)
+                {
+                    int idmat = mate[ComboMateria.Text];
+                    int idcom = c[comboComision.Text];
+                    CursosCRUD curses = new CursosCRUD();
 
-            }
+                    curses.agregarCurso(idmat.ToString(), idcom.ToString(), txtCupo.Text, txtanio.Text);
+                    limpiacampos();
 
-            if(estado == false) 
-            {
-                int idmat = mate[ComboMateria.Text];
-                cursos cu = new cursos();
-               
-                int idcom = c[comboComision.Text];
-                CursosCRUD curses = new CursosCRUD();
-              
-                curses.EditarCurso(  idcurso, idcom.ToString() ,txtCupo.Text, txtanio.Text,idmat.ToString()  );
+                }
+
+                if (estado == false)
+                {
+                    int idmat = mate[ComboMateria.Text];
+                    cursos cu = new cursos();
+
+                    int idcom = c[comboComision.Text];
+                    CursosCRUD curses = new CursosCRUD();
+
+                    curses.EditarCurso(idcurso, idcom.ToString(), txtCupo.Text, txtanio.Text, idmat.ToString());
+                }
             }
-      
-        
+            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
+
+
         }
 
 
         public void cargarcombos() 
         {
-            Entidad en = new Entidad();
-            comisiones com = new comisiones();
-            materias mat = new materias();
-            var vari = en.comisiones;
-           
-            foreach (var comis in vari)//comisiones
+            try
             {
-                var variab = comis.id_comision;
-               comisiones co = en.comisiones.Where(comi => comi.id_comision== variab).First();
-                string descripcion = co.desc_comision;
-                int key1 = co.id_comision;
-                c.Add(descripcion, key1);
-                this.comboComision.Items.Add(descripcion).ToString();
-            }
-            var varia = en.materias;
-            foreach (var ma in varia)//materias
-            {
-                var variab = ma.id_materia;
-                materias m = en.materias.Where(materi => materi.id_materia == variab).First();
-                string descripcion = m.desc_materia;
-                int key2 = m.id_plan;
-                mate.Add(descripcion,key2);
-                this.ComboMateria.Items.Add(descripcion).ToString();
-            }
+                Entidad en = new Entidad();
+                comisiones com = new comisiones();
+                materias mat = new materias();
+                var vari = en.comisiones;
 
-        
-        
+                foreach (var comis in vari)//comisiones
+                {
+                    var variab = comis.id_comision;
+                    comisiones co = en.comisiones.Where(comi => comi.id_comision == variab).First();
+                    string descripcion = co.desc_comision;
+                    int key1 = co.id_comision;
+                    c.Add(descripcion, key1);
+                    this.comboComision.Items.Add(descripcion).ToString();
+                }
+                var varia = en.materias;
+                foreach (var ma in varia)//materias
+                {
+                    var variab = ma.id_materia;
+                    materias m = en.materias.Where(materi => materi.id_materia == variab).First();
+                    string descripcion = m.desc_materia;
+                    int key2 = m.id_plan;
+                    mate.Add(descripcion, key2);
+                    this.ComboMateria.Items.Add(descripcion).ToString();
+                }
+
+            }
+            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
+
         }
         public void limpiacampos() 
         {

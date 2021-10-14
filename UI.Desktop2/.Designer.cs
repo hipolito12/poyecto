@@ -36,7 +36,6 @@ namespace UI.Desktop2
             this.txtdocente = new System.Windows.Forms.TextBox();
             this.txtCurso = new System.Windows.Forms.TextBox();
             this.btnalta = new System.Windows.Forms.Button();
-            this.btnEDT = new System.Windows.Forms.Button();
             this.lblcargo = new System.Windows.Forms.Label();
             this.txtdictado = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -91,23 +90,13 @@ namespace UI.Desktop2
             // 
             // btnalta
             // 
-            this.btnalta.Location = new System.Drawing.Point(12, 3);
+            this.btnalta.Location = new System.Drawing.Point(180, 217);
             this.btnalta.Name = "btnalta";
-            this.btnalta.Size = new System.Drawing.Size(75, 23);
+            this.btnalta.Size = new System.Drawing.Size(144, 23);
             this.btnalta.TabIndex = 6;
-            this.btnalta.Text = "Alta";
+            this.btnalta.Text = "Aceptar";
             this.btnalta.UseVisualStyleBackColor = true;
             this.btnalta.Click += new System.EventHandler(this.btnalta_Click);
-            // 
-            // btnEDT
-            // 
-            this.btnEDT.Location = new System.Drawing.Point(93, 3);
-            this.btnEDT.Name = "btnEDT";
-            this.btnEDT.Size = new System.Drawing.Size(75, 23);
-            this.btnEDT.TabIndex = 7;
-            this.btnEDT.Text = "Modificar";
-            this.btnEDT.UseVisualStyleBackColor = true;
-            this.btnEDT.Click += new System.EventHandler(this.btnEDT_Click);
             // 
             // lblcargo
             // 
@@ -132,7 +121,6 @@ namespace UI.Desktop2
             this.ClientSize = new System.Drawing.Size(522, 252);
             this.Controls.Add(this.txtdictado);
             this.Controls.Add(this.lblcargo);
-            this.Controls.Add(this.btnEDT);
             this.Controls.Add(this.btnalta);
             this.Controls.Add(this.txtCurso);
             this.Controls.Add(this.txtdocente);
@@ -157,7 +145,6 @@ namespace UI.Desktop2
         public System.Windows.Forms.TextBox txtdocente;
         public System.Windows.Forms.TextBox txtCurso;
         public System.Windows.Forms.Button btnalta;
-        public System.Windows.Forms.Button btnEDT;
         public System.Windows.Forms.TextBox txtdictado;
         public System.Windows.Forms.Label lblcargo;
     }

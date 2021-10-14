@@ -28,6 +28,10 @@ namespace UI.Desktop2
 
         private void btnaceptar_Click(object sender, EventArgs e)
         {
+            if (richdescripcion.Text==null) 
+            {
+                MessageBox.Show($"hay campos vacios , verifiquelos");
+            }
             if (estado == true) 
             {
                 es.addEspecialidad(richdescripcion.Text);

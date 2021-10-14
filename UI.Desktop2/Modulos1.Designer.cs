@@ -33,10 +33,10 @@ namespace UI.Desktop2
             this.label2 = new System.Windows.Forms.Label();
             this.txtdesc = new System.Windows.Forms.TextBox();
             this.txtEjecuta = new System.Windows.Forms.TextBox();
-            this.btnagregar = new System.Windows.Forms.Button();
-            this.btnEDITAR = new System.Windows.Forms.Button();
+            this.btnaceptar = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -73,25 +73,15 @@ namespace UI.Desktop2
             this.txtEjecuta.Size = new System.Drawing.Size(100, 20);
             this.txtEjecuta.TabIndex = 3;
             // 
-            // btnagregar
+            // btnaceptar
             // 
-            this.btnagregar.Location = new System.Drawing.Point(51, 172);
-            this.btnagregar.Name = "btnagregar";
-            this.btnagregar.Size = new System.Drawing.Size(75, 23);
-            this.btnagregar.TabIndex = 4;
-            this.btnagregar.Text = "Agregar";
-            this.btnagregar.UseVisualStyleBackColor = true;
-            this.btnagregar.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnEDITAR
-            // 
-            this.btnEDITAR.Location = new System.Drawing.Point(265, 172);
-            this.btnEDITAR.Name = "btnEDITAR";
-            this.btnEDITAR.Size = new System.Drawing.Size(75, 23);
-            this.btnEDITAR.TabIndex = 5;
-            this.btnEDITAR.Text = "Editar";
-            this.btnEDITAR.UseVisualStyleBackColor = true;
-            this.btnEDITAR.Click += new System.EventHandler(this.btnEDITAR_Click);
+            this.btnaceptar.Location = new System.Drawing.Point(141, 172);
+            this.btnaceptar.Name = "btnaceptar";
+            this.btnaceptar.Size = new System.Drawing.Size(173, 23);
+            this.btnaceptar.TabIndex = 4;
+            this.btnaceptar.Text = "Aceptar";
+            this.btnaceptar.UseVisualStyleBackColor = true;
+            this.btnaceptar.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtID
             // 
@@ -110,15 +100,25 @@ namespace UI.Desktop2
             this.label3.TabIndex = 7;
             this.label3.Text = "ID";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(298, 122);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "hacerlo combo";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
             // Modulos1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(450, 207);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtID);
-            this.Controls.Add(this.btnEDITAR);
-            this.Controls.Add(this.btnagregar);
+            this.Controls.Add(this.btnaceptar);
             this.Controls.Add(this.txtEjecuta);
             this.Controls.Add(this.txtdesc);
             this.Controls.Add(this.label2);
@@ -136,9 +136,9 @@ namespace UI.Desktop2
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox txtdesc;
         public System.Windows.Forms.TextBox txtEjecuta;
-        public System.Windows.Forms.Button btnagregar;
-        public System.Windows.Forms.Button btnEDITAR;
+        public System.Windows.Forms.Button btnaceptar;
         public System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -26,14 +26,18 @@ namespace UI.Desktop2
 
         private void btnElminar_Click(object sender, EventArgs e)
         {
-            Persona p = new Persona();
-            if (dataGridView1.SelectedRows.Count > 0) 
+            try
             {
-                string id = dataGridView1.CurrentRow.Cells["idpersona"].Value.ToString();
-                p.deletepersonas(id);
-            
+                Persona p = new Persona();
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    string id = dataGridView1.CurrentRow.Cells["idpersona"].Value.ToString();
+                    p.deletepersonas(id);
+
+                }
+                else { MessageBox.Show("Seleccione fila"); }
             }
-            else { MessageBox.Show("Seleccione fila"); }
+            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
         }
 
         private void Refresh_Click(object sender, EventArgs e)

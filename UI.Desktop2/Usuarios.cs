@@ -26,9 +26,13 @@ namespace UI.Desktop2
 
         private void btnbaja_Click(object sender, EventArgs e)
         {
-            Usuario_ u_ = new Usuario_();
-            string id= dataGridView1.CurrentRow.Cells["idusuario"].Value.ToString();
-            u_.eliminarUsuarios(id);
+            try
+            {
+                Usuario_ u_ = new Usuario_();
+                string id = dataGridView1.CurrentRow.Cells["idusuario"].Value.ToString();
+                u_.eliminarUsuarios(id);
+            }
+            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
         }
 
         private void btnRefressh_Click(object sender, EventArgs e)

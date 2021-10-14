@@ -27,14 +27,17 @@ namespace UI.Desktop2
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            try
             {
-                string ID = dataGridView1.CurrentRow.Cells["idplan"].Value.ToString();
-                Plan_ pl = new Plan_();
-                pl.eliminaplan(ID.ToString());
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    string ID = dataGridView1.CurrentRow.Cells["idplan"].Value.ToString();
+                    Plan_ pl = new Plan_();
+                    pl.eliminaplan(ID.ToString());
+                }
+                else { MessageBox.Show($"seleccionar una fila"); }
             }
-            else { MessageBox.Show($"seleccionar una fila"); }
-
+            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
         }
 
         private void button1_Click(object sender, EventArgs e)
