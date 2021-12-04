@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CapaNegocios;
+using System;
 using System.Windows.Forms;
-using CapaNegocios;
 
 namespace UI.Desktop2
 {
     public partial class Especialidades1 : Form
-       
-        { public bool estado;
-       Especialidad es = new Especialidad();
+
+    {
+        public bool estado;
+        Especialidad es = new Especialidad();
         public string id;
         public Especialidades1()
         {
@@ -28,20 +22,27 @@ namespace UI.Desktop2
 
         private void btnaceptar_Click(object sender, EventArgs e)
         {
-            if (richdescripcion.Text==null) 
+            if (richdescripcion.Text == null)
             {
                 MessageBox.Show($"hay campos vacios , verifiquelos");
             }
-            if (estado == true) 
+            if (estado == true)
             {
                 es.addEspecialidad(richdescripcion.Text);
+                this.Close();
             }
 
-            if (estado == false) 
+            if (estado == false)
             {
-                
+
                 es.Editespecialidades(id, richdescripcion.Text);
+                this.Close();
             }
+        }
+
+        private void Especialidades1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

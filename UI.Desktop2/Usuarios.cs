@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CapaNegocios;
+using System;
 using System.Windows.Forms;
-using CapaNegocios;
 namespace UI.Desktop2
 {
     public partial class Usuarios : Form
@@ -50,9 +43,9 @@ namespace UI.Desktop2
         {
             Usuarios_ingresodatos ui = new Usuarios_ingresodatos();
             ui.idusuario = dataGridView1.CurrentRow.Cells["idusuario"].Value.ToString();
-            ui.estado =false;
+            ui.estado = false;
             ui.txtapelliod.Text = dataGridView1.CurrentRow.Cells["apellido"].Value.ToString();
-            ui.txtclave.Text= dataGridView1.CurrentRow.Cells["clave"].Value.ToString();
+            ui.txtclave.Text = dataGridView1.CurrentRow.Cells["clave"].Value.ToString();
             ui.txtemail.Text = dataGridView1.CurrentRow.Cells["email"].Value.ToString();
             ui.txtnombre.Text = dataGridView1.CurrentRow.Cells["nombre"].Value.ToString();
             ui.txtusuario.Text = dataGridView1.CurrentRow.Cells["nombreU"].Value.ToString();

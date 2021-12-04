@@ -1,13 +1,7 @@
-﻿using System;
+﻿using CapaNegocios;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaNegocios;
 
 namespace UI.Desktop2
 {
@@ -26,25 +20,30 @@ namespace UI.Desktop2
         private void btnAceptar_Click(object sender, EventArgs e)
         {
 
-            if (richdescripcion.Text==null || comboBox1.Text== null ) 
+            if (richdescripcion.Text == null || comboespecialdad.Text == null)
             {
                 MessageBox.Show("campos vacios, verifiquelos");
             }
-            if (estado == true && richdescripcion.Text != null) 
+            if (estado == true && richdescripcion.Text != null)
             {
                 try
                 {
-                    int posi = posiciones[comboBox1.Text];
-                    Pl.agregarplan(richdescripcion.Text,posi.ToString() );
+                    int idespecialidad = Pl.cargargarcombos()[comboespecialdad.Text];
+                    Pl.agregarplan(richdescripcion.Text, idespecialidad.ToString());
+                    _Plan_ planform = new _Plan_();
+                    planform.dataGridView1.Refresh();
                 }
                 catch (Exception ex) { MessageBox.Show($"error:{ex} "); }
             }
-            if (estado ==  false && richdescripcion.Text != null) 
+            if (estado == false && richdescripcion.Text != null)
             {
                 try
                 {
-                    int posi = posiciones[comboBox1.Text];
-                    Pl.editplan(idedit,richdescripcion.Text,posi.ToString());
+                    int idespecialidad = Pl.cargargarcombos()[comboespecialdad.Text];
+                    Pl.editplan(idedit, richdescripcion.Text, idespecialidad.ToString());
+
+                    this.Close();
+
                 }
                 catch (Exception exe) { MessageBox.Show($"error:{exe} "); }
             }
@@ -55,12 +54,11 @@ namespace UI.Desktop2
             try
             {
 
-                int pos = 0;
+
                 foreach (var k in Pl.cargargarcombos())
                 {
-                    comboBox1.Items.Add(k);
-                    posiciones.Add(k, pos);
-                    pos++;
+                    comboespecialdad.Items.Add(k.Key);
+
                 }
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }

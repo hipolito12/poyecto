@@ -74,6 +74,7 @@ namespace UI.Desktop2
             this.Controls.Add(this.richTextBox1);
             this.Name = "Especialidades1";
             this.Text = "Especialidades1";
+            this.Load += new System.EventHandler(this.Especialidades1_Load);
             this.ResumeLayout(false);
 
         }

@@ -1,8 +1,6 @@
-﻿using System;
+﻿using Datos2;
+using System;
 using System.Collections.Generic;
-using System.Text;
-using Datos2;
-using System.Data.SqlClient;
 using System.Data;
 
 namespace CapaNegocios
@@ -33,7 +31,10 @@ namespace CapaNegocios
             return tabla;
         }
 
-
+        public Dictionary<string, int> cargador()
+        {
+            return mo.para_cargar_combos();
+        }
 
 
 

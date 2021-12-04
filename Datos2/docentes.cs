@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
-using System.Data;
-
+using System.Collections.Generic;
 namespace Datos2
 {
     public class docentes
@@ -24,33 +19,57 @@ namespace Datos2
 
         }
 
-         public void ActualizaDocente(int cargo, int idcurso, int iddocente ,int id_dicatado)
-         {
+        public void ActualizaDocente(int cargo, int idcurso, int iddocente, int id_dicatado)
+        {
             Entidades en = new Entidades();
             docentes_cursos dnte = en.docentes_cursos.Where(d => d.id_dictado == id_dicatado).First();
 
             dnte.cargo = cargo;
             dnte.id_curso = idcurso;
             dnte.id_docente = iddocente;
-            en.Entry(dnte).State= System.Data.Entity.EntityState.Modified;
+            en.Entry(dnte).State = System.Data.Entity.EntityState.Modified;
             en.SaveChanges();
-          }
+        }
 
 
-            public void Delete (int id , int idd)
+        public void Delete(int id, int idd)
+        {
+            Entidades en = new Entidades();
+            docentes_cursos dnte = en.docentes_cursos.Where(d => d.id_curso == id && d.id_docente == idd).First();
+            en.docentes_cursos.Remove(dnte);
+            en.SaveChanges();
+
+
+
+        }
+
+
+        public ( Dictionary<string, int> , Dictionary<string, int> ) cargar_combo()
+        {
+            //Dictionary<string, int> PersonsDictionary = new Dictionary<string, int>();
+            Dictionary<string, int> cursosDictionary = new Dictionary<string, int>();
+            Entidades en = new Entidades();
+            var per=en.personas;
+            var curso = en.cursos;
+
+
+            var diccionariopersona = en.personas
+                    .SqlQuery("Select * from personas where tipo_persona=1")
+                    .ToDictionary(t => $"{t.nombre}  {t.apellido}" , t => t.id_persona);
+
+            foreach (var cu in curso) 
             {
-             Entidades en = new Entidades();
-             docentes_cursos dnte = en.docentes_cursos.Where(d => d.id_curso == id &&  d.id_docente== idd ).First();
-             en.docentes_cursos.Remove(dnte);
-             en.SaveChanges();
+                cursos curaux = en.cursos.Where(cs => cs.id_curso == cu.id_curso).FirstOrDefault();
 
+                materias mat = en.materias.Where(m => curaux.id_materia == m.id_materia ).FirstOrDefault();
 
+                string descripcion = $" materia:{mat.desc_materia}  año : {curaux.anio_calendario } ";
+                cursosDictionary.Add(descripcion, curaux.id_curso);
+            }
 
-             }
-      
-
+                return (diccionariopersona,cursosDictionary);
+        }
 
     }
-
 }
-
+     

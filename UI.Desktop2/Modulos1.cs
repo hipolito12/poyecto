@@ -1,40 +1,30 @@
-﻿using System;
+﻿using CapaNegocios;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaNegocios;
-using System.Data.SqlClient;
-using System.Data.Sql;
-using System.Data.OleDb;
-using UI.Desktop2.database;
 
 namespace UI.Desktop2
 {
+
     public partial class Modulos1 : Form
     {
         public bool estado;
+        public string  id;
         modulos mo = new modulos();
         public Modulos1()
         {
             InitializeComponent();
+         //   cargarcombo();
         }
-        public void Limpia() 
+        public void Limpia()
         {
             txtdesc.Clear();
             txtEjecuta.Clear();
         }
 
+        Dictionary<string, int> dicti = new Dictionary<string, int>();
 
-       
-            
-
-
-       private void label1_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
@@ -54,7 +44,8 @@ namespace UI.Desktop2
                 if (estado == false)
                 {
                     ModulosCRUD mc = new ModulosCRUD();
-                    mc.Updatemodulo(txtdesc.Text, txtID.Text, txtEjecuta.Text);
+                    //int n = mc.cargador()[txtdesc.Text];
+                    mc.Updatemodulo(txtdesc.Text, id.ToString(), txtEjecuta.Text);
                 }
 
             }
@@ -64,8 +55,8 @@ namespace UI.Desktop2
 
         private void btnEDITAR_Click(object sender, EventArgs e)
         {
-            
-           
+
+
 
         }
 
@@ -78,5 +69,11 @@ namespace UI.Desktop2
         {
 
         }
+
+        private void Modulos1_Load(object sender, EventArgs e)
+        {
+
+        }
+      
     }
 }

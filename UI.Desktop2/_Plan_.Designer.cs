@@ -154,11 +154,6 @@ namespace UI.Desktop2
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private tp2DataSet tp2DataSet;
-        private System.Windows.Forms.BindingSource planesBindingSource;
-        private tp2DataSetTableAdapters.planesTableAdapter planesTableAdapter;
         private System.Windows.Forms.Button btnrefresh;
         private System.Windows.Forms.Button btnmodificacion;
         private System.Windows.Forms.Button btnAlta;
@@ -166,5 +161,9 @@ namespace UI.Desktop2
         private System.Windows.Forms.DataGridViewTextBoxColumn idplan;
         private System.Windows.Forms.DataGridViewTextBoxColumn descplan;
         private System.Windows.Forms.DataGridViewTextBoxColumn idespecialidad;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        public tp2DataSet tp2DataSet;
+        public System.Windows.Forms.BindingSource planesBindingSource;
+        public tp2DataSetTableAdapters.planesTableAdapter planesTableAdapter;
     }
 }

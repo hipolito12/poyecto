@@ -105,7 +105,7 @@ namespace UI.Desktop2
             // 
             // btnalta
             // 
-            this.btnalta.Location = new System.Drawing.Point(502, 324);
+            this.btnalta.Location = new System.Drawing.Point(480, 120);
             this.btnalta.Name = "btnalta";
             this.btnalta.Size = new System.Drawing.Size(182, 23);
             this.btnalta.TabIndex = 1;
@@ -115,7 +115,7 @@ namespace UI.Desktop2
             // 
             // btnbaja
             // 
-            this.btnbaja.Location = new System.Drawing.Point(502, 376);
+            this.btnbaja.Location = new System.Drawing.Point(480, 163);
             this.btnbaja.Name = "btnbaja";
             this.btnbaja.Size = new System.Drawing.Size(182, 23);
             this.btnbaja.TabIndex = 2;
@@ -125,7 +125,7 @@ namespace UI.Desktop2
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(502, 415);
+            this.button3.Location = new System.Drawing.Point(480, 202);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(182, 23);
             this.button3.TabIndex = 3;
@@ -147,7 +147,7 @@ namespace UI.Desktop2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 436);
+            this.ClientSize = new System.Drawing.Size(687, 369);
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnbaja);

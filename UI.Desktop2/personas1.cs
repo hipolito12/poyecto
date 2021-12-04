@@ -1,21 +1,15 @@
-﻿using System;
+﻿using CapaNegocios;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaNegocios;
-using UI.Desktop2.database;
 
 namespace UI.Desktop2
 {
     public partial class personas1 : Form
-    {   public  bool estado;
-       public  string id;
-        Persona per =new  Persona();
+    {
+        public bool estado;
+        public string id;
+        Persona per = new Persona();
         Dictionary<string, int> person = new Dictionary<string, int>();
         public personas1()
         {
@@ -39,7 +33,7 @@ namespace UI.Desktop2
             {
                 if (estado == true)
                 {
-                    int idplan = person[comboBox1.Text];
+                    int idplan = per.cargar()[comboidplan.Text];
 
                     per.addpersonas(txtnombre.Text, txtapellido.Text, txtdireccion.Text, txtemail.Text
                    , txttelefono.Text, txtfechan.Text, txtlegajo.Text, txttipo.Text, idplan.ToString());
@@ -47,8 +41,8 @@ namespace UI.Desktop2
                 }
                 if (estado == false)
                 {
-                    int idplan = person[comboBox1.Text];
-
+                    int idplan = per.cargar()[comboidplan.Text];
+                   
                     per.modifypersonas(id, txtnombre.Text, txtapellido.Text, txtdireccion.Text, txtemail.Text, txttelefono.Text, txtfechan.Text, txtlegajo.Text, txttipo.Text, idplan.ToString());
 
 
@@ -57,31 +51,29 @@ namespace UI.Desktop2
             catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
         }
 
-      
-        
-        
+
+
+
         public void cargacombo()
         {
-            try
-            {
-                planes p = new planes();
-                Entidad en = new Entidad();
-                var vari = en.planes;
+            Dictionary<string, int> tup = new Dictionary<string, int>();
 
-                foreach (var per in vari)
-                {
-                    var variab = per.id_plan;
-                    planes pla = en.planes.Where(pl => pl.id_plan == variab).First();
-                    string descripcion = pla.desc_plan;
-                    int id = pla.id_plan;
-                    person.Add(descripcion, id);
-                    this.comboBox1.Items.Add(descripcion).ToString();
-                }
+
+
+            foreach (string k in per.cargar().Keys)
+            {
+                comboidplan.Items.Add(k);
+
             }
-            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void personas1_Load(object sender, EventArgs e)
         {
 
         }

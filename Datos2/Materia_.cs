@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
 
 namespace Datos2
 {
@@ -15,38 +13,38 @@ namespace Datos2
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
 
-        public void ADDmaterias( string descmat,int hssemanales,int hstotales, int idplan) 
+        public void ADDmaterias(string descmat, int hssemanales, int hstotales, int idplan)
         {
-          
 
-       
 
-        /* Entidades enti = new Entidades();
-         materias mate = new materias();
-             mate.desc_materia = descmat;
-             mate.hs_semanales = hssemanales;
-             mate.hs_totales = hstotales;
-             mate.id_plan = idplan;
-             enti.materias.Add(mate);
-             enti.SaveChanges();*/
+
+
+            /* Entidades enti = new Entidades();
+             materias mate = new materias();
+                 mate.desc_materia = descmat;
+                 mate.hs_semanales = hssemanales;
+                 mate.hs_totales = hstotales;
+                 mate.id_plan = idplan;
+                 enti.materias.Add(mate);
+                 enti.SaveChanges();*/
 
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "insertar";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@descrip", descmat);
             comando.Parameters.AddWithValue("@semanales", hssemanales);
-            comando.Parameters.AddWithValue("@totales", hstotales) ;
+            comando.Parameters.AddWithValue("@totales", hstotales);
             comando.Parameters.AddWithValue("@idplan", idplan);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
-             
+
 
 
 
         }
 
-        public void Editmaterias( string descmat, int hssemanales, int hstotales, int idplan, int idmateria)
+        public void Editmaterias(string descmat, int hssemanales, int hstotales, int idplan, int idmateria)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "update";
@@ -63,10 +61,10 @@ namespace Datos2
         }
 
 
-        public void Delete( int idmateria)
+        public void Delete(int idmateria)
         {
-            
-            
+
+
             Entidades en = new Entidades();
             materias mates = new materias();
             mates = en.materias.Where(ma => ma.id_materia == idmateria).First();
@@ -74,6 +72,44 @@ namespace Datos2
             en.SaveChanges();
 
         }
+        public List<string> Cargar_combos()
+        {
+            List<string> li = new List<string>();
+            try
+            {
+                planes p = new planes();
+                Entidades en = new Entidades();
+                var vari = en.planes;
 
+                foreach (var per in vari)
+                {
+                    var variab = per.id_plan;
+                    planes pla = en.planes.Where(pl => pl.id_plan == variab).First();
+                    string descripcion = pla.desc_plan;
+                    li.Add(descripcion);
+
+                    return li;
+                }
+            }
+            catch (Exception ex) { Console.WriteLine($"Error: {ex}"); }
+            return li;
+        }
+
+
+        public int buscar_id(string desc)
+        {
+            int ID = 0;
+            try
+            {
+                Entidades en = new Entidades();
+                planes pl = new planes();
+                planes pla = en.planes.Where(plan => plan.desc_plan == desc).First();
+                ID = pla.id_plan;
+                Console.WriteLine(ID);
+                return ID;
+            }
+            catch (Exception ex) { Console.WriteLine($"Error: {ex}"); }
+            return ID;
+        }
     }
 }

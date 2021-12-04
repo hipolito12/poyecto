@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
-using System.Data;
 
 namespace Datos2
 {
     public class tets
     {
 
-            
+
 
         public void testtt()
         {
@@ -29,12 +23,12 @@ namespace Datos2
             dbe.SaveChanges();
         }
 
-        public void act() 
+        public void act()
         {
             Entidades en = new Entidades();
             personas per = new personas();
             per = en.personas.Find(8);
-            per.nombre =" DDDDD2";
+            per.nombre = " DDDDD2";
             per.apellido = "AAA2";
             per.direccion = "DI2";
             per.email = "MAIL2";

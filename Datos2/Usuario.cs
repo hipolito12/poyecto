@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace Datos2
 {
-   public class Usuario
+    public class Usuario
     {
         Entidades en = new Entidades();
         usuarios u = new usuarios();
-        public void ADDusuarios(int idper, string nombre, string nombreU, string apellido, string clave, bool cambia, bool habilit, string email) 
+        public void ADDusuarios(int idper, string nombre, string nombreU, string apellido, string clave, bool cambia, bool habilit, string email)
         {
             u.apellido = apellido;
             u.email = email;
@@ -24,19 +20,20 @@ namespace Datos2
             en.SaveChanges();
 
         }
-      /*  public string personaid(string mail, string dire,string nombre) 
+        /*  public string personaid(string mail, string dire,string nombre) 
+          {
+              var s = en.personas.Where(pe=> pe.email==mail && pe.direccion == dire && pe.nombre==nombre ).First();
+                  return s.id_plan.ToString();
+          }*/
+        public int ultimoregidtro()
         {
-            var s = en.personas.Where(pe=> pe.email==mail && pe.direccion == dire && pe.nombre==nombre ).First();
-                return s.id_plan.ToString();
-        }*/
-        public int ultimoregidtro() 
-        {int k  = en.personas.Max(pers => pers.id_persona);
-            return k; 
+            int k = en.personas.Max(pers => pers.id_persona);
+            return k;
         }
-        public void EditUsuario(int idUsuarios,int idper, string nombre, string nombreU, string apellido, string clave, bool cambia, bool habilit, string email) 
+        public void EditUsuario(int idUsuarios, int idper, string nombre, string nombreU, string apellido, string clave, bool cambia, bool habilit, string email)
         {
-            usuarios usu = en.usuarios.Where(UsU=> UsU.id_usuario == idUsuarios ).First();
-           
+            usuarios usu = en.usuarios.Where(UsU => UsU.id_usuario == idUsuarios).First();
+
             usu.id_usuario = idUsuarios;
             usu.apellido = apellido;
             usu.email = email;
@@ -50,12 +47,12 @@ namespace Datos2
             en.SaveChanges();
         }
 
-        public void deleteUsuarios(int idUsuarios) 
+        public void deleteUsuarios(int idUsuarios)
         {
             usuarios usu = en.usuarios.Where(UsU => UsU.id_usuario == idUsuarios).First();
             en.usuarios.Remove(usu);
             en.SaveChanges();
         }
-    
+
     }
 }

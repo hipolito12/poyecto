@@ -35,9 +35,6 @@ namespace UI.Desktop2
             this.btnBAJA = new System.Windows.Forms.Button();
             this.btnEDIT = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idmoduloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descmoduloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ejecutaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modulosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tp2DataSet = new UI.Desktop2.tp2DataSet();
             this.tp2DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -47,6 +44,9 @@ namespace UI.Desktop2
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.idmodulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descmodulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ejectua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modulosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tp2DataSet)).BeginInit();
@@ -89,34 +89,15 @@ namespace UI.Desktop2
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idmoduloDataGridViewTextBoxColumn,
-            this.descmoduloDataGridViewTextBoxColumn,
-            this.ejecutaDataGridViewTextBoxColumn});
+            this.idmodulo,
+            this.descmodulo,
+            this.ejectua});
             this.dataGridView1.DataSource = this.modulosBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(349, 263);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // idmoduloDataGridViewTextBoxColumn
-            // 
-            this.idmoduloDataGridViewTextBoxColumn.DataPropertyName = "id_modulo";
-            this.idmoduloDataGridViewTextBoxColumn.HeaderText = "id_modulo";
-            this.idmoduloDataGridViewTextBoxColumn.Name = "idmoduloDataGridViewTextBoxColumn";
-            this.idmoduloDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descmoduloDataGridViewTextBoxColumn
-            // 
-            this.descmoduloDataGridViewTextBoxColumn.DataPropertyName = "desc_modulo";
-            this.descmoduloDataGridViewTextBoxColumn.HeaderText = "desc_modulo";
-            this.descmoduloDataGridViewTextBoxColumn.Name = "descmoduloDataGridViewTextBoxColumn";
-            // 
-            // ejecutaDataGridViewTextBoxColumn
-            // 
-            this.ejecutaDataGridViewTextBoxColumn.DataPropertyName = "ejecuta";
-            this.ejecutaDataGridViewTextBoxColumn.HeaderText = "ejecuta";
-            this.ejecutaDataGridViewTextBoxColumn.Name = "ejecutaDataGridViewTextBoxColumn";
             // 
             // modulosBindingSource
             // 
@@ -187,6 +168,25 @@ namespace UI.Desktop2
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 10;
             // 
+            // idmodulo
+            // 
+            this.idmodulo.DataPropertyName = "id_modulo";
+            this.idmodulo.HeaderText = "id_modulo";
+            this.idmodulo.Name = "idmodulo";
+            this.idmodulo.ReadOnly = true;
+            // 
+            // descmodulo
+            // 
+            this.descmodulo.DataPropertyName = "desc_modulo";
+            this.descmodulo.HeaderText = "desc_modulo";
+            this.descmodulo.Name = "descmodulo";
+            // 
+            // ejectua
+            // 
+            this.ejectua.DataPropertyName = "ejecuta";
+            this.ejectua.HeaderText = "ejecuta";
+            this.ejectua.Name = "ejectua";
+            // 
             // modulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -220,9 +220,6 @@ namespace UI.Desktop2
         private System.Windows.Forms.Button btnBAJA;
         private System.Windows.Forms.Button btnEDIT;
         private System.Windows.Forms.BindingSource tp2DataSetBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idmoduloDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descmoduloDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ejecutaDataGridViewTextBoxColumn;
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnrefresh;
         public System.Windows.Forms.BindingSource modulosBindingSource;
@@ -231,6 +228,9 @@ namespace UI.Desktop2
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idmodulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descmodulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ejectua;
     }
 }
 

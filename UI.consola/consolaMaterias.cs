@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using datos;
 namespace UI.consola
 {
@@ -69,9 +69,9 @@ namespace UI.consola
     }
 }
             
-     
+     */
 
 
 
 
-  
+

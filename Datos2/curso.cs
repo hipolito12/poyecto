@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
 namespace Datos2
 {
-   
+
     public class curso_
     {
         conexioncs conexion = new conexioncs();
@@ -32,7 +30,7 @@ namespace Datos2
 
 
 
-        public void ADDcursos( int idmateria, int idComision, int anio, int cupo)
+        public void ADDcursos(int idmateria, int idComision, int anio, int cupo)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "insertar_curso";
@@ -52,7 +50,7 @@ namespace Datos2
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "editar_curso";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idcurso", idmateria);
+            comando.Parameters.AddWithValue("@idcurso", idcurso);
             comando.Parameters.AddWithValue("@idmateria", idmateria);
             comando.Parameters.AddWithValue("@cupo", cupo);
             comando.Parameters.AddWithValue("@anio", anio);
@@ -61,23 +59,59 @@ namespace Datos2
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
-    
-        public void DleteCusrsos(int idcurso )
+
+        public void DleteCusrsos(int idcurso)
         {
-            cursos cu = entidad.cursos.Where(c => c.id_curso == idcurso).First();
+            cursos cu = entidad.cursos.Where(c => c.id_curso == idcurso).FirstOrDefault();
             entidad.cursos.Remove(cu);
             entidad.SaveChanges();
 
-        
-        
+
+
+        }
+
+
+        public (Dictionary<string, int>, Dictionary<string, int>) devuelve_datos_de_combo()
+        {
+            Dictionary<string, int> mate = new Dictionary<string, int>();
+            Dictionary<string, int> c = new Dictionary<string, int>();
+            try
+            {
+
+                Entidades en = new Entidades();
+                comisiones com = new comisiones();
+                materias mat = new materias();
+                var vari = en.comisiones;
+
+                foreach (var comis in vari)//comisiones
+                {
+                    var variab = comis.id_comision;
+                    comisiones co = en.comisiones.Where(comi => comi.id_comision == variab).First();
+                    string descripcion = co.desc_comision;
+                    int key1 = co.id_comision;
+                    c.Add(descripcion, key1);
+
+                }
+                var varia = en.materias;
+                foreach (var ma in varia)//materias
+                {
+                    var variab = ma.id_materia;
+                    materias m = en.materias.Where(materi => materi.id_materia == variab).First();
+                    string descripcion = m.desc_materia;
+                    int key2 = m.id_materia;
+                    mate.Add(descripcion, key2);
+
+                }
+
+            }
+            catch (Exception ex) { Console.WriteLine($"Error: {ex}"); }
+
+            return (mate, c);
         }
 
 
 
 
-
-
-        
 
     }
 

@@ -1,13 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Datos2;
+using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.Generic;
+using System;
 
 namespace CapaNegocios
-{
-    class _Inscripciones_Alumnos
-    {
 
+{
+    public class _Inscripciones_Alumnos
+    {
+        Inscripcion_Alumano_ ia = new Inscripcion_Alumano_();
+        public void agregar(string idalumno , string curso , string estado , string nota) 
+        {
+            ia.Registro(  Convert.ToInt32(idalumno), Convert.ToInt32(curso),estado , Convert.ToInt32(nota) );
+        }
+
+
+
+        public void modificar(string idalumno, string curso, string estado, string nota, string id) 
+        {
+            Console.WriteLine(curso);
+            ia.modificacion(Convert.ToInt32(idalumno), Convert.ToInt32(curso), estado, Convert.ToInt32(nota), Convert.ToInt32(id));
+        }
+
+
+        public void eliminar(string id) 
+        {
+            ia.eliminar(Convert.ToInt32(id));
+        }
+    
+        public (Dictionary<string, int>, Dictionary<string, int>) cargacombos() 
+        {
+            return ia.comboalumno();
+        }
     }
 }

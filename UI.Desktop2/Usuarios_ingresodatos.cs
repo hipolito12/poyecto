@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CapaNegocios;
+using System;
 using System.Windows.Forms;
-using CapaNegocios;
-using UI.Desktop2.database;
 namespace UI.Desktop2
 {
     public partial class Usuarios_ingresodatos : Form
@@ -21,7 +13,7 @@ namespace UI.Desktop2
         public Usuarios_ingresodatos()
         {
             InitializeComponent();
-            
+
         }
 
         private void chkhabilitado_CheckedChanged(object sender, EventArgs e)
@@ -44,14 +36,14 @@ namespace UI.Desktop2
 
 
                     Usuario_ u = new Usuario_();
-                    //  string ide = u.idpersona(txtnombre.Text,);
-                    string ide = "  ";
+                    // string ide = u.idpersona(txtnombre.Text);
+                    string ide = txtid.Text;
                     u.agregegarUsuarios(ide, txtnombre.Text, txtusuario.Text, txtapelliod.Text, txtclave.Text, chkcambiaclave.Checked, chkhabilitado.Checked, txtemail.Text);
                 }
                 catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
             }
 
-            if (estado == false) 
+            if (estado == false)
             {
                 try
                 {
@@ -64,10 +56,10 @@ namespace UI.Desktop2
         }
 
 
-           
-       
-        
-        
+
+
+
+
     }
 
 

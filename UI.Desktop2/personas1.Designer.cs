@@ -47,7 +47,7 @@ namespace UI.Desktop2
             this.txtfechan = new System.Windows.Forms.TextBox();
             this.txtlegajo = new System.Windows.Forms.TextBox();
             this.txttipo = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboidplan = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnacept
@@ -199,21 +199,21 @@ namespace UI.Desktop2
             this.txttipo.Size = new System.Drawing.Size(154, 20);
             this.txttipo.TabIndex = 17;
             // 
-            // comboBox1
+            // comboidplan
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(681, 189);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(154, 21);
-            this.comboBox1.TabIndex = 18;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboidplan.FormattingEnabled = true;
+            this.comboidplan.Location = new System.Drawing.Point(681, 189);
+            this.comboidplan.Name = "comboidplan";
+            this.comboidplan.Size = new System.Drawing.Size(154, 21);
+            this.comboidplan.TabIndex = 18;
+            this.comboidplan.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // personas1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 327);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboidplan);
             this.Controls.Add(this.txttipo);
             this.Controls.Add(this.txtlegajo);
             this.Controls.Add(this.txtfechan);
@@ -234,6 +234,7 @@ namespace UI.Desktop2
             this.Controls.Add(this.btnacept);
             this.Name = "personas1";
             this.Text = "personas1";
+            this.Load += new System.EventHandler(this.personas1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,6 +260,6 @@ namespace UI.Desktop2
         public System.Windows.Forms.TextBox txtfechan;
         public System.Windows.Forms.TextBox txtlegajo;
         public System.Windows.Forms.TextBox txttipo;
-        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox comboidplan;
     }
 }

@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CapaNegocios;
+using System;
 using System.Windows.Forms;
-using CapaNegocios;
 
 namespace UI.Desktop2
 {
@@ -30,7 +23,7 @@ namespace UI.Desktop2
             Materias1 ma1 = new Materias1();
             ma1.estado = true;
             //ma1.lblidmateria.Visible = false;
-           // ma1.txtidmateria.Visible = false;
+            // ma1.txtidmateria.Visible = false;
             ma1.Show();
         }
 
@@ -41,11 +34,11 @@ namespace UI.Desktop2
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 ma1.txtdescripcion.Text = dataGridView1.CurrentRow.Cells["descripcionMateriaD"].Value.ToString();
-              //  ma1.txtidmateria.Text = dataGridView1.CurrentRow.Cells["idMateriaD"].Value.ToString();
-                ma1.txtHs_Semanales.Text= dataGridView1.CurrentRow.Cells["hsSemanlaesD"].Value.ToString();
-                ma1.TXTHs_Totales.Text= dataGridView1.CurrentRow.Cells["hsTotales_D"].Value.ToString();
+                //  ma1.txtidmateria.Text = dataGridView1.CurrentRow.Cells["idMateriaD"].Value.ToString();
+                ma1.txtHs_Semanales.Text = dataGridView1.CurrentRow.Cells["hsSemanlaesD"].Value.ToString();
+                ma1.TXTHs_Totales.Text = dataGridView1.CurrentRow.Cells["hsTotales_D"].Value.ToString();
                 ma1.Show();
-            } 
+            }
 
 
 
@@ -70,7 +63,7 @@ namespace UI.Desktop2
         {
             Materias1 ma1 = new Materias1();
             ma1.estado = true;
-           // ma1.lblidmateria.Visible = false;
+            // ma1.lblidmateria.Visible = false;
             //ma1.txtidmateria.Visible = false;
             ma1.Show();
         }

@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
+﻿using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
 
 namespace Datos2
 {
-   
-public class modulo
+
+    public class modulo
     {
-       
+
         public void cargaModulos(string desc, string ejec)
         {
             Entidades en = new Entidades();
@@ -45,14 +42,14 @@ public class modulo
             en.SaveChanges();
         }
 
-         conexioncs cone = new conexioncs();
+        conexioncs cone = new conexioncs();
         SqlDataReader leer;
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
 
         public DataTable listarmodulos()
         {
-           
+
 
             comando.Connection = cone.AbrirConexion();
             comando.CommandText = "ListarModulos";
@@ -63,7 +60,19 @@ public class modulo
             return tabla;
         }
 
-     
+        public Dictionary<string, int> para_cargar_combos()
+        {
+            Entidades en = new Entidades();
+            var mod = en.modulos;
+            Dictionary<string, int> cm = new Dictionary<string, int>();
+            foreach (var vari in mod)
+            {
+                cm.Add(vari.desc_modulo, vari.id_modulo);
+            }
+            return cm;
+
+        }
+
     }
 
 }

@@ -1,13 +1,7 @@
-﻿using System;
+﻿using CapaNegocios;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaNegocios;
 
 namespace UI.Desktop2
 {
@@ -26,20 +20,20 @@ namespace UI.Desktop2
         private void button1_Click(object sender, EventArgs e)
         {
             tat a = new tat();
-         //   combo.DataSource = "hola mundo";
+            //   combo.DataSource = "hola mundo";
             //MessageBox.Show(combo.Text);
             a.kikint();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void combo_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
-           
+
+
         }
     }
 }

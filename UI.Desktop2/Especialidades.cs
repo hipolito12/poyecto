@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CapaNegocios;
+using System;
 using System.Windows.Forms;
-using CapaNegocios;
 
 namespace UI.Desktop2
 {
@@ -54,7 +47,7 @@ namespace UI.Desktop2
                     espes.delete_especialidad(id);
                 }
             }
-            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
+            catch (Exception ex) { MessageBox.Show("Error para eliminar este  elemento , debido a que esta siendo usando por otro elemto"); }
         }
 
         private void refresh_Click(object sender, EventArgs e)

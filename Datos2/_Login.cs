@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Datos2
 {
-   public class _Login
+    public class _Login
     {
-        public (string , int) busca_rol(string usuario , string contra) 
+        public (string, int) busca_rol(string usuario, string contra)
         {
             Entidades enti = new Entidades();
             personas person = new personas();
-            usuarios us= new usuarios();
+            usuarios us = new usuarios();
             try
             {
                 us = enti.usuarios.Where(u => u.nombre_usuario == usuario && u.clave == contra).First();
@@ -22,8 +19,8 @@ namespace Datos2
             {
                 throw e;
             }
-            
-            if (us != null) 
+
+            if (us != null)
             {
                 int usuario_persona = Convert.ToInt32(us.id_persona);
                 person = enti.personas.Find(usuario_persona);
@@ -32,15 +29,15 @@ namespace Datos2
                 return (nom, k);
             }
             else { return ("-1", -1); }
-            
-          
+
+
         }
 
-        public bool verifica(string usuario, string contra) 
+        public bool verifica(string usuario, string contra)
         {
             Entidades enti = new Entidades();
             usuarios us = new usuarios();
-            bool result= false;
+            bool result = false;
             try
             {
                 us = enti.usuarios.Where(u => u.nombre_usuario == usuario && u.clave == contra).First();
@@ -52,8 +49,8 @@ namespace Datos2
             }
             catch (Exception e)
             {
-                
-                throw  new Exception("error", e);
+
+                throw new Exception("error", e);
             }
             return result;
         }

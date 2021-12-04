@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CapaNegocios;
+using System;
 using System.Windows.Forms;
-using CapaNegocios;
 namespace UI.Desktop2
 {
     public partial class _Plan_ : Form
     {
-        
+
         public _Plan_()
         {
             InitializeComponent();
@@ -50,14 +43,15 @@ namespace UI.Desktop2
             PlanesIngresoDatos uid = new PlanesIngresoDatos();
             uid.estado = true;
             uid.Show();
-            
+
         }
 
         private void btnmodificacion_Click(object sender, EventArgs e)
         {
             PlanesIngresoDatos uid = new PlanesIngresoDatos();
             uid.estado = false;
-            uid.richdescripcion.Text= dataGridView1.CurrentRow.Cells["descplan"].Value.ToString();
+            uid.richdescripcion.Text = dataGridView1.CurrentRow.Cells["descplan"].Value.ToString();
+            uid.idedit = dataGridView1.CurrentRow.Cells["idplan"].Value.ToString();
             uid.Show();
 
         }

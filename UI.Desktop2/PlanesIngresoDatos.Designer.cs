@@ -32,7 +32,7 @@ namespace UI.Desktop2
             this.label1 = new System.Windows.Forms.Label();
             this.comboespecialidad = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboespecialdad = new System.Windows.Forms.ComboBox();
             this.richdescripcion = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
@@ -65,13 +65,13 @@ namespace UI.Desktop2
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // comboBox1
+            // comboespecialdad
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(96, 127);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(174, 21);
-            this.comboBox1.TabIndex = 4;
+            this.comboespecialdad.FormattingEnabled = true;
+            this.comboespecialdad.Location = new System.Drawing.Point(96, 127);
+            this.comboespecialdad.Name = "comboespecialdad";
+            this.comboespecialdad.Size = new System.Drawing.Size(174, 21);
+            this.comboespecialdad.TabIndex = 4;
             // 
             // richdescripcion
             // 
@@ -87,7 +87,7 @@ namespace UI.Desktop2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 239);
             this.Controls.Add(this.richdescripcion);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboespecialdad);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.comboespecialidad);
             this.Controls.Add(this.label1);
@@ -103,7 +103,7 @@ namespace UI.Desktop2
         private System.Windows.Forms.Button btnAceptar;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label comboespecialidad;
-        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox comboespecialdad;
         public System.Windows.Forms.RichTextBox richdescripcion;
     }
 }

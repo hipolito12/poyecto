@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using datos;
-
-namespace UI.consola
+﻿
+/*namespace UI.consola
 {
-    class ConsolaPlan : Plan
+    class ConsolaPlan : Plan_
     {
         static public void Menu()
         {
@@ -21,11 +17,11 @@ namespace UI.consola
 
             int option;
             option = Convert.ToInt32(Console.ReadLine());
-          Plan pla = new Plan();
+          Plan_ pla = new Plan_();
             switch (option)
             {
                 case 1:
-                    pla.listadop();
+                    pla.agregarplan();
                     break;
                 case 2:
                     int id = Convert.ToInt32(Console.ReadLine());
@@ -78,3 +74,4 @@ namespace UI.consola
 
     }
 }
+       */

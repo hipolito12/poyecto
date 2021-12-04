@@ -1,23 +1,18 @@
-﻿using System;
+﻿using CapaNegocios;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using UI.Desktop2.database;
-using CapaNegocios;
 namespace UI.Desktop2
 {
     public partial class cursos1 : Form
 
     {
-       public bool estado;
+        public bool estado;
         public string idcurso;
-        Dictionary<string, int> mate = new Dictionary< string,int>();
+        Dictionary<string, int> mate = new Dictionary<string, int>();
+
         Dictionary<string, int> c = new Dictionary<string, int>();
+
         public cursos1()
         {
             InitializeComponent();
@@ -28,15 +23,19 @@ namespace UI.Desktop2
         {
             try
             {
+                
                 if (txtanio.Text == null || txtCupo.Text == null || comboComision.Text == null || ComboMateria.Text == null)
                 {
                     MessageBox.Show("campos vacios, verifique los campos");
                 }
                 if (estado == true)
                 {
-                    int idmat = mate[ComboMateria.Text];
-                    int idcom = c[comboComision.Text];
+                    
+                    
                     CursosCRUD curses = new CursosCRUD();
+                    int idmat = curses.devuelv_combo().Item1[ComboMateria.Text];
+
+                    int idcom = curses.devuelv_combo().Item2[comboComision.Text];
 
                     curses.agregarCurso(idmat.ToString(), idcom.ToString(), txtCupo.Text, txtanio.Text);
                     limpiacampos();
@@ -45,13 +44,17 @@ namespace UI.Desktop2
 
                 if (estado == false)
                 {
-                    int idmat = mate[ComboMateria.Text];
-                    cursos cu = new cursos();
 
-                    int idcom = c[comboComision.Text];
+                    
                     CursosCRUD curses = new CursosCRUD();
+                    int idmat = curses.devuelv_combo().Item1[ComboMateria.Text];
 
-                    curses.EditarCurso(idcurso, idcom.ToString(), txtCupo.Text, txtanio.Text, idmat.ToString());
+                    int idcom = curses.devuelv_combo().Item2[comboComision.Text];
+                    
+
+                   curses.EditarCurso(idcurso, idcom.ToString(), txtCupo.Text, txtanio.Text, idmat.ToString());
+                    this.Close();
+                    MessageBox.Show("Modificado con exito");
                 }
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
@@ -60,44 +63,35 @@ namespace UI.Desktop2
         }
 
 
-        public void cargarcombos() 
+        public void cargarcombos()
         {
-            try
+            CursosCRUD curses = new CursosCRUD();
+            (Dictionary<string, int>, Dictionary<string, int>) tup = curses.devuelv_combo();
+            //(mate,c)
+            foreach (var varia in tup.Item1)
             {
-                Entidad en = new Entidad();
-                comisiones com = new comisiones();
-                materias mat = new materias();
-                var vari = en.comisiones;
 
-                foreach (var comis in vari)//comisiones
-                {
-                    var variab = comis.id_comision;
-                    comisiones co = en.comisiones.Where(comi => comi.id_comision == variab).First();
-                    string descripcion = co.desc_comision;
-                    int key1 = co.id_comision;
-                    c.Add(descripcion, key1);
-                    this.comboComision.Items.Add(descripcion).ToString();
-                }
-                var varia = en.materias;
-                foreach (var ma in varia)//materias
-                {
-                    var variab = ma.id_materia;
-                    materias m = en.materias.Where(materi => materi.id_materia == variab).First();
-                    string descripcion = m.desc_materia;
-                    int key2 = m.id_plan;
-                    mate.Add(descripcion, key2);
-                    this.ComboMateria.Items.Add(descripcion).ToString();
-                }
+
+                ComboMateria.Items.Add(varia.Key);
+
+                mate.Add(varia.Key, varia.Value);
+
 
             }
-            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
+
+            foreach (var vari in tup.Item2)
+            {
+                comboComision.Items.Add(vari.Key);
+                c.Add(vari.Key, vari.Value);
+
+            }
 
         }
-        public void limpiacampos() 
+        public void limpiacampos()
         {
             txtanio.Clear();
             txtCupo.Clear();
-            
+
         }
         private void cursos1_Load(object sender, EventArgs e)
         {

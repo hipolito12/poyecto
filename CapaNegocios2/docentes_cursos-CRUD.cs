@@ -1,18 +1,15 @@
-﻿using System;
+﻿using Datos2;
+using System;
 using System.Collections.Generic;
-using System.Text;
-using Datos2;
-using System.Data.SqlClient;
-using System.Data;
 
 
 namespace CapaNegocios
 {
-   public class docentes_cursos_CRUD
+    public class docentes_cursos_CRUD
     {
         private docentes doc = new docentes();
 
-        public void ADDdocenteCURSO(string argo,string idcurso,string iddocente)
+        public void ADDdocenteCURSO(string argo, string idcurso, string iddocente)
         {
             doc.cargardocentes(Convert.ToInt32(argo), Convert.ToInt32(idcurso), Convert.ToInt32(iddocente));
         }
@@ -26,5 +23,12 @@ namespace CapaNegocios
         {
             doc.Delete(Convert.ToInt32(idcurso), Convert.ToInt32(iddocente));
         }
+
+
+        public (Dictionary<string, int>, Dictionary<string, int>)  cargaDeCombos() 
+        {
+            return doc.cargar_combo();
+        }
+
     }
 }

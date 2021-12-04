@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CapaNegocios;
+using System;
 using System.Windows.Forms;
-using UI.Desktop2;
-using UI.Desktop2.database;
-using CapaNegocios;
 
 namespace UI.Desktop2
 {
@@ -23,7 +14,7 @@ namespace UI.Desktop2
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void btnRefrescar_Click(object sender, EventArgs e)
@@ -39,10 +30,9 @@ namespace UI.Desktop2
         private void btnalta_Click(object sender, EventArgs e)
         {
             profesores_modulos dc1 = new profesores_modulos();
-            
+
             dc1.estado = true;
-            dc1.txtdictado.Visible = false;
-            dc1.lblcargo.Visible = false;
+
             dc1.Show();
         }
 
@@ -54,12 +44,12 @@ namespace UI.Desktop2
             {
 
                 pm.txtcargos.Text = dataGridView1.CurrentRow.Cells["cargo"].Value.ToString();
-                pm.txtCurso.Text = dataGridView1.CurrentRow.Cells["id_curso"].Value.ToString();
-                pm.txtdictado.Text= dataGridView1.CurrentRow.Cells["id_dictado"].Value.ToString();
-                pm.txtdocente.Text = dataGridView1.CurrentRow.Cells["id_docente"].Value.ToString();
-                
+                //pm.txtCurso.Text = dataGridView1.CurrentRow.Cells["id_curso"].Value.ToString();
+                pm.id = dataGridView1.CurrentRow.Cells["id_dictado"].Value.ToString();
+                //pm.txtdocente.Text = dataGridView1.CurrentRow.Cells["id_docente"].Value.ToString();
+
                 pm.Show();
-                
+
             }
             else { MessageBox.Show("selecciona fila"); }
         }

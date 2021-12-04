@@ -33,17 +33,15 @@ namespace UI.Desktop2
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtcargos = new System.Windows.Forms.TextBox();
-            this.txtdocente = new System.Windows.Forms.TextBox();
-            this.txtCurso = new System.Windows.Forms.TextBox();
             this.btnalta = new System.Windows.Forms.Button();
-            this.lblcargo = new System.Windows.Forms.Label();
-            this.txtdictado = new System.Windows.Forms.TextBox();
+            this.combo_id_Curso = new System.Windows.Forms.ComboBox();
+            this.Combo_id_docente = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 70);
+            this.label1.Location = new System.Drawing.Point(74, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 0;
@@ -52,16 +50,17 @@ namespace UI.Desktop2
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 126);
+            this.label2.Location = new System.Drawing.Point(61, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "ID_docente";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 188);
+            this.label3.Location = new System.Drawing.Point(74, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 2;
@@ -71,26 +70,12 @@ namespace UI.Desktop2
             // 
             this.txtcargos.Location = new System.Drawing.Point(130, 70);
             this.txtcargos.Name = "txtcargos";
-            this.txtcargos.Size = new System.Drawing.Size(100, 20);
+            this.txtcargos.Size = new System.Drawing.Size(186, 20);
             this.txtcargos.TabIndex = 3;
-            // 
-            // txtdocente
-            // 
-            this.txtdocente.Location = new System.Drawing.Point(130, 126);
-            this.txtdocente.Name = "txtdocente";
-            this.txtdocente.Size = new System.Drawing.Size(100, 20);
-            this.txtdocente.TabIndex = 4;
-            // 
-            // txtCurso
-            // 
-            this.txtCurso.Location = new System.Drawing.Point(130, 188);
-            this.txtCurso.Name = "txtCurso";
-            this.txtCurso.Size = new System.Drawing.Size(100, 20);
-            this.txtCurso.TabIndex = 5;
             // 
             // btnalta
             // 
-            this.btnalta.Location = new System.Drawing.Point(180, 217);
+            this.btnalta.Location = new System.Drawing.Point(86, 206);
             this.btnalta.Name = "btnalta";
             this.btnalta.Size = new System.Drawing.Size(144, 23);
             this.btnalta.TabIndex = 6;
@@ -98,32 +83,30 @@ namespace UI.Desktop2
             this.btnalta.UseVisualStyleBackColor = true;
             this.btnalta.Click += new System.EventHandler(this.btnalta_Click);
             // 
-            // lblcargo
+            // combo_id_Curso
             // 
-            this.lblcargo.AutoSize = true;
-            this.lblcargo.Location = new System.Drawing.Point(322, 77);
-            this.lblcargo.Name = "lblcargo";
-            this.lblcargo.Size = new System.Drawing.Size(61, 13);
-            this.lblcargo.TabIndex = 8;
-            this.lblcargo.Text = "DictadoI_D";
+            this.combo_id_Curso.FormattingEnabled = true;
+            this.combo_id_Curso.Location = new System.Drawing.Point(130, 163);
+            this.combo_id_Curso.Name = "combo_id_Curso";
+            this.combo_id_Curso.Size = new System.Drawing.Size(186, 21);
+            this.combo_id_Curso.TabIndex = 7;
             // 
-            // txtdictado
+            // Combo_id_docente
             // 
-            this.txtdictado.Location = new System.Drawing.Point(388, 77);
-            this.txtdictado.Name = "txtdictado";
-            this.txtdictado.Size = new System.Drawing.Size(100, 20);
-            this.txtdictado.TabIndex = 9;
+            this.Combo_id_docente.FormattingEnabled = true;
+            this.Combo_id_docente.Location = new System.Drawing.Point(130, 121);
+            this.Combo_id_docente.Name = "Combo_id_docente";
+            this.Combo_id_docente.Size = new System.Drawing.Size(186, 21);
+            this.Combo_id_docente.TabIndex = 8;
             // 
             // profesores_modulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 252);
-            this.Controls.Add(this.txtdictado);
-            this.Controls.Add(this.lblcargo);
+            this.ClientSize = new System.Drawing.Size(363, 252);
+            this.Controls.Add(this.Combo_id_docente);
+            this.Controls.Add(this.combo_id_Curso);
             this.Controls.Add(this.btnalta);
-            this.Controls.Add(this.txtCurso);
-            this.Controls.Add(this.txtdocente);
             this.Controls.Add(this.txtcargos);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -142,10 +125,8 @@ namespace UI.Desktop2
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txtcargos;
-        public System.Windows.Forms.TextBox txtdocente;
-        public System.Windows.Forms.TextBox txtCurso;
         public System.Windows.Forms.Button btnalta;
-        public System.Windows.Forms.TextBox txtdictado;
-        public System.Windows.Forms.Label lblcargo;
+        private System.Windows.Forms.ComboBox combo_id_Curso;
+        public System.Windows.Forms.ComboBox Combo_id_docente;
     }
 }
