@@ -1,0 +1,24 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Pagina_Maestra.master.cs" Inherits="UI.web_.Pagina_Maestra" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>hola</title>
+    <link href="Estilos/Login_styles.css" rel="stylesheet" />
+   
+   
+       
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    
+    <h1>aca va una nav bar</h1>
+    
+    <asp:ContentPlaceHolder ID="aa" runat="server"></asp:ContentPlaceHolder>
+    
+</body>
+</html>
