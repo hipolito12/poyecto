@@ -1,0 +1,30 @@
+﻿body {
+    background-color: #E8DAEF;
+}
+
+#formulario
+{
+    margin-left:12em;
+    margin-top:5em;
+}
+.btnagrega  {
+    margin-right: 2em;
+}
+.btnmodificar {
+    margin-right: 2em;
+}
+
+.mover
+{
+    margin-left:3em;
+}
+
+.mover {
+    margin-left: 2em;
+}
+#Botones {
+    margin-top:1.3em;
+    margin-bottom:4em;
+}
+
+#gridView{}

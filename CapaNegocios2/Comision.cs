@@ -30,5 +30,10 @@ namespace CapaNegocios
             return com.cargacombo();
         }
     
+       
+    public List<comisiones> cargargrid() 
+        {
+            return com.AgregarGridView();
+        }
     }
 }

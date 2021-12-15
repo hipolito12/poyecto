@@ -66,5 +66,14 @@ namespace Datos2
 
             return dict;
         }
+
+        public List<comisiones> AgregarGridView()
+        {
+            Entidades en = new Entidades();
+            var ListaDeComisiones = en.comisiones
+                      .SqlQuery("Select * from comisiones")
+                      .ToList<comisiones>();
+            return ListaDeComisiones;
+        }
     }
 }

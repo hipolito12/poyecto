@@ -12,7 +12,7 @@ namespace UI.Desktop2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Inscripciones_alumno());
+            Application.Run(new Form1());
         }
     }
 }

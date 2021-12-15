@@ -42,7 +42,18 @@ namespace Datos2
             en.SaveChanges();
         }
 
+        static public void Main(String[] args)
+        {
+            Entidades en = new Entidades();
 
+            var k = en.comisiones;
+            foreach ( var m in k) 
+            {
+                Console.WriteLine(m.anio_especialidad+" "+m.id_comision);
+                
+            }
+                Console.ReadLine();
+        }
 
     }
 }

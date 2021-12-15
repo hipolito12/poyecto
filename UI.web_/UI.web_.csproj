@@ -67,22 +67,41 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Entidades\Comisiones.aspx" />
+    <Content Include="Entidades\Estilos\Comisiones.css" />
+    <Content Include="Estilos\Estilos_Alumnos.css" />
+    <Content Include="Estilos\Estilos_pagina_Maestra.css" />
     <Content Include="Estilos\Login_styles.css" />
     <Content Include="Global.asax" />
-    <Content Include="Login.aspx" />
+    <Content Include="Logins\Login.aspx" />
+    <Content Include="Logins\Pagina_Alumnos.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entidades\Comisiones.aspx.cs">
+      <DependentUpon>Comisiones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Entidades\Comisiones.aspx.designer.cs">
+      <DependentUpon>Comisiones.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
+    <Compile Include="Logins\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
+    <Compile Include="Logins\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logins\Pagina_Alumnos.aspx.cs">
+      <DependentUpon>Pagina_Alumnos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logins\Pagina_Alumnos.aspx.designer.cs">
+      <DependentUpon>Pagina_Alumnos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pagina_Maestra.Master.cs">
       <DependentUpon>Pagina_Maestra.Master</DependentUpon>
@@ -113,6 +132,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaNegocios2\CapaNegocios.csproj">
+      <Project>{b4b5449c-429c-4ecb-9fef-4bd3b584d9e4}</Project>
+      <Name>CapaNegocios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Datos2\CapaDatos.csproj">
+      <Project>{fc614a7a-db96-4226-bbe3-daf487ed8af1}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

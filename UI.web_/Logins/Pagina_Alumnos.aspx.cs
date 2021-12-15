@@ -5,13 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace UI.web_
+namespace UI.web_.Logins
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class Pagina_Alumnos : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+
         }
     }
 }

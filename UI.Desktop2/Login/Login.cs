@@ -22,7 +22,7 @@ namespace UI.Desktop2.Login
 
         private void btnaceptar_Click(object sender, EventArgs e)
         {
-            if (txtusuarios.Text.Length >= 8 && txtusuarios.Text != null)
+            if (txtusuarios.Text.Length >= 8 && txtusuarios.Text != "")
             {
 
             }

@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace UI.web_
+namespace UI.web_.Logins
 {
 
 
-    public partial class Login
+    public partial class Pagina_Alumnos
     {
     }
 }

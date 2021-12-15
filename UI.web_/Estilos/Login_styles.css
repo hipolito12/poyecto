@@ -24,31 +24,70 @@ input {
     border-radius: 10px;
     border: 1px solid #000000;
     padding: 0 4px 0 4px;
-    height: 20px;
+    height: 40px;
+    width: 250px;
 }
 
-.boton_personalizado {
+
+
+#botones{
+    margin-left: 2em;
     text-decoration: none;
-    padding: 10px;
-    font-weight: 600;
+}
+
+
+.boton {
+    color: #fff !important;
     font-size: 20px;
-    color: #ffffff;
-    background-color: #1883ba;
-    border-radius: 6px;
-    margin-left: 15px;
-    border: 2px solid #0016b0;
+    font-weight: 500;
+    padding: 0.5em 1.2em;
+    background: #318aac;
+    border: 2px solid;
+    position: relative;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 15px;
+    border: 1px solid #000000;
+    top: -14px;
+    left: -18px;
+    text-decoration: none;
 }
 
-    .boton_personalizado:hover {
-        color: #1883ba;
-        background-color: #ffffff;
+    .boton:before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 0px;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        transition: all 0.45s ease;
     }
 
-#botones {
-    margin-left: 4em;
-    height: 31px;
+    .boton:hover:before {
+        width: 100%;
+    }
+#botones > button {
+    margin-right: 2em;
 }
 
-    #botones > a {
-        margin-right: 2em;
-    }
+
+.superponer {
+    display: block;
+    margin-left: 14em;
+    position: absolute;
+    margin-bottom: 4em !important;
+    font-size: 1.6em;
+    color: red;
+}
+.label_superpuesta {
+    position: relative;
+    z-index: 10;
+    margin-left: 14em;
+    display: block;
+    font-size: 1.6em;
+    color: red;
+    margin-bottom: 4em !important;
+    top: 5px;
+    left: -15px;
+}
