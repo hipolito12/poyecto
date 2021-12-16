@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
+using System.Data.Entity;
 
 namespace Datos2
 {
@@ -69,10 +72,11 @@ namespace Datos2
 
         public List<comisiones> AgregarGridView()
         {
-            Entidades en = new Entidades();
-            var ListaDeComisiones = en.comisiones
-                      .SqlQuery("Select * from comisiones")
-                      .ToList<comisiones>();
+            Entidades ent = new Entidades();
+             var ListaDeComisiones = ent.comisiones
+                       .SqlQuery("Select * from comisiones")
+                       .ToList();
+            
             return ListaDeComisiones;
         }
     }

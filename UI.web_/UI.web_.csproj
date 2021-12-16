@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -68,7 +76,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Entidades\Comisiones.aspx" />
+    <Content Include="Entidades\Cursos.aspx" />
     <Content Include="Entidades\Estilos\Comisiones.css" />
+    <Content Include="Entidades\Estilos\Cursos.css" />
     <Content Include="Estilos\Estilos_Alumnos.css" />
     <Content Include="Estilos\Estilos_pagina_Maestra.css" />
     <Content Include="Estilos\Login_styles.css" />
@@ -85,6 +95,13 @@
     </Compile>
     <Compile Include="Entidades\Comisiones.aspx.designer.cs">
       <DependentUpon>Comisiones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\Cursos.aspx.cs">
+      <DependentUpon>Cursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Entidades\Cursos.aspx.designer.cs">
+      <DependentUpon>Cursos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -142,6 +159,9 @@
       <Project>{fc614a7a-db96-4226-bbe3-daf487ed8af1}</Project>
       <Name>CapaDatos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

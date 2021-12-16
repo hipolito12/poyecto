@@ -11,89 +11,80 @@ namespace UI.web_.Entidades
 {
 
 
-    public partial class Comisiones
+    public partial class Cursos
     {
 
         /// <summary>
-        /// Control form.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control lblAgregar.
+        /// Control comboidmateria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAgregar;
+        protected global::System.Web.UI.WebControls.DropDownList comboidmateria;
 
         /// <summary>
-        /// Control txtDesc_Comision.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDesc_Comision;
+        protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Control lblModificar.
+        /// Control comboComision.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblModificar;
+        protected global::System.Web.UI.WebControls.DropDownList comboComision;
 
         /// <summary>
-        /// Control txtAnio.
+        /// Control Label3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAnio;
+        protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Control lblEliminar.
+        /// Control TxtAnio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEliminar;
+        protected global::System.Web.UI.WebControls.TextBox TxtAnio;
 
         /// <summary>
-        /// Control txt_IdPlan.
+        /// Control Label4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_IdPlan;
+        protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// Control GridView1.
+        /// Control txtcupo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
-
-        /// <summary>
-        /// Control error.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label error;
+        protected global::System.Web.UI.WebControls.TextBox txtcupo;
 
         /// <summary>
         /// Control btnagregar.
@@ -105,13 +96,13 @@ namespace UI.web_.Entidades
         protected global::System.Web.UI.WebControls.Button btnagregar;
 
         /// <summary>
-        /// Control btnModificar.
+        /// Control btneditar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnModificar;
+        protected global::System.Web.UI.WebControls.Button btneditar;
 
         /// <summary>
         /// Control btnEliminar.

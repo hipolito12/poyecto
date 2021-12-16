@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="tp2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="tp2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="alumnos_inscripciones">
           <Key>
             <PropertyRef Name="id_inscripcion" />
@@ -283,6 +283,29 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="actualizar_personas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="apellido" Type="varchar" Mode="In" />
+          <Parameter Name="direccion" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="telefono" Type="varchar" Mode="In" />
+          <Parameter Name="fecha" Type="date" Mode="In" />
+          <Parameter Name="legajo" Type="int" Mode="In" />
+          <Parameter Name="tipo" Type="int" Mode="In" />
+          <Parameter Name="plan" Type="int" Mode="In" />
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="agregarpersona" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre" Type="nvarchar" Mode="In" />
+          <Parameter Name="apellido" Type="nvarchar" Mode="In" />
+          <Parameter Name="direccion" Type="nvarchar" Mode="In" />
+          <Parameter Name="email" Type="nvarchar" Mode="In" />
+          <Parameter Name="telefono" Type="nvarchar" Mode="In" />
+          <Parameter Name="fecha" Type="datetime" Mode="In" />
+          <Parameter Name="legajo" Type="int" Mode="In" />
+          <Parameter Name="tipo" Type="int" Mode="In" />
+          <Parameter Name="id_plan" Type="int" Mode="In" />
+        </Function>
         <Function Name="baja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idMat" Type="int" Mode="In" />
         </Function>
@@ -291,6 +314,13 @@
         </Function>
         <Function Name="consultarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="editar_curso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idcurso" Type="int" Mode="In" />
+          <Parameter Name="idcom" Type="int" Mode="In" />
+          <Parameter Name="anio" Type="int" Mode="In" />
+          <Parameter Name="idmateria" Type="int" Mode="In" />
+          <Parameter Name="cupo" Type="int" Mode="In" />
         </Function>
         <Function Name="eliminarplan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="int" Mode="In" />
@@ -304,6 +334,12 @@
           <Parameter Name="semanales" Type="int" Mode="In" />
           <Parameter Name="totales" Type="int" Mode="In" />
           <Parameter Name="idplan" Type="int" Mode="In" />
+        </Function>
+        <Function Name="insertar_curso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idmateria" Type="int" Mode="In" />
+          <Parameter Name="idcomision" Type="int" Mode="In" />
+          <Parameter Name="aniocal" Type="int" Mode="In" />
+          <Parameter Name="cupo" Type="int" Mode="In" />
         </Function>
         <Function Name="InsertarPlan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="desc" Type="nvarchar" Mode="In" />
@@ -360,6 +396,7 @@
           <Parameter Name="semanales" Type="int" Mode="In" />
           <Parameter Name="id" Type="int" Mode="In" />
         </Function>
+        <Function Name="updatemodulo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="updateplan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="des" Type="varchar" Mode="In" />
           <Parameter Name="espe" Type="int" Mode="In" />
@@ -442,7 +479,8 @@
             <End Role="usuarios" EntitySet="usuarios" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="tp2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -815,26 +853,62 @@
             <End Role="personas" EntitySet="personas" />
             <End Role="usuarios" EntitySet="usuarios" />
           </AssociationSet>
+          <FunctionImport Name="actualizar_personas">
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="apellido" Mode="In" Type="String" />
+            <Parameter Name="direccion" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="telefono" Mode="In" Type="String" />
+            <Parameter Name="fecha" Mode="In" Type="DateTime" />
+            <Parameter Name="legajo" Mode="In" Type="Int32" />
+            <Parameter Name="tipo" Mode="In" Type="Int32" />
+            <Parameter Name="plan" Mode="In" Type="Int32" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="agregarpersona">
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="apellido" Mode="In" Type="String" />
+            <Parameter Name="direccion" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="telefono" Mode="In" Type="String" />
+            <Parameter Name="fecha" Mode="In" Type="DateTime" />
+            <Parameter Name="legajo" Mode="In" Type="Int32" />
+            <Parameter Name="tipo" Mode="In" Type="Int32" />
+            <Parameter Name="id_plan" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="baja">
-          <Parameter Name="idMat" Mode="In" Type="Int32" />
+            <Parameter Name="idMat" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="consultaplan" ReturnType="Collection(tp2Model.consultaplan_Result)">
-          <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="consultarUsuario" ReturnType="Collection(tp2Model.consultarUsuario_Result)">
-          <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="editar_curso">
+            <Parameter Name="idcurso" Mode="In" Type="Int32" />
+            <Parameter Name="idcom" Mode="In" Type="Int32" />
+            <Parameter Name="anio" Mode="In" Type="Int32" />
+            <Parameter Name="idmateria" Mode="In" Type="Int32" />
+            <Parameter Name="cupo" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="eliminarplan">
-          <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="eliminaUsuarios">
-          <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Insertar">
             <Parameter Name="descrip" Mode="In" Type="String" />
             <Parameter Name="semanales" Mode="In" Type="Int32" />
             <Parameter Name="totales" Mode="In" Type="Int32" />
             <Parameter Name="idplan" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="insertar_curso">
+            <Parameter Name="idmateria" Mode="In" Type="Int32" />
+            <Parameter Name="idcomision" Mode="In" Type="Int32" />
+            <Parameter Name="aniocal" Mode="In" Type="Int32" />
+            <Parameter Name="cupo" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="InsertarPlan">
             <Parameter Name="desc" Mode="In" Type="String" />
@@ -870,11 +944,11 @@
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition">
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(tp2Model.sp_helpdiagramdefinition_Result)">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams">
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(tp2Model.sp_helpdiagrams_Result)">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -891,6 +965,7 @@
             <Parameter Name="semanales" Mode="In" Type="Int32" />
             <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="updatemodulo" ReturnType="Collection(tp2Model.updatemodulo_Result)" />
           <FunctionImport Name="updateplan">
             <Parameter Name="des" Mode="In" Type="String" />
             <Parameter Name="espe" Mode="In" Type="Int32" />
@@ -951,6 +1026,22 @@
           <Property Type="Int32" Name="id_plan" Nullable="false" />
           <Property Type="String" Name="desc_plan" Nullable="false" MaxLength="50" />
           <Property Type="Int32" Name="id_especialidad" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="updatemodulo_Result">
+          <Property Type="Int32" Name="id_modulo" Nullable="false" />
+          <Property Type="String" Name="desc_modulo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ejecuta" Nullable="true" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1092,6 +1183,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="actualizar_personas" FunctionName="tp2Model.Store.actualizar_personas" />
+          <FunctionImportMapping FunctionImportName="agregarpersona" FunctionName="tp2Model.Store.agregarpersona" />
           <FunctionImportMapping FunctionImportName="baja" FunctionName="tp2Model.Store.baja" />
           <FunctionImportMapping FunctionImportName="consultaplan" FunctionName="tp2Model.Store.consultaplan">
             <ResultMapping>
@@ -1117,9 +1210,11 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="editar_curso" FunctionName="tp2Model.Store.editar_curso" />
           <FunctionImportMapping FunctionImportName="eliminarplan" FunctionName="tp2Model.Store.eliminarplan" />
           <FunctionImportMapping FunctionImportName="eliminaUsuarios" FunctionName="tp2Model.Store.eliminaUsuarios" />
           <FunctionImportMapping FunctionImportName="Insertar" FunctionName="tp2Model.Store.Insertar" />
+          <FunctionImportMapping FunctionImportName="insertar_curso" FunctionName="tp2Model.Store.insertar_curso" />
           <FunctionImportMapping FunctionImportName="InsertarPlan" FunctionName="tp2Model.Store.InsertarPlan" />
           <FunctionImportMapping FunctionImportName="insertarUsuario" FunctionName="tp2Model.Store.insertarUsuario" />
           <FunctionImportMapping FunctionImportName="ListarModulos" FunctionName="tp2Model.Store.ListarModulos">
@@ -1169,11 +1264,37 @@
           <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="tp2Model.Store.sp_alterdiagram" />
           <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="tp2Model.Store.sp_creatediagram" />
           <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="tp2Model.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="tp2Model.Store.sp_helpdiagramdefinition" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="tp2Model.Store.sp_helpdiagrams" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="tp2Model.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tp2Model.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="tp2Model.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tp2Model.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="tp2Model.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="tp2Model.Store.sp_upgraddiagrams" />
           <FunctionImportMapping FunctionImportName="update" FunctionName="tp2Model.Store.update" />
+          <FunctionImportMapping FunctionImportName="updatemodulo" FunctionName="tp2Model.Store.updatemodulo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tp2Model.updatemodulo_Result">
+                <ScalarProperty Name="id_modulo" ColumnName="id_modulo" />
+                <ScalarProperty Name="desc_modulo" ColumnName="desc_modulo" />
+                <ScalarProperty Name="ejecuta" ColumnName="ejecuta" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="updateplan" FunctionName="tp2Model.Store.updateplan" />
           <FunctionImportMapping FunctionImportName="UpdateUsuario" FunctionName="tp2Model.Store.UpdateUsuario" />
         </EntityContainerMapping>

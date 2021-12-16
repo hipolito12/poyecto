@@ -35,5 +35,10 @@ namespace CapaNegocios
         {
             return mate.buscar_id(con);
         }
+
+        public  string cry() 
+        {
+            return mate.cry();
+        }
     }
 }

@@ -111,5 +111,14 @@ namespace Datos2
             catch (Exception ex) { Console.WriteLine($"Error: {ex}"); }
             return ID;
         }
+
+
+        public string cry() 
+        {
+            Entidades en = new Entidades();
+            return en.Database.Connection.ConnectionString; 
+        }
+
+
     }
 }

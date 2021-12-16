@@ -40,6 +40,92 @@ namespace Datos2
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<usuarios> usuarios { get; set; }
     
+        public virtual int actualizar_personas(string nombre, string apellido, string direccion, string email, string telefono, Nullable<System.DateTime> fecha, Nullable<int> legajo, Nullable<int> tipo, Nullable<int> plan, Nullable<int> id)
+        {
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("nombre", nombre) :
+                new ObjectParameter("nombre", typeof(string));
+    
+            var apellidoParameter = apellido != null ?
+                new ObjectParameter("apellido", apellido) :
+                new ObjectParameter("apellido", typeof(string));
+    
+            var direccionParameter = direccion != null ?
+                new ObjectParameter("direccion", direccion) :
+                new ObjectParameter("direccion", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("email", email) :
+                new ObjectParameter("email", typeof(string));
+    
+            var telefonoParameter = telefono != null ?
+                new ObjectParameter("telefono", telefono) :
+                new ObjectParameter("telefono", typeof(string));
+    
+            var fechaParameter = fecha.HasValue ?
+                new ObjectParameter("fecha", fecha) :
+                new ObjectParameter("fecha", typeof(System.DateTime));
+    
+            var legajoParameter = legajo.HasValue ?
+                new ObjectParameter("legajo", legajo) :
+                new ObjectParameter("legajo", typeof(int));
+    
+            var tipoParameter = tipo.HasValue ?
+                new ObjectParameter("tipo", tipo) :
+                new ObjectParameter("tipo", typeof(int));
+    
+            var planParameter = plan.HasValue ?
+                new ObjectParameter("plan", plan) :
+                new ObjectParameter("plan", typeof(int));
+    
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("actualizar_personas", nombreParameter, apellidoParameter, direccionParameter, emailParameter, telefonoParameter, fechaParameter, legajoParameter, tipoParameter, planParameter, idParameter);
+        }
+    
+        public virtual int agregarpersona(string nombre, string apellido, string direccion, string email, string telefono, Nullable<System.DateTime> fecha, Nullable<int> legajo, Nullable<int> tipo, Nullable<int> id_plan)
+        {
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("nombre", nombre) :
+                new ObjectParameter("nombre", typeof(string));
+    
+            var apellidoParameter = apellido != null ?
+                new ObjectParameter("apellido", apellido) :
+                new ObjectParameter("apellido", typeof(string));
+    
+            var direccionParameter = direccion != null ?
+                new ObjectParameter("direccion", direccion) :
+                new ObjectParameter("direccion", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("email", email) :
+                new ObjectParameter("email", typeof(string));
+    
+            var telefonoParameter = telefono != null ?
+                new ObjectParameter("telefono", telefono) :
+                new ObjectParameter("telefono", typeof(string));
+    
+            var fechaParameter = fecha.HasValue ?
+                new ObjectParameter("fecha", fecha) :
+                new ObjectParameter("fecha", typeof(System.DateTime));
+    
+            var legajoParameter = legajo.HasValue ?
+                new ObjectParameter("legajo", legajo) :
+                new ObjectParameter("legajo", typeof(int));
+    
+            var tipoParameter = tipo.HasValue ?
+                new ObjectParameter("tipo", tipo) :
+                new ObjectParameter("tipo", typeof(int));
+    
+            var id_planParameter = id_plan.HasValue ?
+                new ObjectParameter("id_plan", id_plan) :
+                new ObjectParameter("id_plan", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("agregarpersona", nombreParameter, apellidoParameter, direccionParameter, emailParameter, telefonoParameter, fechaParameter, legajoParameter, tipoParameter, id_planParameter);
+        }
+    
         public virtual int baja(Nullable<int> idMat)
         {
             var idMatParameter = idMat.HasValue ?
@@ -65,6 +151,31 @@ namespace Datos2
                 new ObjectParameter("id", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<consultarUsuario_Result>("consultarUsuario", idParameter);
+        }
+    
+        public virtual int editar_curso(Nullable<int> idcurso, Nullable<int> idcom, Nullable<int> anio, Nullable<int> idmateria, Nullable<int> cupo)
+        {
+            var idcursoParameter = idcurso.HasValue ?
+                new ObjectParameter("idcurso", idcurso) :
+                new ObjectParameter("idcurso", typeof(int));
+    
+            var idcomParameter = idcom.HasValue ?
+                new ObjectParameter("idcom", idcom) :
+                new ObjectParameter("idcom", typeof(int));
+    
+            var anioParameter = anio.HasValue ?
+                new ObjectParameter("anio", anio) :
+                new ObjectParameter("anio", typeof(int));
+    
+            var idmateriaParameter = idmateria.HasValue ?
+                new ObjectParameter("idmateria", idmateria) :
+                new ObjectParameter("idmateria", typeof(int));
+    
+            var cupoParameter = cupo.HasValue ?
+                new ObjectParameter("cupo", cupo) :
+                new ObjectParameter("cupo", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("editar_curso", idcursoParameter, idcomParameter, anioParameter, idmateriaParameter, cupoParameter);
         }
     
         public virtual int eliminarplan(Nullable<int> id)
@@ -104,6 +215,27 @@ namespace Datos2
                 new ObjectParameter("idplan", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Insertar", descripParameter, semanalesParameter, totalesParameter, idplanParameter);
+        }
+    
+        public virtual int insertar_curso(Nullable<int> idmateria, Nullable<int> idcomision, Nullable<int> aniocal, Nullable<int> cupo)
+        {
+            var idmateriaParameter = idmateria.HasValue ?
+                new ObjectParameter("idmateria", idmateria) :
+                new ObjectParameter("idmateria", typeof(int));
+    
+            var idcomisionParameter = idcomision.HasValue ?
+                new ObjectParameter("idcomision", idcomision) :
+                new ObjectParameter("idcomision", typeof(int));
+    
+            var aniocalParameter = aniocal.HasValue ?
+                new ObjectParameter("aniocal", aniocal) :
+                new ObjectParameter("aniocal", typeof(int));
+    
+            var cupoParameter = cupo.HasValue ?
+                new ObjectParameter("cupo", cupo) :
+                new ObjectParameter("cupo", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("insertar_curso", idmateriaParameter, idcomisionParameter, aniocalParameter, cupoParameter);
         }
     
         public virtual int InsertarPlan(string desc, Nullable<int> esp)
@@ -231,7 +363,7 @@ namespace Datos2
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
         }
     
-        public virtual int sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
+        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
         {
             var diagramnameParameter = diagramname != null ?
                 new ObjectParameter("diagramname", diagramname) :
@@ -241,10 +373,10 @@ namespace Datos2
                 new ObjectParameter("owner_id", owner_id) :
                 new ObjectParameter("owner_id", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
         }
     
-        public virtual int sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
+        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
         {
             var diagramnameParameter = diagramname != null ?
                 new ObjectParameter("diagramname", diagramname) :
@@ -254,7 +386,7 @@ namespace Datos2
                 new ObjectParameter("owner_id", owner_id) :
                 new ObjectParameter("owner_id", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
         }
     
         public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
@@ -302,6 +434,11 @@ namespace Datos2
                 new ObjectParameter("id", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("update", descripParameter, planParameter, totalesParameter, semanalesParameter, idParameter);
+        }
+    
+        public virtual ObjectResult<updatemodulo_Result> updatemodulo()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<updatemodulo_Result>("updatemodulo");
         }
     
         public virtual int updateplan(string des, Nullable<int> espe, Nullable<int> id)

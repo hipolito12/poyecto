@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Data.SqlClient;
+using System.Data;
+ using System.Collections.Generic;
+using System.Linq;
 
 namespace Datos2
 {
@@ -45,14 +49,15 @@ namespace Datos2
         static public void Main(String[] args)
         {
             Entidades en = new Entidades();
+            var ListaDeComisiones = en.comisiones
+                     .SqlQuery("Select * from comisiones")
+                     .ToList();
 
-            var k = en.comisiones;
-            foreach ( var m in k) 
+            foreach (var m in ListaDeComisiones) 
             {
-                Console.WriteLine(m.anio_especialidad+" "+m.id_comision);
-                
+                Console.WriteLine( m.desc_comision +" "+ m.id_comision);
             }
-                Console.ReadLine();
+            Console.ReadLine();
         }
 
     }
