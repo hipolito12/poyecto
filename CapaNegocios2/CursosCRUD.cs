@@ -30,5 +30,9 @@ namespace CapaNegocios
             return c.devuelve_datos_de_combo();
         }
 
+        public List<cursos> cargargridview() 
+        {
+            return c.cargargridview();
+        }
     }
 }

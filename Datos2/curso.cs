@@ -32,22 +32,31 @@ namespace Datos2
 
         public void ADDcursos(int idmateria, int idComision, int anio, int cupo)
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "insertar_curso";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idmateria", idmateria);
-            comando.Parameters.AddWithValue("@cupo", cupo);
-            comando.Parameters.AddWithValue("@aniocal", anio);
-            comando.Parameters.AddWithValue("@idcomision", idComision);
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
-            conexion.CerrarConexion();
+            /* comando.Connection = conexion.AbrirConexion();
+             comando.CommandText = "insertar_curso";
+             comando.CommandType = CommandType.StoredProcedure;
+             comando.Parameters.AddWithValue("@idmateria", idmateria);
+             comando.Parameters.AddWithValue("@cupo", cupo);
+             comando.Parameters.AddWithValue("@aniocal", anio);
+             comando.Parameters.AddWithValue("@idcomision", idComision);
+             comando.ExecuteNonQuery();
+             comando.Parameters.Clear();
+             conexion.CerrarConexion();*/
+
+            Entidades en = new Entidades();
+            cursos cur = new cursos();
+            cur.id_materia = idmateria;
+            cur.id_comision = idComision;
+            cur.anio_calendario = anio;
+            cur.cupo = cupo;
+            en.cursos.Add(cur);
+            en.SaveChanges();
         }
 
 
         public void editCursos(int idmateria, int idComision, int anio, int cupo, int idcurso)
         {
-            comando.Connection = conexion.AbrirConexion();
+            /*comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "editar_curso";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@idcurso", idcurso);
@@ -57,7 +66,18 @@ namespace Datos2
             comando.Parameters.AddWithValue("@idcom", idComision);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
-            conexion.CerrarConexion();
+            conexion.CerrarConexion();*/
+
+
+            Entidades en = new Entidades();
+            cursos cur = new cursos();
+            cursos k = en.cursos.Where(c=> c.id_curso == idcurso).FirstOrDefault();
+            k.id_materia = idmateria;
+           k.id_comision = idComision;
+            k.anio_calendario = anio;
+            k.cupo = cupo;
+            en.Entry(k).State = System.Data.Entity.EntityState.Modified;
+            en.SaveChanges();
         }
 
         public void DleteCusrsos(int idcurso)
@@ -109,7 +129,15 @@ namespace Datos2
             return (mate, c);
         }
 
+        public List<cursos> cargargridview() 
+        {
 
+            Entidades ent = new Entidades();
+            var ListaDecursos = ent.cursos
+                      .SqlQuery("Select * from cursos")
+                      .ToList();
+            return ListaDecursos;
+        }
 
 
 

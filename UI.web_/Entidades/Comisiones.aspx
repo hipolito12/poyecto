@@ -6,9 +6,11 @@
 <head runat="server">
     <link href="Estilos/Comisiones.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+     <link  rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
     <title>Comisiones Crud
     </title>
 </head>
@@ -39,7 +41,7 @@
                  </asp:GridView>
             </div>
             <br />
-                <asp:Label ID="error" runat="server" Text=" Hay campos vacios, verifique su entrada"/>
+                <asp:Label ID="error" runat="server" Text=" Hay campos vacios, verifique su entrada" CssClass="animate__bounceInRight" />
             <div id="Botones">
                 <asp:Button ID="btnagregar" runat="server" Text="Agregar" CssClass="btnagrega" OnClick="btnagregar_Click" />
                 <asp:Button ID="btnModificar" runat="server" Text="Modificar" CssClass="btnmodificar" OnClick="btnModificar_Click" />

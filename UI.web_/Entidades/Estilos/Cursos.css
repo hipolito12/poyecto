@@ -13,3 +13,41 @@
 .input_cupo {
     margin-left: 4em;
 }
+
+.gridStyles, th, td {
+    border: 3px solid black;
+    background-color: #E7CFF0;
+}
+
+    .gridStyles th {
+        padding-left: 2em;
+        padding-right: 2em;
+        height: 20px;
+        color: cornflowerblue;
+    }
+
+.gridStyles, td {
+    justify-content: center;
+    padding-left: 50px;
+}
+
+    .gridStyles a {
+        padding-right: 55px;
+        float: left
+    }
+
+.gridStyles {
+    border-color: black;
+    border-collapse: separate;
+    border-spacing: 15px 10px;
+    color: black;
+    font-family: 'Dosis', sans-serif;
+}
+
+.errores
+{
+    color:red;
+    font-size: 1.6em;
+    margin-left:4em;
+    
+}
