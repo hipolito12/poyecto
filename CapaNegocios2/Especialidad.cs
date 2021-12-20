@@ -1,6 +1,6 @@
 ﻿using Datos2;
 using System;
-
+using System.Collections.Generic;
 
 namespace CapaNegocios
 {
@@ -20,6 +20,11 @@ namespace CapaNegocios
         public void delete_especialidad(string id)
         {
             esp.eliminarespecilidad(Convert.ToInt32(id));
+        }
+        public List<especialidades> cargagv()
+        {
+            return esp.Cargagv()
+            ;
         }
     }
 }

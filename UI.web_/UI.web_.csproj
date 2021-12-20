@@ -77,9 +77,15 @@
   <ItemGroup>
     <Content Include="Entidades\Comisiones.aspx" />
     <Content Include="Entidades\Cursos.aspx" />
+    <Content Include="Entidades\docentes-curso.aspx" />
     <Content Include="Entidades\Especialidades.aspx" />
     <Content Include="Entidades\Estilos\Comisiones.css" />
     <Content Include="Entidades\Estilos\Cursos.css" />
+    <Content Include="Entidades\Estilos\docentes-curso.css" />
+    <Content Include="Entidades\Estilos\especialidades.css" />
+    <Content Include="Entidades\Estilos\HtmlPage1.html" />
+    <Content Include="Entidades\Estilos\Materias.aspx" />
+    <Content Include="Entidades\Estilos\Materias.css" />
     <Content Include="Estilos\Estilos_Alumnos.css" />
     <Content Include="Estilos\Estilos_pagina_Maestra.css" />
     <Content Include="Estilos\Login_styles.css" />
@@ -104,12 +110,26 @@
     <Compile Include="Entidades\Cursos.aspx.designer.cs">
       <DependentUpon>Cursos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Entidades\docentes-curso.aspx.cs">
+      <DependentUpon>docentes-curso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Entidades\docentes-curso.aspx.designer.cs">
+      <DependentUpon>docentes-curso.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\Especialidades.aspx.cs">
       <DependentUpon>Especialidades.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Entidades\Especialidades.aspx.designer.cs">
       <DependentUpon>Especialidades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\Estilos\Materias.aspx.cs">
+      <DependentUpon>Materias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Entidades\Estilos\Materias.aspx.designer.cs">
+      <DependentUpon>Materias.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 namespace Datos2
 {
@@ -26,6 +27,15 @@ namespace Datos2
             en.especialidades.Remove(espe);
             en.SaveChanges();
 
+        }
+
+        public List<especialidades> Cargagv() 
+        {
+            Entidades ent = new Entidades();
+            var ListaDeespecialidades = ent.especialidades
+                      .SqlQuery("Select * from especialidades")
+                      .ToList();
+            return ListaDeespecialidades;
         }
     }
 }

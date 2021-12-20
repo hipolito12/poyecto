@@ -30,5 +30,9 @@ namespace CapaNegocios
             return doc.cargar_combo();
         }
 
+        public List<docentes_cursos> cargagv() 
+        {
+            return doc.cargagv();
+        }
     }
 }

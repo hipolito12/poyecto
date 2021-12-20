@@ -70,6 +70,15 @@ namespace Datos2
                 return (diccionariopersona,cursosDictionary);
         }
 
+        public List<docentes_cursos> cargagv() 
+        {
+
+            Entidades ent = new Entidades();
+            var ListaDeComisiones = ent.docentes_cursos
+                      .SqlQuery("Select * from  docentes_cursos")
+                      .ToList();
+            return ListaDeComisiones;
+        }
     }
 }
      

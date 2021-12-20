@@ -1,0 +1,61 @@
+﻿body {
+
+}
+#subtittulo
+{
+    margin-left:9em;
+    font-size:1.8em;
+    color:black;
+    color:black;
+}
+.Txtdescripcion
+{
+    margin-left:20em;
+}
+#txtAlta {
+    margin-left:20px;
+}
+
+
+.txtmodificacion {
+    margin-left: 25px;
+}
+
+.especialidadgv, th, td {
+    border: 3px solid black;
+    background-color: #E7CFF0;
+}
+
+.especialidadgv th {
+    padding-left: 2em;
+    padding-right: 2em;
+    height: 20px;
+    color: cornflowerblue;
+}
+
+.especialidadgv, td {
+    justify-content: center;
+    padding-left: 50px;
+}
+.especialidadgv a {
+    padding-right: 55px;
+    float: left
+}
+
+.especialidadgv {
+    border-color: black;
+    border-collapse: separate;
+    border-spacing: 15px 10px;
+    margin-left: 15em;
+    color: black;
+    font-family: 'Dosis', sans-serif;
+}
+
+.botones {
+    margin-left: 25em;
+}
+
+#error
+{
+   margin-left :13em;
+}
