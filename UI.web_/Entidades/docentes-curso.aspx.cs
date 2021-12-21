@@ -90,6 +90,7 @@ namespace UI.web_.Entidades
             foreach (var k in dc.cargaDeCombos().Item2.Keys)
             {
                 ddlcurso.Items.Add(k);
+              
             }
         }
 

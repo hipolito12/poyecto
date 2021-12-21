@@ -50,3 +50,8 @@
 .btnmodificacion {
     margin-right: 20px;
 }
+.error
+{
+    color:red;
+    margin-left:16em;
+}

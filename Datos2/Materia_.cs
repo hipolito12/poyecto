@@ -113,11 +113,14 @@ namespace Datos2
         }
 
 
-        public string cry() 
+         public List<materias> cargagv() 
         {
-            Entidades en = new Entidades();
-            return en.Database.Connection.ConnectionString; 
-        }
+            Entidades ent = new Entidades();
+            var ListaDematerias = ent.materias
+                      .SqlQuery("Select * from materias")
+                      .ToList();
+            return ListaDematerias;
+        } 
 
 
     }

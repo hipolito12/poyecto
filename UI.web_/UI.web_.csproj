@@ -84,8 +84,12 @@
     <Content Include="Entidades\Estilos\docentes-curso.css" />
     <Content Include="Entidades\Estilos\especialidades.css" />
     <Content Include="Entidades\Estilos\HtmlPage1.html" />
-    <Content Include="Entidades\Estilos\Materias.aspx" />
+    <Content Include="Entidades\Materias.aspx" />
     <Content Include="Entidades\Estilos\Materias.css" />
+    <Content Include="Entidades\Estilos\Modulos.css" />
+    <Content Include="Entidades\HtmlPage1.html" />
+    <Content Include="Entidades\Modulos.aspx" />
+    <Content Include="Entidades\planes.aspx" />
     <Content Include="Estilos\Estilos_Alumnos.css" />
     <Content Include="Estilos\Estilos_pagina_Maestra.css" />
     <Content Include="Estilos\Login_styles.css" />
@@ -93,7 +97,6 @@
     <Content Include="Logins\Login.aspx" />
     <Content Include="Logins\Pagina_Alumnos.aspx" />
     <Content Include="Web.config" />
-    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entidades\Comisiones.aspx.cs">
@@ -124,12 +127,26 @@
     <Compile Include="Entidades\Especialidades.aspx.designer.cs">
       <DependentUpon>Especialidades.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Entidades\Estilos\Materias.aspx.cs">
+    <Compile Include="Entidades\Materias.aspx.cs">
       <DependentUpon>Materias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Entidades\Estilos\Materias.aspx.designer.cs">
+    <Compile Include="Entidades\Materias.aspx.designer.cs">
       <DependentUpon>Materias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\WebForm1.aspx.cs">
+      <DependentUpon>Modulos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Entidades\WebForm1.aspx.designer.cs">
+      <DependentUpon>Modulos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\planes.aspx.cs">
+      <DependentUpon>planes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Entidades\planes.aspx.designer.cs">
+      <DependentUpon>planes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -156,13 +173,6 @@
       <DependentUpon>Pagina_Maestra.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

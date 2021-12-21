@@ -36,9 +36,9 @@ namespace CapaNegocios
             return mate.buscar_id(con);
         }
 
-        public  string cry() 
+        public List<materias> cargagv() 
         {
-            return mate.cry();
+            return mate.cargagv(); ;
         }
     }
 }

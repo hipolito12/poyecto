@@ -39,7 +39,7 @@
 
     </div>
 
-    <span> <asp:Label ID="error" runat="server" Text="Ha ocurrido un error"></asp:Label>
+    <span> <asp:Label ID="error" runat="server" Text="Ha ocurrido un error" CssClass="error"></asp:Label>
     </span>
 
 </body>

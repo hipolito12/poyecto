@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <link href="Materias.css" rel="stylesheet" />
+    <link href="Estilos/Materias.css" rel="stylesheet" />
     <title></title>
 </head>
 <body>
@@ -34,12 +34,13 @@
     <br />
 
     <div class="botones">
-        <asp:Button ID="btnagregar" runat="server" Text="Agregar"  CssClass="boton" />
-        <asp:Button ID="Btneditar" runat="server" Text="Modificar"  CssClass="boton" />
-        <asp:Button ID="Btneliminar" runat="server" Text="Eliminar" />
+        <asp:Button ID="btnagregar" runat="server" Text="Agregar"  CssClass="boton" OnClick="btnagregar_Click" />
+        <asp:Button ID="Btneditar" runat="server" Text="Modificar"  CssClass="boton" OnClick="Btneditar_Click" />
+        <asp:Button ID="Btneliminar" runat="server" Text="Eliminar" OnClick="Btneliminar_Click" />
     </div>
 </body>
 </html>
+        <asp:Label ID="error" runat="server" Text="AH ocurrido  un error! " CssClass="error"></asp:Label>
         <br />
     </form>
 </asp:Content>
