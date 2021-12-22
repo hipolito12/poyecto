@@ -18,6 +18,11 @@ namespace UI.web_.Entidades
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txtclave.Text = GridView1.SelectedRow.Cells[3].Text;
+            TxtnombreUsuario.Text = GridView1.SelectedRow.Cells[2].Text;
+            Txtnombre.Text = GridView1.SelectedRow.Cells[5].Text;
+            Txtapellido.Text = GridView1.SelectedRow.Cells[6].Text;
+            Txtemail.Text = GridView1.SelectedRow.Cells[7].Text;
 
         }
 
