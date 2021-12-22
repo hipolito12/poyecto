@@ -94,9 +94,7 @@
     <Content Include="Entidades\Modulos.aspx" />
     <Content Include="Entidades\Personas.aspx" />
     <Content Include="Entidades\planes.aspx" />
-    <Content Include="Estilos\Estilos_Alumnos.css" />
-    <Content Include="Estilos\Estilos_pagina_Maestra.css" />
-    <Content Include="Estilos\Login_styles.css" />
+    <Content Include="Entidades\Usuario.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Logins\Login.aspx" />
     <Content Include="Logins\Pagina_Alumnos.aspx" />
@@ -151,6 +149,13 @@
     </Compile>
     <Compile Include="Entidades\Personas.aspx.designer.cs">
       <DependentUpon>Personas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\Usuario.aspx.cs">
+      <DependentUpon>Usuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Entidades\Usuario.aspx.designer.cs">
+      <DependentUpon>Usuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Entidades\WebForm1.aspx.cs">
       <DependentUpon>Modulos.aspx</DependentUpon>

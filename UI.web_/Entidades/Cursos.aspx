@@ -35,8 +35,8 @@
                <asp:Label ID="error" runat="server" Text=" ah ocurrido un error!" CssClass="errores animate__shakeY" ></asp:Label>
             <div class=" botones" >
              
-            <asp:Button ID="btnagregar" runat="server" Text="Agregar " OnClick="btnagregar_Click"  />              
-            <asp:Button ID="btneditar" runat="server" Text="Modificar " OnClick="btneditar_Click"  />
+            <asp:Button ID="btnagregar" runat="server" Text="Agregar "  CssClass="boton" OnClick="btnagregar_Click"  />              
+            <asp:Button ID="btneditar" runat="server" Text="Modificar " OnClick="btneditar_Click" CssClass="boton" />
             <asp:Button ID="btnEliminar" runat="server" Text="Eliminar " OnClick="btnEliminar_Click" />
 
 
