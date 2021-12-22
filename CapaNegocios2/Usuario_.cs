@@ -1,6 +1,6 @@
 ﻿using Datos2;
 using System;
-
+using System.Collections.Generic;
 
 namespace CapaNegocios
 {
@@ -32,6 +32,13 @@ namespace CapaNegocios
         {
             us.deleteUsuarios(Convert.ToInt32(idusuarios));
         }
-
+        public List<personas> cargargv() 
+        {
+            return us.cargargv();
+        }
+        public Dictionary<string , int> cargarcombo() 
+        {
+            return  us.cargarcombos() ;
+        }
     }
 }

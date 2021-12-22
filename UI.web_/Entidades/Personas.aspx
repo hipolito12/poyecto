@@ -4,7 +4,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="aa" runat="server">
     
     <form id="form1" runat="server">
-    
     <link href="Estilos/personas.css" rel="stylesheet" />
     <div class=" acomodar">
     <asp:Label ID="Label1" runat="server" Text="Ingrese nombre  : "  CssClass="separar" ></asp:Label> <asp:TextBox ID="Txtnombre" runat="server"></asp:TextBox>

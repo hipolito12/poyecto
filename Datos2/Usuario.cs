@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Datos2
 {
@@ -52,6 +53,22 @@ namespace Datos2
             usuarios usu = en.usuarios.Where(UsU => UsU.id_usuario == idUsuarios).First();
             en.usuarios.Remove(usu);
             en.SaveChanges();
+        }
+        public List<personas> cargargv() 
+        { Entidades en = new Entidades();
+
+          var persoas= en.personas.SqlQuery("Select * from personas")
+                      .ToList();
+            return persoas;
+        }
+
+        public Dictionary<string , int > cargarcombos()
+        {
+            Entidades en = new Entidades();
+
+            var persoas = en.personas.SqlQuery("Select * from personas")
+                        .ToDictionary(k=> $"{k.nombre} {k.apellido}", k=> k.id_persona);
+            return persoas;
         }
 
     }
