@@ -28,5 +28,10 @@ namespace CapaNegocios
         {
             p.deletePlan(Convert.ToInt32(id));
         }
+
+        public List<planes> cargargv() 
+        {
+            return p.cargargv() ;
+        }
     }
 }

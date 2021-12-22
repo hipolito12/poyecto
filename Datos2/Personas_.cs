@@ -97,6 +97,18 @@ namespace Datos2
             }
             catch (Exception ex) { Console.Write($"Error: {ex}"); }
             return person;
+
+
+           
+
+
+        }
+
+        public List<personas> cargargv()
+        {
+            Entidades en = new Entidades(); 
+            var listaDePersonas= en.personas.SqlQuery("Select * from personas").ToList();
+            return listaDePersonas;
         }
     }
 }

@@ -75,6 +75,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Entidades\alumnos_inscripcion.aspx" />
     <Content Include="Entidades\Comisiones.aspx" />
     <Content Include="Entidades\Cursos.aspx" />
     <Content Include="Entidades\docentes-curso.aspx" />
@@ -84,11 +85,14 @@
     <Content Include="Entidades\Estilos\docentes-curso.css" />
     <Content Include="Entidades\Estilos\especialidades.css" />
     <Content Include="Entidades\Estilos\HtmlPage1.html" />
+    <Content Include="Entidades\Estilos\alumnos_inscripciones.css" />
+    <Content Include="Entidades\Estilos\personas.css" />
+    <Content Include="Entidades\Estilos\Planes.css" />
     <Content Include="Entidades\Materias.aspx" />
     <Content Include="Entidades\Estilos\Materias.css" />
     <Content Include="Entidades\Estilos\Modulos.css" />
-    <Content Include="Entidades\HtmlPage1.html" />
     <Content Include="Entidades\Modulos.aspx" />
+    <Content Include="Entidades\Personas.aspx" />
     <Content Include="Entidades\planes.aspx" />
     <Content Include="Estilos\Estilos_Alumnos.css" />
     <Content Include="Estilos\Estilos_pagina_Maestra.css" />
@@ -99,6 +103,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entidades\alumnos_inscripcion.aspx.cs">
+      <DependentUpon>alumnos_inscripcion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Entidades\alumnos_inscripcion.aspx.designer.cs">
+      <DependentUpon>alumnos_inscripcion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\Comisiones.aspx.cs">
       <DependentUpon>Comisiones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -133,6 +144,13 @@
     </Compile>
     <Compile Include="Entidades\Materias.aspx.designer.cs">
       <DependentUpon>Materias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\Personas.aspx.cs">
+      <DependentUpon>Personas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Entidades\Personas.aspx.designer.cs">
+      <DependentUpon>Personas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Entidades\WebForm1.aspx.cs">
       <DependentUpon>Modulos.aspx</DependentUpon>

@@ -33,5 +33,9 @@ namespace CapaNegocios
         {
             return ia.comboalumno();
         }
+        public List<alumnos_inscripciones> cargargv() 
+        {
+            return ia.cargargv();
+        }
     }
 }

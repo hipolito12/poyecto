@@ -68,5 +68,14 @@ namespace Datos2
             return (diccionariopersona,diccionariocursos);
 
         }
+
+        public List<alumnos_inscripciones> cargargv() 
+        {
+            Entidades en = new Entidades();
+            var auxiliar = en.alumnos_inscripciones
+                   .SqlQuery("Select * from alumnos_inscripciones ")
+                   .ToList();
+            return auxiliar;
+        }
     }
 }

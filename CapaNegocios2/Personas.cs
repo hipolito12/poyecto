@@ -29,6 +29,12 @@ namespace CapaNegocios
 
             return per.cargarcombo();
         }
+
+
+        public List<personas> cargargv() 
+        {
+            return per.cargargv();
+        }
     }
 
 

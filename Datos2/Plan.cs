@@ -48,6 +48,17 @@ namespace Datos2
             }
             return lc;
         }
+    
+    
+        public List<planes> cargargv() 
+        {
+            Entidades ent = new Entidades();
+            var ListaDePlanes = ent.planes
+                      .SqlQuery("Select * from planes")
+                      .ToList();
+            return ListaDePlanes;
+        }
+    
     }
 
 
