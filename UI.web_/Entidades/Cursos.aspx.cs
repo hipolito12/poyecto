@@ -32,10 +32,10 @@ namespace UI.web_.Entidades
             {
                 comboidmateria.Items.Add(k);
             }
-            foreach (var k in c.devuelv_combo().Item2.Keys)
+            foreach (var k1 in c.devuelv_combo().Item2.Keys)
 
             {
-                comboComision.Items.Add(k);
+                comboComision.Items.Add(k1);
             }
         }
 

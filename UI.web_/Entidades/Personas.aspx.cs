@@ -51,15 +51,29 @@ namespace UI.web_.Entidades
                     Error.Visible = true;
                 }
                 Persona p = new Persona();
-                
-                string tipopersona = cargartipo()[ddltipo.SelectedValue].ToString();
+
+                string tipopersona = ddltipo.SelectedValue;
                var Plan= p.cargar()[Ddlplan.SelectedValue];
-                p.addpersonas(Txtnombre.Text,Txtapellido.Text,Txtdireccion.Text,Txtemail.Text
-                    ,Txttelefono.Text,Txtnacimiento.Text,Txtlegajo.Text,tipopersona,Plan.ToString());
+
+                p.addpersonas(
+                    Txtnombre.Text,
+                    Txtapellido.Text,
+                    Txtdireccion.Text
+                    ,Txtemail.Text
+                    ,Txttelefono.Text,
+                    Txtnacimiento.Text,
+                    Txtlegajo.Text,
+                    tipopersona,
+                    Plan.ToString()
+                    );
                 cargargv();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Persona p = new Persona();
+                Error.Text = ex.ToString();
+                
+
                 Error.Visible = true;
                 
             }
@@ -79,15 +93,17 @@ namespace UI.web_.Entidades
                 }
 
                 Persona p = new Persona();
-                string tipopersona = cargartipo()[ddltipo.SelectedValue].ToString();
+                string tipopersona = ddltipo.SelectedValue;
                 var Plan = p.cargar()[Ddlplan.SelectedValue];
                 var id= GridView1.SelectedRow.Cells[1].Text;
                 p.modifypersonas(id,Txtnombre.Text, Txtapellido.Text, Txtdireccion.Text, Txtemail.Text
                     , Txttelefono.Text, Txtnacimiento.Text, Txtlegajo.Text, tipopersona, Plan.ToString());
+                cargargv();
             }
-            catch (Exception)
+            catch (Exception ex )
             {
-                Error.Text = "hay campos vacios";
+                Error.Text =  ex.ToString();
+
                 Error.Visible = true;
 
             }
@@ -108,12 +124,12 @@ namespace UI.web_.Entidades
                 Persona p = new Persona();
                 var id = GridView1.SelectedRow.Cells[1].Text;
                 p.deletepersonas(id);
-
+                cargargv();
             }
             catch (Exception)
             {
 
-                Error.Text = "hay campos vacios";
+                Error.Text = "ah ocurrido un error";
                 Error.Visible = true;
             }
         }

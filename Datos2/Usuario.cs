@@ -54,10 +54,10 @@ namespace Datos2
             en.usuarios.Remove(usu);
             en.SaveChanges();
         }
-        public List<personas> cargargv() 
+        public List<usuarios> cargargv() 
         { Entidades en = new Entidades();
 
-          var persoas= en.personas.SqlQuery("Select * from personas")
+          var persoas= en.usuarios.SqlQuery("Select * from usuarios")
                       .ToList();
             return persoas;
         }

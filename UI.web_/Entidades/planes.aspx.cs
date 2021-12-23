@@ -28,7 +28,8 @@ namespace UI.web_.Entidades
                 }
                 Plan_ pla = new Plan_();
 
-                pla.agregarplan(Txtplan.Text, pla.cargargarcombos()[Ddlespecialidad.SelectedValue].ToString());
+                string especialidad = pla.cargargarcombos()[Ddlespecialidad.SelectedValue].ToString();
+                pla.agregarplan(Txtplan.Text,especialidad);
                 cargarGv();
 
             }

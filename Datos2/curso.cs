@@ -94,6 +94,7 @@ namespace Datos2
         public (Dictionary<string, int>, Dictionary<string, int>) devuelve_datos_de_combo()
         {
             Dictionary<string, int> mate = new Dictionary<string, int>();
+             
             Dictionary<string, int> c = new Dictionary<string, int>();
             try
             {
@@ -120,7 +121,7 @@ namespace Datos2
                     string descripcion = m.desc_materia;
                     int key2 = m.id_materia;
                     mate.Add(descripcion, key2);
-
+                  
                 }
 
             }

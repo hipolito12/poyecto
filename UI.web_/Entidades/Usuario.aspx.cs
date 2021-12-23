@@ -48,10 +48,11 @@ namespace UI.web_.Entidades
                 
                 cargargv();
             }
-            catch (Exception)
+            catch (Exception ex )
             {
+                Error.Text = ex.ToString();
                 Error.Visible = true;
-               
+
             }
         }
 
@@ -79,9 +80,9 @@ namespace UI.web_.Entidades
                 
                 cargargv();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                Error.Text = ex.ToString();
                 Error.Visible = true;
             }
         }

@@ -77,6 +77,7 @@ namespace UI.web_.Entidades.Estilos
             var id = GridView1.SelectedRow.Cells[1].Text;
             Materia_n mat = new Materia_n();
             mat.eliminarMateria(id);
+            cargagv();
         }
     }
 }

@@ -24,7 +24,7 @@ namespace UI.web_.Entidades
 
         protected void btncarga_Click(object sender, EventArgs e)
         {
-            if (Txtcargo.Text == null || Txtcargo.Text == "") 
+            if (Txtcargo.Text == null || Txtcargo.Text == "")
             {
                 error.Text = "Hay campos vacios!";
                 error.Visible = true;
@@ -33,6 +33,7 @@ namespace UI.web_.Entidades
             docentes_cursos_CRUD dc = new docentes_cursos_CRUD();
             var curso = dc.cargaDeCombos().Item2[ddlcurso.SelectedValue];
             var docente = dc.cargaDeCombos().Item1[ddldocente.SelectedValue];
+          
             dc.ADDdocenteCURSO(Txtcargo.Text,curso.ToString(), docente.ToString());
             cargagv();
         }

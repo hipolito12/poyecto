@@ -1,8 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pagina_Maestra.Master" AutoEventWireup="true" CodeBehind="alumnos_inscripcion.aspx.cs" Inherits="UI.web_.Entidades.alumnos_inscripcion" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pagina_Maestra.Master" AutoEventWireup="true" CodeBehind="alumnos_inscripcioness.aspx.cs" Inherits="UI.web_.Entidades.WebForm3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="aa" runat="server">
-    <link href="Estilos/alumnos_inscripciones.css" rel="stylesheet" />
+
+     <link href="Estilos/alumnos_inscripciones.css" rel="stylesheet" />
+    
+    <form  method="post" runat="server" >
     <div class="acomodar">
     <asp:Label ID="Label2" runat="server" Text="Ingrese Estado del alumno : "></asp:Label><asp:TextBox ID="Txtalumno" runat="server"></asp:TextBox>
     <br />
@@ -25,10 +28,11 @@
     <br />
 
     <div class="botones">
-        <asp:Button ID="btnagregar" runat="server" Text="Agregar"  CssClass="boton" OnClick="btnagregar_Click" />
+        <asp:Button ID="btnagregar" runat="server" Text="agregar" OnClick="btnagregar_Click1" />
         <asp:Button ID="Btneditar" runat="server" Text="Modificar"  CssClass="boton" OnClick="Btneditar_Click" />
         <asp:Button ID="Btneliminar" runat="server" Text="Eliminar" OnClick="Btneliminar_Click" />
     </div>
      <asp:Label ID="error" runat="server" Text="AH ocurrido  un error! " CssClass="error"></asp:Label>
         <br />
+        </form>
 </asp:Content>

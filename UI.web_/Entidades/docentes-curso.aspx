@@ -13,7 +13,7 @@
 <body>
     <div class="posicionar">
     <asp:Label ID="Label1" runat="server" Text="Seleccione curso: "></asp:Label>   
-    <asp:DropDownList ID="ddlcurso" runat="server" Width="168px"> </asp:DropDownList>
+    <asp:DropDownList ID="ddlcurso" runat="server" Width="250px" style="margin-right: 60px"> </asp:DropDownList>
     <br />
     <br />
     <asp:Label ID="Label2" runat="server" Text="Seleccione un docente"></asp:Label>   :

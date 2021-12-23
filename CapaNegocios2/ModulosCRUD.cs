@@ -24,11 +24,11 @@ namespace CapaNegocios
             mo.EditarModulo(desc, Convert.ToInt32(id), ejec);
         }
 
-        public DataTable Listmodulo()
+        public List<modulos>  Listmodulo()
         {
-            DataTable tabla = new DataTable();
-            mo.listarmodulos();
-            return tabla;
+
+
+            return mo.listarmodulos(); 
         }
 
         public Dictionary<string, int> cargador()

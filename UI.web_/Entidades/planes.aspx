@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="aa" runat="server">
-  <!DOCTYPE html>
+    <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -10,6 +10,8 @@
     <title></title>
 </head>
 <body>
+    <form action="/" method="post" runat="server">
+
     <div class="posicion">
     <asp:Label ID="Label1" runat="server" Text="Ingrese descripcion del plan  :  "    CssClass="descripcion_titulo"></asp:Label>
     <br />
@@ -23,10 +25,12 @@
 
 
 
+
     <asp:GridView ID="gv"  CssClass="gv"   runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="gv_SelectedIndexChanged">
         <SelectedRowStyle BorderColor="#CC0000" BorderStyle="Solid" BorderWidth="3px" />
     </asp:GridView>
     <br />
+        
     <br />
     <div class="botones">
         <asp:Button ID="btnagregar" runat="server" Text="Agregar "  CssClass="boton"  OnClick="btnagregar_Click"  />              
@@ -35,6 +39,7 @@
           
     </div>
      <asp:Label ID="error" runat="server" Text="ah ocurrido un error" CssClass="error"></asp:Label>
+        </form>
 </body>
 </html>
 </asp:Content>

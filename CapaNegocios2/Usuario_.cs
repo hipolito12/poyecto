@@ -32,7 +32,7 @@ namespace CapaNegocios
         {
             us.deleteUsuarios(Convert.ToInt32(idusuarios));
         }
-        public List<personas> cargargv() 
+        public List<usuarios> cargargv() 
         {
             return us.cargargv();
         }

@@ -5,7 +5,7 @@ namespace Datos2
 {
     public class conexioncs
     {
-        private SqlConnection Conexion = new SqlConnection("Data Source=localhost;Initial Catalog=tp2;Integrated Security=true");
+        private SqlConnection Conexion = new SqlConnection("Data Source=localhost;Initial Catalog=tp2;Integrated Security=false");
 
         public SqlConnection AbrirConexion()
         {

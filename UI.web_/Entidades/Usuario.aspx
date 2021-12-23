@@ -5,6 +5,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="aa" runat="server">
     <link href="Estilos/Usuario.css" rel="stylesheet" />
     <div class=" acomodar">
+        <form  runat ="server" method="post" >
+
         <asp:Label ID="Label1" runat="server" Text="Ingrese nombre  : " CssClass="separar"></asp:Label>
         <asp:TextBox ID="Txtnombre" runat="server"></asp:TextBox>
 

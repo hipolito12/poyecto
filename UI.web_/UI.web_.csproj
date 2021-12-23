@@ -75,7 +75,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Entidades\alumnos_inscripcion.aspx" />
     <Content Include="Entidades\Comisiones.aspx" />
     <Content Include="Entidades\Cursos.aspx" />
     <Content Include="Entidades\docentes-curso.aspx" />
@@ -84,6 +83,7 @@
     <Content Include="Entidades\Estilos\Cursos.css" />
     <Content Include="Entidades\Estilos\docentes-curso.css" />
     <Content Include="Entidades\Estilos\especialidades.css" />
+    <Content Include="Entidades\Estilos\Estilos_pagina_Maestra.css" />
     <Content Include="Entidades\Estilos\HtmlPage1.html" />
     <Content Include="Entidades\Estilos\alumnos_inscripciones.css" />
     <Content Include="Entidades\Estilos\Usuario.css" />
@@ -96,19 +96,13 @@
     <Content Include="Entidades\Personas.aspx" />
     <Content Include="Entidades\planes.aspx" />
     <Content Include="Entidades\Usuario.aspx" />
+    <Content Include="Entidades\alumnos_inscripcioness.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Logins\Login.aspx" />
     <Content Include="Logins\Pagina_Alumnos.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entidades\alumnos_inscripcion.aspx.cs">
-      <DependentUpon>alumnos_inscripcion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Entidades\alumnos_inscripcion.aspx.designer.cs">
-      <DependentUpon>alumnos_inscripcion.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Entidades\Comisiones.aspx.cs">
       <DependentUpon>Comisiones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -171,6 +165,13 @@
     </Compile>
     <Compile Include="Entidades\planes.aspx.designer.cs">
       <DependentUpon>planes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\alumnos_inscripcioness.aspx.cs">
+      <DependentUpon>alumnos_inscripcioness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Entidades\alumnos_inscripcioness.aspx.designer.cs">
+      <DependentUpon>alumnos_inscripcioness.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -19,16 +19,16 @@ namespace Datos2
 
 
 
-            /* Entidades enti = new Entidades();
+             Entidades enti = new Entidades();
              materias mate = new materias();
                  mate.desc_materia = descmat;
                  mate.hs_semanales = hssemanales;
                  mate.hs_totales = hstotales;
                  mate.id_plan = idplan;
                  enti.materias.Add(mate);
-                 enti.SaveChanges();*/
+                  enti.SaveChanges();
 
-            comando.Connection = conexion.AbrirConexion();
+            /*comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "insertar";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@descrip", descmat);
@@ -37,7 +37,7 @@ namespace Datos2
             comando.Parameters.AddWithValue("@idplan", idplan);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
-            conexion.CerrarConexion();
+            conexion.CerrarConexion();*/
 
 
 
@@ -46,7 +46,21 @@ namespace Datos2
 
         public void Editmaterias(string descmat, int hssemanales, int hstotales, int idplan, int idmateria)
         {
-            comando.Connection = conexion.AbrirConexion();
+
+
+
+            Entidades enti = new Entidades();
+            materias mate = new materias();
+            materias m = enti.materias.Find(idmateria);
+            m.desc_materia = descmat;
+            m.hs_semanales = hssemanales;
+            m.hs_totales = hstotales;
+            m.id_plan = idplan;
+            enti.Entry(m).State = System.Data.Entity.EntityState.Modified;
+            
+            enti.SaveChanges();
+
+            /*comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "update";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@descrip", descmat);
@@ -57,19 +71,27 @@ namespace Datos2
 
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
-            conexion.CerrarConexion();
+            conexion.CerrarConexion();*/
         }
 
 
         public void Delete(int idmateria)
         {
 
+            try
+            {
 
-            Entidades en = new Entidades();
-            materias mates = new materias();
-            mates = en.materias.Where(ma => ma.id_materia == idmateria).First();
-            en.materias.Remove(mates);
-            en.SaveChanges();
+                Entidades en = new Entidades();
+                materias mates = new materias();
+                mates = en.materias.Find(idmateria);
+                        en.materias.Remove(mates);
+                en.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex);
+            }
 
         }
         public List<string> Cargar_combos()

@@ -11,7 +11,7 @@ namespace UI.web_.Entidades
 {
 
 
-    public partial class alumnos_inscripcion
+    public partial class WebForm3
     {
 
         /// <summary>

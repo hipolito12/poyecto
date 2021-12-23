@@ -10,6 +10,7 @@
     <title></title>
 </head>
 <body>
+    <form runat="server" method="post" > 
     <div class="inputs">
     <asp:Label ID="Label1" runat="server" Text="Ingrese descripcion del modulo:  "></asp:Label><asp:TextBox ID="txtdescripcion" runat="server" Height="48px" Width="213px"></asp:TextBox>
     <br />
@@ -31,7 +32,7 @@
         <br />
         <asp:Label ID="error"  CssClass="error"  runat="server" Text="Ha ocurrido un error   "/>
     </div>
-    
+    </form>
 </body>
 </html>
 </asp:Content>

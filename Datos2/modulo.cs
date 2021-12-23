@@ -47,17 +47,12 @@ namespace Datos2
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
 
-        public DataTable listarmodulos()
+        public List<modulos> listarmodulos()
         {
 
-
-            comando.Connection = cone.AbrirConexion();
-            comando.CommandText = "ListarModulos";
-            comando.CommandType = CommandType.StoredProcedure;
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            cone.CerrarConexion();
-            return tabla;
+            Entidades en = new Entidades();
+            var modulos = en.modulos.SqlQuery("Select * from modulos").ToList();
+            return modulos;
         }
 
         public Dictionary<string, int> para_cargar_combos()
