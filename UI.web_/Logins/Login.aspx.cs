@@ -50,7 +50,7 @@ namespace UI.web_
                 {
                     case 1: Response.Redirect(" "); break;
                     case 2: Response.Redirect(" "); break;
-                    case 3: Response.Redirect(" "); break;
+                    case 3: Response.Redirect("Pagina_Alumnos.aspx "); break;
                 }
 
             }

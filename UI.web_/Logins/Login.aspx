@@ -13,7 +13,7 @@
        
 <head >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link href="../Estilos/Login_styles.css" rel="stylesheet" />
+    <link href="../Entidades/Estilos/Login_styles.css" rel="stylesheet" />
      
 </head>
 <body>
