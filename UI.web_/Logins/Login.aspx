@@ -14,7 +14,7 @@
 <head >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link href="../Entidades/Estilos/Login_styles.css" rel="stylesheet" />
-     
+    <link href="../Entidades/Estilos/personas.css" rel="stylesheet" />
 </head>
 <body>
     <div id="Login">
@@ -25,7 +25,7 @@
         <br />
       <div id="botones">
         <asp:LinkButton   ID="boton_ingreso" CssClass="boton" runat="server" OnClick="boton_ingreso_Click" >Ingresar</asp:LinkButton>
-          <asp:LinkButton ID="boton_registrarme" CssClass="boton" runat="server">Registrarme</asp:LinkButton>
+          <asp:LinkButton ID="boton_registrarme" CssClass="boton" runat="server" OnClick="boton_registrarme_Click1">Registrarme</asp:LinkButton>
 
           
 
