@@ -11,7 +11,7 @@ namespace UI.web_.Logins
 {
 
 
-    public partial class Pagina_Alumnos
+    public partial class Menu_Alumno
     {
     }
 }

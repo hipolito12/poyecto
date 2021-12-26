@@ -7,9 +7,11 @@
   
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>hola</title>
-    <link href="Entidades/Estilos/Estilos_pagina_Maestra.css" rel="stylesheet" />
+  
     
-   
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link href="Entidades/Estilos/Estilos_pagina_Maestra.css" rel="stylesheet" />
    
        
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -17,9 +19,32 @@
 </head>
 <body>
     
-    <h1>aca va una nav bar</h1>
+    <form runat="server"   method="post" >
     
+    
+   
+    <div id="nav">
+   <nav 
+                    class="navbar navbar-dark bg-dark">
+              
+                   
+                     <asp:Button CssClass="botonmenu" ID="btnmenu"  runat="server" Text="Menu" OnClick="btnmenu_Click" />
+                        
+                      <span id="pading" style="margin-right:4em; padding : 0 3em 0 3em;"> <a href="#">Tramites</a></span>
+
+                      <span style="margin-left:-6em; padding : 0 9em 0 1em; " > <a  href="#">Contacto</a><asp:Button ID="Button1" runat="server" CssClass="salir" Text="Salir" OnClick="Button1_Click" />
+                     
+                     
+                  
+                &nbsp;</span>
+                     
+                          
+                  
+                </nav>  
+    </div>
     <asp:ContentPlaceHolder ID="aa" runat="server"></asp:ContentPlaceHolder>
+    
+   </form>
     
 </body>
 </html>

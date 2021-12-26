@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaNegocios;
+using System.Web.SessionState;
 
 namespace UI.web_
 {
@@ -15,6 +16,7 @@ namespace UI.web_
             Mensaje_error.Visible = false;
             Mensaje_campo_vacio.Visible = false;   
             error.Visible = false;
+            Session["acceso"] = null;
         }
 
         protected void boton_registrarme_Click(object sender, EventArgs e)
@@ -51,9 +53,9 @@ namespace UI.web_
                     tup = lo.FindRoles(l.Text, contrasena.Text);
                     switch (tup.Item2)
                     {
-                        case 1: Response.Redirect(" "); break;
-                        case 2: Response.Redirect(" "); break;
-                        case 3: Response.Redirect("../Logins/Pagina_Alumnos.aspx"); break;
+                        case 1: Session["acceso"] = tup.Item2.ToString(); Response.Redirect("../Logins/Menu-admins.aspx "); break;
+                        case 2: Session["acceso"] = tup.Item2.ToString(); Response.Redirect("../Logins/Menu_Profesores.aspx"); break;
+                        case 3: Session["acceso"] = tup.Item2.ToString() ;   Response.Redirect("../Logins/Menu_Alumno.aspx"); break;
                     }
                 }
                 else

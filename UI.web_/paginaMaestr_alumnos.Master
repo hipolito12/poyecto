@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="paginaMaestr_alumnos.Master.cs" Inherits="UI.web_.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Alumnos</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>hola</title>
+    <link href="Entidades/Estilos/Estilos_pagina_Maestra.css" rel="stylesheet" />
+    
+   
+   
+       
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+      <div id="nav">
+   <nav 
+                    class="navbar navbar-dark bg-dark">
+                    <span id="pading"><a href="../Entidades/alumnos_inscripcioness.aspx">Alumnos Inscripciones</a></span>
+                      <span id="comision" > <a href="#">Comisiones </a></span>
+                      <span id="cursos"> <a href="#">Cursos</a></span>
+                      <span id="materias"> <a href="#">Materias</a></span>
+                       <span id="modulos"> <a href="#">Modulos</a></span>
+                       <span id="docente-curso"> <a href="#">Docente y cursos</a></span>
+                        <span id="especialidades"> <a href="#">Especialdiades</a></span>
+                        <span id="personas"> <a href="#">Personas</a></span>
+                       <span id="Usuarios"> <a href="#">Usuarios</a></span>
+                        <span id="Plan"> <a href="#">Plan</a></span>
+                       
+                     
+                  
+                </nav>  
+
+    </div>
+                    
+
+    
+    <asp:ContentPlaceHolder ID="aa" runat="server"></asp:ContentPlaceHolder>
+    
+</body></form>
+</body>
+</html>

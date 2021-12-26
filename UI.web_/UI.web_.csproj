@@ -87,6 +87,10 @@
     <Content Include="Entidades\Estilos\HtmlPage1.html" />
     <Content Include="Entidades\Estilos\alumnos_inscripciones.css" />
     <Content Include="Entidades\Estilos\Login_styles.css" />
+    <Content Include="Entidades\Estilos\menuusuario.css" />
+    <Content Include="Entidades\Estilos\Menu-profesores.css" />
+    <Content Include="Entidades\Estilos\Menu_Admins - Copia.css" />
+    <Content Include="Entidades\Estilos\Menu_Alumnos.css" />
     <Content Include="Entidades\Estilos\Usuario.css" />
     <Content Include="Entidades\Estilos\personas.css" />
     <Content Include="Entidades\Estilos\Planes.css" />
@@ -98,9 +102,12 @@
     <Content Include="Entidades\planes.aspx" />
     <Content Include="Entidades\Usuario.aspx" />
     <Content Include="Entidades\alumnos_inscripcioness.aspx" />
+    <Content Include="Formulario web1.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Logins\Login.aspx" />
-    <Content Include="Logins\Pagina_Alumnos.aspx" />
+    <Content Include="Logins\Menu-admins.aspx" />
+    <Content Include="Logins\Menu_Alumno.aspx" />
+    <Content Include="Logins\Menu_Profesores.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -174,6 +181,13 @@
     <Compile Include="Entidades\alumnos_inscripcioness.aspx.designer.cs">
       <DependentUpon>alumnos_inscripcioness.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formulario web1.aspx.cs">
+      <DependentUpon>Formulario web1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formulario web1.aspx.designer.cs">
+      <DependentUpon>Formulario web1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -184,12 +198,26 @@
     <Compile Include="Logins\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Logins\Pagina_Alumnos.aspx.cs">
-      <DependentUpon>Pagina_Alumnos.aspx</DependentUpon>
+    <Compile Include="Logins\Menu-admins.aspx.cs">
+      <DependentUpon>Menu-admins.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Logins\Pagina_Alumnos.aspx.designer.cs">
-      <DependentUpon>Pagina_Alumnos.aspx</DependentUpon>
+    <Compile Include="Logins\Menu-admins.aspx.designer.cs">
+      <DependentUpon>Menu-admins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logins\Menu_Alumno.aspx.cs">
+      <DependentUpon>Menu_Alumno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logins\Menu_Alumno.aspx.designer.cs">
+      <DependentUpon>Menu_Alumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logins\Menu_Profesores.aspx.cs">
+      <DependentUpon>Menu_Profesores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logins\Menu_Profesores.aspx.designer.cs">
+      <DependentUpon>Menu_Profesores.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pagina_Maestra.Master.cs">
       <DependentUpon>Pagina_Maestra.Master</DependentUpon>
@@ -199,10 +227,18 @@
       <DependentUpon>Pagina_Maestra.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="paginaMaestr_alumnos.Master.cs">
+      <DependentUpon>paginaMaestr_alumnos.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="paginaMaestr_alumnos.Master.designer.cs">
+      <DependentUpon>paginaMaestr_alumnos.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Pagina_Maestra.Master" />
+    <Content Include="paginaMaestr_alumnos.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

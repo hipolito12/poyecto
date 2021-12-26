@@ -1,3 +1,41 @@
 ﻿body {
     background-color: #EFD0EE;
 }
+
+#pading 
+{
+    padding-left: 4em;
+}
+
+
+#nav 
+{
+    height:11.2em;
+}
+
+#nav a 
+{
+    margin-right: 1em;
+    font-size:1.3em;
+}
+
+
+
+.botonmenu {
+    margin-left: 7em;
+    font-size: 1.3em;
+    height: 1.3em;
+    background-color: transparent !important;
+    border: none;
+    color: #264b91;
+}
+
+
+.salir {
+    margin-right:2em;
+    font-size: 1.3em;
+    height: 1.3em;
+    background-color: transparent !important;
+    border: none;
+    color: #264b91;
+}
