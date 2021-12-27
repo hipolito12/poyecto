@@ -9,12 +9,15 @@ namespace UI.Desktop2.Login
     {
         public Alumnos()
         {
+            
             InitializeComponent();
+            Login l = new Login();
+            l.Close();
         }
 
         private void contextMenuStrip2_Opening(object sender, CancelEventArgs e)
         {
-
+           
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -26,7 +29,8 @@ namespace UI.Desktop2.Login
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //TO DO
+            Inscripciones_alumno ins = new Inscripciones_alumno();
+            ins.Show();
         }
 
         private void btnmaterias_Click(object sender, EventArgs e)
@@ -55,6 +59,49 @@ namespace UI.Desktop2.Login
         }
 
         private void btnCursos_Click(object sender, EventArgs e)
+        {
+            cursos cur = new cursos();
+            cur.ShowDialog();
+        }
+
+        private void Alumnos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+       
+
+        private void inscripcionDeAlumnosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Inscripciones_alumno ins = new Inscripciones_alumno();
+            ins.Show();
+        }
+
+        private void materiasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Materia mat = new Materia();
+            mat.ShowDialog();
+        }
+
+        private void modulosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            modulos mod = new modulos();
+            mod.ShowDialog();
+        }
+
+        private void planesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            _Plan_ pla = new _Plan_();
+            pla.Show();
+        }
+
+        private void especialidadesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Especialidades ESP = new Especialidades();
+            ESP.ShowDialog();
+        }
+
+        private void cursosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             cursos cur = new cursos();
             cur.ShowDialog();

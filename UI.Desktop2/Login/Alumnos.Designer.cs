@@ -29,10 +29,7 @@ namespace UI.Desktop2.Login
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.texto = new System.Windows.Forms.RichTextBox();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnCursos = new System.Windows.Forms.Button();
             this.btnmodulos = new System.Windows.Forms.Button();
@@ -41,7 +38,15 @@ namespace UI.Desktop2.Login
             this.btnespecialidades = new System.Windows.Forms.Button();
             this.btnPlanes = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.contextMenuStrip2.SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.asasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inscripcionDeAlumnosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.materiasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.modulosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.planesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.especialidadesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cursosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // texto
@@ -50,42 +55,30 @@ namespace UI.Desktop2.Login
             this.texto.BackColor = System.Drawing.SystemColors.Control;
             this.texto.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.texto.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.texto.Location = new System.Drawing.Point(58, 37);
+            this.texto.Location = new System.Drawing.Point(87, 57);
+            this.texto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.texto.Name = "texto";
-            this.texto.Size = new System.Drawing.Size(453, 77);
+            this.texto.Size = new System.Drawing.Size(678, 116);
             this.texto.TabIndex = 0;
             this.texto.Text = "";
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
-            // contextMenuStrip2
-            // 
-            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.salirToolStripMenuItem});
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(97, 26);
-            this.contextMenuStrip2.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip2_Opening);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.SystemColors.Highlight;
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 11);
+            this.dateTimePicker1.Location = new System.Drawing.Point(564, 0);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(207, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(308, 26);
             this.dateTimePicker1.TabIndex = 2;
             // 
             // btnCursos
             // 
             this.btnCursos.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnCursos.Location = new System.Drawing.Point(328, 386);
+            this.btnCursos.Location = new System.Drawing.Point(492, 594);
+            this.btnCursos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCursos.Name = "btnCursos";
-            this.btnCursos.Size = new System.Drawing.Size(207, 23);
+            this.btnCursos.Size = new System.Drawing.Size(310, 35);
             this.btnCursos.TabIndex = 3;
             this.btnCursos.Text = "Cursos";
             this.btnCursos.UseVisualStyleBackColor = false;
@@ -94,9 +87,10 @@ namespace UI.Desktop2.Login
             // btnmodulos
             // 
             this.btnmodulos.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnmodulos.Location = new System.Drawing.Point(26, 386);
+            this.btnmodulos.Location = new System.Drawing.Point(39, 594);
+            this.btnmodulos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnmodulos.Name = "btnmodulos";
-            this.btnmodulos.Size = new System.Drawing.Size(207, 23);
+            this.btnmodulos.Size = new System.Drawing.Size(310, 35);
             this.btnmodulos.TabIndex = 4;
             this.btnmodulos.Text = "Modulos";
             this.btnmodulos.UseVisualStyleBackColor = false;
@@ -105,9 +99,10 @@ namespace UI.Desktop2.Login
             // btnmaterias
             // 
             this.btnmaterias.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnmaterias.Location = new System.Drawing.Point(26, 333);
+            this.btnmaterias.Location = new System.Drawing.Point(39, 512);
+            this.btnmaterias.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnmaterias.Name = "btnmaterias";
-            this.btnmaterias.Size = new System.Drawing.Size(207, 23);
+            this.btnmaterias.Size = new System.Drawing.Size(310, 35);
             this.btnmaterias.TabIndex = 5;
             this.btnmaterias.Text = "Materias";
             this.btnmaterias.UseVisualStyleBackColor = false;
@@ -116,9 +111,10 @@ namespace UI.Desktop2.Login
             // btninscalummnos
             // 
             this.btninscalummnos.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btninscalummnos.Location = new System.Drawing.Point(26, 272);
+            this.btninscalummnos.Location = new System.Drawing.Point(39, 418);
+            this.btninscalummnos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btninscalummnos.Name = "btninscalummnos";
-            this.btninscalummnos.Size = new System.Drawing.Size(207, 23);
+            this.btninscalummnos.Size = new System.Drawing.Size(310, 35);
             this.btninscalummnos.TabIndex = 6;
             this.btninscalummnos.Text = "Inscripciones Alumnos";
             this.btninscalummnos.UseVisualStyleBackColor = false;
@@ -127,9 +123,10 @@ namespace UI.Desktop2.Login
             // btnespecialidades
             // 
             this.btnespecialidades.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnespecialidades.Location = new System.Drawing.Point(328, 333);
+            this.btnespecialidades.Location = new System.Drawing.Point(492, 512);
+            this.btnespecialidades.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnespecialidades.Name = "btnespecialidades";
-            this.btnespecialidades.Size = new System.Drawing.Size(214, 23);
+            this.btnespecialidades.Size = new System.Drawing.Size(321, 35);
             this.btnespecialidades.TabIndex = 7;
             this.btnespecialidades.Text = "Especialidades";
             this.btnespecialidades.UseVisualStyleBackColor = false;
@@ -138,9 +135,10 @@ namespace UI.Desktop2.Login
             // btnPlanes
             // 
             this.btnPlanes.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnPlanes.Location = new System.Drawing.Point(328, 272);
+            this.btnPlanes.Location = new System.Drawing.Point(492, 418);
+            this.btnPlanes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPlanes.Name = "btnPlanes";
-            this.btnPlanes.Size = new System.Drawing.Size(214, 23);
+            this.btnPlanes.Size = new System.Drawing.Size(321, 35);
             this.btnPlanes.TabIndex = 8;
             this.btnPlanes.Text = "Planes";
             this.btnPlanes.UseVisualStyleBackColor = false;
@@ -151,17 +149,87 @@ namespace UI.Desktop2.Login
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(163, 157);
+            this.label1.Location = new System.Drawing.Point(244, 242);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 26);
+            this.label1.Size = new System.Drawing.Size(396, 39);
             this.label1.TabIndex = 9;
             this.label1.Text = "Navegue por las opciones";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.asasToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(872, 33);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // asasToolStripMenuItem
+            // 
+            this.asasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inscripcionDeAlumnosToolStripMenuItem1,
+            this.materiasToolStripMenuItem1,
+            this.modulosToolStripMenuItem1,
+            this.planesToolStripMenuItem1,
+            this.especialidadesToolStripMenuItem1,
+            this.cursosToolStripMenuItem1});
+            this.asasToolStripMenuItem.Name = "asasToolStripMenuItem";
+            this.asasToolStripMenuItem.Size = new System.Drawing.Size(121, 29);
+            this.asasToolStripMenuItem.Text = "Navegacion";
+            // 
+            // inscripcionDeAlumnosToolStripMenuItem1
+            // 
+            this.inscripcionDeAlumnosToolStripMenuItem1.Name = "inscripcionDeAlumnosToolStripMenuItem1";
+            this.inscripcionDeAlumnosToolStripMenuItem1.Size = new System.Drawing.Size(305, 34);
+            this.inscripcionDeAlumnosToolStripMenuItem1.Text = "Inscripcion de Alumnos ";
+            this.inscripcionDeAlumnosToolStripMenuItem1.Click += new System.EventHandler(this.inscripcionDeAlumnosToolStripMenuItem1_Click);
+            // 
+            // materiasToolStripMenuItem1
+            // 
+            this.materiasToolStripMenuItem1.Name = "materiasToolStripMenuItem1";
+            this.materiasToolStripMenuItem1.Size = new System.Drawing.Size(305, 34);
+            this.materiasToolStripMenuItem1.Text = "Materias";
+            this.materiasToolStripMenuItem1.Click += new System.EventHandler(this.materiasToolStripMenuItem1_Click);
+            // 
+            // modulosToolStripMenuItem1
+            // 
+            this.modulosToolStripMenuItem1.Name = "modulosToolStripMenuItem1";
+            this.modulosToolStripMenuItem1.Size = new System.Drawing.Size(305, 34);
+            this.modulosToolStripMenuItem1.Text = "Modulos";
+            this.modulosToolStripMenuItem1.Click += new System.EventHandler(this.modulosToolStripMenuItem1_Click);
+            // 
+            // planesToolStripMenuItem1
+            // 
+            this.planesToolStripMenuItem1.Name = "planesToolStripMenuItem1";
+            this.planesToolStripMenuItem1.Size = new System.Drawing.Size(305, 34);
+            this.planesToolStripMenuItem1.Text = "Planes";
+            this.planesToolStripMenuItem1.Click += new System.EventHandler(this.planesToolStripMenuItem1_Click);
+            // 
+            // especialidadesToolStripMenuItem1
+            // 
+            this.especialidadesToolStripMenuItem1.Name = "especialidadesToolStripMenuItem1";
+            this.especialidadesToolStripMenuItem1.Size = new System.Drawing.Size(305, 34);
+            this.especialidadesToolStripMenuItem1.Text = "Especialidades";
+            this.especialidadesToolStripMenuItem1.Click += new System.EventHandler(this.especialidadesToolStripMenuItem1_Click);
+            // 
+            // cursosToolStripMenuItem1
+            // 
+            this.cursosToolStripMenuItem1.Name = "cursosToolStripMenuItem1";
+            this.cursosToolStripMenuItem1.Size = new System.Drawing.Size(305, 34);
+            this.cursosToolStripMenuItem1.Text = "Cursos";
+            this.cursosToolStripMenuItem1.Click += new System.EventHandler(this.cursosToolStripMenuItem1_Click);
+            // 
             // Alumnos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AccessibleDescription = "navegacion";
+            this.AccessibleName = "navegacion";
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 439);
+            this.ClientSize = new System.Drawing.Size(872, 675);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPlanes);
             this.Controls.Add(this.btnespecialidades);
@@ -171,9 +239,14 @@ namespace UI.Desktop2.Login
             this.Controls.Add(this.btnCursos);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.texto);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Alumnos";
             this.Text = "Alumnos";
-            this.contextMenuStrip2.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.Alumnos_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,8 +255,6 @@ namespace UI.Desktop2.Login
         #endregion
 
         public System.Windows.Forms.RichTextBox texto;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button btnCursos;
         private System.Windows.Forms.Button btnmodulos;
@@ -192,5 +263,13 @@ namespace UI.Desktop2.Login
         private System.Windows.Forms.Button btnespecialidades;
         private System.Windows.Forms.Button btnPlanes;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem asasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inscripcionDeAlumnosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem materiasToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem modulosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem planesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem especialidadesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem1;
     }
 }
