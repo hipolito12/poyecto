@@ -5,7 +5,7 @@ namespace Datos2
 {
     public class _Login
     {
-        public (string, int) busca_rol(string usuario, string contra)
+        public (string, int ,int) busca_rol(string usuario, string contra)
         {
             Entidades enti = new Entidades();
             personas person = new personas();
@@ -26,9 +26,10 @@ namespace Datos2
                 person = enti.personas.Find(usuario_persona);
                 int k = person.tipo_persona;
                 string nom = person.nombre;
-                return (nom, k);
+                int idper = person.id_persona;
+                return (nom, k,idper);
             }
-            else { return ("-1", -1); }
+            else { return ("-1", -1,-1); }
 
 
         }

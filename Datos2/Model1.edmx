@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="tp2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="tp2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="alumnos_inscripciones">
           <Key>
             <PropertyRef Name="id_inscripcion" />
@@ -357,6 +357,10 @@
         </Function>
         <Function Name="ListarModulos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="ListarUsuarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="mostrar_notas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idpersonas" Type="int" Mode="In" />
+          <Parameter Name="idcurso" Type="int" Mode="In" />
+        </Function>
         <Function Name="MostrarMaterias" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="MostrarPlanes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -479,8 +483,7 @@
             <End Role="usuarios" EntitySet="usuarios" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="tp2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -877,13 +880,13 @@
             <Parameter Name="id_plan" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="baja">
-            <Parameter Name="idMat" Mode="In" Type="Int32" />
+          <Parameter Name="idMat" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="consultaplan" ReturnType="Collection(tp2Model.consultaplan_Result)">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="consultarUsuario" ReturnType="Collection(tp2Model.consultarUsuario_Result)">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="editar_curso">
             <Parameter Name="idcurso" Mode="In" Type="Int32" />
@@ -893,10 +896,10 @@
             <Parameter Name="cupo" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="eliminarplan">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="eliminaUsuarios">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Insertar">
             <Parameter Name="descrip" Mode="In" Type="String" />
@@ -982,6 +985,10 @@
             <Parameter Name="habilitado" Mode="In" Type="Boolean" />
             <Parameter Name="email" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="mostrar_notas" ReturnType="Collection(tp2Model.mostrar_notas_Result)">
+            <Parameter Name="idpersonas" Mode="In" Type="Int32" />
+            <Parameter Name="idcurso" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="consultaplan_Result">
           <Property Type="Int32" Name="id_plan" Nullable="false" />
@@ -1042,6 +1049,11 @@
           <Property Type="Int32" Name="id_modulo" Nullable="false" />
           <Property Type="String" Name="desc_modulo" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="ejecuta" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="mostrar_notas_Result">
+          <Property Type="String" Name="desc_materia" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="nota" Nullable="true" />
+          <Property Type="String" Name="condicion" Nullable="false" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1297,6 +1309,15 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="updateplan" FunctionName="tp2Model.Store.updateplan" />
           <FunctionImportMapping FunctionImportName="UpdateUsuario" FunctionName="tp2Model.Store.UpdateUsuario" />
+          <FunctionImportMapping FunctionImportName="mostrar_notas" FunctionName="tp2Model.Store.mostrar_notas">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tp2Model.mostrar_notas_Result">
+                <ScalarProperty Name="desc_materia" ColumnName="desc_materia" />
+                <ScalarProperty Name="nota" ColumnName="nota" />
+                <ScalarProperty Name="condicion" ColumnName="condicion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

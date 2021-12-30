@@ -43,32 +43,37 @@ namespace UI.Desktop2
             // Combocurso
             // 
             this.Combocurso.FormattingEnabled = true;
-            this.Combocurso.Location = new System.Drawing.Point(106, 152);
+            this.Combocurso.Location = new System.Drawing.Point(159, 234);
+            this.Combocurso.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Combocurso.Name = "Combocurso";
-            this.Combocurso.Size = new System.Drawing.Size(196, 21);
+            this.Combocurso.Size = new System.Drawing.Size(292, 28);
             this.Combocurso.TabIndex = 0;
+            this.Combocurso.SelectedIndexChanged += new System.EventHandler(this.Combocurso_SelectedIndexChanged);
             // 
             // combocondicionalu
             // 
-            this.combocondicionalu.Location = new System.Drawing.Point(106, 37);
+            this.combocondicionalu.Location = new System.Drawing.Point(159, 57);
+            this.combocondicionalu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.combocondicionalu.Name = "combocondicionalu";
-            this.combocondicionalu.Size = new System.Drawing.Size(196, 20);
+            this.combocondicionalu.Size = new System.Drawing.Size(292, 26);
             this.combocondicionalu.TabIndex = 1;
             // 
             // lblestado
             // 
             this.lblestado.AutoSize = true;
-            this.lblestado.Location = new System.Drawing.Point(9, 37);
+            this.lblestado.Location = new System.Drawing.Point(14, 57);
+            this.lblestado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblestado.Name = "lblestado";
-            this.lblestado.Size = new System.Drawing.Size(91, 13);
+            this.lblestado.Size = new System.Drawing.Size(135, 20);
             this.lblestado.TabIndex = 2;
             this.lblestado.Text = "Condicion alumno";
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(26, 201);
+            this.btnAceptar.Location = new System.Drawing.Point(87, 301);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(255, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(382, 35);
             this.btnAceptar.TabIndex = 3;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -77,18 +82,20 @@ namespace UI.Desktop2
             // lblCurso
             // 
             this.lblCurso.AutoSize = true;
-            this.lblCurso.Location = new System.Drawing.Point(49, 160);
+            this.lblCurso.Location = new System.Drawing.Point(74, 246);
+            this.lblCurso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurso.Name = "lblCurso";
-            this.lblCurso.Size = new System.Drawing.Size(48, 13);
+            this.lblCurso.Size = new System.Drawing.Size(72, 20);
             this.lblCurso.TabIndex = 4;
             this.lblCurso.Text = "ID Curso";
             // 
             // lblalumno
             // 
             this.lblalumno.AutoSize = true;
-            this.lblalumno.Location = new System.Drawing.Point(49, 122);
+            this.lblalumno.Location = new System.Drawing.Point(74, 188);
+            this.lblalumno.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblalumno.Name = "lblalumno";
-            this.lblalumno.Size = new System.Drawing.Size(52, 13);
+            this.lblalumno.Size = new System.Drawing.Size(78, 20);
             this.lblalumno.TabIndex = 5;
             this.lblalumno.Text = "IDalumno";
             this.lblalumno.Click += new System.EventHandler(this.label3_Click);
@@ -96,32 +103,35 @@ namespace UI.Desktop2
             // lblnota
             // 
             this.lblnota.AutoSize = true;
-            this.lblnota.Location = new System.Drawing.Point(49, 86);
+            this.lblnota.Location = new System.Drawing.Point(74, 132);
+            this.lblnota.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblnota.Name = "lblnota";
-            this.lblnota.Size = new System.Drawing.Size(30, 13);
+            this.lblnota.Size = new System.Drawing.Size(43, 20);
             this.lblnota.TabIndex = 6;
             this.lblnota.Text = "Nota";
             // 
             // txtnota
             // 
-            this.txtnota.Location = new System.Drawing.Point(106, 79);
+            this.txtnota.Location = new System.Drawing.Point(159, 122);
+            this.txtnota.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtnota.Name = "txtnota";
-            this.txtnota.Size = new System.Drawing.Size(196, 20);
+            this.txtnota.Size = new System.Drawing.Size(292, 26);
             this.txtnota.TabIndex = 7;
             // 
             // Comboalumno
             // 
             this.Comboalumno.FormattingEnabled = true;
-            this.Comboalumno.Location = new System.Drawing.Point(106, 122);
+            this.Comboalumno.Location = new System.Drawing.Point(159, 188);
+            this.Comboalumno.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Comboalumno.Name = "Comboalumno";
-            this.Comboalumno.Size = new System.Drawing.Size(196, 21);
+            this.Comboalumno.Size = new System.Drawing.Size(292, 28);
             this.Comboalumno.TabIndex = 8;
             // 
             // inscripciones_alumno1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(367, 291);
+            this.ClientSize = new System.Drawing.Size(550, 448);
             this.Controls.Add(this.Comboalumno);
             this.Controls.Add(this.txtnota);
             this.Controls.Add(this.lblnota);
@@ -131,6 +141,7 @@ namespace UI.Desktop2
             this.Controls.Add(this.lblestado);
             this.Controls.Add(this.combocondicionalu);
             this.Controls.Add(this.Combocurso);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "inscripciones_alumno1";
             this.Text = "inscripciones_alumno1";
             this.Load += new System.EventHandler(this.inscripciones_alumno1_Load);
@@ -140,14 +151,14 @@ namespace UI.Desktop2
         }
 
         #endregion
-        private System.Windows.Forms.Label lblestado;
-        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Label lblCurso;
         private System.Windows.Forms.Label lblalumno;
-        private System.Windows.Forms.Label lblnota;
         public System.Windows.Forms.ComboBox Combocurso;
         public System.Windows.Forms.TextBox combocondicionalu;
         public System.Windows.Forms.TextBox txtnota;
         public System.Windows.Forms.ComboBox Comboalumno;
+        public System.Windows.Forms.Label lblestado;
+        public System.Windows.Forms.Label lblnota;
+        public System.Windows.Forms.Button btnAceptar;
     }
 }

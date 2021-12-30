@@ -76,5 +76,10 @@ namespace UI.Desktop2
             }
 
         }
+
+        private void Combocurso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

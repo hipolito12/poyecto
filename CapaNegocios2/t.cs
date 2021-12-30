@@ -1,23 +1,28 @@
 ﻿using Datos2;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
+using System;
 
 namespace CapaNegocios
 {
-    public class tat
+    public class Notas
     {
-        public void kiki()
-        {
-            tets tac = new tets();
+        NotasAlumnos t = new NotasAlumnos();
 
-            tac.testtt();
+        public List<NotasAlumnos> algo(int fecha, int idpersona)
+        {
+          
+            return t.alg(fecha, idpersona);
+
         }
 
-
-        public void kikint()
-
+        public List<NotasAlumnos> fechasyparacombo(int idalumno)
         {
-            tets tac = new tets();
-            tac.act();
-
+            return t.notas(idalumno);
         }
+        
+
     }
+    
 }

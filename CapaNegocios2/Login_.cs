@@ -5,7 +5,7 @@ namespace CapaNegocios
     public class Login_
     {
         private _Login lol = new _Login();
-        public (string, int) FindRoles(string usuario, string contrasena)
+        public (string, int,int) FindRoles(string usuario, string contrasena)
         {
             return lol.busca_rol(usuario, contrasena);
         }

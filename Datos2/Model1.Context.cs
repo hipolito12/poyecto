@@ -498,5 +498,18 @@ namespace Datos2
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateUsuario", idParameter, idpersonaParameter, nombreUParameter, apellidoParameter, nombreParameter, claveParameter, cambiaParameter, habilitadoParameter, emailParameter);
         }
+    
+        public virtual ObjectResult<mostrar_notas_Result> mostrar_notas(Nullable<int> idpersonas, Nullable<int> idcurso)
+        {
+            var idpersonasParameter = idpersonas.HasValue ?
+                new ObjectParameter("idpersonas", idpersonas) :
+                new ObjectParameter("idpersonas", typeof(int));
+    
+            var idcursoParameter = idcurso.HasValue ?
+                new ObjectParameter("idcurso", idcurso) :
+                new ObjectParameter("idcurso", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<mostrar_notas_Result>("mostrar_notas", idpersonasParameter, idcursoParameter);
+        }
     }
 }

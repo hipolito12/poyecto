@@ -35,7 +35,6 @@ namespace UI.Desktop2.Login
             this.btnModuos = new System.Windows.Forms.Button();
             this.btncursos = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btninscripcionAlumno = new System.Windows.Forms.Button();
             this.btnMaterias = new System.Windows.Forms.Button();
             this.btnComisiones = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -46,6 +45,7 @@ namespace UI.Desktop2.Login
             this.planesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.docentesCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,7 +104,7 @@ namespace UI.Desktop2.Login
             this.btncursos.Name = "btncursos";
             this.btncursos.Size = new System.Drawing.Size(248, 35);
             this.btncursos.TabIndex = 5;
-            this.btncursos.Text = "Cursos";
+            this.btncursos.Text = "Alumnos por cursos";
             this.btncursos.UseVisualStyleBackColor = false;
             this.btncursos.Click += new System.EventHandler(this.btncursos_Click);
             // 
@@ -120,22 +120,10 @@ namespace UI.Desktop2.Login
             this.label1.TabIndex = 6;
             this.label1.Text = "Seleccione una accion";
             // 
-            // btninscripcionAlumno
-            // 
-            this.btninscripcionAlumno.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btninscripcionAlumno.Location = new System.Drawing.Point(98, 449);
-            this.btninscripcionAlumno.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btninscripcionAlumno.Name = "btninscripcionAlumno";
-            this.btninscripcionAlumno.Size = new System.Drawing.Size(248, 35);
-            this.btninscripcionAlumno.TabIndex = 7;
-            this.btninscripcionAlumno.Text = "Inscripcion  de Alumnos";
-            this.btninscripcionAlumno.UseVisualStyleBackColor = false;
-            this.btninscripcionAlumno.Click += new System.EventHandler(this.btninscripcionAlumno_Click);
-            // 
             // btnMaterias
             // 
             this.btnMaterias.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnMaterias.Location = new System.Drawing.Point(393, 449);
+            this.btnMaterias.Location = new System.Drawing.Point(94, 445);
             this.btnMaterias.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnMaterias.Name = "btnMaterias";
             this.btnMaterias.Size = new System.Drawing.Size(248, 35);
@@ -147,7 +135,7 @@ namespace UI.Desktop2.Login
             // btnComisiones
             // 
             this.btnComisiones.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnComisiones.Location = new System.Drawing.Point(243, 510);
+            this.btnComisiones.Location = new System.Drawing.Point(393, 445);
             this.btnComisiones.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnComisiones.Name = "btnComisiones";
             this.btnComisiones.Size = new System.Drawing.Size(248, 35);
@@ -163,7 +151,7 @@ namespace UI.Desktop2.Login
             this.navegacionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(775, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(709, 33);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -222,14 +210,25 @@ namespace UI.Desktop2.Login
             this.materiasToolStripMenuItem.Text = "Materias";
             this.materiasToolStripMenuItem.Click += new System.EventHandler(this.materiasToolStripMenuItem_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button1.Location = new System.Drawing.Point(238, 504);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(248, 35);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Cantidad de Alumno por curso";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // Profesores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(775, 587);
+            this.ClientSize = new System.Drawing.Size(709, 610);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnComisiones);
             this.Controls.Add(this.btnMaterias);
-            this.Controls.Add(this.btninscripcionAlumno);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btncursos);
             this.Controls.Add(this.btnModuos);
@@ -239,7 +238,6 @@ namespace UI.Desktop2.Login
             this.Controls.Add(this.menuStrip1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Profesores";
-            this.Text = "Profesores";
             this.Load += new System.EventHandler(this.Profesores_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -256,7 +254,6 @@ namespace UI.Desktop2.Login
         private System.Windows.Forms.Button btnModuos;
         private System.Windows.Forms.Button btncursos;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btninscripcionAlumno;
         private System.Windows.Forms.Button btnMaterias;
         private System.Windows.Forms.Button btnComisiones;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -267,5 +264,6 @@ namespace UI.Desktop2.Login
         private System.Windows.Forms.ToolStripMenuItem planesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem docentesCursosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem materiasToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }

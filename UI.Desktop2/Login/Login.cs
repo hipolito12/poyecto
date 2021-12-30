@@ -1,5 +1,6 @@
 ﻿using CapaNegocios;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 namespace UI.Desktop2.Login
 {
@@ -7,8 +8,12 @@ namespace UI.Desktop2.Login
     {
         public Login()
         {
+          
             InitializeComponent();
-        }
+            
+         }
+
+        public int idaux ;
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
@@ -40,13 +45,16 @@ namespace UI.Desktop2.Login
 
 
             }
-            (string, int) tup;
+            (string, int,int) tup;
             tup.Item2 = -1;
             tup.Item1 = " ";
+            tup.Item3 = -1;
+            
             Login_ lg = new Login_();
             try
             {
                 tup = lg.FindRoles(txtusuarios.Text, txtContrasena.Text);
+             
             }
             catch (Exception ex)
             {
@@ -55,16 +63,18 @@ namespace UI.Desktop2.Login
                 txtusuarios.Clear();
             }
 
+            idaux = tup.Item3;
             switch (tup.Item2)
             {
-                case 0: Suprer_Admins sa = new Suprer_Admins(); sa.richTextBox1.Text = $"               Bienvenido {tup.Item1}"; sa.richTextBox1.ReadOnly = true; sa.ShowDialog(); break;
+                
+                case 0:    Suprer_Admins sa = new Suprer_Admins(); sa.richTextBox1.Text = $"               Bienvenido {tup.Item1}"; sa.richTextBox1.ReadOnly = true; sa.ShowDialog(); break;
                 case 1: Profesores p = new Profesores(); p.richTextBox1.Text = $"               Bienvenido {tup.Item1}"; p.richTextBox1.ReadOnly = true; p.ShowDialog(); break;
-                case 2: Alumnos al = new Alumnos(); al.texto.Text = $"               Bienvenido {tup.Item1}"; al.texto.ReadOnly = true; al.ShowDialog(); break;
+                case 2: Alumnos a = new Alumnos(); a.algo = tup.Item3; ;  a.texto.Text = $"               Bienvenido {tup.Item1}"; a.texto.ReadOnly = true; a.ShowDialog()  ; break;
             }
 
 
         }
-
+        
         private void txtContrasena_TextChanged(object sender, EventArgs e)
         {
 

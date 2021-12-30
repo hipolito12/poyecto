@@ -32,11 +32,8 @@ namespace UI.Desktop2.Login
             this.texto = new System.Windows.Forms.RichTextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnCursos = new System.Windows.Forms.Button();
-            this.btnmodulos = new System.Windows.Forms.Button();
             this.btnmaterias = new System.Windows.Forms.Button();
             this.btninscalummnos = new System.Windows.Forms.Button();
-            this.btnespecialidades = new System.Windows.Forms.Button();
-            this.btnPlanes = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.asasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +43,7 @@ namespace UI.Desktop2.Login
             this.planesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.especialidadesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cursosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +73,7 @@ namespace UI.Desktop2.Login
             // btnCursos
             // 
             this.btnCursos.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnCursos.Location = new System.Drawing.Point(492, 594);
+            this.btnCursos.Location = new System.Drawing.Point(528, 557);
             this.btnCursos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCursos.Name = "btnCursos";
             this.btnCursos.Size = new System.Drawing.Size(310, 35);
@@ -84,22 +82,10 @@ namespace UI.Desktop2.Login
             this.btnCursos.UseVisualStyleBackColor = false;
             this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
             // 
-            // btnmodulos
-            // 
-            this.btnmodulos.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnmodulos.Location = new System.Drawing.Point(39, 594);
-            this.btnmodulos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnmodulos.Name = "btnmodulos";
-            this.btnmodulos.Size = new System.Drawing.Size(310, 35);
-            this.btnmodulos.TabIndex = 4;
-            this.btnmodulos.Text = "Modulos";
-            this.btnmodulos.UseVisualStyleBackColor = false;
-            this.btnmodulos.Click += new System.EventHandler(this.btnmodulos_Click);
-            // 
             // btnmaterias
             // 
             this.btnmaterias.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnmaterias.Location = new System.Drawing.Point(39, 512);
+            this.btnmaterias.Location = new System.Drawing.Point(528, 418);
             this.btnmaterias.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnmaterias.Name = "btnmaterias";
             this.btnmaterias.Size = new System.Drawing.Size(310, 35);
@@ -111,38 +97,14 @@ namespace UI.Desktop2.Login
             // btninscalummnos
             // 
             this.btninscalummnos.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btninscalummnos.Location = new System.Drawing.Point(39, 418);
+            this.btninscalummnos.Location = new System.Drawing.Point(45, 418);
             this.btninscalummnos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btninscalummnos.Name = "btninscalummnos";
             this.btninscalummnos.Size = new System.Drawing.Size(310, 35);
             this.btninscalummnos.TabIndex = 6;
-            this.btninscalummnos.Text = "Inscripciones Alumnos";
+            this.btninscalummnos.Text = "Inscribirme a curso";
             this.btninscalummnos.UseVisualStyleBackColor = false;
             this.btninscalummnos.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // btnespecialidades
-            // 
-            this.btnespecialidades.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnespecialidades.Location = new System.Drawing.Point(492, 512);
-            this.btnespecialidades.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnespecialidades.Name = "btnespecialidades";
-            this.btnespecialidades.Size = new System.Drawing.Size(321, 35);
-            this.btnespecialidades.TabIndex = 7;
-            this.btnespecialidades.Text = "Especialidades";
-            this.btnespecialidades.UseVisualStyleBackColor = false;
-            this.btnespecialidades.Click += new System.EventHandler(this.btnespecialidades_Click);
-            // 
-            // btnPlanes
-            // 
-            this.btnPlanes.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnPlanes.Location = new System.Drawing.Point(492, 418);
-            this.btnPlanes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnPlanes.Name = "btnPlanes";
-            this.btnPlanes.Size = new System.Drawing.Size(321, 35);
-            this.btnPlanes.TabIndex = 8;
-            this.btnPlanes.Text = "Planes";
-            this.btnPlanes.UseVisualStyleBackColor = false;
-            this.btnPlanes.Click += new System.EventHandler(this.btnPlanes_Click);
             // 
             // label1
             // 
@@ -223,6 +185,18 @@ namespace UI.Desktop2.Login
             this.cursosToolStripMenuItem1.Text = "Cursos";
             this.cursosToolStripMenuItem1.Click += new System.EventHandler(this.cursosToolStripMenuItem1_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.button1.Location = new System.Drawing.Point(45, 557);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(310, 35);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Notas";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Alumnos
             // 
             this.AccessibleDescription = "navegacion";
@@ -230,12 +204,10 @@ namespace UI.Desktop2.Login
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(872, 675);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnPlanes);
-            this.Controls.Add(this.btnespecialidades);
             this.Controls.Add(this.btninscalummnos);
             this.Controls.Add(this.btnmaterias);
-            this.Controls.Add(this.btnmodulos);
             this.Controls.Add(this.btnCursos);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.texto);
@@ -257,11 +229,8 @@ namespace UI.Desktop2.Login
         public System.Windows.Forms.RichTextBox texto;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button btnCursos;
-        private System.Windows.Forms.Button btnmodulos;
         private System.Windows.Forms.Button btnmaterias;
         private System.Windows.Forms.Button btninscalummnos;
-        private System.Windows.Forms.Button btnespecialidades;
-        private System.Windows.Forms.Button btnPlanes;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem asasToolStripMenuItem;
@@ -271,5 +240,6 @@ namespace UI.Desktop2.Login
         private System.Windows.Forms.ToolStripMenuItem planesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem especialidadesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem1;
+        private System.Windows.Forms.Button button1;
     }
 }
