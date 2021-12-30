@@ -46,18 +46,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comision.cs" />
-    <Compile Include="CursosCRUD.cs" />
-    <Compile Include="docentes_cursos-CRUD.cs" />
+    <Compile Include="Cursos.cs" />
+    <Compile Include="docentes_cursos.cs" />
     <Compile Include="Especialidad.cs" />
     <Compile Include="Login_.cs" />
     <Compile Include="Materia_n.cs" />
-    <Compile Include="ModulosCRUD.cs" />
+    <Compile Include="Modulos.cs" />
     <Compile Include="Personas.cs" />
-    <Compile Include="Plan_.cs" />
+    <Compile Include="Plan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="t.cs" />
+    <Compile Include="Notas.cs" />
     <Compile Include="Usuario_.cs" />
-    <Compile Include="_Inscripciones_Alumnos.cs" />
+    <Compile Include="Inscripciones_Alumnos.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos2\CapaDatos.csproj">

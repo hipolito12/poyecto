@@ -13,24 +13,24 @@ using System.Data.SqlClient;
 using CapaNegocios;
 namespace UI.Desktop2
 {
-    public partial class Pruebas : Form
+    public partial class NotasAlumnos: Form
     {
         public int idpersonacp ;
-        public Pruebas()
+        public NotasAlumnos()
         {
             
           
             InitializeComponent();
-            cargarpls();
+            
             reportViewer1.Visible = false;
-          
+             cargarpls();
         }
         
         public void cargarpls() 
         {
             Notas n = new Notas();
             foreach (var m in n.fechasyparacombo(idpersonacp)) { 
-            comboBox1.Items.Add(m.anio + m.materia+ m.Nota);
+            comboBox1.Items.Add( m.Nota);
             }
 
         }
@@ -87,13 +87,10 @@ namespace UI.Desktop2
             try
             {
                 Login.Alumnos al = new Login.Alumnos();
-                string campo = Convert.ToString(  comboBox2.SelectedItem.ToString()  );
-                foreach (var k in comboBox2.Items) 
-                {
-                    var m = k;
-                    MessageBox.Show(k.ToString());
-                }
-                MessageBox.Show(campo );
+                string campo = Convert.ToString(comboBox2.SelectedItem.ToString());
+
+                MessageBox.Show(campo);
+                comboBox2.Items.Add("saasasas");
                 //alg(10,15);
                // reportViewer1.Visible = true;
             }

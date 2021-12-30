@@ -84,11 +84,11 @@ namespace Datos2
             return nal;
         }
 
-       /* static void Main(string[] args)
+        /*static void Main(string[] args)
         {
             NotasAlumnos na = new NotasAlumnos();
             foreach (var k in na.notas(15))
-            { Console.WriteLine(k);
+            { Console.WriteLine(k.anio);
                 
 
             }

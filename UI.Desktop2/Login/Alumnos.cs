@@ -122,11 +122,11 @@ namespace UI.Desktop2.Login
         {
 
             MessageBox.Show(algo.ToString());
-            
-            
-           Pruebas p = new Pruebas();
-            p.idpersonacp = algo;
-            p.Show();
+
+
+            NotasAlumnos na = new NotasAlumnos();
+            na.idpersonacp = algo;
+            na.Show();
         }
 
         
