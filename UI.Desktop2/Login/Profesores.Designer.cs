@@ -80,7 +80,7 @@ namespace UI.Desktop2.Login
             this.btndocentescursos.Name = "btndocentescursos";
             this.btndocentescursos.Size = new System.Drawing.Size(248, 35);
             this.btndocentescursos.TabIndex = 2;
-            this.btndocentescursos.Text = "docentes por cursos";
+            this.btndocentescursos.Text = "Calificar Alumnos";
             this.btndocentescursos.UseVisualStyleBackColor = false;
             this.btndocentescursos.Click += new System.EventHandler(this.btndocentescursos_Click);
             // 
@@ -104,7 +104,7 @@ namespace UI.Desktop2.Login
             this.btncursos.Name = "btncursos";
             this.btncursos.Size = new System.Drawing.Size(248, 35);
             this.btncursos.TabIndex = 5;
-            this.btncursos.Text = "Alumnos por cursos";
+            this.btncursos.Text = "Alumnos por Comision";
             this.btncursos.UseVisualStyleBackColor = false;
             this.btncursos.Click += new System.EventHandler(this.btncursos_Click);
             // 

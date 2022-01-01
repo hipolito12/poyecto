@@ -23,17 +23,12 @@ namespace UI.Desktop2
             InitializeComponent();
             
             reportViewer1.Visible = false;
-             cargarpls();
-        }
-        
-        public void cargarpls() 
-        {
-            Notas n = new Notas();
-            foreach (var m in n.fechasyparacombo(idpersonacp)) { 
-            comboBox1.Items.Add( m.Nota);
-            }
+          
+                       
 
         }
+        
+      
 
         private void Pruebas_Load(object sender, EventArgs e)
         {
@@ -86,13 +81,9 @@ namespace UI.Desktop2
         {
             try
             {
-                Login.Alumnos al = new Login.Alumnos();
-                string campo = Convert.ToString(comboBox2.SelectedItem.ToString());
-
-                MessageBox.Show(campo);
-                comboBox2.Items.Add("saasasas");
-                //alg(10,15);
-               // reportViewer1.Visible = true;
+                string campo = comboBox1.SelectedItem.ToString()  ;
+                alg(Convert.ToInt32( campo ) ,idpersonacp);
+                reportViewer1.Visible = true;
             }
             catch (Exception ex)
             {

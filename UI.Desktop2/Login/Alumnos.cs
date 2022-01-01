@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocios;
+using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 namespace UI.Desktop2.Login
@@ -36,7 +37,11 @@ namespace UI.Desktop2.Login
             inscripciones_alumno1 ins1 = new inscripciones_alumno1();
             ins1.lblestado.Visible = false;
             ins1.lblnota.Visible = false;
+            ins1.txtnota.Text = "0";
+            ins1.estado = true;
+            ins1.combocondicionalu.Text = "   ";
             ins1.txtnota.Visible = false;
+            ins1.lblalumno.Text ="Legajo de alumno";
             ins1.combocondicionalu.Visible = false;
             ins1.btnAceptar.Text = "Inscribirse";
             ins1.Show();
@@ -125,6 +130,11 @@ namespace UI.Desktop2.Login
 
 
             NotasAlumnos na = new NotasAlumnos();
+            Notas n = new Notas();
+            foreach (var k in n.fechasyparacombo(15)) 
+            { 
+            na.comboBox1.Items.Add(k.anio);
+            }
             na.idpersonacp = algo;
             na.Show();
         }

@@ -126,6 +126,7 @@ namespace UI.Desktop2
             this.Comboalumno.Name = "Comboalumno";
             this.Comboalumno.Size = new System.Drawing.Size(292, 28);
             this.Comboalumno.TabIndex = 8;
+            this.Comboalumno.SelectedIndexChanged += new System.EventHandler(this.Comboalumno_SelectedIndexChanged);
             // 
             // inscripciones_alumno1
             // 
@@ -152,7 +153,6 @@ namespace UI.Desktop2
 
         #endregion
         private System.Windows.Forms.Label lblCurso;
-        private System.Windows.Forms.Label lblalumno;
         public System.Windows.Forms.ComboBox Combocurso;
         public System.Windows.Forms.TextBox combocondicionalu;
         public System.Windows.Forms.TextBox txtnota;
@@ -160,5 +160,6 @@ namespace UI.Desktop2
         public System.Windows.Forms.Label lblestado;
         public System.Windows.Forms.Label lblnota;
         public System.Windows.Forms.Button btnAceptar;
+        public System.Windows.Forms.Label lblalumno;
     }
 }

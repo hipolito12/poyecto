@@ -52,8 +52,8 @@ namespace Datos2
             Entidades en = new Entidades();
 
             var diccionariopersona = en.personas
-                     .SqlQuery("Select * from personas where tipo_persona=3")
-                     .ToDictionary(t => $"{t.nombre}  {t.apellido}", t => t.id_persona);
+                     .SqlQuery("Select * from personas where tipo_persona=2")
+                     .ToDictionary(t => $" {t.legajo}   {t.nombre} {t.apellido}", t => t.id_persona);
 
             var auxiliar = en.materias
                     .SqlQuery("Select * from materias ")

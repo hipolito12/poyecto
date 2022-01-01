@@ -45,7 +45,7 @@ namespace UI.Desktop2
                     int curso = ia.cargacombos().Item2[Combocurso.Text];
                    
                     ia.agregar(alumnoid.ToString(),curso.ToString(),  combocondicionalu.Text, txtnota.Text);
-                    
+                    MessageBox.Show("Carga realizada!");
                 }
                 if(estado == false) 
                 {
@@ -53,7 +53,9 @@ namespace UI.Desktop2
                     int curso = ia.cargacombos().Item2[Combocurso.Text];
                     
                     ia.modificar(alumnoid.ToString(), curso.ToString(), combocondicionalu.Text, txtnota.Text, ide);
+                    MessageBox.Show("Modificado!");
                     this.Close();
+                    
                 }
             }
             catch(Exception ex) { MessageBox.Show("error " + ex); }
@@ -78,6 +80,11 @@ namespace UI.Desktop2
         }
 
         private void Combocurso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Comboalumno_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
