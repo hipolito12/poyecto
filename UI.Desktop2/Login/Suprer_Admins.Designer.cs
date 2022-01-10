@@ -53,6 +53,7 @@ namespace UI.Desktop2.Login
             this.planesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.docentesPorCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btncantidades = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,19 +61,17 @@ namespace UI.Desktop2.Login
             // 
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.richTextBox1.Location = new System.Drawing.Point(160, 53);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.richTextBox1.Location = new System.Drawing.Point(107, 34);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(745, 98);
+            this.richTextBox1.Size = new System.Drawing.Size(498, 65);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
             // btncomisiones
             // 
-            this.btncomisiones.Location = new System.Drawing.Point(64, 315);
-            this.btncomisiones.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btncomisiones.Location = new System.Drawing.Point(43, 205);
             this.btncomisiones.Name = "btncomisiones";
-            this.btncomisiones.Size = new System.Drawing.Size(294, 35);
+            this.btncomisiones.Size = new System.Drawing.Size(196, 23);
             this.btncomisiones.TabIndex = 1;
             this.btncomisiones.Text = "Comisiones";
             this.btncomisiones.UseVisualStyleBackColor = true;
@@ -80,10 +79,9 @@ namespace UI.Desktop2.Login
             // 
             // btnmaterias
             // 
-            this.btnmaterias.Location = new System.Drawing.Point(418, 315);
-            this.btnmaterias.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnmaterias.Location = new System.Drawing.Point(279, 205);
             this.btnmaterias.Name = "btnmaterias";
-            this.btnmaterias.Size = new System.Drawing.Size(294, 35);
+            this.btnmaterias.Size = new System.Drawing.Size(196, 23);
             this.btnmaterias.TabIndex = 2;
             this.btnmaterias.Text = "Materias";
             this.btnmaterias.UseVisualStyleBackColor = true;
@@ -91,10 +89,9 @@ namespace UI.Desktop2.Login
             // 
             // btnEspecialidades
             // 
-            this.btnEspecialidades.Location = new System.Drawing.Point(418, 245);
-            this.btnEspecialidades.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEspecialidades.Location = new System.Drawing.Point(279, 159);
             this.btnEspecialidades.Name = "btnEspecialidades";
-            this.btnEspecialidades.Size = new System.Drawing.Size(294, 35);
+            this.btnEspecialidades.Size = new System.Drawing.Size(196, 23);
             this.btnEspecialidades.TabIndex = 3;
             this.btnEspecialidades.Text = "Especialidades";
             this.btnEspecialidades.UseVisualStyleBackColor = true;
@@ -102,10 +99,9 @@ namespace UI.Desktop2.Login
             // 
             // btnisncalu
             // 
-            this.btnisncalu.Location = new System.Drawing.Point(64, 245);
-            this.btnisncalu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnisncalu.Location = new System.Drawing.Point(43, 159);
             this.btnisncalu.Name = "btnisncalu";
-            this.btnisncalu.Size = new System.Drawing.Size(294, 35);
+            this.btnisncalu.Size = new System.Drawing.Size(196, 23);
             this.btnisncalu.TabIndex = 4;
             this.btnisncalu.Text = "Inscripciones Alumnos";
             this.btnisncalu.UseVisualStyleBackColor = true;
@@ -113,10 +109,9 @@ namespace UI.Desktop2.Login
             // 
             // btnModulo
             // 
-            this.btnModulo.Location = new System.Drawing.Point(418, 383);
-            this.btnModulo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnModulo.Location = new System.Drawing.Point(279, 249);
             this.btnModulo.Name = "btnModulo";
-            this.btnModulo.Size = new System.Drawing.Size(294, 35);
+            this.btnModulo.Size = new System.Drawing.Size(196, 23);
             this.btnModulo.TabIndex = 5;
             this.btnModulo.Text = "Modulos";
             this.btnModulo.UseVisualStyleBackColor = true;
@@ -124,10 +119,9 @@ namespace UI.Desktop2.Login
             // 
             // btnDocentesxcursos
             // 
-            this.btnDocentesxcursos.Location = new System.Drawing.Point(362, 454);
-            this.btnDocentesxcursos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDocentesxcursos.Location = new System.Drawing.Point(241, 295);
             this.btnDocentesxcursos.Name = "btnDocentesxcursos";
-            this.btnDocentesxcursos.Size = new System.Drawing.Size(374, 35);
+            this.btnDocentesxcursos.Size = new System.Drawing.Size(249, 23);
             this.btnDocentesxcursos.TabIndex = 7;
             this.btnDocentesxcursos.Text = "Docentes por Cursos";
             this.btnDocentesxcursos.UseVisualStyleBackColor = true;
@@ -135,10 +129,9 @@ namespace UI.Desktop2.Login
             // 
             // btnCursos
             // 
-            this.btnCursos.Location = new System.Drawing.Point(64, 375);
-            this.btnCursos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCursos.Location = new System.Drawing.Point(43, 244);
             this.btnCursos.Name = "btnCursos";
-            this.btnCursos.Size = new System.Drawing.Size(294, 35);
+            this.btnCursos.Size = new System.Drawing.Size(196, 23);
             this.btnCursos.TabIndex = 8;
             this.btnCursos.Text = "Cursos";
             this.btnCursos.UseVisualStyleBackColor = true;
@@ -146,10 +139,9 @@ namespace UI.Desktop2.Login
             // 
             // btnPlanes
             // 
-            this.btnPlanes.Location = new System.Drawing.Point(778, 315);
-            this.btnPlanes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPlanes.Location = new System.Drawing.Point(519, 205);
             this.btnPlanes.Name = "btnPlanes";
-            this.btnPlanes.Size = new System.Drawing.Size(294, 35);
+            this.btnPlanes.Size = new System.Drawing.Size(196, 23);
             this.btnPlanes.TabIndex = 9;
             this.btnPlanes.Text = "Planes";
             this.btnPlanes.UseVisualStyleBackColor = true;
@@ -157,10 +149,9 @@ namespace UI.Desktop2.Login
             // 
             // btnPersonas
             // 
-            this.btnPersonas.Location = new System.Drawing.Point(778, 245);
-            this.btnPersonas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPersonas.Location = new System.Drawing.Point(519, 159);
             this.btnPersonas.Name = "btnPersonas";
-            this.btnPersonas.Size = new System.Drawing.Size(294, 35);
+            this.btnPersonas.Size = new System.Drawing.Size(196, 23);
             this.btnPersonas.TabIndex = 10;
             this.btnPersonas.Text = "Personas";
             this.btnPersonas.UseVisualStyleBackColor = true;
@@ -168,10 +159,9 @@ namespace UI.Desktop2.Login
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.Location = new System.Drawing.Point(778, 383);
-            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUsuarios.Location = new System.Drawing.Point(519, 249);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(294, 35);
+            this.btnUsuarios.Size = new System.Drawing.Size(196, 23);
             this.btnUsuarios.TabIndex = 11;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = true;
@@ -181,8 +171,7 @@ namespace UI.Desktop2.Login
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(72, 177);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(48, 115);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(329, 33);
             this.label1.TabIndex = 12;
@@ -196,7 +185,8 @@ namespace UI.Desktop2.Login
             this.navegacionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1102, 33);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(738, 31);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -288,11 +278,23 @@ namespace UI.Desktop2.Login
             this.docentesPorCursosToolStripMenuItem.Text = "Docentes por cursos";
             this.docentesPorCursosToolStripMenuItem.Click += new System.EventHandler(this.docentesPorCursosToolStripMenuItem_Click);
             // 
+            // btncantidades
+            // 
+            this.btncantidades.Location = new System.Drawing.Point(43, 295);
+            this.btncantidades.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btncantidades.Name = "btncantidades";
+            this.btncantidades.Size = new System.Drawing.Size(128, 27);
+            this.btncantidades.TabIndex = 14;
+            this.btncantidades.Text = "Cantidad de cursos";
+            this.btncantidades.UseVisualStyleBackColor = true;
+            this.btncantidades.Click += new System.EventHandler(this.btncantidades_Click);
+            // 
             // Suprer_Admins
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1102, 538);
+            this.ClientSize = new System.Drawing.Size(738, 369);
+            this.Controls.Add(this.btncantidades);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnPersonas);
@@ -307,7 +309,6 @@ namespace UI.Desktop2.Login
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Suprer_Admins";
             this.Text = "Suprer_Admins";
             this.menuStrip1.ResumeLayout(false);
@@ -343,5 +344,6 @@ namespace UI.Desktop2.Login
         private System.Windows.Forms.ToolStripMenuItem planesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem docentesPorCursosToolStripMenuItem;
+        private System.Windows.Forms.Button btncantidades;
     }
 }

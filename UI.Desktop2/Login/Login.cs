@@ -8,7 +8,6 @@ namespace UI.Desktop2.Login
     {
         public Login()
         {
-          
             InitializeComponent();
             
          }

@@ -31,6 +31,10 @@ namespace UI.Desktop2
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idcomision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idplan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comisionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tp2DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tp2DataSet = new UI.Desktop2.tp2DataSet();
@@ -39,10 +43,6 @@ namespace UI.Desktop2
             this.btneliminar = new System.Windows.Forms.Button();
             this.btnmodificar = new System.Windows.Forms.Button();
             this.btnrefrescar = new System.Windows.Forms.Button();
-            this.idcomision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idplan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comisionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tp2DataSetBindingSource)).BeginInit();
@@ -59,10 +59,45 @@ namespace UI.Desktop2
             this.anio,
             this.idplan});
             this.dataGridView1.DataSource = this.comisionesBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 18);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(445, 306);
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.Size = new System.Drawing.Size(668, 471);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // idcomision
+            // 
+            this.idcomision.DataPropertyName = "id_comision";
+            this.idcomision.HeaderText = "id_comision";
+            this.idcomision.MinimumWidth = 8;
+            this.idcomision.Name = "idcomision";
+            this.idcomision.ReadOnly = true;
+            this.idcomision.Width = 150;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "desc_comision";
+            this.descripcion.HeaderText = "desc_comision";
+            this.descripcion.MinimumWidth = 8;
+            this.descripcion.Name = "descripcion";
+            this.descripcion.Width = 150;
+            // 
+            // anio
+            // 
+            this.anio.DataPropertyName = "anio_especialidad";
+            this.anio.HeaderText = "anio_especialidad";
+            this.anio.MinimumWidth = 8;
+            this.anio.Name = "anio";
+            this.anio.Width = 150;
+            // 
+            // idplan
+            // 
+            this.idplan.DataPropertyName = "id_plan";
+            this.idplan.HeaderText = "id_plan";
+            this.idplan.MinimumWidth = 8;
+            this.idplan.Name = "idplan";
+            this.idplan.Width = 150;
             // 
             // comisionesBindingSource
             // 
@@ -85,9 +120,10 @@ namespace UI.Desktop2
             // 
             // btnaceptar
             // 
-            this.btnaceptar.Location = new System.Drawing.Point(516, 52);
+            this.btnaceptar.Location = new System.Drawing.Point(774, 80);
+            this.btnaceptar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnaceptar.Name = "btnaceptar";
-            this.btnaceptar.Size = new System.Drawing.Size(204, 23);
+            this.btnaceptar.Size = new System.Drawing.Size(306, 35);
             this.btnaceptar.TabIndex = 1;
             this.btnaceptar.Text = "Agregar";
             this.btnaceptar.UseVisualStyleBackColor = true;
@@ -95,9 +131,10 @@ namespace UI.Desktop2
             // 
             // btneliminar
             // 
-            this.btneliminar.Location = new System.Drawing.Point(516, 117);
+            this.btneliminar.Location = new System.Drawing.Point(774, 180);
+            this.btneliminar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(204, 23);
+            this.btneliminar.Size = new System.Drawing.Size(306, 35);
             this.btneliminar.TabIndex = 2;
             this.btneliminar.Text = "Eliminar";
             this.btneliminar.UseVisualStyleBackColor = true;
@@ -105,9 +142,10 @@ namespace UI.Desktop2
             // 
             // btnmodificar
             // 
-            this.btnmodificar.Location = new System.Drawing.Point(516, 181);
+            this.btnmodificar.Location = new System.Drawing.Point(774, 278);
+            this.btnmodificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnmodificar.Name = "btnmodificar";
-            this.btnmodificar.Size = new System.Drawing.Size(204, 23);
+            this.btnmodificar.Size = new System.Drawing.Size(306, 35);
             this.btnmodificar.TabIndex = 3;
             this.btnmodificar.Text = "Modificar";
             this.btnmodificar.UseVisualStyleBackColor = true;
@@ -115,49 +153,26 @@ namespace UI.Desktop2
             // 
             // btnrefrescar
             // 
-            this.btnrefrescar.Location = new System.Drawing.Point(124, 334);
+            this.btnrefrescar.Location = new System.Drawing.Point(186, 514);
+            this.btnrefrescar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnrefrescar.Name = "btnrefrescar";
-            this.btnrefrescar.Size = new System.Drawing.Size(204, 23);
+            this.btnrefrescar.Size = new System.Drawing.Size(306, 35);
             this.btnrefrescar.TabIndex = 4;
             this.btnrefrescar.Text = "Refrescar";
             this.btnrefrescar.UseVisualStyleBackColor = true;
             this.btnrefrescar.Click += new System.EventHandler(this.btnrefrescar_Click);
             // 
-            // idcomision
-            // 
-            this.idcomision.DataPropertyName = "id_comision";
-            this.idcomision.HeaderText = "id_comision";
-            this.idcomision.Name = "idcomision";
-            this.idcomision.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "desc_comision";
-            this.descripcion.HeaderText = "desc_comision";
-            this.descripcion.Name = "descripcion";
-            // 
-            // anio
-            // 
-            this.anio.DataPropertyName = "anio_especialidad";
-            this.anio.HeaderText = "anio_especialidad";
-            this.anio.Name = "anio";
-            // 
-            // idplan
-            // 
-            this.idplan.DataPropertyName = "id_plan";
-            this.idplan.HeaderText = "id_plan";
-            this.idplan.Name = "idplan";
-            // 
             // comisiones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 369);
+            this.ClientSize = new System.Drawing.Size(1200, 568);
             this.Controls.Add(this.btnrefrescar);
             this.Controls.Add(this.btnmodificar);
             this.Controls.Add(this.btneliminar);
             this.Controls.Add(this.btnaceptar);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "comisiones";
             this.Text = "comisiones";
             this.Load += new System.EventHandler(this.comisiones_Load);
@@ -176,13 +191,13 @@ namespace UI.Desktop2
         private tp2DataSet tp2DataSet;
         private System.Windows.Forms.BindingSource comisionesBindingSource;
         private tp2DataSetTableAdapters.comisionesTableAdapter comisionesTableAdapter;
-        private System.Windows.Forms.Button btnaceptar;
-        private System.Windows.Forms.Button btneliminar;
-        private System.Windows.Forms.Button btnmodificar;
         private System.Windows.Forms.Button btnrefrescar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idcomision;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn anio;
         private System.Windows.Forms.DataGridViewTextBoxColumn idplan;
+        public System.Windows.Forms.Button btnaceptar;
+        public System.Windows.Forms.Button btneliminar;
+        public System.Windows.Forms.Button btnmodificar;
     }
 }

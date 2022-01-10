@@ -44,9 +44,10 @@ namespace UI.web_
                  
                 }
 
-                (string, int) tup;
+                (string, int,int ) tup;
                 tup.Item2 = -1;
                 tup.Item1 = " ";
+                tup.Item3 = -1;
 
                 if (lo.FindRoles(l.Text, contrasena.Text).Item2 != -1)
                 {

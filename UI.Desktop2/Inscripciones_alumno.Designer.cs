@@ -44,6 +44,9 @@ namespace UI.Desktop2
             this.btnmodificar = new System.Windows.Forms.Button();
             this.btneliminar = new System.Windows.Forms.Button();
             this.btnrefrescar = new System.Windows.Forms.Button();
+            this.combocurso = new System.Windows.Forms.ComboBox();
+            this.lblCurso = new System.Windows.Forms.Label();
+            this.btnaceptar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alumnosinscripcionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tp2DataSetBindingSource)).BeginInit();
@@ -172,11 +175,41 @@ namespace UI.Desktop2
             this.btnrefrescar.UseVisualStyleBackColor = true;
             this.btnrefrescar.Click += new System.EventHandler(this.btnrefrescar_Click);
             // 
+            // combocurso
+            // 
+            this.combocurso.FormattingEnabled = true;
+            this.combocurso.Location = new System.Drawing.Point(869, 57);
+            this.combocurso.Name = "combocurso";
+            this.combocurso.Size = new System.Drawing.Size(289, 28);
+            this.combocurso.TabIndex = 5;
+            // 
+            // lblCurso
+            // 
+            this.lblCurso.AutoSize = true;
+            this.lblCurso.Location = new System.Drawing.Point(961, 31);
+            this.lblCurso.Name = "lblCurso";
+            this.lblCurso.Size = new System.Drawing.Size(125, 20);
+            this.lblCurso.TabIndex = 6;
+            this.lblCurso.Text = "Selecione Curso";
+            // 
+            // btnaceptar
+            // 
+            this.btnaceptar.Location = new System.Drawing.Point(949, 101);
+            this.btnaceptar.Name = "btnaceptar";
+            this.btnaceptar.Size = new System.Drawing.Size(137, 34);
+            this.btnaceptar.TabIndex = 7;
+            this.btnaceptar.Text = "Aceptar";
+            this.btnaceptar.UseVisualStyleBackColor = true;
+            this.btnaceptar.Click += new System.EventHandler(this.btnaceptar_Click);
+            // 
             // Inscripciones_alumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.btnaceptar);
+            this.Controls.Add(this.lblCurso);
+            this.Controls.Add(this.combocurso);
             this.Controls.Add(this.btnrefrescar);
             this.Controls.Add(this.btneliminar);
             this.Controls.Add(this.btnmodificar);
@@ -191,6 +224,7 @@ namespace UI.Desktop2
             ((System.ComponentModel.ISupportInitialize)(this.tp2DataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tp2DataSet)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -210,5 +244,8 @@ namespace UI.Desktop2
         public System.Windows.Forms.Button btnagregar;
         public System.Windows.Forms.Button btnmodificar;
         public System.Windows.Forms.Button btneliminar;
+        public System.Windows.Forms.Button btnaceptar;
+        public System.Windows.Forms.ComboBox combocurso;
+        public System.Windows.Forms.Label lblCurso;
     }
 }

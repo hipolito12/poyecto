@@ -21,8 +21,21 @@ namespace CapaNegocios
         {
             return t.notas(idalumno);
         }
-        
 
+        public List<Menu_profesoress> cargarInformeDocentesXcurso()
+        {
+            return t.cargarInformeDocentesXcurso();
+        }
+
+        public bool verifyActualPass(int id, string pass) 
+        {
+            return t.verifyActualPass(id, pass);
+        }
+
+        public void cambiarContrasena(int id, string newpass) 
+        {
+            t.cambiarContrasena(id,newpass);
+        }
     }
     
 }

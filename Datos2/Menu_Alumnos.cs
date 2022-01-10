@@ -95,5 +95,79 @@ namespace Datos2
             Console.ReadLine();
         }*/
 
+
+        public List<Menu_profesoress> cargarInformeDocentesXcurso()
+
+        {
+            Entidades en = new Entidades();
+
+            string query = $" use tp2 " +
+                "select   CONCAT( p.nombre , p.apellido) as nombres, dc.id_curso from   docentes_cursos dc inner join personas p on p.id_persona = dc.id_docente ";
+            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            var dr = cmd.ExecuteReader();
+
+            List<Menu_profesoress> mp = new List<Menu_profesoress>();
+
+            while (dr.Read())
+            {
+                Menu_profesoress m = new Menu_profesoress();
+
+                m.docentes = dr.GetString(0);
+                m.idalumno = dr.GetInt32(1);
+                mp.Add(m);
+
+            }
+            con.Close();
+            return mp;
+        }
+
+
+        public bool verifyActualPass(int id , string pass) 
+        {
+            try
+            {
+
+                bool result = false;
+
+                Entidades En = new Entidades();
+                usuarios u = En.usuarios.Where(us => us.id_persona == id).FirstOrDefault();
+
+                if (u.clave == pass)
+                {
+                    result = true;
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex; 
+            }
+
+
+
+        }
+
+        public void cambiarContrasena(int id ,string newpass) 
+        {
+            try
+            {
+                Entidades En = new Entidades();
+                usuarios u = En.usuarios.Where(us => us.id_persona == id).FirstOrDefault();
+                u.clave = newpass;
+                u.cambia_clave = true;
+                En.Entry(u).State = System.Data.Entity.EntityState.Modified;
+                En.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw  ex ;
+            }
+        }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using CapaNegocios;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
@@ -139,6 +140,27 @@ namespace UI.Desktop2.Login
             na.Show();
         }
 
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            {
+                Notas mp = new Notas();
+                DocentesXcursosreporte dxc = new DocentesXcursosreporte();
+                dxc.Menu_profesoressBindingSource.DataSource = mp.cargarInformeDocentesXcurso();
+
+                ReportDataSource rd = new ReportDataSource("DocentesXCursos", mp.cargarInformeDocentesXcurso());
+                dxc.reportViewer1.LocalReport.DataSources.Clear();
+                dxc.reportViewer1.LocalReport.DataSources.Add(rd);
+                dxc.reportViewer1.RefreshReport();
+                dxc.Show();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Cambiar_contraseña cc = new Cambiar_contraseña();
+            cc.id = algo;
+            cc.Show();
+
+        }
     }
 }

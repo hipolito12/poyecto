@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocios;
 
+
 namespace UI.Desktop2
 {
     public partial class Inscripciones_alumno : Form
@@ -16,6 +17,10 @@ namespace UI.Desktop2
         public Inscripciones_alumno()
         {
             InitializeComponent();
+            combocurso.Visible = false;
+            lblCurso.Visible = false;
+            btnaceptar.Visible = false;
+            combocurso.Refresh();
         }
 
         private void Inscripciones_alumno_Load(object sender, EventArgs e)
@@ -27,7 +32,9 @@ namespace UI.Desktop2
 
         private void btnrefrescar_Click(object sender, EventArgs e)
         {
+            dataGridView1.Refresh();
             this.alumnos_inscripcionesTableAdapter.Fill(this.tp2DataSet.alumnos_inscripciones);
+            dataGridView1.Refresh();
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
@@ -44,6 +51,8 @@ namespace UI.Desktop2
             ia1.ide = dataGridView1.CurrentRow.Cells["inscripcion"].Value.ToString();
             ia1.txtnota.Text = dataGridView1.CurrentRow.Cells["nota"].Value.ToString();
             ia1.combocondicionalu.Text = dataGridView1.CurrentRow.Cells["condicion"].Value.ToString();
+            ia1.Comboalumno.Text= dataGridView1.CurrentRow.Cells["alumno"].Value.ToString();
+
             ia1.estado = false;
             ia1.Show();
         }
@@ -55,10 +64,11 @@ namespace UI.Desktop2
             ia1.Show();
         }
 
-
-
-
-       
-    
+        private void btnaceptar_Click(object sender, EventArgs e)
+        {
+            Menu_profesores mp = new Menu_profesores();
+            int idC =  Convert.ToInt32( combocurso.SelectedItem.ToString() ) ;
+           dataGridView1.DataSource =  mp.filtrar(idC);
+        }
     }
 }

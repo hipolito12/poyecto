@@ -32,10 +32,8 @@ namespace UI.Desktop2.Login
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btnPlanes = new System.Windows.Forms.Button();
             this.btndocentescursos = new System.Windows.Forms.Button();
-            this.btnModuos = new System.Windows.Forms.Button();
             this.btncursos = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnMaterias = new System.Windows.Forms.Button();
             this.btnComisiones = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.navegacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,18 +82,6 @@ namespace UI.Desktop2.Login
             this.btndocentescursos.UseVisualStyleBackColor = false;
             this.btndocentescursos.Click += new System.EventHandler(this.btndocentescursos_Click);
             // 
-            // btnModuos
-            // 
-            this.btnModuos.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnModuos.Location = new System.Drawing.Point(94, 378);
-            this.btnModuos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnModuos.Name = "btnModuos";
-            this.btnModuos.Size = new System.Drawing.Size(248, 35);
-            this.btnModuos.TabIndex = 4;
-            this.btnModuos.Text = "Modulos";
-            this.btnModuos.UseVisualStyleBackColor = false;
-            this.btnModuos.Click += new System.EventHandler(this.btnModuos_Click);
-            // 
             // btncursos
             // 
             this.btncursos.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -104,7 +90,7 @@ namespace UI.Desktop2.Login
             this.btncursos.Name = "btncursos";
             this.btncursos.Size = new System.Drawing.Size(248, 35);
             this.btncursos.TabIndex = 5;
-            this.btncursos.Text = "Alumnos por Comision";
+            this.btncursos.Text = "Docentes Cursos";
             this.btncursos.UseVisualStyleBackColor = false;
             this.btncursos.Click += new System.EventHandler(this.btncursos_Click);
             // 
@@ -120,28 +106,17 @@ namespace UI.Desktop2.Login
             this.label1.TabIndex = 6;
             this.label1.Text = "Seleccione una accion";
             // 
-            // btnMaterias
-            // 
-            this.btnMaterias.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnMaterias.Location = new System.Drawing.Point(94, 445);
-            this.btnMaterias.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnMaterias.Name = "btnMaterias";
-            this.btnMaterias.Size = new System.Drawing.Size(248, 35);
-            this.btnMaterias.TabIndex = 8;
-            this.btnMaterias.Text = "Materias";
-            this.btnMaterias.UseVisualStyleBackColor = false;
-            this.btnMaterias.Click += new System.EventHandler(this.btnMaterias_Click);
-            // 
             // btnComisiones
             // 
             this.btnComisiones.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnComisiones.Location = new System.Drawing.Point(393, 445);
+            this.btnComisiones.Location = new System.Drawing.Point(219, 438);
             this.btnComisiones.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnComisiones.Name = "btnComisiones";
-            this.btnComisiones.Size = new System.Drawing.Size(248, 35);
+            this.btnComisiones.Size = new System.Drawing.Size(278, 35);
             this.btnComisiones.TabIndex = 9;
             this.btnComisiones.Text = "Comisiones";
             this.btnComisiones.UseVisualStyleBackColor = false;
+            this.btnComisiones.Click += new System.EventHandler(this.btnComisiones_Click);
             // 
             // menuStrip1
             // 
@@ -213,25 +188,24 @@ namespace UI.Desktop2.Login
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button1.Location = new System.Drawing.Point(238, 504);
+            this.button1.Location = new System.Drawing.Point(98, 378);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(248, 35);
             this.button1.TabIndex = 11;
             this.button1.Text = "Cantidad de Alumno por curso";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Profesores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(709, 610);
+            this.ClientSize = new System.Drawing.Size(709, 516);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnComisiones);
-            this.Controls.Add(this.btnMaterias);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btncursos);
-            this.Controls.Add(this.btnModuos);
             this.Controls.Add(this.btndocentescursos);
             this.Controls.Add(this.btnPlanes);
             this.Controls.Add(this.richTextBox1);
@@ -251,10 +225,8 @@ namespace UI.Desktop2.Login
         public System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button btnPlanes;
         private System.Windows.Forms.Button btndocentescursos;
-        private System.Windows.Forms.Button btnModuos;
         private System.Windows.Forms.Button btncursos;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnMaterias;
         private System.Windows.Forms.Button btnComisiones;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem navegacionToolStripMenuItem;
