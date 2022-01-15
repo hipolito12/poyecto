@@ -6,14 +6,14 @@
      <h2 style="font-size:3em; color:darkblue ;     margin-left :30%; ">Seleccione una opcion </h2>
     <div id="listas">
         <ul>
-            <li><a href="../Entidades/Comisiones.aspx">Comision</a></li>
-            <li><a href="../Entidades/Cursos.aspx">Curso</a></li>
-            <li><a href="../Entidades/Materias.aspx">Materia</a></li>
-            <li><a href="../Entidades/Modulos.aspx">Modulos</a></li>
-            <li><a href="../Entidades/alumnos_inscripcioness.aspx">Alumnos e inscripciones</a></li>
-            <li><a href="../Entidades/docentes-cursos.aspx">Docente y cursos</a></li>
-            <li><a href="../Entidades/Especialidades.aspx">Especialdiades</a></li>
+            
              <li><a href="../Entidades/planes.aspx">Planes</a></li>
+             <li><a href="../Reportes/Calificar_alumnos.aspx">colocar notas</a></li>
+              <li><a href="../Reportes/DocentesXcursos.aspx">docentes de cada curso</a></li>
+              <li><a href="../Reportes/ListadDeComisions.aspx">Listado de Comisiones</a></li>
+            <li><a href="../Reportes/CantidadAlumnosXcurso.aspx">Cantidad de alumnos en comisiones</a></li>
+
+
                        
         </ul>
 

@@ -77,5 +77,21 @@ namespace Datos2
                    .ToList();
             return auxiliar;
         }
+
+        public int buscarid_inscripcion(int idalumno,int idcurso) 
+        {
+            Entidades en = new Entidades();
+            alumnos_inscripciones ai = en.alumnos_inscripciones.Where(a => a.id_alumno == idalumno && a.id_curso == idcurso).First();
+            int id = ai.id_inscripcion;
+            return id;
+        }
+
+        public int   buscarPerosnaParaCalificar(int   legajo) 
+        {
+            Entidades en = new Entidades();
+            personas p = en.personas.Where(per => per.legajo ==  legajo).FirstOrDefault();
+           
+            return p.id_persona;
+        }
     }
 }

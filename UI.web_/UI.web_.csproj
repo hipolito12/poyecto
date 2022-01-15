@@ -50,6 +50,16 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.Common.12.0.2402.15\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.Common.12.0.2402.15\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.Common.12.0.2402.15\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -108,6 +118,19 @@
     <Content Include="Logins\Menu-admins.aspx" />
     <Content Include="Logins\Menu_Alumno.aspx" />
     <Content Include="Logins\Menu_Profesores.aspx" />
+    <Content Include="Reportes\Calificar_alumnos.aspx" />
+    <Content Include="Reportes\CambiarContrasena.aspx" />
+    <Content Include="Reportes\CantidadAlumnosXcurso.aspx" />
+    <Content Include="Reportes\CursosEintegrantes.aspx" />
+    <Content Include="Reportes\DocentesXcursos.aspx" />
+    <Content Include="Reportes\estilos.css" />
+    <Content Include="Reportes\CodigoParaImprimir.js" />
+    <Content Include="Reportes\InformeDeNotas.aspx" />
+    <Content Include="Reportes\Inscripcion_Materia.aspx" />
+    <Content Include="Reportes\ListadDeComisions.aspx" />
+    <Content Include="Reportes\reporCurso_Docentes.aspx" />
+    <Content Include="Reportes\reporteMATERIAS.aspx" />
+    <Content Include="Resource\csharp_original_logo_icon_146578.ico" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -233,6 +256,76 @@
     </Compile>
     <Compile Include="paginaMaestr_alumnos.Master.designer.cs">
       <DependentUpon>paginaMaestr_alumnos.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Calificar_alumnos.aspx.cs">
+      <DependentUpon>Calificar_alumnos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\Calificar_alumnos.aspx.designer.cs">
+      <DependentUpon>Calificar_alumnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\CambiarContrasena.aspx.cs">
+      <DependentUpon>CambiarContrasena.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\CambiarContrasena.aspx.designer.cs">
+      <DependentUpon>CambiarContrasena.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\CantidadAlumnosXcurso.aspx.cs">
+      <DependentUpon>CantidadAlumnosXcurso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\CantidadAlumnosXcurso.aspx.designer.cs">
+      <DependentUpon>CantidadAlumnosXcurso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\CursosEintegrantes.aspx.cs">
+      <DependentUpon>CursosEintegrantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\CursosEintegrantes.aspx.designer.cs">
+      <DependentUpon>CursosEintegrantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DocentesXcursos.aspx.cs">
+      <DependentUpon>DocentesXcursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\DocentesXcursos.aspx.designer.cs">
+      <DependentUpon>DocentesXcursos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\InformeDeNotas.aspx.cs">
+      <DependentUpon>InformeDeNotas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\InformeDeNotas.aspx.designer.cs">
+      <DependentUpon>InformeDeNotas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Inscripcion_Materia.aspx.cs">
+      <DependentUpon>Inscripcion_Materia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\Inscripcion_Materia.aspx.designer.cs">
+      <DependentUpon>Inscripcion_Materia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ListadDeComisions.aspx.cs">
+      <DependentUpon>ListadDeComisions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ListadDeComisions.aspx.designer.cs">
+      <DependentUpon>ListadDeComisions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\reporCurso_Docentes.aspx.cs">
+      <DependentUpon>reporCurso_Docentes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\reporCurso_Docentes.aspx.designer.cs">
+      <DependentUpon>reporCurso_Docentes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\reporteMATERIAS.aspx.cs">
+      <DependentUpon>reporteMATERIAS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\reporteMATERIAS.aspx.designer.cs">
+      <DependentUpon>reporteMATERIAS.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

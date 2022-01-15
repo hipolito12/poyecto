@@ -132,7 +132,7 @@ namespace UI.Desktop2.Login
 
             NotasAlumnos na = new NotasAlumnos();
             Notas n = new Notas();
-            foreach (var k in n.fechasyparacombo(15)) 
+            foreach (var k in n.fechasyparacombo(algo)) 
             { 
             na.comboBox1.Items.Add(k.anio);
             }

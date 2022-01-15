@@ -37,5 +37,15 @@ namespace CapaNegocios
         {
             return ia.cargargv();
         }
+
+        public int buscarid_inscripcion(int idalumno, int idcurso) 
+        {
+            return ia.buscarid_inscripcion(idalumno,idcurso);
+        }
+
+        public int buscarPerosnaParaCalificar(int legajo) 
+        {
+            return ia.buscarPerosnaParaCalificar(legajo);
+        }
     }
 }

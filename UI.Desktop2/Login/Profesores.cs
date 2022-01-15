@@ -21,6 +21,11 @@ namespace UI.Desktop2.Login
         private void btnPlanes_Click(object sender, EventArgs e)
         {
             _Plan_ pla = new _Plan_();
+            pla.btnAlta.Visible = false;
+            pla.btnmodificacion.Visible = false;
+            pla.btnrefresh.Visible = false;
+            pla.Eliminar.Visible = false;
+
             pla.Show();
         }
 

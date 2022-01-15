@@ -17,11 +17,17 @@
     <div id="listas">
         <ul>
             <li><a href="../Entidades/Comisiones.aspx">Comision</a></li>
-            <li><a href="../Entidades/Cursos.aspx">Curso</a></li>
-            <li><a href="../Entidades/Materias.aspx">Materia</a></li>
-            <li><a href="../Entidades/Modulos.aspx">Modulos</a></li>
-            <li><a href="../Entidades/alumnos_inscripcioness.aspx">Alumnos e inscripciones</a></li>
-        </ul>
+            <li><a href="../Reportes/InformeDeNotas.aspx">Notas </a></li>
+             <li><a href="../Reportes/reporteMATERIAS.aspx">Materias </a></li>
+              <li><a href="../Reportes/reporCurso_Docentes.aspx">Cursos y docentes </a></li>
+               <li><a href="../Reportes/Inscripcion_Materia.aspx">Registrar en materia </a></li>
+                <li><a href="../Reportes/CambiarContrasena.aspx">Cambiar Contraseña </a></li>
+                 <li><a href="../ReportesDocentesXcursos.aspx">docentes de cada curso</a></li>
+
+
+
+
+            </ul>
 
 
     </div>

@@ -1,0 +1,25 @@
+﻿body 
+{
+}
+
+.print th:nth-child(1)
+{
+    
+    display:none;
+}
+
+.print th:nth-child(2) {
+    visibility:hidden;
+}
+.print th:nth-child(2)::after 
+{
+    content:"Curso";
+    visibility:visible;
+    float:left;
+}
+    .print td:nth-child(1) {
+    display: none;
+   
+}
+
+

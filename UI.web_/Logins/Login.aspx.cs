@@ -54,10 +54,11 @@ namespace UI.web_
                     tup = lo.FindRoles(l.Text, contrasena.Text);
                     switch (tup.Item2)
                     {
-                        case 1: Session["acceso"] = tup.Item2.ToString(); Response.Redirect("../Logins/Menu-admins.aspx "); break;
-                        case 2: Session["acceso"] = tup.Item2.ToString(); Response.Redirect("../Logins/Menu_Profesores.aspx"); break;
-                        case 3: Session["acceso"] = tup.Item2.ToString() ;   Response.Redirect("../Logins/Menu_Alumno.aspx"); break;
+                        case 0: Session["acceso"] = tup.Item2.ToString(); Response.Redirect("../Logins/Menu-admins.aspx"); break;
+                        case 1: Session["acceso"] = tup.Item2.ToString(); Session["usuarioprofe"]= tup.Item3.ToString(); Response.Redirect("../Logins/Menu_Profesores.aspx"); break;
+                        case 2: Session["acceso"] = tup.Item2.ToString() ; Session["usuario"] = tup.Item3.ToString();   Response.Redirect("../Logins/Menu_Alumno.aspx"); break;
                     }
+                    
                 }
                 else
                 {

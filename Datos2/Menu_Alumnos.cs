@@ -4,6 +4,7 @@ using System.Data;
  using System.Collections.Generic;
 using System.Linq;
 
+
 namespace Datos2
 {
     public class NotasAlumnos

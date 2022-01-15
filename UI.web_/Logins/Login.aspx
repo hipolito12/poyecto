@@ -26,7 +26,7 @@
                     <br />
                     <br />
                     <asp:Label Text="Ingrese su Contraseña: " runat="server" />
-                    <asp:TextBox ID="contrasena" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="contrasena" runat="server" TextMode="Password"></asp:TextBox>
                     &nbsp;<br />
                  
                     <br />

@@ -10,7 +10,7 @@
     <title></title>
 </head>
 <body>
-    <form action="/" method="post" runat="server">
+    <form action="/" method="post" >
 
     <div class="posicion">
     <asp:Label ID="Label1" runat="server" Text="Ingrese descripcion del plan  :  "    CssClass="descripcion_titulo"></asp:Label>

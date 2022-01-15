@@ -55,29 +55,37 @@ namespace UI.Desktop2
             this.descplan,
             this.idespecialidad});
             this.dataGridView1.DataSource = this.planesBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 18);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(347, 150);
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.Size = new System.Drawing.Size(520, 231);
             this.dataGridView1.TabIndex = 0;
             // 
             // idplan
             // 
             this.idplan.DataPropertyName = "id_plan";
             this.idplan.HeaderText = "id_plan";
+            this.idplan.MinimumWidth = 8;
             this.idplan.Name = "idplan";
             this.idplan.ReadOnly = true;
+            this.idplan.Width = 150;
             // 
             // descplan
             // 
             this.descplan.DataPropertyName = "desc_plan";
             this.descplan.HeaderText = "desc_plan";
+            this.descplan.MinimumWidth = 8;
             this.descplan.Name = "descplan";
+            this.descplan.Width = 150;
             // 
             // idespecialidad
             // 
             this.idespecialidad.DataPropertyName = "id_especialidad";
             this.idespecialidad.HeaderText = "id_especialidad";
+            this.idespecialidad.MinimumWidth = 8;
             this.idespecialidad.Name = "idespecialidad";
+            this.idespecialidad.Width = 150;
             // 
             // planesBindingSource
             // 
@@ -95,9 +103,10 @@ namespace UI.Desktop2
             // 
             // btnrefresh
             // 
-            this.btnrefresh.Location = new System.Drawing.Point(134, 177);
+            this.btnrefresh.Location = new System.Drawing.Point(201, 272);
+            this.btnrefresh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnrefresh.Name = "btnrefresh";
-            this.btnrefresh.Size = new System.Drawing.Size(87, 23);
+            this.btnrefresh.Size = new System.Drawing.Size(130, 35);
             this.btnrefresh.TabIndex = 1;
             this.btnrefresh.Text = "Refrescar";
             this.btnrefresh.UseVisualStyleBackColor = true;
@@ -105,9 +114,10 @@ namespace UI.Desktop2
             // 
             // btnmodificacion
             // 
-            this.btnmodificacion.Location = new System.Drawing.Point(396, 73);
+            this.btnmodificacion.Location = new System.Drawing.Point(594, 112);
+            this.btnmodificacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnmodificacion.Name = "btnmodificacion";
-            this.btnmodificacion.Size = new System.Drawing.Size(153, 23);
+            this.btnmodificacion.Size = new System.Drawing.Size(230, 35);
             this.btnmodificacion.TabIndex = 2;
             this.btnmodificacion.Text = "Modificacion";
             this.btnmodificacion.UseVisualStyleBackColor = true;
@@ -115,9 +125,10 @@ namespace UI.Desktop2
             // 
             // btnAlta
             // 
-            this.btnAlta.Location = new System.Drawing.Point(396, 20);
+            this.btnAlta.Location = new System.Drawing.Point(594, 31);
+            this.btnAlta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAlta.Name = "btnAlta";
-            this.btnAlta.Size = new System.Drawing.Size(153, 23);
+            this.btnAlta.Size = new System.Drawing.Size(230, 35);
             this.btnAlta.TabIndex = 3;
             this.btnAlta.Text = "Alta";
             this.btnAlta.UseVisualStyleBackColor = true;
@@ -125,9 +136,10 @@ namespace UI.Desktop2
             // 
             // Eliminar
             // 
-            this.Eliminar.Location = new System.Drawing.Point(396, 124);
+            this.Eliminar.Location = new System.Drawing.Point(594, 191);
+            this.Eliminar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Size = new System.Drawing.Size(153, 23);
+            this.Eliminar.Size = new System.Drawing.Size(230, 35);
             this.Eliminar.TabIndex = 4;
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.UseVisualStyleBackColor = true;
@@ -135,14 +147,15 @@ namespace UI.Desktop2
             // 
             // _Plan_
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 249);
+            this.ClientSize = new System.Drawing.Size(842, 383);
             this.Controls.Add(this.Eliminar);
             this.Controls.Add(this.btnAlta);
             this.Controls.Add(this.btnmodificacion);
             this.Controls.Add(this.btnrefresh);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "_Plan_";
             this.Text = "_Plan_";
             this.Load += new System.EventHandler(this._Plan__Load);
@@ -154,10 +167,6 @@ namespace UI.Desktop2
         }
 
         #endregion
-        private System.Windows.Forms.Button btnrefresh;
-        private System.Windows.Forms.Button btnmodificacion;
-        private System.Windows.Forms.Button btnAlta;
-        private System.Windows.Forms.Button Eliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idplan;
         private System.Windows.Forms.DataGridViewTextBoxColumn descplan;
         private System.Windows.Forms.DataGridViewTextBoxColumn idespecialidad;
@@ -165,5 +174,9 @@ namespace UI.Desktop2
         public tp2DataSet tp2DataSet;
         public System.Windows.Forms.BindingSource planesBindingSource;
         public tp2DataSetTableAdapters.planesTableAdapter planesTableAdapter;
+        public System.Windows.Forms.Button btnrefresh;
+        public System.Windows.Forms.Button btnmodificacion;
+        public System.Windows.Forms.Button btnAlta;
+        public System.Windows.Forms.Button Eliminar;
     }
 }
