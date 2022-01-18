@@ -25,6 +25,7 @@ namespace UI.Desktop2.Login
             pla.btnmodificacion.Visible = false;
             pla.btnrefresh.Visible = false;
             pla.Eliminar.Visible = false;
+            pla.dataGridView1.Columns[2].Visible = false;
 
             pla.Show();
         }

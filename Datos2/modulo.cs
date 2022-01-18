@@ -9,6 +9,13 @@ namespace Datos2
     public class modulo
     {
 
+
+        public List<modulos> listar() 
+        {
+            Entidades en = new Entidades();
+            return en.modulos.SqlQuery("select * from modulos").ToList();
+        }
+
         public void cargaModulos(string desc, string ejec)
         {
             Entidades en = new Entidades();

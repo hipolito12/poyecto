@@ -1,6 +1,7 @@
 ﻿using CapaNegocios;
 using System;
 using System.Windows.Forms;
+using CapaNegocios;
 
 namespace UI.Desktop2
 {
@@ -8,8 +9,11 @@ namespace UI.Desktop2
     {
         public Materia()
         {
-            InitializeComponent();
+           
+            InitializeComponent(); 
+            dataGridView1.DataSource = m.listar();
         }
+        Materia_n m = new Materia_n();
 
         private void Materia_Load(object sender, EventArgs e)
         {
@@ -56,7 +60,8 @@ namespace UI.Desktop2
 
         private void refresh_Click(object sender, EventArgs e)
         {
-            this.materiasTableAdapter.Fill(this.tp2DataSet.materias);
+            //this.materiasTableAdapter.Fill(this.tp2DataSet.materias);
+            dataGridView1.DataSource=  m.listar();
         }
 
         private void btnagregar_Click_1(object sender, EventArgs e)

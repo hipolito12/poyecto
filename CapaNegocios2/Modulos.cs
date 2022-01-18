@@ -9,6 +9,10 @@ namespace CapaNegocios
     {
         modulo mo = new modulo();
 
+        public List<modulos> listar() 
+        {
+            return mo.listar();
+        }
         public void ADDmodulo(string desc, string ejec)
         {
             mo.cargaModulos(desc, ejec);

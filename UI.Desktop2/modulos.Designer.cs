@@ -30,35 +30,33 @@ namespace UI.Desktop2
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(modulos));
             this.btnAlta = new System.Windows.Forms.Button();
             this.btnBAJA = new System.Windows.Forms.Button();
             this.btnEDIT = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idmodulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descmodulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ejectua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modulosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tp2DataSet = new UI.Desktop2.tp2DataSet();
             this.tp2DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.modulosTableAdapter = new UI.Desktop2.tp2DataSetTableAdapters.modulosTableAdapter();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnrefresh = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.idmodulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descmodulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ejectua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modulosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tp2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tp2DataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAlta
             // 
-            this.btnAlta.Location = new System.Drawing.Point(422, 290);
+            this.btnAlta.Location = new System.Drawing.Point(612, 85);
+            this.btnAlta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAlta.Name = "btnAlta";
-            this.btnAlta.Size = new System.Drawing.Size(214, 23);
+            this.btnAlta.Size = new System.Drawing.Size(321, 35);
             this.btnAlta.TabIndex = 2;
             this.btnAlta.Text = "Alta";
             this.btnAlta.UseVisualStyleBackColor = true;
@@ -66,9 +64,10 @@ namespace UI.Desktop2
             // 
             // btnBAJA
             // 
-            this.btnBAJA.Location = new System.Drawing.Point(422, 341);
+            this.btnBAJA.Location = new System.Drawing.Point(612, 164);
+            this.btnBAJA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBAJA.Name = "btnBAJA";
-            this.btnBAJA.Size = new System.Drawing.Size(214, 23);
+            this.btnBAJA.Size = new System.Drawing.Size(321, 35);
             this.btnBAJA.TabIndex = 3;
             this.btnBAJA.Text = "Baja";
             this.btnBAJA.UseVisualStyleBackColor = true;
@@ -76,9 +75,10 @@ namespace UI.Desktop2
             // 
             // btnEDIT
             // 
-            this.btnEDIT.Location = new System.Drawing.Point(422, 389);
+            this.btnEDIT.Location = new System.Drawing.Point(612, 237);
+            this.btnEDIT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEDIT.Name = "btnEDIT";
-            this.btnEDIT.Size = new System.Drawing.Size(214, 23);
+            this.btnEDIT.Size = new System.Drawing.Size(321, 35);
             this.btnEDIT.TabIndex = 4;
             this.btnEDIT.Text = "Editar";
             this.btnEDIT.UseVisualStyleBackColor = true;
@@ -93,11 +93,38 @@ namespace UI.Desktop2
             this.descmodulo,
             this.ejectua});
             this.dataGridView1.DataSource = this.modulosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 18);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(349, 263);
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.Size = new System.Drawing.Size(524, 405);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // idmodulo
+            // 
+            this.idmodulo.DataPropertyName = "id_modulo";
+            this.idmodulo.HeaderText = "id_modulo";
+            this.idmodulo.MinimumWidth = 8;
+            this.idmodulo.Name = "idmodulo";
+            this.idmodulo.ReadOnly = true;
+            this.idmodulo.Width = 150;
+            // 
+            // descmodulo
+            // 
+            this.descmodulo.DataPropertyName = "desc_modulo";
+            this.descmodulo.HeaderText = "desc_modulo";
+            this.descmodulo.MinimumWidth = 8;
+            this.descmodulo.Name = "descmodulo";
+            this.descmodulo.Width = 150;
+            // 
+            // ejectua
+            // 
+            this.ejectua.DataPropertyName = "ejecuta";
+            this.ejectua.HeaderText = "ejecuta";
+            this.ejectua.MinimumWidth = 8;
+            this.ejectua.Name = "ejectua";
+            this.ejectua.Width = 150;
             // 
             // modulosBindingSource
             // 
@@ -120,23 +147,14 @@ namespace UI.Desktop2
             // 
             this.modulosTableAdapter.ClearBeforeFill = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(384, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(321, 251);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // btnrefresh
             // 
-            this.btnrefresh.Location = new System.Drawing.Point(33, 290);
+            this.btnrefresh.Location = new System.Drawing.Point(38, 433);
+            this.btnrefresh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnrefresh.Name = "btnrefresh";
-            this.btnrefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnrefresh.Size = new System.Drawing.Size(410, 35);
             this.btnrefresh.TabIndex = 7;
-            this.btnrefresh.Text = "refrescar";
+            this.btnrefresh.Text = "Refrescar";
             this.btnrefresh.UseVisualStyleBackColor = true;
             this.btnrefresh.Click += new System.EventHandler(this.btnrefresh_Click);
             // 
@@ -144,9 +162,10 @@ namespace UI.Desktop2
             // 
             this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.modulosBindingSource, "desc_modulo", true));
             this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.modulosBindingSource, "desc_modulo", true));
-            this.textBox1.Location = new System.Drawing.Point(897, 430);
+            this.textBox1.Location = new System.Drawing.Point(1346, 662);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(148, 26);
             this.textBox1.TabIndex = 8;
             // 
             // textBox2
@@ -154,44 +173,27 @@ namespace UI.Desktop2
             this.textBox2.AcceptsReturn = true;
             this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.modulosBindingSource, "id_modulo", true));
             this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.modulosBindingSource, "id_modulo", true));
-            this.textBox2.Location = new System.Drawing.Point(897, 357);
+            this.textBox2.Location = new System.Drawing.Point(1346, 549);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(148, 26);
             this.textBox2.TabIndex = 9;
             // 
             // textBox3
             // 
             this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.modulosBindingSource, "ejecuta", true));
             this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.modulosBindingSource, "ejecuta", true));
-            this.textBox3.Location = new System.Drawing.Point(897, 392);
+            this.textBox3.Location = new System.Drawing.Point(1346, 603);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.Size = new System.Drawing.Size(148, 26);
             this.textBox3.TabIndex = 10;
-            // 
-            // idmodulo
-            // 
-            this.idmodulo.DataPropertyName = "id_modulo";
-            this.idmodulo.HeaderText = "id_modulo";
-            this.idmodulo.Name = "idmodulo";
-            this.idmodulo.ReadOnly = true;
-            // 
-            // descmodulo
-            // 
-            this.descmodulo.DataPropertyName = "desc_modulo";
-            this.descmodulo.HeaderText = "desc_modulo";
-            this.descmodulo.Name = "descmodulo";
-            // 
-            // ejectua
-            // 
-            this.ejectua.DataPropertyName = "ejecuta";
-            this.ejectua.HeaderText = "ejecuta";
-            this.ejectua.Name = "ejectua";
             // 
             // modulos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 407);
+            this.ClientSize = new System.Drawing.Size(1050, 510);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -200,7 +202,7 @@ namespace UI.Desktop2
             this.Controls.Add(this.btnEDIT);
             this.Controls.Add(this.btnBAJA);
             this.Controls.Add(this.btnAlta);
-            this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "modulos";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.modulos_Load);
@@ -208,14 +210,12 @@ namespace UI.Desktop2
             ((System.ComponentModel.ISupportInitialize)(this.modulosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tp2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tp2DataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnAlta;
         private System.Windows.Forms.Button btnBAJA;
         private System.Windows.Forms.Button btnEDIT;

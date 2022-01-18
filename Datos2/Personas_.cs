@@ -12,6 +12,13 @@ namespace Datos2
         Entidades en = new Entidades();
         personas per = new personas();
 
+
+        public List<personas> listar() 
+        {
+            return en.personas.SqlQuery("select * from personas ").ToList();
+        }
+
+
         public void agregarPersonas(string nombre, string apellido, string direccion, string email, string telefono, string fechan, int legajo, int tipo_persona, int id_plan)
         {
             /*conexioncs conexion = new conexioncs();

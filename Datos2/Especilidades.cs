@@ -8,6 +8,11 @@ namespace Datos2
         Entidades en = new Entidades();
         especialidades es = new especialidades();
 
+        public List<especialidades> Listar() 
+        {
+            return en.especialidades.SqlQuery("select * from especialidades ").ToList();
+        }
+
         public void agregarespecialidades(string descripcion)
         {
             es.desc_especialidad = descripcion;

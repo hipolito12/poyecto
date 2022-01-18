@@ -43,15 +43,23 @@ namespace UI.Desktop2
 
                     int alumnoid = ia.cargacombos().Item1[Comboalumno.Text];
                     int curso = ia.cargacombos().Item2[Combocurso.Text];
-                   
-                    ia.agregar(alumnoid.ToString(),curso.ToString(),  combocondicionalu.Text, txtnota.Text);
-                    MessageBox.Show("Carga realizada!");
+                    //verificar que ya este inscripto
+                    bool x = ia.VerificarInscripcion(alumnoid,curso);
+                    if (x == false)
+                    {
+                        ia.agregar(alumnoid.ToString(), curso.ToString(), combocondicionalu.Text, txtnota.Text);
+
+
+                        MessageBox.Show("Carga realizada!");
+                    }
+                    else { MessageBox.Show(" error en la Carga!"); }
                 }
                 if(estado == false) 
                 {
-                   int alumnoid= ia.cargacombos().Item1[Comboalumno.Text];
+
+                    int alumnoid = ia.cargacombos().Item1[Comboalumno.Text];
                     int curso = ia.cargacombos().Item2[Combocurso.Text];
-                    
+
                     ia.modificar(alumnoid.ToString(), curso.ToString(), combocondicionalu.Text, txtnota.Text, ide);
                     MessageBox.Show("Modificado!");
                     this.Close();

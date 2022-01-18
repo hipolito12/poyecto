@@ -8,10 +8,10 @@ namespace Datos2
 
     public class curso_
     {
-        conexioncs conexion = new conexioncs();
-        SqlDataReader leer;
-        DataTable tabla = new DataTable();
-        SqlCommand comando = new SqlCommand();
+        //conexioncs conexion = new conexioncs();
+        //SqlDataReader leer;
+        //DataTable tabla = new DataTable();
+        //SqlCommand comando = new SqlCommand();
         public Entidades entidad = new Entidades();
         /*public void ADDcursometodoviejo(int idmateria, int idComision, int anio, int cupo) 
         {
@@ -28,7 +28,10 @@ namespace Datos2
         }*/
 
 
-
+        public List<cursos> Listar()
+        {
+            return entidad.cursos.SqlQuery("select * from cursos ").ToList();
+        }
 
         public void ADDcursos(int idmateria, int idComision, int anio, int cupo)
         {
@@ -140,7 +143,12 @@ namespace Datos2
             return ListaDecursos;
         }
 
-
+        public List<cursos> cargarcamposCursos()
+        {
+            Entidades ent = new Entidades();
+            var campos =ent.cursos.SqlQuery($" select * from cursos  where anio_calendario = {DateTime.Now.Year}").ToList();
+            return campos;
+        } 
 
     }
 

@@ -6,7 +6,14 @@ namespace CapaNegocios
 {
     public class Especialidad
     {
+        
+
         Especilidades esp = new Especilidades();
+
+        public List<especialidades> Listar()
+        {
+            return esp.Listar();
+        }
         public void addEspecialidad(string especilidad)
         {
             esp.agregarespecialidades(especilidad);

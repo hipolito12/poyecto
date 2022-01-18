@@ -11,6 +11,13 @@ namespace Datos2
 {
     public class comision
     {
+
+        public List<comisiones> Listar() 
+        {
+            Entidades en = new Entidades();
+            return en.comisiones.SqlQuery("select * from comisiones  ").ToList(); 
+        } 
+
         public void agregar_entidades( string descomi,int  anio,int idplan)
         {
             Entidades en = new Entidades();

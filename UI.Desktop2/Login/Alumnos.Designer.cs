@@ -38,14 +38,14 @@ namespace UI.Desktop2.Login
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.asasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inscripcionDeAlumnosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.materiasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.modulosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.planesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.especialidadesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cursosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.notasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.docentesDeCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.materiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.camabiarLaContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,11 +131,11 @@ namespace UI.Desktop2.Login
             // 
             this.asasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inscripcionDeAlumnosToolStripMenuItem1,
-            this.materiasToolStripMenuItem1,
-            this.modulosToolStripMenuItem1,
-            this.planesToolStripMenuItem1,
-            this.especialidadesToolStripMenuItem1,
-            this.cursosToolStripMenuItem1});
+            this.notasToolStripMenuItem,
+            this.docentesDeCursoToolStripMenuItem,
+            this.materiasToolStripMenuItem,
+            this.cursosToolStripMenuItem,
+            this.camabiarLaContraseñaToolStripMenuItem});
             this.asasToolStripMenuItem.Name = "asasToolStripMenuItem";
             this.asasToolStripMenuItem.Size = new System.Drawing.Size(121, 29);
             this.asasToolStripMenuItem.Text = "Navegacion";
@@ -143,44 +143,9 @@ namespace UI.Desktop2.Login
             // inscripcionDeAlumnosToolStripMenuItem1
             // 
             this.inscripcionDeAlumnosToolStripMenuItem1.Name = "inscripcionDeAlumnosToolStripMenuItem1";
-            this.inscripcionDeAlumnosToolStripMenuItem1.Size = new System.Drawing.Size(305, 34);
-            this.inscripcionDeAlumnosToolStripMenuItem1.Text = "Inscripcion de Alumnos ";
+            this.inscripcionDeAlumnosToolStripMenuItem1.Size = new System.Drawing.Size(295, 34);
+            this.inscripcionDeAlumnosToolStripMenuItem1.Text = "inscripcion a cursos";
             this.inscripcionDeAlumnosToolStripMenuItem1.Click += new System.EventHandler(this.inscripcionDeAlumnosToolStripMenuItem1_Click);
-            // 
-            // materiasToolStripMenuItem1
-            // 
-            this.materiasToolStripMenuItem1.Name = "materiasToolStripMenuItem1";
-            this.materiasToolStripMenuItem1.Size = new System.Drawing.Size(305, 34);
-            this.materiasToolStripMenuItem1.Text = "Materias";
-            this.materiasToolStripMenuItem1.Click += new System.EventHandler(this.materiasToolStripMenuItem1_Click);
-            // 
-            // modulosToolStripMenuItem1
-            // 
-            this.modulosToolStripMenuItem1.Name = "modulosToolStripMenuItem1";
-            this.modulosToolStripMenuItem1.Size = new System.Drawing.Size(305, 34);
-            this.modulosToolStripMenuItem1.Text = "Modulos";
-            this.modulosToolStripMenuItem1.Click += new System.EventHandler(this.modulosToolStripMenuItem1_Click);
-            // 
-            // planesToolStripMenuItem1
-            // 
-            this.planesToolStripMenuItem1.Name = "planesToolStripMenuItem1";
-            this.planesToolStripMenuItem1.Size = new System.Drawing.Size(305, 34);
-            this.planesToolStripMenuItem1.Text = "Planes";
-            this.planesToolStripMenuItem1.Click += new System.EventHandler(this.planesToolStripMenuItem1_Click);
-            // 
-            // especialidadesToolStripMenuItem1
-            // 
-            this.especialidadesToolStripMenuItem1.Name = "especialidadesToolStripMenuItem1";
-            this.especialidadesToolStripMenuItem1.Size = new System.Drawing.Size(305, 34);
-            this.especialidadesToolStripMenuItem1.Text = "Especialidades";
-            this.especialidadesToolStripMenuItem1.Click += new System.EventHandler(this.especialidadesToolStripMenuItem1_Click);
-            // 
-            // cursosToolStripMenuItem1
-            // 
-            this.cursosToolStripMenuItem1.Name = "cursosToolStripMenuItem1";
-            this.cursosToolStripMenuItem1.Size = new System.Drawing.Size(305, 34);
-            this.cursosToolStripMenuItem1.Text = "Cursos";
-            this.cursosToolStripMenuItem1.Click += new System.EventHandler(this.cursosToolStripMenuItem1_Click);
             // 
             // button1
             // 
@@ -214,6 +179,39 @@ namespace UI.Desktop2.Login
             this.button3.Text = "Cambiar Contraseña";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // notasToolStripMenuItem
+            // 
+            this.notasToolStripMenuItem.Name = "notasToolStripMenuItem";
+            this.notasToolStripMenuItem.Size = new System.Drawing.Size(295, 34);
+            this.notasToolStripMenuItem.Text = "Notas";
+            this.notasToolStripMenuItem.Click += new System.EventHandler(this.notasToolStripMenuItem_Click);
+            // 
+            // docentesDeCursoToolStripMenuItem
+            // 
+            this.docentesDeCursoToolStripMenuItem.Name = "docentesDeCursoToolStripMenuItem";
+            this.docentesDeCursoToolStripMenuItem.Size = new System.Drawing.Size(295, 34);
+            this.docentesDeCursoToolStripMenuItem.Text = "docentes de curso";
+            this.docentesDeCursoToolStripMenuItem.Click += new System.EventHandler(this.docentesDeCursoToolStripMenuItem_Click);
+            // 
+            // materiasToolStripMenuItem
+            // 
+            this.materiasToolStripMenuItem.Name = "materiasToolStripMenuItem";
+            this.materiasToolStripMenuItem.Size = new System.Drawing.Size(295, 34);
+            this.materiasToolStripMenuItem.Text = "materias";
+            this.materiasToolStripMenuItem.Click += new System.EventHandler(this.materiasToolStripMenuItem_Click);
+            // 
+            // cursosToolStripMenuItem
+            // 
+            this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
+            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(295, 34);
+            this.cursosToolStripMenuItem.Text = "cursos";
+            // 
+            // camabiarLaContraseñaToolStripMenuItem
+            // 
+            this.camabiarLaContraseñaToolStripMenuItem.Name = "camabiarLaContraseñaToolStripMenuItem";
+            this.camabiarLaContraseñaToolStripMenuItem.Size = new System.Drawing.Size(295, 34);
+            this.camabiarLaContraseñaToolStripMenuItem.Text = "camabiar la contraseña";
             // 
             // Alumnos
             // 
@@ -254,13 +252,13 @@ namespace UI.Desktop2.Login
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem asasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inscripcionDeAlumnosToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem materiasToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem modulosToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem planesToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem especialidadesToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         public System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ToolStripMenuItem notasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem docentesDeCursoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem materiasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem camabiarLaContraseñaToolStripMenuItem;
     }
 }

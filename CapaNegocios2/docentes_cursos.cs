@@ -9,6 +9,11 @@ namespace CapaNegocios
     {
         private docentes doc = new docentes();
 
+        public List<docentes_cursos> Listar() {
+            return doc.Listar();
+        }
+
+
         public void ADDdocenteCURSO(string argo, string idcurso, string iddocente)
         {
             doc.cargardocentes(Convert.ToInt32(argo), Convert.ToInt32(idcurso), Convert.ToInt32(iddocente));

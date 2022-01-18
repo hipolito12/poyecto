@@ -7,6 +7,11 @@ namespace Datos2
     {
         Entidades en = new Entidades();
         usuarios u = new usuarios();
+
+        public List<usuarios> listar() 
+        {
+            return en.usuarios.SqlQuery("select *  from usuarios").ToList();
+        }
         public void ADDusuarios(int idper, string nombre, string nombreU, string apellido, string clave, bool cambia, bool habilit, string email)
         {
             u.apellido = apellido;

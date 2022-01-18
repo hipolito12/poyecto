@@ -16,6 +16,8 @@ namespace UI.Desktop2
         public comisiones()
         {
             InitializeComponent();
+            Comision c = new Comision();
+            dataGridView1.DataSource = c.Listar();
         }
 
         private void comisiones_Load(object sender, EventArgs e)
@@ -56,7 +58,8 @@ namespace UI.Desktop2
 
         private void btnrefrescar_Click(object sender, EventArgs e)
         {
-            this.comisionesTableAdapter.Fill(this.tp2DataSet.comisiones);
+            Comision c = new Comision();
+            dataGridView1.DataSource = c.Listar();
         }
     }
 }

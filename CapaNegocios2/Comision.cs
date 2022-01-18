@@ -9,6 +9,12 @@ namespace CapaNegocios
     public class Comision
     {
         comision com = new comision();
+        public List<comisiones> Listar()
+        {
+            return com.Listar();
+        }
+
+        
         public void agregar_comisiones(string descomi, string anio, string idplan) 
         {
             com.agregar_entidades(descomi, Convert.ToInt32(anio) , Convert.ToInt32(idplan));

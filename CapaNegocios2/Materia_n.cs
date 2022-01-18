@@ -8,6 +8,12 @@ namespace CapaNegocios
     {
 
         Materia_ mate = new Materia_();
+
+        public List<materias> listar() 
+        {
+            return mate.Listar();
+        }
+
         public void agregarmateria(string descmat, string hssemanales, string hstotales, string idplan)
         {
             mate.ADDmaterias(descmat, Convert.ToInt32(hssemanales), Convert.ToInt32(hstotales), Convert.ToInt32(idplan));

@@ -1,13 +1,16 @@
 ﻿using CapaNegocios;
 using System;
+using CapaNegocios;
 using System.Windows.Forms;
 namespace UI.Desktop2
 {
     public partial class Personas : Form
     {
+        Persona p = new Persona();
         public Personas()
         {
             InitializeComponent();
+           dataGridView1.DataSource= p.listar();
         }
 
         private void Personas_Load(object sender, EventArgs e)
@@ -35,7 +38,10 @@ namespace UI.Desktop2
 
         private void Refresh_Click(object sender, EventArgs e)
         {
-            this.personasTableAdapter.Fill(this.tp2DataSet.personas);
+            Persona per = new Persona();
+            //this.personasTableAdapter.Fill(this.tp2DataSet.personas);
+            dataGridView1.DataSource = per.listar();
+
         }
 
         private void btnmodificar_Click(object sender, EventArgs e)

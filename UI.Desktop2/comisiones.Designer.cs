@@ -31,10 +31,6 @@ namespace UI.Desktop2
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idcomision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idplan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comisionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tp2DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tp2DataSet = new UI.Desktop2.tp2DataSet();
@@ -43,6 +39,10 @@ namespace UI.Desktop2
             this.btneliminar = new System.Windows.Forms.Button();
             this.btnmodificar = new System.Windows.Forms.Button();
             this.btnrefrescar = new System.Windows.Forms.Button();
+            this.idplan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idcomision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comisionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tp2DataSetBindingSource)).BeginInit();
@@ -65,39 +65,6 @@ namespace UI.Desktop2
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.Size = new System.Drawing.Size(668, 471);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // idcomision
-            // 
-            this.idcomision.DataPropertyName = "id_comision";
-            this.idcomision.HeaderText = "id_comision";
-            this.idcomision.MinimumWidth = 8;
-            this.idcomision.Name = "idcomision";
-            this.idcomision.ReadOnly = true;
-            this.idcomision.Width = 150;
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "desc_comision";
-            this.descripcion.HeaderText = "desc_comision";
-            this.descripcion.MinimumWidth = 8;
-            this.descripcion.Name = "descripcion";
-            this.descripcion.Width = 150;
-            // 
-            // anio
-            // 
-            this.anio.DataPropertyName = "anio_especialidad";
-            this.anio.HeaderText = "anio_especialidad";
-            this.anio.MinimumWidth = 8;
-            this.anio.Name = "anio";
-            this.anio.Width = 150;
-            // 
-            // idplan
-            // 
-            this.idplan.DataPropertyName = "id_plan";
-            this.idplan.HeaderText = "id_plan";
-            this.idplan.MinimumWidth = 8;
-            this.idplan.Name = "idplan";
-            this.idplan.Width = 150;
             // 
             // comisionesBindingSource
             // 
@@ -162,6 +129,39 @@ namespace UI.Desktop2
             this.btnrefrescar.UseVisualStyleBackColor = true;
             this.btnrefrescar.Click += new System.EventHandler(this.btnrefrescar_Click);
             // 
+            // idplan
+            // 
+            this.idplan.DataPropertyName = "id_plan";
+            this.idplan.HeaderText = "id_plan";
+            this.idplan.MinimumWidth = 8;
+            this.idplan.Name = "idplan";
+            this.idplan.Width = 150;
+            // 
+            // anio
+            // 
+            this.anio.DataPropertyName = "anio_especialidad";
+            this.anio.HeaderText = "anio_especialidad";
+            this.anio.MinimumWidth = 8;
+            this.anio.Name = "anio";
+            this.anio.Width = 150;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "desc_comision";
+            this.descripcion.HeaderText = "desc_comision";
+            this.descripcion.MinimumWidth = 8;
+            this.descripcion.Name = "descripcion";
+            this.descripcion.Width = 150;
+            // 
+            // idcomision
+            // 
+            this.idcomision.DataPropertyName = "id_comision";
+            this.idcomision.HeaderText = "id_comision";
+            this.idcomision.MinimumWidth = 8;
+            this.idcomision.Name = "idcomision";
+            this.idcomision.ReadOnly = true;
+            this.idcomision.Width = 150;
+            // 
             // comisiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -192,12 +192,12 @@ namespace UI.Desktop2
         private System.Windows.Forms.BindingSource comisionesBindingSource;
         private tp2DataSetTableAdapters.comisionesTableAdapter comisionesTableAdapter;
         private System.Windows.Forms.Button btnrefrescar;
+        public System.Windows.Forms.Button btnaceptar;
+        public System.Windows.Forms.Button btneliminar;
+        public System.Windows.Forms.Button btnmodificar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idcomision;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn anio;
         private System.Windows.Forms.DataGridViewTextBoxColumn idplan;
-        public System.Windows.Forms.Button btnaceptar;
-        public System.Windows.Forms.Button btneliminar;
-        public System.Windows.Forms.Button btnmodificar;
     }
 }

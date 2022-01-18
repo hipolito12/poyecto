@@ -3,6 +3,7 @@ using Microsoft.Reporting.WinForms;
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
+using CapaNegocios;
 namespace UI.Desktop2.Login
 {
     public partial class Alumnos : Form
@@ -53,6 +54,7 @@ namespace UI.Desktop2.Login
         {
             MateriasInforme mi = new MateriasInforme();
             mi.Show();
+            
         }
 
         private void btnmodulos_Click(object sender, EventArgs e)
@@ -76,7 +78,16 @@ namespace UI.Desktop2.Login
 
         private void btnCursos_Click(object sender, EventArgs e)
         {
-          //Listar Cursos
+            //Listar Cursos
+            cursos c = new cursos();
+            c.btnagregar.Visible = false;
+            c.btnModificar.Visible = false;
+            c.btnRefresh.Visible = false;
+            c.btbElimina.Visible = false;
+            CursosCRUD cc = new CursosCRUD();
+            c.dataGridView1.DataSource = cc.cargarcamposCursos();
+            c.dataGridView1.Columns[1].Visible = false;
+            c.ShowDialog();
         }
 
         private void Alumnos_Load(object sender, EventArgs e)
@@ -89,8 +100,18 @@ namespace UI.Desktop2.Login
 
         private void inscripcionDeAlumnosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Inscripciones_alumno ins = new Inscripciones_alumno();
-            ins.Show();
+
+            inscripciones_alumno1 ins1 = new inscripciones_alumno1();
+            ins1.lblestado.Visible = false;
+            ins1.lblnota.Visible = false;
+            ins1.txtnota.Text = "0";
+            ins1.estado = true;
+            ins1.combocondicionalu.Text = "   ";
+            ins1.txtnota.Visible = false;
+            ins1.lblalumno.Text = "Legajo de alumno";
+            ins1.combocondicionalu.Visible = false;
+            ins1.btnAceptar.Text = "Inscribirse";
+            ins1.Show();
         }
 
         private void materiasToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -161,6 +182,43 @@ namespace UI.Desktop2.Login
             cc.id = algo;
             cc.Show();
 
+        }
+
+        private void notasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(algo.ToString());
+
+
+            NotasAlumnos na = new NotasAlumnos();
+            Notas n = new Notas();
+            foreach (var k in n.fechasyparacombo(algo))
+            {
+                na.comboBox1.Items.Add(k.anio);
+            }
+            na.idpersonacp = algo;
+            na.Show();
+        }
+
+        private void docentesDeCursoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            {
+                Notas mp = new Notas();
+                DocentesXcursosreporte dxc = new DocentesXcursosreporte();
+                dxc.Menu_profesoressBindingSource.DataSource = mp.cargarInformeDocentesXcurso();
+
+                ReportDataSource rd = new ReportDataSource("DocentesXCursos", mp.cargarInformeDocentesXcurso());
+                dxc.reportViewer1.LocalReport.DataSources.Clear();
+                dxc.reportViewer1.LocalReport.DataSources.Add(rd);
+                dxc.reportViewer1.RefreshReport();
+                dxc.Show();
+            }
+        }
+
+        private void materiasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            MateriasInforme mi = new MateriasInforme();
+            mi.Show();
         }
     }
 }

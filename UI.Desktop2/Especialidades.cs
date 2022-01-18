@@ -1,20 +1,25 @@
 ﻿using CapaNegocios;
 using System;
 using System.Windows.Forms;
+using CapaNegocios;
 
 namespace UI.Desktop2
 {
     public partial class Especialidades : Form
     {
+        Especialidad esp = new Especialidad();
         public Especialidades()
         {
-            InitializeComponent();
+           
+           
+            InitializeComponent(); 
+            dataGridView1.DataSource = esp.Listar();
         }
 
         private void Especialidades_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'tp2DataSet.especialidades' Puede moverla o quitarla según sea necesario.
-            this.especialidadesTableAdapter.Fill(this.tp2DataSet.especialidades);
+            //// TODO: esta línea de código carga datos en la tabla 'tp2DataSet.especialidades' Puede moverla o quitarla según sea necesario.
+            //this.especialidadesTableAdapter.Fill(this.tp2DataSet.especialidades);
 
         }
 
@@ -52,7 +57,9 @@ namespace UI.Desktop2
 
         private void refresh_Click(object sender, EventArgs e)
         {
-            this.especialidadesTableAdapter.Fill(this.tp2DataSet.especialidades);
+            //this.especialidadesTableAdapter.Fill(this.tp2DataSet.especialidades);
+           
+             dataGridView1.DataSource= esp.Listar();
         }
     }
 }

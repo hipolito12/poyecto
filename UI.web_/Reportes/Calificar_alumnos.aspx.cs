@@ -49,7 +49,7 @@ namespace UI.web_.Reportes
             }
             catch (Exception ex)
             {
-                lblinformar.Text = "ha ocurrido un error , verifique la entrada  e intente de nuevo";
+                lblinformar.Text = /*"ha ocurrido un error , verifique la entrada  e intente de nuevo"*/  ex.Message ;
                 lblinformar.Visible = true;
             }
         }

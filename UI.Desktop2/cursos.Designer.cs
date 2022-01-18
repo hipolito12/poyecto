@@ -59,41 +59,53 @@ namespace UI.Desktop2
             this.aniocalendario,
             this.cupo});
             this.dataGridView1.DataSource = this.cursosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(-69, 5);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(543, 291);
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.Size = new System.Drawing.Size(1047, 448);
             this.dataGridView1.TabIndex = 0;
             // 
             // idcursos
             // 
             this.idcursos.DataPropertyName = "id_curso";
             this.idcursos.HeaderText = "id_curso";
+            this.idcursos.MinimumWidth = 8;
             this.idcursos.Name = "idcursos";
             this.idcursos.ReadOnly = true;
+            this.idcursos.Width = 150;
             // 
             // idmateriaDataGridViewTextBoxColumn
             // 
             this.idmateriaDataGridViewTextBoxColumn.DataPropertyName = "id_materia";
             this.idmateriaDataGridViewTextBoxColumn.HeaderText = "id_materia";
+            this.idmateriaDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.idmateriaDataGridViewTextBoxColumn.Name = "idmateriaDataGridViewTextBoxColumn";
+            this.idmateriaDataGridViewTextBoxColumn.Width = 150;
             // 
             // idcomisionDataGridViewTextBoxColumn
             // 
             this.idcomisionDataGridViewTextBoxColumn.DataPropertyName = "id_comision";
             this.idcomisionDataGridViewTextBoxColumn.HeaderText = "id_comision";
+            this.idcomisionDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.idcomisionDataGridViewTextBoxColumn.Name = "idcomisionDataGridViewTextBoxColumn";
+            this.idcomisionDataGridViewTextBoxColumn.Width = 150;
             // 
             // aniocalendario
             // 
             this.aniocalendario.DataPropertyName = "anio_calendario";
             this.aniocalendario.HeaderText = "anio_calendario";
+            this.aniocalendario.MinimumWidth = 8;
             this.aniocalendario.Name = "aniocalendario";
+            this.aniocalendario.Width = 150;
             // 
             // cupo
             // 
             this.cupo.DataPropertyName = "cupo";
             this.cupo.HeaderText = "cupo";
+            this.cupo.MinimumWidth = 8;
             this.cupo.Name = "cupo";
+            this.cupo.Width = 150;
             // 
             // cursosBindingSource
             // 
@@ -111,9 +123,10 @@ namespace UI.Desktop2
             // 
             // btnagregar
             // 
-            this.btnagregar.Location = new System.Drawing.Point(595, 323);
+            this.btnagregar.Location = new System.Drawing.Point(986, 65);
+            this.btnagregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnagregar.Name = "btnagregar";
-            this.btnagregar.Size = new System.Drawing.Size(172, 23);
+            this.btnagregar.Size = new System.Drawing.Size(258, 35);
             this.btnagregar.TabIndex = 1;
             this.btnagregar.Text = "Agregar";
             this.btnagregar.UseVisualStyleBackColor = true;
@@ -121,9 +134,10 @@ namespace UI.Desktop2
             // 
             // btbElimina
             // 
-            this.btbElimina.Location = new System.Drawing.Point(595, 415);
+            this.btbElimina.Location = new System.Drawing.Point(986, 206);
+            this.btbElimina.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btbElimina.Name = "btbElimina";
-            this.btbElimina.Size = new System.Drawing.Size(172, 23);
+            this.btbElimina.Size = new System.Drawing.Size(258, 35);
             this.btbElimina.TabIndex = 2;
             this.btbElimina.Text = "Eliminar";
             this.btbElimina.UseVisualStyleBackColor = true;
@@ -131,9 +145,10 @@ namespace UI.Desktop2
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(595, 370);
+            this.btnModificar.Location = new System.Drawing.Point(986, 137);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(172, 23);
+            this.btnModificar.Size = new System.Drawing.Size(258, 35);
             this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -141,9 +156,10 @@ namespace UI.Desktop2
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(175, 311);
+            this.btnRefresh.Location = new System.Drawing.Point(262, 478);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(169, 23);
+            this.btnRefresh.Size = new System.Drawing.Size(254, 35);
             this.btnRefresh.TabIndex = 4;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -151,14 +167,15 @@ namespace UI.Desktop2
             // 
             // cursos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 450);
+            this.ClientSize = new System.Drawing.Size(1234, 692);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btbElimina);
             this.Controls.Add(this.btnagregar);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "cursos";
             this.Text = "cursos";
             this.Load += new System.EventHandler(this.cursos_Load);
@@ -173,15 +190,15 @@ namespace UI.Desktop2
         private tp2DataSet tp2DataSet;
         private System.Windows.Forms.BindingSource cursosBindingSource;
         private tp2DataSetTableAdapters.cursosTableAdapter cursosTableAdapter;
-        private System.Windows.Forms.Button btnagregar;
-        private System.Windows.Forms.Button btbElimina;
-        private System.Windows.Forms.Button btnModificar;
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idcursos;
         private System.Windows.Forms.DataGridViewTextBoxColumn idmateriaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idcomisionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aniocalendario;
         private System.Windows.Forms.DataGridViewTextBoxColumn cupo;
-        private System.Windows.Forms.Button btnRefresh;
+        public System.Windows.Forms.Button btnagregar;
+        public System.Windows.Forms.Button btbElimina;
+        public System.Windows.Forms.Button btnModificar;
+        public System.Windows.Forms.Button btnRefresh;
     }
 }

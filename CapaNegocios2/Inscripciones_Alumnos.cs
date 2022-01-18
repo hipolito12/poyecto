@@ -15,9 +15,13 @@ namespace CapaNegocios
             ia.Registro(  Convert.ToInt32(idalumno), Convert.ToInt32(curso),estado , Convert.ToInt32(nota) );
         }
 
+        public List<alumnos_inscripciones> Listar()
+        {
+            return ia.Listar();
+        }
 
 
-        public void modificar(string idalumno, string curso, string estado, string nota, string id) 
+            public void modificar(string idalumno, string curso, string estado, string nota, string id) 
         {
             Console.WriteLine(curso);
             ia.modificacion(Convert.ToInt32(idalumno), Convert.ToInt32(curso), estado, Convert.ToInt32(nota), Convert.ToInt32(id));
@@ -46,6 +50,11 @@ namespace CapaNegocios
         public int buscarPerosnaParaCalificar(int legajo) 
         {
             return ia.buscarPerosnaParaCalificar(legajo);
+        }
+
+        public bool VerificarInscripcion(int id, int curso) 
+        {
+            return ia.VerificarInscripcion(id,curso);
         }
     }
 }

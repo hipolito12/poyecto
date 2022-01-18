@@ -7,6 +7,13 @@ namespace Datos2
     {
         Entidades en = new Entidades();
         planes pl = new planes();
+
+
+        public List<planes> listar() 
+        {
+            return en.planes.SqlQuery("select * from planes").ToList();
+        }
+
         public void ADDplan(string desc, int espe)
         {
             pl.desc_plan = desc;

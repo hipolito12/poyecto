@@ -29,7 +29,10 @@ namespace CapaNegocios
         {
             return mo.cargarInformeDocentesXcurso();
         }
-
+        public List<alumnos_inscripciones> refrescar() 
+        {
+            return mo.refrescar(); ;
+        }
 
     }
 }

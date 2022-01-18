@@ -12,6 +12,12 @@ namespace CapaNegocios
               string s = us.personaid(mail,dire,nombre);
                return s;
            }*/
+
+        public List<usuarios> listar() 
+        {
+            return us.listar();
+        }
+
         public int ultimo()
         {
             int k = us.ultimoregidtro();

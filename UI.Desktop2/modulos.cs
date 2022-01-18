@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using System.Windows.Forms;
 using UI.Desktop2.database;
-
+using CapaNegocios;
 namespace UI.Desktop2
 {
 
@@ -13,8 +13,9 @@ namespace UI.Desktop2
         public modulos()
         {
             InitializeComponent();
-
+            dataGridView1.DataSource = mc.listar();
         }
+        ModulosCRUD mc = new ModulosCRUD();
 
         private void mostrarmodulos()
         {
@@ -104,7 +105,9 @@ namespace UI.Desktop2
 
         private void btnrefresh_Click(object sender, EventArgs e)
         {
-            this.modulosTableAdapter.Fill(this.tp2DataSet.modulos);
+
+            //this.modulosTableAdapter.Fill(this.tp2DataSet.modulos);
+            dataGridView1.DataSource = mc.listar();
         }
     }
 }

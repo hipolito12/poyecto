@@ -8,12 +8,17 @@ namespace Datos2
 {
     public class Materia_
     {
-        conexioncs conexion = new conexioncs();
-        SqlDataReader leer;
-        DataTable tabla = new DataTable();
-        SqlCommand comando = new SqlCommand();
+        //conexioncs conexion = new conexioncs();
+        //SqlDataReader leer;
+        //DataTable tabla = new DataTable();
+        //SqlCommand comando = new SqlCommand();
+        public List<materias> Listar()
+        {
+            Entidades enti = new Entidades();
+            return enti.materias.SqlQuery("select * from materias").ToList();
+        }
 
-        public void ADDmaterias(string descmat, int hssemanales, int hstotales, int idplan)
+            public void ADDmaterias(string descmat, int hssemanales, int hstotales, int idplan)
         {
 
 

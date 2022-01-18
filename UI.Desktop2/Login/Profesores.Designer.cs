@@ -51,20 +51,18 @@ namespace UI.Desktop2.Login
             // 
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.richTextBox1.Location = new System.Drawing.Point(42, 61);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.richTextBox1.Location = new System.Drawing.Point(28, 40);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(646, 121);
+            this.richTextBox1.Size = new System.Drawing.Size(432, 80);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
             // btnPlanes
             // 
             this.btnPlanes.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnPlanes.Location = new System.Drawing.Point(393, 308);
-            this.btnPlanes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPlanes.Location = new System.Drawing.Point(262, 200);
             this.btnPlanes.Name = "btnPlanes";
-            this.btnPlanes.Size = new System.Drawing.Size(248, 35);
+            this.btnPlanes.Size = new System.Drawing.Size(165, 23);
             this.btnPlanes.TabIndex = 1;
             this.btnPlanes.Text = "Planes";
             this.btnPlanes.UseVisualStyleBackColor = false;
@@ -73,10 +71,9 @@ namespace UI.Desktop2.Login
             // btndocentescursos
             // 
             this.btndocentescursos.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btndocentescursos.Location = new System.Drawing.Point(393, 378);
-            this.btndocentescursos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btndocentescursos.Location = new System.Drawing.Point(262, 246);
             this.btndocentescursos.Name = "btndocentescursos";
-            this.btndocentescursos.Size = new System.Drawing.Size(248, 35);
+            this.btndocentescursos.Size = new System.Drawing.Size(165, 23);
             this.btndocentescursos.TabIndex = 2;
             this.btndocentescursos.Text = "Calificar Alumnos";
             this.btndocentescursos.UseVisualStyleBackColor = false;
@@ -85,10 +82,9 @@ namespace UI.Desktop2.Login
             // btncursos
             // 
             this.btncursos.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btncursos.Location = new System.Drawing.Point(94, 308);
-            this.btncursos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btncursos.Location = new System.Drawing.Point(63, 200);
             this.btncursos.Name = "btncursos";
-            this.btncursos.Size = new System.Drawing.Size(248, 35);
+            this.btncursos.Size = new System.Drawing.Size(165, 23);
             this.btncursos.TabIndex = 5;
             this.btncursos.Text = "Docentes Cursos";
             this.btncursos.UseVisualStyleBackColor = false;
@@ -99,8 +95,7 @@ namespace UI.Desktop2.Login
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 197);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 128);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(328, 33);
             this.label1.TabIndex = 6;
@@ -109,10 +104,9 @@ namespace UI.Desktop2.Login
             // btnComisiones
             // 
             this.btnComisiones.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnComisiones.Location = new System.Drawing.Point(219, 438);
-            this.btnComisiones.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnComisiones.Location = new System.Drawing.Point(146, 285);
             this.btnComisiones.Name = "btnComisiones";
-            this.btnComisiones.Size = new System.Drawing.Size(278, 35);
+            this.btnComisiones.Size = new System.Drawing.Size(185, 23);
             this.btnComisiones.TabIndex = 9;
             this.btnComisiones.Text = "Comisiones";
             this.btnComisiones.UseVisualStyleBackColor = false;
@@ -126,7 +120,8 @@ namespace UI.Desktop2.Login
             this.navegacionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(709, 33);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(473, 31);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -188,10 +183,9 @@ namespace UI.Desktop2.Login
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button1.Location = new System.Drawing.Point(98, 378);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Location = new System.Drawing.Point(65, 246);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(248, 35);
+            this.button1.Size = new System.Drawing.Size(165, 23);
             this.button1.TabIndex = 11;
             this.button1.Text = "Cantidad de Alumno por curso";
             this.button1.UseVisualStyleBackColor = false;
@@ -199,9 +193,9 @@ namespace UI.Desktop2.Login
             // 
             // Profesores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(709, 516);
+            this.ClientSize = new System.Drawing.Size(473, 335);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnComisiones);
             this.Controls.Add(this.label1);
@@ -210,7 +204,6 @@ namespace UI.Desktop2.Login
             this.Controls.Add(this.btnPlanes);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.menuStrip1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Profesores";
             this.Load += new System.EventHandler(this.Profesores_Load);
             this.menuStrip1.ResumeLayout(false);

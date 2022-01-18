@@ -88,6 +88,15 @@ namespace Datos2
             }
             con.Close();
             return mp;
+        
+        }
+
+        public List<alumnos_inscripciones> refrescar()
+        {
+            Entidades en = new Entidades();
+            var k = en.alumnos_inscripciones.SqlQuery($"select * from alumnos_inscripciones  ").ToList();
+
+            return k;
         }
 
     }

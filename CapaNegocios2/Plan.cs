@@ -8,7 +8,10 @@ namespace CapaNegocios
     {
 
         Plan p = new Plan();
-
+        public List<planes> listar() 
+        {
+            return p.listar();
+        }
         public Dictionary<string, int> cargargarcombos()
         {
             return p.cargarCB();

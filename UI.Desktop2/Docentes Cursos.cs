@@ -1,6 +1,7 @@
 ﻿using CapaNegocios;
 using System;
 using System.Windows.Forms;
+using CapaNegocios;
 
 namespace UI.Desktop2
 {
@@ -9,7 +10,8 @@ namespace UI.Desktop2
         public Docentes_Cursos()
         {
             InitializeComponent();
-            this.docentes_cursosTableAdapter1.Fill(this.tp2DataSet.docentes_cursos);
+            docentes_cursos_CRUD dcc = new docentes_cursos_CRUD();
+            dataGridView1.DataSource = dcc.Listar();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -19,7 +21,11 @@ namespace UI.Desktop2
 
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
-            this.docentes_cursosTableAdapter1.Fill(this.tp2DataSet.docentes_cursos);
+            docentes_cursos_CRUD dcc = new docentes_cursos_CRUD();
+            dataGridView1.DataSource= dcc.Listar();
+
+            //this.docentes_cursosTableAdapter1.Fill(this.tp2DataSet.docentes_cursos);
+
         }
 
         private void Docentes_Cursos_Load(object sender, EventArgs e)

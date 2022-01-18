@@ -5,7 +5,11 @@ namespace Datos2
 {
     public class docentes
     {
-
+        public List<docentes_cursos> Listar()
+        {
+            Entidades en = new Entidades();
+            return en.docentes_cursos.SqlQuery("select * from docentes_cursos ").ToList();
+        }
         public void cargardocentes(int cargo, int idcurso, int iddocente)
         {
 

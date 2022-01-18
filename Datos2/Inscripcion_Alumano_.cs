@@ -8,6 +8,12 @@ namespace Datos2
 {
     public class Inscripcion_Alumano_
     {
+
+        public List<alumnos_inscripciones> Listar()
+        {
+            Entidades en = new Entidades();
+            return en.alumnos_inscripciones.SqlQuery("select * from alumnos_inscripciones").ToList();
+        }
         public void Registro(int alumno, int curso, string condicion, int nota)
         {
             Entidades en = new Entidades();
@@ -47,7 +53,7 @@ namespace Datos2
             en.SaveChanges();
         }
 
-        public (Dictionary<string ,int>, Dictionary<string, int>) comboalumno()
+        public (Dictionary<string ,int>, Dictionary<string, int >) comboalumno()
         {
             Entidades en = new Entidades();
 
@@ -61,7 +67,7 @@ namespace Datos2
 
             var diccionariocursos = en.cursos
                    .SqlQuery("Select * from cursos")
-                   .ToDictionary(t => $" materia:{ auxiliar[t.id_materia]} || año:{t.anio_calendario}", t => t.id_curso);
+                   .ToDictionary(t => $" anio : {t.anio_calendario} curso: {t.id_curso}" , t => t.id_curso  );
 
 
 
@@ -92,6 +98,19 @@ namespace Datos2
             personas p = en.personas.Where(per => per.legajo ==  legajo).FirstOrDefault();
            
             return p.id_persona;
+        }
+
+        public bool VerificarInscripcion( int id , int curso) 
+        {
+            bool verifica = false;
+            Entidades en = new Entidades();
+           var alumno= en.alumnos_inscripciones.Where(k => k.id_alumno == id && k.id_curso == curso).FirstOrDefault();
+            if (alumno == null) 
+            {
+                return verifica ;
+
+            }
+            return verifica =true;
         }
     }
 }

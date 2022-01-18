@@ -1,13 +1,17 @@
 ﻿using CapaNegocios;
 using System;
 using System.Windows.Forms;
+using CapaNegocios;
 namespace UI.Desktop2
 {
     public partial class Usuarios : Form
     {
+        Usuario_ us = new Usuario_();
+        
         public Usuarios()
         {
             InitializeComponent();
+            dataGridView1.DataSource = us.listar();
         }
 
         private void Usuarios_Load(object sender, EventArgs e)
@@ -30,7 +34,10 @@ namespace UI.Desktop2
 
         private void btnRefressh_Click(object sender, EventArgs e)
         {
-            this.usuariosTableAdapter.Fill(this.tp2DataSet.usuarios);
+            dataGridView1.DataSource = " ";
+            Usuario_ usu = new Usuario_();
+            //this.usuariosTableAdapter.Fill(this.tp2DataSet.usuarios);
+            dataGridView1.DataSource = usu.listar();
         }
 
         private void btnAlta_Click(object sender, EventArgs e)
@@ -49,8 +56,9 @@ namespace UI.Desktop2
             ui.txtemail.Text = dataGridView1.CurrentRow.Cells["email"].Value.ToString();
             ui.txtnombre.Text = dataGridView1.CurrentRow.Cells["nombre"].Value.ToString();
             ui.txtusuario.Text = dataGridView1.CurrentRow.Cells["nombreU"].Value.ToString();
-            ui.txtid.Text = dataGridView1.CurrentRow.Cells["id_persona"].Value.ToString();
-            ui.id = dataGridView1.CurrentRow.Cells["id_persona"].Value.ToString();
+            ui.txtid.Text = dataGridView1.CurrentRow.Cells["idpersonas"].Value.ToString();
+            ui.id = dataGridView1.CurrentRow.Cells["idpersonas"].Value.ToString();
+            ui.ShowDialog();
 
         }
     }

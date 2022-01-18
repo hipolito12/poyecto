@@ -8,6 +8,11 @@ namespace CapaNegocios
     {
         curso_ c = new curso_();
 
+        public List<cursos> Listar() 
+        {
+            return c.Listar();
+        }
+
         public void agregarCurso(string materia, string comision, string cupo, string anio)
         {
             c.ADDcursos(Convert.ToInt32(materia), Convert.ToInt32(comision), Convert.ToInt32(cupo), Convert.ToInt32(anio));
@@ -33,6 +38,11 @@ namespace CapaNegocios
         public List<cursos> cargargridview() 
         {
             return c.cargargridview();
+        }
+
+        public List<cursos> cargarcamposCursos() 
+        {
+            return c.cargarcamposCursos();
         }
     }
 }
