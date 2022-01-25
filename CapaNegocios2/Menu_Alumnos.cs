@@ -10,19 +10,19 @@ namespace CapaNegocios
     {
         NotasAlumnos t = new NotasAlumnos();
 
-        public List<NotasAlumnos> algo(int fecha, int idpersona)
+        public DataTable algo(int fecha, int idpersona)
         {
           
             return t.alg(fecha, idpersona);
 
         }
 
-        public List<NotasAlumnos> fechasyparacombo(int idalumno)
+        public List<DataRow> fechasyparacombo(int idalumno)
         {
             return t.notas(idalumno);
         }
 
-        public List<Menu_profesoress> cargarInformeDocentesXcurso()
+        public DataTable cargarInformeDocentesXcurso()
         {
             return t.cargarInformeDocentesXcurso();
         }

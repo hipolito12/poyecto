@@ -1,12 +1,17 @@
-﻿/*using System;
-using datos;
+﻿using System;
+
+using System.Data;
+using System.Data.SqlClient;
+using CapaNegocios;
+
+
 namespace UI.consola
 {
-    public class consolaMaterias : Materia
+    public class consolaMaterias : Materia_n
     {
         public void Menu()
         {
-
+            consolaMaterias cm = new consolaMaterias();
 
             Console.Clear();
             Console.WriteLine("1- Listado general");
@@ -16,60 +21,66 @@ namespace UI.consola
             Console.WriteLine("5- Eliminar");
             Console.WriteLine("6- Salir");
 
-            int option;
-            option = Convert.ToInt32(Console.ReadLine());
-            Materia a = new Materia();
+            int option = Convert.ToInt32(Console.ReadLine());
+
+
             switch (option)
             {
                 case 1:
-                    a.listado();
-                    break;
+
+                    try
+                    {
+                        foreach (var items in cm.lista())
+                        {
+                            Console.WriteLine($"|{items.idmateria} ||{items.horas_semanales} ||{items.horas_totales} ||{items.idplan} |");
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+
+                       break;
+
+
+
+
                 case 2:
 
-                    break;
-                case 3:
-                    string desc = Console.ReadLine();
-                    int t = Convert.ToInt32(Console.ReadLine());
-                    int s = Convert.ToInt32(Console.ReadLine());
-                    int p = Convert.ToInt32(Console.ReadLine());
 
-                    a.insertt(desc, t, s, p);
 
+                    cm.agregarmateria("materiaConsola","15","30","1");
 
                     break;
+            //    case 5:
+            //        int id = Convert.ToInt32(Console.ReadLine());
+            //        a.Eliminar(id);
+
+
+            //        break;
 
 
 
-
-                case 4:
-                    string descr = Console.ReadLine();
-                    int te = Convert.ToInt32(Console.ReadLine());
-                    int ese = Convert.ToInt32(Console.ReadLine());
-                    int pe = Convert.ToInt32(Console.ReadLine());
-                    int ide = Convert.ToInt32(Console.ReadLine());
-                    a.update(descr, te, ese, pe, ide);
-
-
-
-
-                    break;
-                case 5:
-                    int id = Convert.ToInt32(Console.ReadLine());
-                    a.Eliminar(id);
-
-
-                    break;
-
-
-
-                case 6:
-                    break;
+            //    case 6:
+            //        break;
             }
+
+
+
         }
+
+        static void Main(string[] args)
+        {
+            consolaMaterias cm = new consolaMaterias();
+            cm.Menu();
+        }
+
     }
 }
-            
-     */
+
+
 
 
 

@@ -44,20 +44,21 @@ namespace UI.Desktop2
         {
             Usuarios_ingresodatos ui = new Usuarios_ingresodatos();
             ui.estado = true;
+            ui.ShowDialog();
         }
 
         private void btnmodificar_Click(object sender, EventArgs e)
         {
             Usuarios_ingresodatos ui = new Usuarios_ingresodatos();
-            ui.idusuario = dataGridView1.CurrentRow.Cells["idusuario"].Value.ToString();
+            ui.idusuario = dataGridView1.CurrentRow.Cells["id_usuario"].Value.ToString();
             ui.estado = false;
             ui.txtapelliod.Text = dataGridView1.CurrentRow.Cells["apellido"].Value.ToString();
             ui.txtclave.Text = dataGridView1.CurrentRow.Cells["clave"].Value.ToString();
             ui.txtemail.Text = dataGridView1.CurrentRow.Cells["email"].Value.ToString();
             ui.txtnombre.Text = dataGridView1.CurrentRow.Cells["nombre"].Value.ToString();
-            ui.txtusuario.Text = dataGridView1.CurrentRow.Cells["nombreU"].Value.ToString();
-            ui.txtid.Text = dataGridView1.CurrentRow.Cells["idpersonas"].Value.ToString();
-            ui.id = dataGridView1.CurrentRow.Cells["idpersonas"].Value.ToString();
+            ui.txtusuario.Text = dataGridView1.CurrentRow.Cells["nombre_usuario"].Value.ToString();
+            ui.txtid.Text = dataGridView1.CurrentRow.Cells["id_persona"].Value.ToString();
+            ui.id = dataGridView1.CurrentRow.Cells["id_persona"].Value.ToString();
             ui.ShowDialog();
 
         }

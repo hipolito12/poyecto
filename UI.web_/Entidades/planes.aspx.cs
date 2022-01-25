@@ -13,8 +13,13 @@ namespace UI.web_.Entidades
         protected void Page_Load(object sender, EventArgs e)
         {
             error.Visible = false;
-            cargarCombos();
-            cargarGv();
+            if (!IsPostBack) 
+            { 
+                cargarCombos();
+                cargarGv();
+
+            }
+           
         }
 
         protected void btnagregar_Click(object sender, EventArgs e)
@@ -80,7 +85,11 @@ namespace UI.web_.Entidades
 
         protected void gv_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Txtplan.Text = gv.SelectedRow.Cells[2].Text;
+            if (Page.IsPostBack)
+            {
+               Txtplan.Text = gv.SelectedRow.Cells[2].Text;
+            }
+            else {  }
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)

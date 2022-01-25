@@ -11,11 +11,21 @@ namespace Datos2
 {
     public class comision
     {
+        public int idplan { get; set; }
+        public int anio { get; set; }
+        public string descripcion { get; set; }
+        public int idcomision { get; set; }
 
-        public List<comisiones> Listar() 
+
+        public DataTable Listar() 
         {
             Entidades en = new Entidades();
-            return en.comisiones.SqlQuery("select * from comisiones  ").ToList(); 
+            string query = "select * from comisiones";
+            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
+             SqlDataAdapter da = new SqlDataAdapter(query,con);
+            var dt = new DataTable();
+            da.Fill(dt);
+            return dt;
         } 
 
         public void agregar_entidades( string descomi,int  anio,int idplan)

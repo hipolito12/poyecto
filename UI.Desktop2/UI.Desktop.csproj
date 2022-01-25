@@ -468,6 +468,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CapaNegocios.Comision.datasource" />
     <None Include="Properties\DataSources\CapaNegocios.Materia_n.datasource" />
+    <None Include="Properties\DataSources\CapaNegocios.Notas.datasource" />
     <None Include="Properties\DataSources\CapaNegocios.tat.datasource" />
     <None Include="Properties\DataSources\Datos2.Menu_Admins.datasource" />
     <None Include="Properties\DataSources\Datos2.Menu_profesoress.datasource" />
@@ -542,10 +543,6 @@
     <ProjectReference Include="..\CapaNegocios2\CapaNegocios.csproj">
       <Project>{b4b5449c-429c-4ecb-9fef-4bd3b584d9e4}</Project>
       <Name>CapaNegocios</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Datos2\CapaDatos.csproj">
-      <Project>{FC614A7A-DB96-4226-BBE3-DAF487ED8AF1}</Project>
-      <Name>CapaDatos</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

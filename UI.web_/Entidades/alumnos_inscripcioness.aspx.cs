@@ -11,9 +11,12 @@ namespace UI.web_.Entidades
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            cargarcombos();
-            cargargv();
-            error.Visible = false;
+            if (!IsPostBack) 
+            { 
+                cargarcombos();
+                cargargv();
+              error.Visible = false;
+            }
         }
 
         protected void btnagregar_Click1(object sender, EventArgs e)

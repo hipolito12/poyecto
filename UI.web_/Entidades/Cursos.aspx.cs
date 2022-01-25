@@ -11,9 +11,13 @@ namespace UI.web_.Entidades
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            cargargridview();
-            cargarcombos();
-            error.Visible = false;
+            if (!IsPostBack) 
+            { 
+                cargargridview();
+               cargarcombos();
+               error.Visible = false;
+            }
+        
         }
 
         protected void comboidmateria_SelectedIndexChanged(object sender, EventArgs e)

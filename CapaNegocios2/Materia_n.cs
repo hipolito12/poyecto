@@ -1,6 +1,8 @@
 ﻿using Datos2;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace CapaNegocios
 {
@@ -9,7 +11,7 @@ namespace CapaNegocios
 
         Materia_ mate = new Materia_();
 
-        public List<materias> listar() 
+        public DataTable listar() 
         {
             return mate.Listar();
         }
@@ -45,6 +47,13 @@ namespace CapaNegocios
         public List<materias> cargagv() 
         {
             return mate.cargagv(); ;
+        }
+
+
+
+        public List<Materia_> lista() 
+        {
+            return mate.listar();
         }
     }
 }

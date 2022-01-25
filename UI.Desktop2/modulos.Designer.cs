@@ -34,9 +34,6 @@ namespace UI.Desktop2
             this.btnBAJA = new System.Windows.Forms.Button();
             this.btnEDIT = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idmodulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descmodulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ejectua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modulosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tp2DataSet = new UI.Desktop2.tp2DataSet();
             this.tp2DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -86,45 +83,14 @@ namespace UI.Desktop2
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idmodulo,
-            this.descmodulo,
-            this.ejectua});
-            this.dataGridView1.DataSource = this.modulosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 18);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 3);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.Size = new System.Drawing.Size(524, 405);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // idmodulo
-            // 
-            this.idmodulo.DataPropertyName = "id_modulo";
-            this.idmodulo.HeaderText = "id_modulo";
-            this.idmodulo.MinimumWidth = 8;
-            this.idmodulo.Name = "idmodulo";
-            this.idmodulo.ReadOnly = true;
-            this.idmodulo.Width = 150;
-            // 
-            // descmodulo
-            // 
-            this.descmodulo.DataPropertyName = "desc_modulo";
-            this.descmodulo.HeaderText = "desc_modulo";
-            this.descmodulo.MinimumWidth = 8;
-            this.descmodulo.Name = "descmodulo";
-            this.descmodulo.Width = 150;
-            // 
-            // ejectua
-            // 
-            this.ejectua.DataPropertyName = "ejecuta";
-            this.ejectua.HeaderText = "ejecuta";
-            this.ejectua.MinimumWidth = 8;
-            this.ejectua.Name = "ejectua";
-            this.ejectua.Width = 150;
             // 
             // modulosBindingSource
             // 
@@ -228,9 +194,6 @@ namespace UI.Desktop2
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idmodulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descmodulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ejectua;
     }
 }
 

@@ -9,9 +9,9 @@ namespace CapaNegocios
     {
         modulo mo = new modulo();
 
-        public List<modulos> listar() 
+        public DataTable listar() 
         {
-            return mo.listar();
+            return mo.Listar();
         }
         public void ADDmodulo(string desc, string ejec)
         {

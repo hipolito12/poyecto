@@ -8,12 +8,19 @@ namespace Datos2
 
     public class modulo
     {
+        public int idmodulo { get; set; }
+        public string desc_modulo { get; set; }
+        public string ejecuta { get; set; }
 
-
-        public List<modulos> listar() 
+        public DataTable Listar()
         {
             Entidades en = new Entidades();
-            return en.modulos.SqlQuery("select * from modulos").ToList();
+            string query = "select * from modulos";
+            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            var dt = new DataTable();
+            da.Fill(dt);
+            return dt;
         }
 
         public void cargaModulos(string desc, string ejec)

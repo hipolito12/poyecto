@@ -1,14 +1,29 @@
 ﻿using System.Data;
 using System.Linq;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+
 namespace Datos2
 {
     public class docentes
     {
-        public List<docentes_cursos> Listar()
+        public int idcurso { get; set; }
+
+        public int iddictado { get; set; }
+
+        public int iddocente { get; set; }
+
+        public int Cargo { get; set; }
+
+        public DataTable Listar()
         {
             Entidades en = new Entidades();
-            return en.docentes_cursos.SqlQuery("select * from docentes_cursos ").ToList();
+            string query = "select * from docentes_cursos";
+            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            var dt = new DataTable();
+            da.Fill(dt);
+            return dt;
         }
         public void cargardocentes(int cargo, int idcurso, int iddocente)
         {

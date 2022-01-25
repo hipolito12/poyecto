@@ -52,7 +52,7 @@ namespace UI.Desktop2
             // 
             // Menu_profesoressBindingSource
             // 
-            this.Menu_profesoressBindingSource.DataSource = typeof(Datos2.Menu_profesoress);
+          //  this.Menu_profesoressBindingSource.DataSource = typeof(Datos2.Menu_profesoress);
             // 
             // ReporteAlumnosxComisiones
             // 

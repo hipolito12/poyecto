@@ -27,7 +27,7 @@ namespace UI.Desktop2
             {
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
-                    string ID = dataGridView1.CurrentRow.Cells["idplan"].Value.ToString();
+                    string ID = dataGridView1.CurrentRow.Cells["id_plan"].Value.ToString();
                     Plan_ pl = new Plan_();
                     pl.eliminaplan(ID.ToString());
                 }
@@ -56,8 +56,8 @@ namespace UI.Desktop2
         {
             PlanesIngresoDatos uid = new PlanesIngresoDatos();
             uid.estado = false;
-            uid.richdescripcion.Text = dataGridView1.CurrentRow.Cells["descplan"].Value.ToString();
-            uid.idedit = dataGridView1.CurrentRow.Cells["idplan"].Value.ToString();
+            uid.richdescripcion.Text = dataGridView1.CurrentRow.Cells["desc_plan"].Value.ToString();
+            uid.idedit = dataGridView1.CurrentRow.Cells["id_plan"].Value.ToString();
             uid.Show();
 
         }

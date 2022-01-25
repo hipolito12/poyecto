@@ -14,7 +14,6 @@
 
 <body>
     <div id="formulario">
-           <form id="form1" runat="server">
             <asp:Label ID="Label1" runat="server" Text="Seleccione materias:   "></asp:Label > <asp:DropDownList ID="comboidmateria" runat="server" Height="25px" Width="211px" AutoPostBack="True" OnSelectedIndexChanged="comboidmateria_SelectedIndexChanged">
                    <asp:ListItem>prubea</asp:ListItem>
                </asp:DropDownList> <br />
@@ -43,7 +42,7 @@
 
         </div>
            
-           </form>
+           
        
   </div>
 </body>

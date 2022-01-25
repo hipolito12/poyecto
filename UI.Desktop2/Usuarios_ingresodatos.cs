@@ -60,11 +60,10 @@ namespace UI.Desktop2
             }
         }
 
+        private void txtid_TextChanged(object sender, EventArgs e)
+        {
 
-
-
-
-
+        }
     }
 
 

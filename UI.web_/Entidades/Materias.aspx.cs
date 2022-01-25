@@ -12,9 +12,12 @@ namespace UI.web_.Entidades.Estilos
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            error.Visible = false;
-            cargagv();
-            cargarcombos();
+            if (!IsPostBack) 
+            { 
+              error.Visible = false;
+              cargagv();
+              cargarcombos();
+            }
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)

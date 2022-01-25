@@ -3,22 +3,64 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-
+using System.Configuration;
 namespace Datos2
 {
     public class Materia_
     {
+        public int idmateria { get; set; }
+        public int idplan { get; set; }
+        public string desc_materia { get; set; }
+        public int horas_semanales { get; set; }
+        public int horas_totales { get; set; }
+
         //conexioncs conexion = new conexioncs();
         //SqlDataReader leer;
         //DataTable tabla = new DataTable();
         //SqlCommand comando = new SqlCommand();
-        public List<materias> Listar()
+        public DataTable Listar()
         {
-            Entidades enti = new Entidades();
-            return enti.materias.SqlQuery("select * from materias").ToList();
+            Entidades en = new Entidades();
+            string query = "select * from materias";
+            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            var dt = new DataTable();
+            da.Fill(dt);
+            return dt;
         }
 
-            public void ADDmaterias(string descmat, int hssemanales, int hstotales, int idplan)
+        public List <Materia_> listar() 
+        {
+            Entidades en = new Entidades();
+            Entidades entis = new Entidades();
+
+            List<Materia_> lmate = new List<Materia_>();
+            string conect = entis.Database.Connection.ConnectionString;
+            SqlConnection con = new SqlConnection(conect);
+            con.Open();
+            string query = "use tp2" +
+                " select * from materias";
+            SqlCommand cmd = new SqlCommand(query,con);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read()) 
+            {
+                Materia_ m = new Materia_();
+                m.desc_materia = dr.GetString(1);
+                m.idmateria = dr.GetInt32(0);
+                m.horas_semanales = dr.GetInt32(2);
+                m.horas_totales = dr.GetInt32(3);
+                lmate.Add(m);
+            }
+            con.Close();
+
+
+
+            return lmate;
+        }
+
+        public void ADDmaterias(string descmat, int hssemanales, int hstotales, int idplan)
         {
 
 
@@ -147,8 +189,12 @@ namespace Datos2
                       .SqlQuery("Select * from materias")
                       .ToList();
             return ListaDematerias;
-        } 
+        }
 
+        public string[] buscarymostrar() 
+        {
+
+        }
 
     }
 }

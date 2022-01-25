@@ -13,6 +13,7 @@ namespace UI.web_
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             Mensaje_error.Visible = false;
             Mensaje_campo_vacio.Visible = false;   
             error.Visible = false;
@@ -52,11 +53,24 @@ namespace UI.web_
                 if (lo.FindRoles(l.Text, contrasena.Text).Item2 != -1)
                 {
                     tup = lo.FindRoles(l.Text, contrasena.Text);
+                    if (Request.Cookies["niveldeacceso"] != null)
+                    {
+
+                    }
+                    else
+                    {
+                        HttpCookie ck = new HttpCookie("niveldeacceso");
+                        ck.Value = tup.Item2.ToString();
+                        ck.Expires = DateTime.Now.AddMinutes(5);
+                        Response.Cookies.Add(ck);
+
+                    }
+
                     switch (tup.Item2)
                     {
                         case 0: Session["acceso"] = tup.Item2.ToString(); Response.Redirect("../Logins/Menu-admins.aspx"); break;
                         case 1: Session["acceso"] = tup.Item2.ToString(); Session["usuarioprofe"]= tup.Item3.ToString(); Response.Redirect("../Logins/Menu_Profesores.aspx"); break;
-                        case 2: Session["acceso"] = tup.Item2.ToString() ; Session["usuario"] = tup.Item3.ToString();   Response.Redirect("../Logins/Menu_Alumno.aspx"); break;
+                        case 2: Session["acceso"] = tup.Item2.ToString() ; Session["usuario"] = tup.Item3;   Response.Redirect("../Logins/Menu_Alumno.aspx"); break;
                     }
                     
                 }

@@ -1,6 +1,7 @@
 ﻿using Datos2;
 using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace CapaNegocios
 {
@@ -8,9 +9,9 @@ namespace CapaNegocios
     {
 
         Plan p = new Plan();
-        public List<planes> listar() 
+        public DataTable listar() 
         {
-            return p.listar();
+            return p.Listar();
         }
         public Dictionary<string, int> cargargarcombos()
         {

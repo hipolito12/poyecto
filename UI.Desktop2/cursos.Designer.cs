@@ -31,11 +31,6 @@ namespace UI.Desktop2
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idcursos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idmateriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idcomisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aniocalendario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cursosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tp2DataSet = new UI.Desktop2.tp2DataSet();
             this.cursosTableAdapter = new UI.Desktop2.tp2DataSetTableAdapters.cursosTableAdapter();
@@ -50,62 +45,13 @@ namespace UI.Desktop2
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idcursos,
-            this.idmateriaDataGridViewTextBoxColumn,
-            this.idcomisionDataGridViewTextBoxColumn,
-            this.aniocalendario,
-            this.cupo});
-            this.dataGridView1.DataSource = this.cursosBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(-69, 5);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(1047, 448);
+            this.dataGridView1.Size = new System.Drawing.Size(866, 448);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // idcursos
-            // 
-            this.idcursos.DataPropertyName = "id_curso";
-            this.idcursos.HeaderText = "id_curso";
-            this.idcursos.MinimumWidth = 8;
-            this.idcursos.Name = "idcursos";
-            this.idcursos.ReadOnly = true;
-            this.idcursos.Width = 150;
-            // 
-            // idmateriaDataGridViewTextBoxColumn
-            // 
-            this.idmateriaDataGridViewTextBoxColumn.DataPropertyName = "id_materia";
-            this.idmateriaDataGridViewTextBoxColumn.HeaderText = "id_materia";
-            this.idmateriaDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.idmateriaDataGridViewTextBoxColumn.Name = "idmateriaDataGridViewTextBoxColumn";
-            this.idmateriaDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // idcomisionDataGridViewTextBoxColumn
-            // 
-            this.idcomisionDataGridViewTextBoxColumn.DataPropertyName = "id_comision";
-            this.idcomisionDataGridViewTextBoxColumn.HeaderText = "id_comision";
-            this.idcomisionDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.idcomisionDataGridViewTextBoxColumn.Name = "idcomisionDataGridViewTextBoxColumn";
-            this.idcomisionDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // aniocalendario
-            // 
-            this.aniocalendario.DataPropertyName = "anio_calendario";
-            this.aniocalendario.HeaderText = "anio_calendario";
-            this.aniocalendario.MinimumWidth = 8;
-            this.aniocalendario.Name = "aniocalendario";
-            this.aniocalendario.Width = 150;
-            // 
-            // cupo
-            // 
-            this.cupo.DataPropertyName = "cupo";
-            this.cupo.HeaderText = "cupo";
-            this.cupo.MinimumWidth = 8;
-            this.cupo.Name = "cupo";
-            this.cupo.Width = 150;
             // 
             // cursosBindingSource
             // 
@@ -123,7 +69,7 @@ namespace UI.Desktop2
             // 
             // btnagregar
             // 
-            this.btnagregar.Location = new System.Drawing.Point(986, 65);
+            this.btnagregar.Location = new System.Drawing.Point(827, 144);
             this.btnagregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(258, 35);
@@ -134,7 +80,7 @@ namespace UI.Desktop2
             // 
             // btbElimina
             // 
-            this.btbElimina.Location = new System.Drawing.Point(986, 206);
+            this.btbElimina.Location = new System.Drawing.Point(827, 285);
             this.btbElimina.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btbElimina.Name = "btbElimina";
             this.btbElimina.Size = new System.Drawing.Size(258, 35);
@@ -145,7 +91,7 @@ namespace UI.Desktop2
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(986, 137);
+            this.btnModificar.Location = new System.Drawing.Point(827, 216);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(258, 35);
@@ -156,7 +102,7 @@ namespace UI.Desktop2
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(262, 478);
+            this.btnRefresh.Location = new System.Drawing.Point(231, 476);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(254, 35);
@@ -169,7 +115,7 @@ namespace UI.Desktop2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1234, 692);
+            this.ClientSize = new System.Drawing.Size(1092, 692);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btbElimina);
@@ -191,11 +137,6 @@ namespace UI.Desktop2
         private System.Windows.Forms.BindingSource cursosBindingSource;
         private tp2DataSetTableAdapters.cursosTableAdapter cursosTableAdapter;
         public System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idcursos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idmateriaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idcomisionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aniocalendario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cupo;
         public System.Windows.Forms.Button btnagregar;
         public System.Windows.Forms.Button btbElimina;
         public System.Windows.Forms.Button btnModificar;

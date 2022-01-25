@@ -11,12 +11,12 @@ namespace UI.web_.Reportes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridView1.Visible = false;
+
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void btnimprimir_Click(object sender, EventArgs e)
         {
-            Button2.Attributes.Add("onclick", "imprime()");
+            btnimprimir.Attributes.Add("onclick", "imprime()");
         }
     }
 }

@@ -31,11 +31,6 @@ namespace UI.Desktop2
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.inscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alumnosinscripcionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tp2DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tp2DataSet = new UI.Desktop2.tp2DataSet();
@@ -55,62 +50,13 @@ namespace UI.Desktop2
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.inscripcion,
-            this.alumno,
-            this.curso,
-            this.condicion,
-            this.nota});
-            this.dataGridView1.DataSource = this.alumnosinscripcionesBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.Size = new System.Drawing.Size(814, 552);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // inscripcion
-            // 
-            this.inscripcion.DataPropertyName = "id_inscripcion";
-            this.inscripcion.HeaderText = "id_inscripcion";
-            this.inscripcion.MinimumWidth = 8;
-            this.inscripcion.Name = "inscripcion";
-            this.inscripcion.ReadOnly = true;
-            this.inscripcion.Width = 150;
-            // 
-            // alumno
-            // 
-            this.alumno.DataPropertyName = "id_alumno";
-            this.alumno.HeaderText = "id_alumno";
-            this.alumno.MinimumWidth = 8;
-            this.alumno.Name = "alumno";
-            this.alumno.Width = 150;
-            // 
-            // curso
-            // 
-            this.curso.DataPropertyName = "id_curso";
-            this.curso.HeaderText = "id_curso";
-            this.curso.MinimumWidth = 8;
-            this.curso.Name = "curso";
-            this.curso.Width = 150;
-            // 
-            // condicion
-            // 
-            this.condicion.DataPropertyName = "condicion";
-            this.condicion.HeaderText = "condicion";
-            this.condicion.MinimumWidth = 8;
-            this.condicion.Name = "condicion";
-            this.condicion.Width = 150;
-            // 
-            // nota
-            // 
-            this.nota.DataPropertyName = "nota";
-            this.nota.HeaderText = "nota";
-            this.nota.MinimumWidth = 8;
-            this.nota.Name = "nota";
-            this.nota.Width = 150;
             // 
             // alumnosinscripcionesBindingSource
             // 
@@ -235,11 +181,6 @@ namespace UI.Desktop2
         private tp2DataSet tp2DataSet;
         private System.Windows.Forms.BindingSource alumnosinscripcionesBindingSource;
         private tp2DataSetTableAdapters.alumnos_inscripcionesTableAdapter alumnos_inscripcionesTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn inscripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn alumno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn curso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn condicion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nota;
         private System.Windows.Forms.Button btnrefrescar;
         public System.Windows.Forms.Button btnagregar;
         public System.Windows.Forms.Button btnmodificar;

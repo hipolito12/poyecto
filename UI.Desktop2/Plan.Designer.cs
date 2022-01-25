@@ -31,9 +31,6 @@ namespace UI.Desktop2
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idplan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descplan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idespecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.planesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tp2DataSet = new UI.Desktop2.tp2DataSet();
             this.planesTableAdapter = new UI.Desktop2.tp2DataSetTableAdapters.planesTableAdapter();
@@ -48,44 +45,13 @@ namespace UI.Desktop2
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idplan,
-            this.descplan,
-            this.idespecialidad});
-            this.dataGridView1.DataSource = this.planesBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(18, 18);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.Size = new System.Drawing.Size(520, 231);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // idplan
-            // 
-            this.idplan.DataPropertyName = "id_plan";
-            this.idplan.HeaderText = "id_plan";
-            this.idplan.MinimumWidth = 8;
-            this.idplan.Name = "idplan";
-            this.idplan.ReadOnly = true;
-            this.idplan.Width = 150;
-            // 
-            // descplan
-            // 
-            this.descplan.DataPropertyName = "desc_plan";
-            this.descplan.HeaderText = "desc_plan";
-            this.descplan.MinimumWidth = 8;
-            this.descplan.Name = "descplan";
-            this.descplan.Width = 150;
-            // 
-            // idespecialidad
-            // 
-            this.idespecialidad.DataPropertyName = "id_especialidad";
-            this.idespecialidad.HeaderText = "id_especialidad";
-            this.idespecialidad.MinimumWidth = 8;
-            this.idespecialidad.Name = "idespecialidad";
-            this.idespecialidad.Width = 150;
             // 
             // planesBindingSource
             // 
@@ -167,9 +133,6 @@ namespace UI.Desktop2
         }
 
         #endregion
-        private System.Windows.Forms.DataGridViewTextBoxColumn idplan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descplan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idespecialidad;
         public System.Windows.Forms.DataGridView dataGridView1;
         public tp2DataSet tp2DataSet;
         public System.Windows.Forms.BindingSource planesBindingSource;

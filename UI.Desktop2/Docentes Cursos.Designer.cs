@@ -32,10 +32,6 @@ namespace UI.Desktop2
             this.components = new System.ComponentModel.Container();
             this.docentes_cursosTableAdapter1 = new UI.Desktop2.tp2DataSetTableAdapters.docentes_cursosTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id_dictado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_docente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.docentescursosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tp2DataSet = new UI.Desktop2.tp2DataSet();
             this.btnalta = new System.Windows.Forms.Button();
@@ -53,45 +49,15 @@ namespace UI.Desktop2
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_dictado,
-            this.id_curso,
-            this.id_docente,
-            this.cargo});
             this.dataGridView1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.docentescursosBindingSource, "id_dictado", true));
-            this.dataGridView1.DataSource = this.docentescursosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 18);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(444, 302);
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.Size = new System.Drawing.Size(666, 465);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // id_dictado
-            // 
-            this.id_dictado.DataPropertyName = "id_dictado";
-            this.id_dictado.HeaderText = "id_dictado";
-            this.id_dictado.Name = "id_dictado";
-            this.id_dictado.ReadOnly = true;
-            // 
-            // id_curso
-            // 
-            this.id_curso.DataPropertyName = "id_curso";
-            this.id_curso.HeaderText = "id_curso";
-            this.id_curso.Name = "id_curso";
-            // 
-            // id_docente
-            // 
-            this.id_docente.DataPropertyName = "id_docente";
-            this.id_docente.HeaderText = "id_docente";
-            this.id_docente.Name = "id_docente";
-            // 
-            // cargo
-            // 
-            this.cargo.DataPropertyName = "cargo";
-            this.cargo.HeaderText = "cargo";
-            this.cargo.Name = "cargo";
             // 
             // docentescursosBindingSource
             // 
@@ -105,9 +71,10 @@ namespace UI.Desktop2
             // 
             // btnalta
             // 
-            this.btnalta.Location = new System.Drawing.Point(480, 120);
+            this.btnalta.Location = new System.Drawing.Point(720, 185);
+            this.btnalta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnalta.Name = "btnalta";
-            this.btnalta.Size = new System.Drawing.Size(182, 23);
+            this.btnalta.Size = new System.Drawing.Size(273, 35);
             this.btnalta.TabIndex = 1;
             this.btnalta.Text = "Alta";
             this.btnalta.UseVisualStyleBackColor = true;
@@ -115,9 +82,10 @@ namespace UI.Desktop2
             // 
             // btnbaja
             // 
-            this.btnbaja.Location = new System.Drawing.Point(480, 163);
+            this.btnbaja.Location = new System.Drawing.Point(720, 251);
+            this.btnbaja.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnbaja.Name = "btnbaja";
-            this.btnbaja.Size = new System.Drawing.Size(182, 23);
+            this.btnbaja.Size = new System.Drawing.Size(273, 35);
             this.btnbaja.TabIndex = 2;
             this.btnbaja.Text = "Baja";
             this.btnbaja.UseVisualStyleBackColor = true;
@@ -125,9 +93,10 @@ namespace UI.Desktop2
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(480, 202);
+            this.button3.Location = new System.Drawing.Point(720, 311);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(182, 23);
+            this.button3.Size = new System.Drawing.Size(273, 35);
             this.button3.TabIndex = 3;
             this.button3.Text = "Modificacion";
             this.button3.UseVisualStyleBackColor = true;
@@ -135,9 +104,10 @@ namespace UI.Desktop2
             // 
             // btnRefrescar
             // 
-            this.btnRefrescar.Location = new System.Drawing.Point(117, 324);
+            this.btnRefrescar.Location = new System.Drawing.Point(176, 498);
+            this.btnRefrescar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRefrescar.Name = "btnRefrescar";
-            this.btnRefrescar.Size = new System.Drawing.Size(182, 23);
+            this.btnRefrescar.Size = new System.Drawing.Size(273, 35);
             this.btnRefrescar.TabIndex = 4;
             this.btnRefrescar.Text = "Refrescar";
             this.btnRefrescar.UseVisualStyleBackColor = true;
@@ -145,14 +115,15 @@ namespace UI.Desktop2
             // 
             // Docentes_Cursos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 369);
+            this.ClientSize = new System.Drawing.Size(1030, 568);
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnbaja);
             this.Controls.Add(this.btnalta);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Docentes_Cursos";
             this.Text = "Docentes_Cursos";
             this.Load += new System.EventHandler(this.Docentes_Cursos_Load);
@@ -169,10 +140,6 @@ namespace UI.Desktop2
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnRefrescar;
         public System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_dictado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_curso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_docente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cargo;
         public tp2DataSetTableAdapters.docentes_cursosTableAdapter docentes_cursosTableAdapter1;
         public System.Windows.Forms.BindingSource docentescursosBindingSource;
         public tp2DataSet tp2DataSet;

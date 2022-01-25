@@ -148,14 +148,11 @@ namespace UI.Desktop2.Login
         private void button1_Click(object sender, EventArgs e)
         {
 
-            MessageBox.Show(algo.ToString());
-
-
             NotasAlumnos na = new NotasAlumnos();
             Notas n = new Notas();
             foreach (var k in n.fechasyparacombo(algo)) 
             { 
-            na.comboBox1.Items.Add(k.anio);
+            na.comboBox1.Items.Add(k.ItemArray[0]);
             }
             na.idpersonacp = algo;
             na.Show();
@@ -193,7 +190,7 @@ namespace UI.Desktop2.Login
             Notas n = new Notas();
             foreach (var k in n.fechasyparacombo(algo))
             {
-                na.comboBox1.Items.Add(k.anio);
+                na.comboBox1.Items.Add(k.ItemArray[0]);
             }
             na.idpersonacp = algo;
             na.Show();

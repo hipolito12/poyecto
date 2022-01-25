@@ -18,7 +18,7 @@
     <asp:TextBox ID="Txtplan" CssClass="descripcion"  runat ="server" Height="152px" Width="526px"></asp:TextBox>
     <br />
     <br />
-<asp:Label ID="Label2" runat="server" Text="Selecione una especialidad :  "></asp:Label>    <asp:DropDownList ID="Ddlespecialidad" runat="server" Width="210px"></asp:DropDownList>
+<asp:Label ID="Label2" runat="server" Text="Selecione una especialidad :  "></asp:Label>    <asp:DropDownList ID="Ddlespecialidad" runat="server" Width="210px" AutoPostBack="True"></asp:DropDownList>
     <br />
     <br />
 </div>

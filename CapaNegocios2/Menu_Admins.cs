@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace CapaNegocios
        
 
         Menu_Admins ma = new Menu_Admins();
-            public List<Menu_Admins> CantidadDeCursosEintegrantes()
+            public DataTable CantidadDeCursosEintegrantes()
         {
 
             return ma.CantidadDeCursosEintegrantes();

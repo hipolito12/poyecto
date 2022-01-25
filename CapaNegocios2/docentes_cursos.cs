@@ -1,15 +1,15 @@
 ﻿using Datos2;
 using System;
 using System.Collections.Generic;
-
-
+using System.Data.SqlClient;
+using System.Data;
 namespace CapaNegocios
 {
     public class docentes_cursos_CRUD
     {
         private docentes doc = new docentes();
 
-        public List<docentes_cursos> Listar() {
+        public DataTable Listar() {
             return doc.Listar();
         }
 

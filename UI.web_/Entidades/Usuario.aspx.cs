@@ -10,10 +10,12 @@ namespace UI.web_.Entidades
     public partial class Usuario : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-            Error.Visible = false;
-            cargarcombos();
-            cargargv();
+        {  if (!IsPostBack)
+            {
+                Error.Visible = false;
+                cargarcombos();
+                cargargv();
+            }
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)

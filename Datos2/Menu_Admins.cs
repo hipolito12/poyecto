@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ namespace Datos2
         public string Estudiantes { get; set; }
 
 
-        public List<Menu_Admins> CantidadDeCursosEintegrantes()
+        public DataTable CantidadDeCursosEintegrantes()
         {
             string query = "use tp2" +
                 " declare" +
@@ -30,26 +31,33 @@ namespace Datos2
             Entidades en = new Entidades();
             //List<mostrar_notas_Result> l = new List<mostrar_notas_Result>(en.mostrar_notas(idper,idcurso));
             SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
-            SqlCommand cmd = new SqlCommand(query, con);
+            //SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
-            var dr = cmd.ExecuteReader();
-            List<int> li = new List<int>();
-            int i = 0;
-            List<Menu_Admins> lma = new List<Menu_Admins>();
-            while (dr.Read())
-            {
-                Menu_Admins ma = new Menu_Admins();
-                ma.pepe= dr.GetString(3);
-                ma.Curso = dr.GetString(0);
-                ma.Docentes = dr.GetString(1);
-                ma.Estudiantes = dr.GetString(2);
 
-                lma.Add(ma);
-                ma = null;
+           
+                SqlDataAdapter da = new SqlDataAdapter(query, con);
+                var dt = new System.Data.DataTable();
+                da.Fill(dt);
+            
 
-            }
+            //var dr = cmd.ExecuteReader();
+            //List<int> li = new List<int>();
+            //int i = 0;
+            //List<Menu_Admins> lma = new List<Menu_Admins>();
+            //while (dr.Read())
+            //{
+            //    Menu_Admins ma = new Menu_Admins();
+            //    ma.pepe= dr.GetString(3);
+            //    ma.Curso = dr.GetString(0);
+            //    ma.Docentes = dr.GetString(1);
+            //    ma.Estudiantes = dr.GetString(2);
+
+            //    lma.Add(ma);
+            //    ma = null;
+
+            //}
             con.Close();
-            return lma;
+            return dt;
         }
 
 

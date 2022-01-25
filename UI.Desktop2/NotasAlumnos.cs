@@ -42,13 +42,20 @@ namespace UI.Desktop2
          
 
         }
+        
         void alg( int fecha , int idpersona ) 
         {
+            List<DataRow> lst = new List<DataRow>();
             Notas n = new Notas();
-            mostrar_notasBindingSource.DataSource = n.algo(fecha,idpersona);
-          //  mostrar_notasBindingSource.Add(t.algo());
+            Materia_n m = new Materia_n();
+           
 
-            ReportDataSource ds = new ReportDataSource("Prueba", n.algo(fecha,idpersona));
+            
+
+
+
+            ReportDataSource ds = new ReportDataSource("Prueba", n.algo(fecha, idpersona) ) ;
+            mostrar_notasBindingSource.DataSource = n.algo(fecha, idpersona);
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(ds);
             reportViewer1.RefreshReport();

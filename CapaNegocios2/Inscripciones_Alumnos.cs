@@ -15,7 +15,7 @@ namespace CapaNegocios
             ia.Registro(  Convert.ToInt32(idalumno), Convert.ToInt32(curso),estado , Convert.ToInt32(nota) );
         }
 
-        public List<alumnos_inscripciones> Listar()
+        public DataTable Listar()
         {
             return ia.Listar();
         }

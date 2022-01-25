@@ -1,16 +1,27 @@
 ﻿using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 namespace Datos2
 {
     public class Especilidades
     {
+
+        public int idespecialdiad { get; set; }
+        public string  desc_especialidad { get; set; }
+
         Entidades en = new Entidades();
         especialidades es = new especialidades();
 
-        public List<especialidades> Listar() 
+        public DataTable Listar()
         {
-            return en.especialidades.SqlQuery("select * from especialidades ").ToList();
+            Entidades en = new Entidades();
+            string query = "select * from especialidades";
+            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            var dt = new DataTable();
+            da.Fill(dt);
+            return dt;
         }
 
         public void agregarespecialidades(string descripcion)

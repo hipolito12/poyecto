@@ -12,8 +12,11 @@ namespace UI.web_.Entidades
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            error.Visible = false;
-            cargargv();
+            if (!IsPostBack) 
+            {
+                error.Visible = false;
+                cargargv();
+            }
         }
 
         protected void gv_SelectedIndexChanged(object sender, EventArgs e)

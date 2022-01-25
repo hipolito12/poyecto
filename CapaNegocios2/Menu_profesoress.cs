@@ -4,19 +4,20 @@ using System.Linq;
 using System.Text;
 using Datos2;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace CapaNegocios
 {
      public class Menu_profesores
      {
         Menu_profesoress mo = new Menu_profesoress();
-        public List<Menu_profesoress> cargarReporte() 
+        public DataTable cargarReporte() 
         {
            
             return mo.CargarReporteDeAlumosXcurso();
         }
 
-        public List<alumnos_inscripciones> filtrar( int id) 
+        public DataTable filtrar( int id) 
         {
             return mo.FiltrarCursos(id);
         }
@@ -25,7 +26,7 @@ namespace CapaNegocios
         {
             return mo.comboidcurso();
         }
-        public List<Menu_profesoress> cargarInformeDocentesXcurso() 
+        public DataTable cargarInformeDocentesXcurso() 
         {
             return mo.cargarInformeDocentesXcurso();
         }

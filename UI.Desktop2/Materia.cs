@@ -37,10 +37,10 @@ namespace UI.Desktop2
             ma1.estado = false;
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                ma1.txtdescripcion.Text = dataGridView1.CurrentRow.Cells["descripcionMateriaD"].Value.ToString();
+                ma1.txtdescripcion.Text = dataGridView1.CurrentRow.Cells["desc_materia"].Value.ToString();
                 //  ma1.txtidmateria.Text = dataGridView1.CurrentRow.Cells["idMateriaD"].Value.ToString();
-                ma1.txtHs_Semanales.Text = dataGridView1.CurrentRow.Cells["hsSemanlaesD"].Value.ToString();
-                ma1.TXTHs_Totales.Text = dataGridView1.CurrentRow.Cells["hsTotales_D"].Value.ToString();
+                ma1.txtHs_Semanales.Text = dataGridView1.CurrentRow.Cells["hs_semanales"].Value.ToString();
+                ma1.TXTHs_Totales.Text = dataGridView1.CurrentRow.Cells["hs_totales"].Value.ToString();
                 ma1.Show();
             }
 
@@ -53,7 +53,7 @@ namespace UI.Desktop2
             Materia_n m = new Materia_n();
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                string id = dataGridView1.CurrentRow.Cells["idMateria"].Value.ToString();
+                string id = dataGridView1.CurrentRow.Cells["id_materia"].Value.ToString();
                 m.eliminarMateria(id);
             }
         }
@@ -80,7 +80,7 @@ namespace UI.Desktop2
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 ma1.txtdescripcion.Text = dataGridView1.CurrentRow.Cells["desc_materia"].Value.ToString();
-                ma1.IDmateria = dataGridView1.CurrentRow.Cells["idMateria"].Value.ToString();
+                ma1.IDmateria = dataGridView1.CurrentRow.Cells["id_materia"].Value.ToString();
                 ma1.txtHs_Semanales.Text = dataGridView1.CurrentRow.Cells["hs_semanales"].Value.ToString();
                 ma1.TXTHs_Totales.Text = dataGridView1.CurrentRow.Cells["hs_totales"].Value.ToString();
                 ma1.Show();

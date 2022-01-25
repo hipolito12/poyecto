@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Datos2;
+using System.Data;
 namespace CapaNegocios
 {
-    public class Comision
+    public class Comision 
     {
         comision com = new comision();
-        public List<comisiones> Listar()
+        public DataTable Listar()
         {
             return com.Listar();
         }

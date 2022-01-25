@@ -12,10 +12,14 @@ namespace UI.web_.Entidades
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Error.Visible = false;
-            cargarcombo();
-            cargargv();
-            cargartipo();
+            if (!IsPostBack)
+            {
+
+                Error.Visible = false;
+                cargarcombo();
+                cargargv();
+                cargartipo();
+            }
         }
 
         private Dictionary<string,int> cargartipo()

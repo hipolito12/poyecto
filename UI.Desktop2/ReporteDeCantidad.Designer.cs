@@ -50,7 +50,7 @@ namespace UI.Desktop2
             // 
             // Menu_AdminsBindingSource
             // 
-            this.Menu_AdminsBindingSource.DataSource = typeof(Datos2.Menu_Admins);
+           // this.Menu_AdminsBindingSource.DataSource = typeof(Datos2.Menu_Admins);
             // 
             // ReporteDeCantidad
             // 

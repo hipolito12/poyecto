@@ -5,7 +5,7 @@
     
 
     <link href="Estilos/personas.css" rel="stylesheet" />
-    <form id="form2" method="post" runat="server">
+  
         <div class=" acomodar">
             <asp:Label ID="Label1" runat="server" Text="Ingrese nombre  : " CssClass="separar"></asp:Label>
             <asp:TextBox ID="Txtnombre" runat="server"></asp:TextBox>
@@ -45,14 +45,13 @@
         <div class=" botones">
 
             <asp:Button ID="btnagregar" runat="server" Text="Agregar " OnClick="btnagregar_Click" CssClass="boton" />
-            <asp:Button ID="btneditar" runat="server" Text="Modificar " OnClick="btneditar_Click" Style="height: 35px" CssClass="boton" />
+            <asp:Button ID="btneditar" runat="server" Text="Modificar " OnClick="btneditar_Click" CssClass="boton" Height="45px" />
             <asp:Button ID="btnEliminar" runat="server" Text="Eliminar " OnClick="btnEliminar_Click" />
 
 
         </div>
         <asp:Label ID="Error" runat="server" CssClass="error" Text="AH ocurrido un error!"></asp:Label>
 
-    </form>
-
+   
 
 </asp:Content>

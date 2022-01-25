@@ -27,7 +27,7 @@ namespace UI.Desktop2
                 Persona p = new Persona();
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
-                    string id = dataGridView1.CurrentRow.Cells["idpersona"].Value.ToString();
+                    string id = dataGridView1.CurrentRow.Cells["id_persona"].Value.ToString();
                     p.deletepersonas(id);
 
                 }
@@ -50,13 +50,13 @@ namespace UI.Desktop2
             pe1.txtapellido.Text = dataGridView1.CurrentRow.Cells["apellido"].Value.ToString();
             pe1.txtdireccion.Text = dataGridView1.CurrentRow.Cells["direccion"].Value.ToString();
             pe1.txtemail.Text = dataGridView1.CurrentRow.Cells["email"].Value.ToString();
-            pe1.txtfechan.Text = dataGridView1.CurrentRow.Cells["fechanac"].Value.ToString();
+            pe1.txtfechan.Text = dataGridView1.CurrentRow.Cells["fecha_nac"].Value.ToString();
             pe1.txtlegajo.Text = dataGridView1.CurrentRow.Cells["legajo"].Value.ToString();
             pe1.txtnombre.Text = dataGridView1.CurrentRow.Cells["nombre"].Value.ToString();
             //pe1.txtplan.Text= dataGridView1.CurrentRow.Cells["idplan"].Value.ToString();
             pe1.txttelefono.Text = dataGridView1.CurrentRow.Cells["telefono"].Value.ToString();
-            pe1.txttipo.Text = dataGridView1.CurrentRow.Cells["tipopersonas"].Value.ToString();
-            pe1.id = dataGridView1.CurrentRow.Cells["idpersona"].Value.ToString();
+            pe1.txttipo.Text = dataGridView1.CurrentRow.Cells["tipo_persona"].Value.ToString();
+            pe1.id = dataGridView1.CurrentRow.Cells["id_persona"].Value.ToString();
             pe1.estado = false;
             pe1.Show();
 

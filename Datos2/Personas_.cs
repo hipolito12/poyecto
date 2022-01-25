@@ -9,13 +9,33 @@ namespace Datos2
 {
     public class Personas_
     {
+
+        public int idcpesonas { get; set; }
+        public string  apellido { get; set; }
+        public string nombre{ get; set; }
+        public string direccion { get; set; }
+        public string  email { get; set; }
+        public string  telefono { get; set; }
+        public DateTime fecha_nac { get; set; }
+        public int legajo { get; set; }
+        public int tipo_pesona { get; set; }
+        public int id_persona{ get; set; }
+
+
+
         Entidades en = new Entidades();
         personas per = new personas();
 
 
-        public List<personas> listar() 
+        public DataTable Listar()
         {
-            return en.personas.SqlQuery("select * from personas ").ToList();
+            Entidades en = new Entidades();
+            string query = "select * from personas";
+            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            var dt = new DataTable();
+            da.Fill(dt);
+            return dt;
         }
 
 

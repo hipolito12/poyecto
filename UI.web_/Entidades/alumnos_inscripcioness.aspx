@@ -5,7 +5,7 @@
 
      <link href="Estilos/alumnos_inscripciones.css" rel="stylesheet" />
     
-    <form  method="post" runat="server" >
+    
     <div class="acomodar">
     <asp:Label ID="Label2" runat="server" Text="Ingrese Estado del alumno : "></asp:Label><asp:TextBox ID="Txtalumno" runat="server"></asp:TextBox>
     <br />
@@ -34,5 +34,4 @@
     </div>
      <asp:Label ID="error" runat="server" Text="AH ocurrido  un error! " CssClass="error"></asp:Label>
         <br />
-        </form>
 </asp:Content>

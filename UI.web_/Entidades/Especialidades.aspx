@@ -15,7 +15,7 @@
     </head>
     <body>
 
-        <form id="form1" runat="server">
+       
             <h3 id="subtittulo">Ingrese una descripcion de la espacialdiad</h3>
             <br />
             <asp:TextBox ID="Txtdescripcion"   CssClass="Txtdescripcion"     runat="server" Height="220px" Width="524px"></asp:TextBox>
@@ -33,7 +33,6 @@
 
             </div>
              <span> <asp:Label ID="error" runat="server" Text="Ocurrio un error! verifique su entrada"></asp:Label> </span>
-        </form>
     </body>
     </html>
       

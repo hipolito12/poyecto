@@ -12,8 +12,11 @@ namespace UI.web_.Entidades
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            cargarGridview();
-            error.Visible = false;
+            if (!IsPostBack) 
+            { 
+                cargarGridview();
+                  error.Visible = false;
+            }
         }
 
 

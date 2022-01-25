@@ -28,8 +28,9 @@ namespace UI.Desktop2
             Especialidades1 es1 = new Especialidades1();
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                es1.id = dataGridView1.CurrentRow.Cells["idespecialidad"].Value.ToString();
+                es1.id = dataGridView1.CurrentRow.Cells["id_especialidad"].Value.ToString();
                 es1.estado = false;
+                es1.richdescripcion.Text= dataGridView1.CurrentRow.Cells["desc_especialidad"].Value.ToString();
                 es1.Show();
             }
         }
@@ -47,7 +48,7 @@ namespace UI.Desktop2
             {
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
-                    string id = dataGridView1.CurrentRow.Cells["idespecialidad"].Value.ToString();
+                    string id = dataGridView1.CurrentRow.Cells["id_especialidad"].Value.ToString();
                     Especialidad espes = new Especialidad();
                     espes.delete_especialidad(id);
                 }

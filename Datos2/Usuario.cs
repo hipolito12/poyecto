@@ -1,16 +1,43 @@
 ﻿using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 
 namespace Datos2
 {
     public class Usuario
     {
+
+        public int id_usuario { get; set; }
+
+        public string nombre_usuario { get; set; }
+
+        public string clave { get; set; }
+
+        public string nombre { get; set; }
+
+        public string apelldo { get; set; }
+
+        public string email { get; set; }
+
+         public bool habitada { get; set; }
+
+        public bool cambia_clave { get; set; }
+
+        public int id_peronas { get; set; }
+
         Entidades en = new Entidades();
         usuarios u = new usuarios();
 
-        public List<usuarios> listar() 
+        public DataTable Listar()
         {
-            return en.usuarios.SqlQuery("select *  from usuarios").ToList();
+            Entidades en = new Entidades();
+            string query = "select * from usuarios";
+            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            var dt = new DataTable();
+            da.Fill(dt);
+            return dt;
         }
         public void ADDusuarios(int idper, string nombre, string nombreU, string apellido, string clave, bool cambia, bool habilit, string email)
         {

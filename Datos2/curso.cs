@@ -8,6 +8,17 @@ namespace Datos2
 
     public class curso_
     {
+
+        public int idcurso { get; set; }
+
+        public int idmateria { get; set; }
+
+        public int idcomision { get; set; }
+
+        public int anio_calendaria { get; set; }
+
+        public int cupo { get; set; }
+
         //conexioncs conexion = new conexioncs();
         //SqlDataReader leer;
         //DataTable tabla = new DataTable();
@@ -28,9 +39,15 @@ namespace Datos2
         }*/
 
 
-        public List<cursos> Listar()
+        public DataTable Listar()
         {
-            return entidad.cursos.SqlQuery("select * from cursos ").ToList();
+            Entidades en = new Entidades();
+            string query = "select * from cursos";
+            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            var dt = new DataTable();
+            da.Fill(dt);
+            return dt;
         }
 
         public void ADDcursos(int idmateria, int idComision, int anio, int cupo)
@@ -143,11 +160,15 @@ namespace Datos2
             return ListaDecursos;
         }
 
-        public List<cursos> cargarcamposCursos()
+        public DataTable cargarcamposCursos()
         {
             Entidades ent = new Entidades();
-            var campos =ent.cursos.SqlQuery($" select * from cursos  where anio_calendario = {DateTime.Now.Year}").ToList();
-            return campos;
+            SqlConnection con = new SqlConnection(ent.Database.Connection.ConnectionString);
+            string query = $" select * from cursos  where anio_calendario = {DateTime.Now.Year}";
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            var dt = new System.Data.DataTable();
+            da.Fill(dt);
+            return dt;
         } 
 
     }

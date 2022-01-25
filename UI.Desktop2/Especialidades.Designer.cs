@@ -31,8 +31,6 @@ namespace UI.Desktop2
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idespecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descespecialidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.especialidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tp2DataSet = new UI.Desktop2.tp2DataSet();
             this.btnAlta = new System.Windows.Forms.Button();
@@ -47,29 +45,13 @@ namespace UI.Desktop2
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idespecialidad,
-            this.descespecialidadDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.especialidadesBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(1, -2);
+            this.dataGridView1.Location = new System.Drawing.Point(25, 3);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(253, 251);
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.Size = new System.Drawing.Size(431, 386);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // idespecialidad
-            // 
-            this.idespecialidad.DataPropertyName = "id_especialidad";
-            this.idespecialidad.HeaderText = "id_especialidad";
-            this.idespecialidad.Name = "idespecialidad";
-            this.idespecialidad.ReadOnly = true;
-            // 
-            // descespecialidadDataGridViewTextBoxColumn
-            // 
-            this.descespecialidadDataGridViewTextBoxColumn.DataPropertyName = "desc_especialidad";
-            this.descespecialidadDataGridViewTextBoxColumn.HeaderText = "desc_especialidad";
-            this.descespecialidadDataGridViewTextBoxColumn.Name = "descespecialidadDataGridViewTextBoxColumn";
             // 
             // especialidadesBindingSource
             // 
@@ -83,9 +65,10 @@ namespace UI.Desktop2
             // 
             // btnAlta
             // 
-            this.btnAlta.Location = new System.Drawing.Point(294, 60);
+            this.btnAlta.Location = new System.Drawing.Point(540, 93);
+            this.btnAlta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAlta.Name = "btnAlta";
-            this.btnAlta.Size = new System.Drawing.Size(193, 23);
+            this.btnAlta.Size = new System.Drawing.Size(290, 35);
             this.btnAlta.TabIndex = 1;
             this.btnAlta.Text = "Alta";
             this.btnAlta.UseVisualStyleBackColor = true;
@@ -93,9 +76,10 @@ namespace UI.Desktop2
             // 
             // btnModificacion
             // 
-            this.btnModificacion.Location = new System.Drawing.Point(294, 114);
+            this.btnModificacion.Location = new System.Drawing.Point(540, 176);
+            this.btnModificacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnModificacion.Name = "btnModificacion";
-            this.btnModificacion.Size = new System.Drawing.Size(193, 23);
+            this.btnModificacion.Size = new System.Drawing.Size(290, 35);
             this.btnModificacion.TabIndex = 2;
             this.btnModificacion.Text = "Modificacion";
             this.btnModificacion.UseVisualStyleBackColor = true;
@@ -103,9 +87,10 @@ namespace UI.Desktop2
             // 
             // btnBAJA
             // 
-            this.btnBAJA.Location = new System.Drawing.Point(294, 162);
+            this.btnBAJA.Location = new System.Drawing.Point(540, 250);
+            this.btnBAJA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBAJA.Name = "btnBAJA";
-            this.btnBAJA.Size = new System.Drawing.Size(193, 23);
+            this.btnBAJA.Size = new System.Drawing.Size(290, 35);
             this.btnBAJA.TabIndex = 3;
             this.btnBAJA.Text = "Eliminar";
             this.btnBAJA.UseVisualStyleBackColor = true;
@@ -113,9 +98,10 @@ namespace UI.Desktop2
             // 
             // refresh
             // 
-            this.refresh.Location = new System.Drawing.Point(12, 255);
+            this.refresh.Location = new System.Drawing.Point(57, 397);
+            this.refresh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.refresh.Name = "refresh";
-            this.refresh.Size = new System.Drawing.Size(193, 23);
+            this.refresh.Size = new System.Drawing.Size(290, 35);
             this.refresh.TabIndex = 4;
             this.refresh.Text = "Refresh";
             this.refresh.UseVisualStyleBackColor = true;
@@ -127,14 +113,15 @@ namespace UI.Desktop2
             // 
             // Especialidades
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 290);
+            this.ClientSize = new System.Drawing.Size(877, 446);
             this.Controls.Add(this.refresh);
             this.Controls.Add(this.btnBAJA);
             this.Controls.Add(this.btnModificacion);
             this.Controls.Add(this.btnAlta);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Especialidades";
             this.Text = "Especialidades";
             this.Load += new System.EventHandler(this.Especialidades_Load);
@@ -155,7 +142,5 @@ namespace UI.Desktop2
         private tp2DataSet tp2DataSet;
         private System.Windows.Forms.BindingSource especialidadesBindingSource;
         private tp2DataSetTableAdapters.especialidadesTableAdapter especialidadesTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idespecialidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descespecialidadDataGridViewTextBoxColumn;
     }
 }

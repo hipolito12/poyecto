@@ -66,9 +66,9 @@ namespace UI.Desktop2
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
                     md1.estado = false;
-                    md1.txtdesc.Text = dataGridView1.CurrentRow.Cells["descmodulo"].Value.ToString();
-                    md1.txtEjecuta.Text = dataGridView1.CurrentRow.Cells["ejectua"].Value.ToString();
-                    md1.id = dataGridView1.CurrentRow.Cells["idmodulo"].Value.ToString();
+                    md1.txtdesc.Text = dataGridView1.CurrentRow.Cells["desc_modulo"].Value.ToString();
+                    md1.txtEjecuta.Text = dataGridView1.CurrentRow.Cells["ejecuta"].Value.ToString();
+                    md1.id = dataGridView1.CurrentRow.Cells["id_modulo"].Value.ToString();
                    
                     md1.Show();
                 }

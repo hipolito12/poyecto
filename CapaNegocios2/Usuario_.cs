@@ -1,6 +1,7 @@
 ﻿using Datos2;
 using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace CapaNegocios
 {
@@ -13,9 +14,9 @@ namespace CapaNegocios
                return s;
            }*/
 
-        public List<usuarios> listar() 
+        public DataTable listar() 
         {
-            return us.listar();
+            return us.Listar();
         }
 
         public int ultimo()

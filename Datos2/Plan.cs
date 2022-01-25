@@ -1,17 +1,33 @@
 ﻿using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 
 namespace Datos2
 {
     public class Plan
     {
+
+        public int id_plan { get; set; }
+        public string desc_plan { get; set; }
+        public int id_especialidad { get; set; }
+
+
+
+
         Entidades en = new Entidades();
         planes pl = new planes();
 
 
-        public List<planes> listar() 
+        public DataTable Listar()
         {
-            return en.planes.SqlQuery("select * from planes").ToList();
+            Entidades en = new Entidades();
+            string query = "select * from planes";
+            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            var dt = new DataTable();
+            da.Fill(dt);
+            return dt;
         }
 
         public void ADDplan(string desc, int espe)

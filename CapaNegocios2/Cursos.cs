@@ -1,14 +1,14 @@
 ﻿using Datos2;
 using System;
 using System.Collections.Generic;
-
+using System.Data;
 namespace CapaNegocios
 {
     public class CursosCRUD
     {
         curso_ c = new curso_();
 
-        public List<cursos> Listar() 
+        public DataTable  Listar() 
         {
             return c.Listar();
         }
@@ -40,7 +40,7 @@ namespace CapaNegocios
             return c.cargargridview();
         }
 
-        public List<cursos> cargarcamposCursos() 
+        public DataTable cargarcamposCursos() 
         {
             return c.cargarcamposCursos();
         }

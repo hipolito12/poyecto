@@ -39,10 +39,6 @@ namespace UI.Desktop2
             this.btneliminar = new System.Windows.Forms.Button();
             this.btnmodificar = new System.Windows.Forms.Button();
             this.btnrefrescar = new System.Windows.Forms.Button();
-            this.idplan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idcomision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comisionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tp2DataSetBindingSource)).BeginInit();
@@ -51,14 +47,7 @@ namespace UI.Desktop2
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idcomision,
-            this.descripcion,
-            this.anio,
-            this.idplan});
-            this.dataGridView1.DataSource = this.comisionesBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(18, 18);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
@@ -129,39 +118,6 @@ namespace UI.Desktop2
             this.btnrefrescar.UseVisualStyleBackColor = true;
             this.btnrefrescar.Click += new System.EventHandler(this.btnrefrescar_Click);
             // 
-            // idplan
-            // 
-            this.idplan.DataPropertyName = "id_plan";
-            this.idplan.HeaderText = "id_plan";
-            this.idplan.MinimumWidth = 8;
-            this.idplan.Name = "idplan";
-            this.idplan.Width = 150;
-            // 
-            // anio
-            // 
-            this.anio.DataPropertyName = "anio_especialidad";
-            this.anio.HeaderText = "anio_especialidad";
-            this.anio.MinimumWidth = 8;
-            this.anio.Name = "anio";
-            this.anio.Width = 150;
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "desc_comision";
-            this.descripcion.HeaderText = "desc_comision";
-            this.descripcion.MinimumWidth = 8;
-            this.descripcion.Name = "descripcion";
-            this.descripcion.Width = 150;
-            // 
-            // idcomision
-            // 
-            this.idcomision.DataPropertyName = "id_comision";
-            this.idcomision.HeaderText = "id_comision";
-            this.idcomision.MinimumWidth = 8;
-            this.idcomision.Name = "idcomision";
-            this.idcomision.ReadOnly = true;
-            this.idcomision.Width = 150;
-            // 
             // comisiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -195,9 +151,5 @@ namespace UI.Desktop2
         public System.Windows.Forms.Button btnaceptar;
         public System.Windows.Forms.Button btneliminar;
         public System.Windows.Forms.Button btnmodificar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idcomision;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn anio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idplan;
     }
 }

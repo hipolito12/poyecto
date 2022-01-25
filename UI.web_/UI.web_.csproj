@@ -87,7 +87,7 @@
   <ItemGroup>
     <Content Include="Entidades\Comisiones.aspx" />
     <Content Include="Entidades\Cursos.aspx" />
-    <Content Include="Entidades\docentes-curso.aspx" />
+    <Content Include="Entidades\docentes_curso.aspx" />
     <Content Include="Entidades\Especialidades.aspx" />
     <Content Include="Entidades\Estilos\Comisiones.css" />
     <Content Include="Entidades\Estilos\Cursos.css" />
@@ -148,12 +148,12 @@
     <Compile Include="Entidades\Cursos.aspx.designer.cs">
       <DependentUpon>Cursos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Entidades\docentes-curso.aspx.cs">
-      <DependentUpon>docentes-curso.aspx</DependentUpon>
+    <Compile Include="Entidades\docentes_curso.aspx.cs">
+      <DependentUpon>docentes_curso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Entidades\docentes-curso.aspx.designer.cs">
-      <DependentUpon>docentes-curso.aspx</DependentUpon>
+    <Compile Include="Entidades\docentes_curso.aspx.designer.cs">
+      <DependentUpon>docentes_curso.aspx</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Especialidades.aspx.cs">
       <DependentUpon>Especialidades.aspx</DependentUpon>

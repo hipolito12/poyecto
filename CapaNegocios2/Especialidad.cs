@@ -1,6 +1,7 @@
 ﻿using Datos2;
 using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace CapaNegocios
 {
@@ -10,7 +11,7 @@ namespace CapaNegocios
 
         Especilidades esp = new Especilidades();
 
-        public List<especialidades> Listar()
+        public DataTable Listar()
         {
             return esp.Listar();
         }

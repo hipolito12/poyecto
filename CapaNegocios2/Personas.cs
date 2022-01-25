@@ -1,6 +1,7 @@
 ﻿using Datos2;
 using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace CapaNegocios
 {
@@ -10,9 +11,9 @@ namespace CapaNegocios
 
         Personas_ per = new Personas_();
 
-        public List<personas> listar() 
+        public DataTable listar() 
         {
-            return per.listar();
+            return per.Listar();
         }
 
         public void addpersonas(string nombre, string apellido, string direccion, string email, string telefono, string fechan, string legajo, string tipo_persona, string id_plan)

@@ -32,7 +32,7 @@ namespace UI.Desktop2
             try
             {
                 Comision c = new Comision();
-                string id = dataGridView1.CurrentRow.Cells["idcomision"].Value.ToString();
+                string id = dataGridView1.CurrentRow.Cells["id_comision"].Value.ToString();
                 c.eliminar_comision(id);
             }
             catch (Exception ex) { MessageBox.Show("error "+ ex); }
@@ -43,8 +43,8 @@ namespace UI.Desktop2
         {
             Comisiones_1 com1 = new Comisiones_1();
             com1.estado = false;
-            com1.id = dataGridView1.CurrentRow.Cells["idcomision"].Value.ToString();
-            com1.textanio.Text = dataGridView1.CurrentRow.Cells["anio"].Value.ToString();
+            com1.id = dataGridView1.CurrentRow.Cells["id_comision"].Value.ToString();
+            com1.textanio.Text = dataGridView1.CurrentRow.Cells["anio_especialidad"].Value.ToString();
             com1.Show();
         }
 

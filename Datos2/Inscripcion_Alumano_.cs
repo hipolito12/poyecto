@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,10 +10,22 @@ namespace Datos2
     public class Inscripcion_Alumano_
     {
 
-        public List<alumnos_inscripciones> Listar()
+        public int idinscripcion { get; set; }
+        public int idalumno { get; set; }
+        public int idcurso { get; set; }
+        public string  condicion { get; set; }
+        public int nota { get; set; }
+
+
+        public DataTable Listar()
         {
             Entidades en = new Entidades();
-            return en.alumnos_inscripciones.SqlQuery("select * from alumnos_inscripciones").ToList();
+            string query = "select * from alumnos_inscripciones";
+            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            var dt = new DataTable();
+            da.Fill(dt);
+            return dt;
         }
         public void Registro(int alumno, int curso, string condicion, int nota)
         {

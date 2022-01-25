@@ -13,7 +13,7 @@ namespace Datos2
         public int idalumno { get; set; }
         public string docentes { get; set; }
 
-        public List<Menu_profesoress> CargarReporteDeAlumosXcurso( ) 
+        public DataTable CargarReporteDeAlumosXcurso( ) 
         {
             string query = "use[tp2] "
                 + " select c.id_curso,  count (ai.id_alumno)as alumnos from alumnos_inscripciones ai "
@@ -29,23 +29,32 @@ namespace Datos2
             Entidades en = new Entidades();
             
             SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
-            SqlCommand cmd = new SqlCommand(query, con);
+           // SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
-            var dr = cmd.ExecuteReader();
-
-            List< Menu_profesoress> mp = new List<Menu_profesoress>();
-
-            while (dr.Read())
-            {
-                Menu_profesoress  m = new Menu_profesoress ();
-
-                m.cantidad = dr.GetInt32(0);
-                m.idalumno = dr.GetInt32(1);
-                mp.Add(m);
-
-            }
+            
+              
+              
+                SqlDataAdapter da = new SqlDataAdapter(query, con);
+                var dt = new DataTable();
+                da.Fill(dt);
+                
+            
             con.Close();
-            return mp;
+          //  var dr = cmd.ExecuteReader();
+
+            //List< Menu_profesoress> mp = new List<Menu_profesoress>();
+
+            //while (dr.Read())
+            //{
+            //    Menu_profesoress  m = new Menu_profesoress ();
+
+            //    m.cantidad = dr.GetInt32(0);
+            //    m.idalumno = dr.GetInt32(1);
+            //    mp.Add(m);
+
+            //}
+            //con.Close();
+            return dt;
         }
 
 
@@ -56,14 +65,18 @@ namespace Datos2
             return ids;
         }
 
-        public List<alumnos_inscripciones> FiltrarCursos( int idcurso) 
+        public DataTable FiltrarCursos( int idcurso) 
         {
             Entidades en = new Entidades();
-            var k = en.alumnos_inscripciones.SqlQuery($"select * from alumnos_inscripciones where id_curso={idcurso} ").ToList();
+            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
 
-            return k;
+            string query =$"select * from alumnos_inscripciones where id_curso={idcurso} ";
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            var dt = new System.Data.DataTable();
+            da.Fill(dt);
+            return dt;
         }
-       public List<Menu_profesoress> cargarInformeDocentesXcurso()
+       public DataTable cargarInformeDocentesXcurso()
        
         {
             Entidades en = new Entidades();
@@ -71,23 +84,27 @@ namespace Datos2
             string query = $" use tp2 " +
                 $"select   CONCAT( p.nombre , p.apellido) as nombres, dc.id_curso from   docentes_cursos dc inner join personas p on p.id_persona = dc.id_docente ";
             SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
-            SqlCommand cmd = new SqlCommand(query, con);
+           // SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
-            var dr = cmd.ExecuteReader();
+            //var dr = cmd.ExecuteReader();
 
-            List<Menu_profesoress> mp = new List<Menu_profesoress>();
+            //List<Menu_profesoress> mp = new List<Menu_profesoress>();
 
-            while (dr.Read())
-            {
-                Menu_profesoress m = new Menu_profesoress();
+            //while (dr.Read())
+            //{
+            //    Menu_profesoress m = new Menu_profesoress();
 
-                m. docentes = dr.GetString(0);
-                m.idalumno = dr.GetInt32(1);
-                mp.Add(m);
+            //    m. docentes = dr.GetString(0);
+            //    m.idalumno = dr.GetInt32(1);
+            //    mp.Add(m);
 
-            }
+            //}
+
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            var dt = new System.Data.DataTable();
+            da.Fill(dt);
             con.Close();
-            return mp;
+            return dt;
         
         }
 

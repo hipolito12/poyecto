@@ -39,9 +39,9 @@ namespace UI.Desktop2
             {
                 cursos1 cur = new cursos1();
                 cur.estado = false;
-                cur.txtanio.Text = dataGridView1.CurrentRow.Cells["aniocalendario"].Value.ToString();
+                cur.txtanio.Text = dataGridView1.CurrentRow.Cells["anio_calendario"].Value.ToString();
                 cur.txtCupo.Text = dataGridView1.CurrentRow.Cells["cupo"].Value.ToString();
-                cur.idcurso = dataGridView1.CurrentRow.Cells["idcursos"].Value.ToString();
+                cur.idcurso = dataGridView1.CurrentRow.Cells["id_curso"].Value.ToString();
                 cur.Show();
             }
             else { MessageBox.Show("seleccione columna"); }
@@ -54,7 +54,7 @@ namespace UI.Desktop2
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
                     CursosCRUD curses = new CursosCRUD();
-                    string idcurso = dataGridView1.CurrentRow.Cells["idcursos"].Value.ToString();
+                    string idcurso = dataGridView1.CurrentRow.Cells["id_curso"].Value.ToString();
                     curses.elimminarcurso(idcurso);
 
                 }
@@ -65,8 +65,8 @@ namespace UI.Desktop2
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            CursosCRUD cc = new CursosCRUD();
-           dataGridView1.DataSource= cc.Listar();
+            CursosCRUD dc = new CursosCRUD();
+           dataGridView1.DataSource= dc.Listar();
         }
     }
 }
