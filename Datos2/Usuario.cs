@@ -103,5 +103,34 @@ namespace Datos2
             return persoas;
         }
 
+
+        public List<Usuario> Lista() 
+        {
+            List<Usuario> lu = new List<Usuario>();
+            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
+            string query = "select * from usuarios";
+           
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read() ) 
+            {
+                Usuario u = new Usuario();
+                u.nombre_usuario = dr.GetString(1);
+                u.clave = dr.GetString(2);
+                u.habitada = dr.GetBoolean(3);
+                u.nombre = dr.GetString(4);
+                u.apelldo = dr.GetString(5);
+                u.email = dr.GetString(6);
+                u.cambia_clave = dr.GetBoolean(7);
+                u.id_peronas = dr.GetInt32(8);
+                    lu.Add(u);
+
+
+            }
+            con.Close();
+            return lu;
+        }
     }
 }

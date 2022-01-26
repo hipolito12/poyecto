@@ -47,5 +47,10 @@ namespace CapaNegocios
         {
             return  us.cargarcombos() ;
         }
+
+        public List<Usuario> list() 
+        {
+            return us.Lista();
+        }
     }
 }
