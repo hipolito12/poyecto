@@ -11,7 +11,7 @@ namespace CapaNegocios
      public class Menu_profesores
      {
         Menu_profesoress mo = new Menu_profesoress();
-        public DataTable cargarReporte() 
+        public List<Menu_profesoress> cargarReporte() 
         {
            
             return mo.CargarReporteDeAlumosXcurso();
@@ -26,7 +26,7 @@ namespace CapaNegocios
         {
             return mo.comboidcurso();
         }
-        public DataTable cargarInformeDocentesXcurso() 
+        public List<Menu_profesoress> cargarInformeDocentesXcurso() 
         {
             return mo.cargarInformeDocentesXcurso();
         }

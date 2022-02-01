@@ -33,16 +33,20 @@ namespace UI.Desktop2.Login
         private void btndocentescursos_Click(object sender, EventArgs e)
         {
             Inscripciones_alumno ai = new Inscripciones_alumno();
+           
+
             Menu_profesores mp = new Menu_profesores();
             foreach (var k in mp.comboidcurso()) 
             {
                 ai.combocurso.Items.Add(k);
             }
+            ai.activarmodis = true;
             ai.combocurso.Visible = true;
             ai.btnaceptar.Visible = true;
             ai.btneliminar.Visible = false;
             ai.btnagregar.Visible = false;
             ai.lblCurso.Visible = true;
+            
             ai.Show();
           
         }

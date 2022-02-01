@@ -9,15 +9,17 @@ namespace UI.Consolas
     public class UsuarioConsola : Usuario_
     {
 
-        public void menu() 
+
+        public void menu()
         {
             UsuarioConsola uc = new UsuarioConsola();
             Console.Clear();
             Console.WriteLine("1-Listar");
-            Console.WriteLine("2-Agregar");
-            Console.WriteLine("3-Modificar");
-            Console.WriteLine("4-Eliminar");
-            Console.WriteLine("5-salir");
+            Console.WriteLine("2- Consulta ");
+            Console.WriteLine("3-Agregar");
+            Console.WriteLine("4-Modificar");
+            Console.WriteLine("5-Eliminar");
+            Console.WriteLine("6-salir");
 
             string opcion = Console.ReadLine();
             int op = Int32.Parse(opcion);
@@ -26,35 +28,66 @@ namespace UI.Consolas
             {
                 case 1:
 
-
-                    foreach (var item in  uc.list() ) 
+                    Console.Clear();
+                    foreach (var item in uc.list())
                     {
-                        Console.WriteLine($" |{item.nombre_usuario}|  {item.nombre}  |  {item.apelldo}  |  {item.clave}  |  {item.email}  |  {item.habitada}  |  {item.cambia_clave}  | {item.id_peronas}    ");
+                        Console.WriteLine(
+                        $" Nombre completo :  {item.nombre} {item.apelldo} " +
+                             $"mail: {item.email}  " +
+                             $"clave: {item.clave}  " +
+                             $"estado:{item.habilitado }  " +
+                             $"cambio de clave :{item.cambia_clave} " +
+                             $"persona: {item.id_persona} ");
                     }
+                    Console.ReadLine();
+                    
+                    Console.Beep();
+                    Console.ReadKey();
                     break;
 
                 case 2:
-                    Console.Write("ingrese nombre Usuario");
-                    string nombreu = Console.ReadLine();
-                    Console.Write("ingrese nombre");
-                    string nombre = Console.ReadLine();
-                    Console.Write("ingrese apellido");
-                    string apellido = Console.ReadLine();
-                    Console.Write("ingrese clave");
-                    string clave = Console.ReadLine();
-                    Console.Write("ingrese nombre email");
-                    string email = Console.ReadLine();
-                    Console.Write("ingrese 1 si esta habilitado 0 si no ");
-                    string habilitado = Console.ReadLine();
-                    Console.Write("ingrese 1 si cambia clave y 0 si no ");
-                    string cambiaClave = Console.ReadLine();
-                    Console.Write("ingrese id_persona");
-                    string idpersona = Console.ReadLine();
+                    Console.WriteLine("Ingerse el id del usuario a buscar");
 
-                    uc.agregegarUsuarios(idpersona,nombre,nombreu,apellido,clave,Convert.ToBoolean(cambiaClave),Convert.ToBoolean(habilitado) ,email   );
+                    string idu = Console.ReadLine();
+
+                    foreach (var i in uc.GetOne(idu)) 
+                    {
+                        Console.Write($" Nombre completo :  {i.nombre} {i.apelldo} " +
+                            $"mail: {i.email}  " +
+                            $"clave: {i.clave}  " +
+                            $"estado:{i.habilitado }  " +
+                            $"cambio de clave :{i.cambia_clave} " +
+                            $"persona: {i.id_persona}  ");
+                    }
 
                     break;
+
+
+
+
                 case 3:
+                    Console.Clear();
+                    Console.Write("ingrese nombre Usuario  ");
+                    string nombreu = Console.ReadLine();
+                    Console.Write("ingrese nombre  ");
+                    string nombre = Console.ReadLine();
+                    Console.Write("ingrese apellido  ");
+                    string apellido = Console.ReadLine();
+                    Console.Write("ingrese clave  ");
+                    string clave = Console.ReadLine();
+                    Console.Write("ingrese nombre email  ");
+                    string email = Console.ReadLine();
+                    Console.Write("ingrese 1 si esta habilitado 0 si no  ");
+                    string habilitado = Console.ReadLine();
+                    Console.Write("ingrese 1 si cambia clave y 0 si no  ");
+                    string cambiaClave = Console.ReadLine();
+                    Console.Write("ingrese id_persona  ");
+                    string idpersona = Console.ReadLine();
+
+                    uc.agregegarUsuarios(idpersona, nombre, nombreu, apellido, clave, Convert.ToBoolean(Convert.ToInt32( cambiaClave)), Convert.ToBoolean(Convert.ToInt32( habilitado)), email);
+
+                    break;
+                case 4:
 
                     Console.Clear();
                     Console.WriteLine("ingrese id de usuario a modificar");
@@ -80,12 +113,12 @@ namespace UI.Consolas
                     string Idpersona = Console.ReadLine();
 
 
-                    uc.editUsuarios(idedit,Idpersona, Nombre, nombreusu, Apellido, Clave, Convert.ToBoolean(CambiaClave), Convert.ToBoolean(Habilitado), Email);
+                    uc.editUsuarios(idedit, Idpersona, Nombre, nombreusu, Apellido, Clave, Convert.ToBoolean(CambiaClave), Convert.ToBoolean(Habilitado), Email);
 
 
                     break;
 
-                case 4:
+                case 5:
                     Console.Write("ingrese id del usuario");
                     string id = Console.ReadLine();
 
@@ -93,9 +126,10 @@ namespace UI.Consolas
 
 
                     break;
+                    
+                case 6:
                     Console.Clear();
                     Environment.Exit(0);
-                case 5:
 
                     break;
             }
@@ -103,8 +137,7 @@ namespace UI.Consolas
 
 
         }
-    
-
+       
 
     } 
     

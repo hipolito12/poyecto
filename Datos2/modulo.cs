@@ -56,10 +56,10 @@ namespace Datos2
             en.SaveChanges();
         }
 
-        conexioncs cone = new conexioncs();
-        SqlDataReader leer;
-        DataTable tabla = new DataTable();
-        SqlCommand comando = new SqlCommand();
+        //conexioncs cone = new conexioncs();
+        //SqlDataReader leer;
+        //DataTable tabla = new DataTable();
+        //SqlCommand comando = new SqlCommand();
 
         public List<modulos> listarmodulos()
         {

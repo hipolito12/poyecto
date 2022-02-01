@@ -16,10 +16,10 @@ namespace UI.Desktop2.Login
              
         }
 
-      
 
 
 
+        public int algo;
 
         private void contextMenuStrip2_Opening(object sender, CancelEventArgs e)
         {
@@ -36,14 +36,19 @@ namespace UI.Desktop2.Login
         private void button4_Click(object sender, EventArgs e)
         {
             
+            
+
             inscripciones_alumno1 ins1 = new inscripciones_alumno1();
             ins1.lblestado.Visible = false;
             ins1.lblnota.Visible = false;
             ins1.txtnota.Text = "0";
             ins1.estado = true;
+            ins1.idalumno = algo;
+            ins1.txtauxalumno.Visible = false;
             ins1.combocondicionalu.Text = "   ";
             ins1.txtnota.Visible = false;
-            ins1.lblalumno.Text ="Legajo de alumno";
+            ins1.lblalumno.Visible = false;
+            ins1.Comboalumno.Visible = false;
             ins1.combocondicionalu.Visible = false;
             ins1.btnAceptar.Text = "Inscribirse";
             ins1.Show();
@@ -86,7 +91,7 @@ namespace UI.Desktop2.Login
             c.btbElimina.Visible = false;
             CursosCRUD cc = new CursosCRUD();
             c.dataGridView1.DataSource = cc.cargarcamposCursos();
-            c.dataGridView1.Columns[1].Visible = false;
+          
             c.ShowDialog();
         }
 
@@ -144,12 +149,13 @@ namespace UI.Desktop2.Login
         }
 
 
-        public int algo;
+       
         private void button1_Click(object sender, EventArgs e)
         {
 
             NotasAlumnos na = new NotasAlumnos();
             Notas n = new Notas();
+           
             foreach (var k in n.fechasyparacombo(algo)) 
             { 
             na.comboBox1.Items.Add(k.ItemArray[0]);

@@ -13,7 +13,7 @@ namespace CapaNegocios
        
 
         Menu_Admins ma = new Menu_Admins();
-            public DataTable CantidadDeCursosEintegrantes()
+            public List<Menu_Admins> CantidadDeCursosEintegrantes()
         {
 
             return ma.CantidadDeCursosEintegrantes();

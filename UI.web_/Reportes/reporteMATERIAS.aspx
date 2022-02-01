@@ -4,8 +4,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="aa" runat="server">
     
     <center> 
-        <h1>Materias del plan</h1>
-     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id_plan" DataSourceID="SqlDataSource1">
+        <h1>Informacion de Materias</h1>
+     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id_plan" DataSourceID="SqlDataSource1" AllowSorting="True" Height="250px">
          <Columns>
              <asp:BoundField DataField="desc_materia" HeaderText="desc_materia" SortExpression="desc_materia" />
              <asp:BoundField DataField="hs_totales" HeaderText="hs_totales" SortExpression="hs_totales" />
@@ -14,10 +14,7 @@
          </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:tp2ConnectionString %>" SelectCommand="use tp2
-select m.desc_materia, m.hs_totales,m.hs_semanales, p.id_plan from materias m 
-join  planes p on p.id_plan = m.id_plan
-join personas per on per.id_plan = p.id_plan
-where per.id_persona = @personas;">
+select * from materias">
             <SelectParameters>
                 <asp:SessionParameter Name="personas" SessionField="usuario" />
             </SelectParameters>

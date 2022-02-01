@@ -44,5 +44,11 @@ namespace CapaNegocios
         {
             return c.cargarcamposCursos();
         }
+
+        public List<curso_> cargarTodosLosCursos() 
+        {
+            return c.cargarTodosLosCursos();
+        }
+
     }
 }

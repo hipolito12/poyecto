@@ -33,7 +33,7 @@ namespace CapaNegocios
             ia.eliminar(Convert.ToInt32(id));
         }
     
-        public (Dictionary<string, int>, Dictionary<string, int>) cargacombos() 
+        public (Dictionary<string, int>, Dictionary<string, int> ,Dictionary<string, int>) cargacombos() 
         {
             return ia.comboalumno();
         }

@@ -20,11 +20,11 @@ namespace Datos2
 
         public string email { get; set; }
 
-         public bool habitada { get; set; }
+         public bool habilitado { get; set; }
 
         public bool cambia_clave { get; set; }
 
-        public int id_peronas { get; set; }
+        public int id_persona { get; set; }
 
         Entidades en = new Entidades();
         usuarios u = new usuarios();
@@ -119,12 +119,12 @@ namespace Datos2
                 Usuario u = new Usuario();
                 u.nombre_usuario = dr.GetString(1);
                 u.clave = dr.GetString(2);
-                u.habitada = dr.GetBoolean(3);
+                u.habilitado = dr.GetBoolean(3);
                 u.nombre = dr.GetString(4);
                 u.apelldo = dr.GetString(5);
                 u.email = dr.GetString(6);
                 u.cambia_clave = dr.GetBoolean(7);
-                u.id_peronas = dr.GetInt32(8);
+                u.id_persona = dr.GetInt32(8);
                     lu.Add(u);
 
 
@@ -132,5 +132,13 @@ namespace Datos2
             con.Close();
             return lu;
         }
+
+        public List<Usuario> GetOne(int id) 
+        {
+            var Listusu = en.Database.SqlQuery<Usuario>($"select * from usuarios u where u.id_usuario = {id}").ToList();
+            return Listusu;
+        }
+    
+                
     }
 }

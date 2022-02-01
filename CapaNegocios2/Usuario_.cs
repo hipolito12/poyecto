@@ -52,5 +52,14 @@ namespace CapaNegocios
         {
             return us.Lista();
         }
+
+
+
+        public List<Usuario> GetOne(string id) 
+        {
+            return us.GetOne(Convert.ToInt32(id));
+        }
+
+
     }
 }

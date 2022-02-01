@@ -13,7 +13,7 @@ namespace Datos2
         public string situacion { get; set; }
         public string materia { get; set; }
         public int anio { get; set; }
-        public DataTable alg(int fecha, int idper)
+        public List<NotasAlumnos>  alg(int fecha, int idper)
         {
             string query = "use[tp2] " +
                  " select nota, m.desc_materia, condicion " +
@@ -25,37 +25,37 @@ namespace Datos2
 
 
             Entidades en = new Entidades();
-            ////List<mostrar_notas_Result> l = new List<mostrar_notas_Result>(en.mostrar_notas(idper,idcurso));
+           // list<mostrar_notas_result> l = new list<mostrar_notas_result>(en.mostrar_notas(idper, idcurso));
             SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
-            //SqlCommand cmd = new SqlCommand(query,con);
-            //con.Open();
-            //var dr = cmd.ExecuteReader();
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            var dr = cmd.ExecuteReader();
 
-            // List<NotasAlumnos> a = new List<NotasAlumnos>();
+            List<NotasAlumnos> a = new List<NotasAlumnos>();
 
-            // while (dr.Read()) 
-            // {
-            //    NotasAlumnos t = new NotasAlumnos();
+            while (dr.Read())
+            {
+                NotasAlumnos t = new NotasAlumnos();
 
-            //     t.Nota = dr.GetInt32(1);
-            //     t.situacion = dr.GetString(2);
-            //     t.materia = dr.GetString(0);
-            //    Console.WriteLine();
-            //     a.Add(t);
+                t.Nota = dr.GetInt32(0);
+                t.situacion = dr.GetString(1);
+                t.materia = dr.GetString(2);
+                Console.WriteLine();
+                a.Add(t);
 
-            // }
+            }
 
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
-            var dt = new System.Data.DataTable();
-            da.Fill(dt);
-            con.Close();
-           // DataTable dt = new DataTable();
+            //SqlDataAdapter da = new SqlDataAdapter(query, con);
+            //var dt = new System.Data.DataTable();
+            //da.Fill(dt);
+            //con.Close();
+            // DataTable dt = new DataTable();
             //dt.Load(dr);
             //dr.Dispose();
             //SqlDataAdapter da = new SqlDataAdapter(cmd);
             //da.Fill(dt);
 
-            return dt ;
+            return a ;
         }
 
        public List<DataRow> notas(int idalumno ) 
@@ -113,34 +113,34 @@ namespace Datos2
         }*/
 
 
-        public DataTable cargarInformeDocentesXcurso()
+        public List<Menu_profesoress> cargarInformeDocentesXcurso()
 
         {
             Entidades en = new Entidades();
 
             string query = $" use tp2 " +
-                "select   CONCAT( p.nombre , p.apellido) as nombres, dc.id_curso from   docentes_cursos dc inner join personas p on p.id_persona = dc.id_docente ";
+                "select   CONCAT( p.nombre , ' ', p.apellido) as nombres, m.desc_materia  from   docentes_cursos dc inner join personas p on p.id_persona = dc.id_docente join materias m on m.id_materias = c.id_materias where p.tipo_persona=1";
             SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
-            //var dr = cmd.ExecuteReader();
+            var dr = cmd.ExecuteReader();
 
-            //List<Menu_profesoress> mp = new List<Menu_profesoress>();
+                    List<Menu_profesoress> mp = new List<Menu_profesoress>();
 
-            //while (dr.Read())
-            //{
-            //    Menu_profesoress m = new Menu_profesoress();
+            while (dr.Read())
+            {
+                Menu_profesoress m = new Menu_profesoress();
 
-            //    m.docentes = dr.GetString(0);
-            //    m.idalumno = dr.GetInt32(1);
-            //    mp.Add(m);
+                m.docentes = dr.GetString(0);
+                m.idalumno = dr.GetInt32(1);
+                mp.Add(m);
 
-            //}
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
-            var dt = new System.Data.DataTable();
-            da.Fill(dt);
+            }
+            //SqlDataAdapter da = new SqlDataAdapter(query, con);
+            //var dt = new System.Data.DataTable();
+            //da.Fill(dt);
             con.Close();
-            return dt;
+            return mp;
         }
 
 

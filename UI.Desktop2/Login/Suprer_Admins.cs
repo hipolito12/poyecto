@@ -11,8 +11,8 @@ namespace UI.Desktop2.Login
         public Suprer_Admins()
         {
             InitializeComponent();
-            Login l = new Login();
-            l.Close();
+           
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -28,9 +28,14 @@ namespace UI.Desktop2.Login
 
         private void btnisncalu_Click(object sender, System.EventArgs e)
         {
-            Inscripciones_alumno ia = new Inscripciones_alumno();
-            ia.Show();
-            this.Close();
+            Inscripciones_alumno insc = new Inscripciones_alumno();
+
+            insc.modisadmin = true;
+            
+            insc.ShowDialog();
+           
+
+
         }
 
         private void btncomisiones_Click(object sender, System.EventArgs e)

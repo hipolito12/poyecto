@@ -164,12 +164,34 @@ namespace Datos2
         {
             Entidades ent = new Entidades();
             SqlConnection con = new SqlConnection(ent.Database.Connection.ConnectionString);
-            string query = $" select * from cursos  where anio_calendario = {DateTime.Now.Year}";
+            string query = $" select m.desc_materia,c.anio_calendario,c.cupo  from cursos c join materias m  on m.id_materia = c.id_materia where anio_calendario = {DateTime.Now.Year}";
             SqlDataAdapter da = new SqlDataAdapter(query, con);
             var dt = new System.Data.DataTable();
             da.Fill(dt);
             return dt;
-        } 
+        }
+
+        public List<curso_> cargarTodosLosCursos()
+        {
+            string query = "select id_curso from  cursos";
+            SqlConnection con = new SqlConnection(entidad.Database.Connection.ConnectionString);
+            List<curso_> lc = new List<curso_>();
+            con.Open();
+            SqlCommand cmd = new SqlCommand(query,con );
+            
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read()) 
+            {
+                curso_ c = new curso_();
+                c.idcurso = dr.GetInt32(0);
+                lc.Add(c);
+
+            }
+            con.Close();
+            return lc;
+
+        }
+
 
     }
 

@@ -38,12 +38,15 @@ namespace UI.Desktop2
             this.lblnota = new System.Windows.Forms.Label();
             this.txtnota = new System.Windows.Forms.TextBox();
             this.Comboalumno = new System.Windows.Forms.ComboBox();
+            this.txtauxalumno = new System.Windows.Forms.TextBox();
+            this.txtauxcurso = new System.Windows.Forms.TextBox();
+            this.combocursoaux = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // Combocurso
             // 
             this.Combocurso.FormattingEnabled = true;
-            this.Combocurso.Location = new System.Drawing.Point(159, 234);
+            this.Combocurso.Location = new System.Drawing.Point(151, 247);
             this.Combocurso.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Combocurso.Name = "Combocurso";
             this.Combocurso.Size = new System.Drawing.Size(292, 28);
@@ -70,7 +73,7 @@ namespace UI.Desktop2
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(87, 301);
+            this.btnAceptar.Location = new System.Drawing.Point(69, 327);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(382, 35);
@@ -82,7 +85,7 @@ namespace UI.Desktop2
             // lblCurso
             // 
             this.lblCurso.AutoSize = true;
-            this.lblCurso.Location = new System.Drawing.Point(74, 246);
+            this.lblCurso.Location = new System.Drawing.Point(70, 253);
             this.lblCurso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurso.Name = "lblCurso";
             this.lblCurso.Size = new System.Drawing.Size(72, 20);
@@ -121,12 +124,36 @@ namespace UI.Desktop2
             // Comboalumno
             // 
             this.Comboalumno.FormattingEnabled = true;
-            this.Comboalumno.Location = new System.Drawing.Point(159, 188);
+            this.Comboalumno.Location = new System.Drawing.Point(160, 211);
             this.Comboalumno.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Comboalumno.Name = "Comboalumno";
             this.Comboalumno.Size = new System.Drawing.Size(292, 28);
             this.Comboalumno.TabIndex = 8;
             this.Comboalumno.SelectedIndexChanged += new System.EventHandler(this.Comboalumno_SelectedIndexChanged);
+            // 
+            // txtauxalumno
+            // 
+            this.txtauxalumno.Location = new System.Drawing.Point(160, 185);
+            this.txtauxalumno.Name = "txtauxalumno";
+            this.txtauxalumno.Size = new System.Drawing.Size(292, 26);
+            this.txtauxalumno.TabIndex = 9;
+            // 
+            // txtauxcurso
+            // 
+            this.txtauxcurso.Location = new System.Drawing.Point(149, 247);
+            this.txtauxcurso.Name = "txtauxcurso";
+            this.txtauxcurso.Size = new System.Drawing.Size(292, 26);
+            this.txtauxcurso.TabIndex = 10;
+            this.txtauxcurso.TextChanged += new System.EventHandler(this.txtauxcurso_TextChanged);
+            // 
+            // combocursoaux
+            // 
+            this.combocursoaux.FormattingEnabled = true;
+            this.combocursoaux.Location = new System.Drawing.Point(151, 248);
+            this.combocursoaux.Name = "combocursoaux";
+            this.combocursoaux.Size = new System.Drawing.Size(291, 28);
+            this.combocursoaux.TabIndex = 11;
+            this.combocursoaux.SelectedIndexChanged += new System.EventHandler(this.combocursoaux_SelectedIndexChanged);
             // 
             // inscripciones_alumno1
             // 
@@ -142,6 +169,9 @@ namespace UI.Desktop2
             this.Controls.Add(this.lblestado);
             this.Controls.Add(this.combocondicionalu);
             this.Controls.Add(this.Combocurso);
+            this.Controls.Add(this.txtauxcurso);
+            this.Controls.Add(this.txtauxalumno);
+            this.Controls.Add(this.combocursoaux);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "inscripciones_alumno1";
             this.Text = "inscripciones_alumno1";
@@ -156,10 +186,13 @@ namespace UI.Desktop2
         public System.Windows.Forms.ComboBox Combocurso;
         public System.Windows.Forms.TextBox combocondicionalu;
         public System.Windows.Forms.TextBox txtnota;
-        public System.Windows.Forms.ComboBox Comboalumno;
         public System.Windows.Forms.Label lblestado;
         public System.Windows.Forms.Label lblnota;
         public System.Windows.Forms.Button btnAceptar;
         public System.Windows.Forms.Label lblalumno;
+        public System.Windows.Forms.ComboBox Comboalumno;
+        public System.Windows.Forms.TextBox txtauxalumno;
+        public System.Windows.Forms.TextBox txtauxcurso;
+        private System.Windows.Forms.ComboBox combocursoaux;
     }
 }

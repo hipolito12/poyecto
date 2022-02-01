@@ -10,7 +10,7 @@ namespace CapaNegocios
     {
         NotasAlumnos t = new NotasAlumnos();
 
-        public DataTable algo(int fecha, int idpersona)
+        public List<NotasAlumnos> algo(int fecha, int idpersona)
         {
           
             return t.alg(fecha, idpersona);
@@ -22,7 +22,7 @@ namespace CapaNegocios
             return t.notas(idalumno);
         }
 
-        public DataTable cargarInformeDocentesXcurso()
+        public List<Menu_profesoress> cargarInformeDocentesXcurso()
         {
             return t.cargarInformeDocentesXcurso();
         }

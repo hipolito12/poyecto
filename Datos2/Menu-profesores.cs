@@ -13,48 +13,46 @@ namespace Datos2
         public int idalumno { get; set; }
         public string docentes { get; set; }
 
-        public DataTable CargarReporteDeAlumosXcurso( ) 
+        public List<Menu_profesoress> CargarReporteDeAlumosXcurso( ) 
         {
             string query = "use[tp2] "
-                + " select c.id_curso,  count (ai.id_alumno)as alumnos from alumnos_inscripciones ai "
-                + "join cursos c on c.id_curso = ai.id_curso"
+                + " select m.desc_materia,  count (ai.id_alumno)as alumnos from alumnos_inscripciones ai "
+                + "join cursos c on c.id_curso = ai.id_curso " +
+                " join materias m on m.id_materia= c.id_materia " +
+                " group by m.desc_materia";
               
-                + " group by c.id_curso  ";
-                                
-               
-
-
+           
 
 
             Entidades en = new Entidades();
             
             SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
-           // SqlCommand cmd = new SqlCommand(query, con);
+            SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
             
               
               
-                SqlDataAdapter da = new SqlDataAdapter(query, con);
-                var dt = new DataTable();
-                da.Fill(dt);
+                //SqlDataAdapter da = new SqlDataAdapter(query, con);
+                //var dt = new DataTable();
+                //da.Fill(dt);
                 
             
+            
+            var dr = cmd.ExecuteReader();
+
+            List<Menu_profesoress> mp = new List<Menu_profesoress>();
+
+            while (dr.Read())
+            {
+                Menu_profesoress m = new Menu_profesoress();
+
+                m.cantidad = dr.GetInt32(1);
+                m.docentes = dr.GetString(0);
+                mp.Add(m);
+
+            }
             con.Close();
-          //  var dr = cmd.ExecuteReader();
-
-            //List< Menu_profesoress> mp = new List<Menu_profesoress>();
-
-            //while (dr.Read())
-            //{
-            //    Menu_profesoress  m = new Menu_profesoress ();
-
-            //    m.cantidad = dr.GetInt32(0);
-            //    m.idalumno = dr.GetInt32(1);
-            //    mp.Add(m);
-
-            //}
-            //con.Close();
-            return dt;
+            return mp;
         }
 
 
@@ -76,36 +74,40 @@ namespace Datos2
             da.Fill(dt);
             return dt;
         }
-       public DataTable cargarInformeDocentesXcurso()
+
+
+
+       public List<Menu_profesoress> cargarInformeDocentesXcurso()
        
         {
             Entidades en = new Entidades();
 
+            
+
             string query = $" use tp2 " +
-                $"select   CONCAT( p.nombre , p.apellido) as nombres, dc.id_curso from   docentes_cursos dc inner join personas p on p.id_persona = dc.id_docente ";
+                "select   CONCAT( p.nombre , ' ', p.apellido) as nombres, dc.id_curso from   docentes_cursos dc inner join personas p on p.id_persona = dc.id_docente  where p.tipo_persona=1";
             SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
-           // SqlCommand cmd = new SqlCommand(query, con);
+            SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
-            //var dr = cmd.ExecuteReader();
+            var dr = cmd.ExecuteReader();
 
-            //List<Menu_profesoress> mp = new List<Menu_profesoress>();
+            List<Menu_profesoress> mp = new List<Menu_profesoress>();
 
-            //while (dr.Read())
-            //{
-            //    Menu_profesoress m = new Menu_profesoress();
+            while (dr.Read())
+            {
+                Menu_profesoress m = new Menu_profesoress();
 
-            //    m. docentes = dr.GetString(0);
-            //    m.idalumno = dr.GetInt32(1);
-            //    mp.Add(m);
+                m.docentes = dr.GetString(0);
+                m.idalumno = dr.GetInt32(1);
+                mp.Add(m);
 
-            //}
-
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
-            var dt = new System.Data.DataTable();
-            da.Fill(dt);
+            }
+            //SqlDataAdapter da = new SqlDataAdapter(query, con);
+            //var dt = new System.Data.DataTable();
+            //da.Fill(dt);
             con.Close();
-            return dt;
-        
+            return mp;
+
         }
 
         public List<alumnos_inscripciones> refrescar()

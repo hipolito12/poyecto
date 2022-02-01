@@ -544,6 +544,10 @@
       <Project>{b4b5449c-429c-4ecb-9fef-4bd3b584d9e4}</Project>
       <Name>CapaNegocios</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Datos2\CapaDatos.csproj">
+      <Project>{fc614a7a-db96-4226-bbe3-daf487ed8af1}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Utils\" />

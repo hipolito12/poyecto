@@ -20,10 +20,21 @@ namespace UI.web_.Reportes
         {
             int secion = Convert.ToInt32(Session["usuario"]);
             _Inscripciones_Alumnos ia = new _Inscripciones_Alumnos();
-            ia.agregar(secion.ToString(), DropDownList1.SelectedValue, " ", "-1");
-            lblestado.Text = "registrado!";
-            
-            lblestado.Visible = true;
+            bool x = ia.VerificarInscripcion(secion, Convert.ToInt32(DropDownList1.SelectedValue));
+            if (x == false)
+            {
+                ia.agregar(secion.ToString(), DropDownList1.SelectedValue, " ", "-1");
+                lblestado.Text = "registrado!";
+
+                lblestado.Visible = true;
+
+            }
+            else
+            {
+                lblestado.Text = "  Ya se encuenta registrado!";
+
+                lblestado.Visible = true;
+            }
         }
     }
 }

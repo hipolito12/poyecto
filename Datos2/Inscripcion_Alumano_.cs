@@ -47,7 +47,7 @@ namespace Datos2
             alumnos_inscripciones ia = new alumnos_inscripciones();
             alumnos_inscripciones ali = en.alumnos_inscripciones.Find(id);
             ali.condicion = condicion;
-            
+            // ver aca que onda y mucha suerte entendiendo el spagueti code
             ali.id_curso = curso;
            
             ali.id_alumno = alumno;
@@ -66,7 +66,7 @@ namespace Datos2
             en.SaveChanges();
         }
 
-        public (Dictionary<string ,int>, Dictionary<string, int >) comboalumno()
+        public (Dictionary<string ,int>, Dictionary<string, int >, Dictionary<string, int>) comboalumno()
         {
             Entidades en = new Entidades();
 
@@ -79,12 +79,16 @@ namespace Datos2
                     .ToDictionary(t => t.id_materia  ,t=>t.desc_materia);
 
             var diccionariocursos = en.cursos
-                   .SqlQuery("Select * from cursos")
-                   .ToDictionary(t => $" anio : {t.anio_calendario} curso: {t.id_curso}" , t => t.id_curso  );
+                   .SqlQuery($" select * from cursos  where anio_calendario = { DateTime.Now.Year}")
+            
+                   .ToDictionary(t => $" anio : {t.anio_calendario} curso: {auxiliar[t.id_materia]}" , t => t.id_curso  );
 
+            var diccionarioDeTodosLosCursos = en.cursos
+                  .SqlQuery($" select * from cursos  ")
 
+                  .ToDictionary(t => $" anio : {t.anio_calendario} curso: {auxiliar[t.id_materia]}", t => t.id_curso);
 
-            return (diccionariopersona,diccionariocursos);
+            return (diccionariopersona,diccionariocursos,diccionarioDeTodosLosCursos);
 
         }
 
@@ -125,5 +129,20 @@ namespace Datos2
             }
             return verifica =true;
         }
+
+
+        //public bool verificarInscripcion(int alumno) 
+        //{
+        //    bool x = false;
+        //    Entidades en = new Entidades();
+        //    alumnos_inscripciones ai = en.alumnos_inscripciones.Where(a => a.id_alumno == 15).FirstOrDefault();
+        //    if (ai != null)
+        //    {
+        //        x = true;
+        //        return x;
+        //    }
+        //    else { return x; }
+        //}
+
     }
 }

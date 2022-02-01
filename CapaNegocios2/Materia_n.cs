@@ -55,5 +55,11 @@ namespace CapaNegocios
         {
             return mate.listar();
         }
+
+        public List<Materia_> GetOne(string idm) 
+        {
+          return  mate.GetOne(Convert.ToInt32(idm));
+        }
+
     }
 }

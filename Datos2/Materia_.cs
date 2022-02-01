@@ -9,10 +9,10 @@ namespace Datos2
     public class Materia_
     {
         public int idmateria { get; set; }
-        public int idplan { get; set; }
+        public int id_plan { get; set; }
         public string desc_materia { get; set; }
-        public int horas_semanales { get; set; }
-        public int horas_totales { get; set; }
+        public int hs_semanales { get; set; }
+        public int hs_totales { get; set; }
 
         //conexioncs conexion = new conexioncs();
         //SqlDataReader leer;
@@ -49,8 +49,8 @@ namespace Datos2
                 Materia_ m = new Materia_();
                 m.desc_materia = dr.GetString(1);
                 m.idmateria = dr.GetInt32(0);
-                m.horas_semanales = dr.GetInt32(2);
-                m.horas_totales = dr.GetInt32(3);
+                m.hs_semanales = dr.GetInt32(2);
+                m.hs_totales = dr.GetInt32(3);
                 lmate.Add(m);
             }
             con.Close();
@@ -143,25 +143,28 @@ namespace Datos2
         }
         public List<string> Cargar_combos()
         {
-            List<string> li = new List<string>();
-            try
-            {
-                planes p = new planes();
-                Entidades en = new Entidades();
-                var vari = en.planes;
+            //List<string> li = new List<string>();
+           
 
-                foreach (var per in vari)
-                {
-                    var variab = per.id_plan;
-                    planes pla = en.planes.Where(pl => pl.id_plan == variab).First();
-                    string descripcion = pla.desc_plan;
-                    li.Add(descripcion);
 
-                    return li;
-                }
-            }
-            catch (Exception ex) { Console.WriteLine($"Error: {ex}"); }
-            return li;
+                Entidades entis = new Entidades();
+               var  planesList = entis.Database.SqlQuery<string>("select desc_plan from planes").ToList();
+
+                //planes p = new planes();
+                //Entidades en = new Entidades();
+                //var vari = en.planes;
+
+                //foreach (var per in vari)
+                //{
+                //    var variab = per.id_plan;
+                //    planes pla = en.planes.Where(pl => pl.id_plan == variab).First();
+                //    string descripcion = pla.desc_plan;
+                //    li.Add(descripcion);
+
+                return planesList ;
+                //}
+           
+            
         }
 
 
@@ -191,9 +194,11 @@ namespace Datos2
             return ListaDematerias;
         }
 
-        public string[] buscarymostrar() 
+       public List<Materia_> GetOne(int idm) 
         {
-
+            Entidades ent = new Entidades();
+          var listmateria = ent.Database.SqlQuery<Materia_>($"select * from materias where materias.id_materia = {idm}").ToList();
+            return listmateria;
         }
 
     }

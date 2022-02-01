@@ -15,20 +15,20 @@ namespace UI.Desktop2
 {
     public partial class NotasAlumnos: Form
     {
-        public int idpersonacp ;
+       
         public NotasAlumnos()
         {
             
           
             InitializeComponent();
-            
+           
             reportViewer1.Visible = false;
           
                        
 
         }
-        
-      
+
+        public int idpersonacp;
 
         private void Pruebas_Load(object sender, EventArgs e)
         {
@@ -49,9 +49,6 @@ namespace UI.Desktop2
             Notas n = new Notas();
             Materia_n m = new Materia_n();
            
-
-            
-
 
 
             ReportDataSource ds = new ReportDataSource("Prueba", n.algo(fecha, idpersona) ) ;
@@ -89,7 +86,8 @@ namespace UI.Desktop2
             try
             {
                 string campo = comboBox1.SelectedItem.ToString()  ;
-                alg(Convert.ToInt32( campo ) ,idpersonacp);
+                int fecha = Convert.ToInt32(campo);
+                alg(fecha ,idpersonacp);
                 reportViewer1.Visible = true;
             }
             catch (Exception ex)
