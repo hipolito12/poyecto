@@ -12,6 +12,7 @@ namespace Datos2
         public  int cantidad { get; set; }
         public int idalumno { get; set; }
         public string docentes { get; set; }
+        public string materias { get; set; }
 
         public List<Menu_profesoress> CargarReporteDeAlumosXcurso( ) 
         {

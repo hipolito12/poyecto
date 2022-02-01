@@ -119,7 +119,7 @@ namespace Datos2
             Entidades en = new Entidades();
 
             string query = $" use tp2 " +
-                "select   CONCAT( p.nombre , ' ', p.apellido) as nombres, m.desc_materia  from   docentes_cursos dc inner join personas p on p.id_persona = dc.id_docente join materias m on m.id_materias = c.id_materias where p.tipo_persona=1";
+           "  select CONCAT(p.nombre , ' ', p.apellido) as nombres, m.desc_materia from   docentes_cursos dc inner join personas p on p.id_persona = dc.id_docente  join cursos c on c.id_curso = dc.id_curso join materias m on m.id_materia = c.id_materia where p.tipo_persona = 1";
             SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
@@ -132,7 +132,7 @@ namespace Datos2
                 Menu_profesoress m = new Menu_profesoress();
 
                 m.docentes = dr.GetString(0);
-                m.idalumno = dr.GetInt32(1);
+                m.materias = dr.GetString(1);
                 mp.Add(m);
 
             }
