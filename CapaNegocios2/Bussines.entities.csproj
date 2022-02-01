@@ -62,9 +62,9 @@
     <Compile Include="Inscripciones_Alumnos.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Datos2\CapaDatos.csproj">
+    <ProjectReference Include="..\Datos2\Data.database.csproj">
       <Project>{fc614a7a-db96-4226-bbe3-daf487ed8af1}</Project>
-      <Name>CapaDatos</Name>
+      <Name>Data.database</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

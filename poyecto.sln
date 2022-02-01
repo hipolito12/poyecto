@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDatos", "Datos2\CapaDatos.csproj", "{FC614A7A-DB96-4226-BBE3-DAF487ED8AF1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.database", "Datos2\Data.database.csproj", "{FC614A7A-DB96-4226-BBE3-DAF487ED8AF1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D856C5FE-8066-4380-9D49-1DB6F60C4F7E}"
 	ProjectSection(SolutionItems) = preProject
@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.Desktop", "UI.Desktop2\UI.Desktop.csproj", "{5753F19B-B86E-4449-8ECA-24027C63D64A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaNegocios", "CapaNegocios2\CapaNegocios.csproj", "{B4B5449C-429C-4ECB-9FEF-4BD3B584D9E4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bussines.entities", "CapaNegocios2\Bussines.entities.csproj", "{B4B5449C-429C-4ECB-9FEF-4BD3B584D9E4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.web_", "UI.web_\UI.web_.csproj", "{FD9AC1F7-B0AE-4568-9679-38B5AC8C6CA4}"
 EndProject
