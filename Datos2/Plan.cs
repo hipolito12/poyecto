@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Datos2
 {
-    public class Plan
+    public class Plan:Adapter
     {
 
         public int id_plan { get; set; }
@@ -21,12 +21,13 @@ namespace Datos2
 
         public DataTable Listar()
         {
-            Entidades en = new Entidades();
+            
             string query = "select * from planes";
-            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            this.OpenConnection();
+            SqlDataAdapter da = new SqlDataAdapter(query, sqlConn);
             var dt = new DataTable();
             da.Fill(dt);
+            this.CloseConnection();
             return dt;
         }
 

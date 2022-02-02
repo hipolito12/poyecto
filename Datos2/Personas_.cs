@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Datos2
 {
-    public class Personas_
+    public class Personas_:Adapter
     {
 
         public int idcpesonas { get; set; }
@@ -29,12 +29,13 @@ namespace Datos2
 
         public DataTable Listar()
         {
-            Entidades en = new Entidades();
+            
             string query = "select * from personas";
-            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            this.OpenConnection();
+            SqlDataAdapter da = new SqlDataAdapter(query, sqlConn);
             var dt = new DataTable();
             da.Fill(dt);
+            this.CloseConnection();
             return dt;
         }
 

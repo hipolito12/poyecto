@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 using System.Data;
 namespace Datos2
 {
-    public class Menu_profesoress
+    public class Menu_profesoress:Adapter
     {
         public  int cantidad { get; set; }
         public int idalumno { get; set; }
@@ -21,24 +21,20 @@ namespace Datos2
                 + "join cursos c on c.id_curso = ai.id_curso " +
                 " join materias m on m.id_materia= c.id_materia " +
                 " group by m.desc_materia";
-              
-           
+
+
 
 
             Entidades en = new Entidades();
-            
-            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
-            SqlCommand cmd = new SqlCommand(query, con);
-            con.Open();
-            
-              
-              
-                //SqlDataAdapter da = new SqlDataAdapter(query, con);
-                //var dt = new DataTable();
-                //da.Fill(dt);
-                
-            
-            
+
+            this.OpenConnection();
+            SqlCommand cmd = new SqlCommand(query, sqlConn);
+
+            //SqlDataAdapter da = new SqlDataAdapter(query, con);
+            //var dt = new DataTable();
+            //da.Fill(dt);
+
+
             var dr = cmd.ExecuteReader();
 
             List<Menu_profesoress> mp = new List<Menu_profesoress>();
@@ -52,7 +48,7 @@ namespace Datos2
                 mp.Add(m);
 
             }
-            con.Close();
+            this.CloseConnection();
             return mp;
         }
 
@@ -67,12 +63,13 @@ namespace Datos2
         public DataTable FiltrarCursos( int idcurso) 
         {
             Entidades en = new Entidades();
-            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
+            this.OpenConnection();
 
             string query =$"select * from alumnos_inscripciones where id_curso={idcurso} ";
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            SqlDataAdapter da = new SqlDataAdapter(query, sqlConn);
             var dt = new System.Data.DataTable();
             da.Fill(dt);
+            this.CloseConnection();
             return dt;
         }
 
@@ -87,9 +84,9 @@ namespace Datos2
 
             string query = $" use tp2 " +
                 "select   CONCAT( p.nombre , ' ', p.apellido) as nombres, dc.id_curso from   docentes_cursos dc inner join personas p on p.id_persona = dc.id_docente  where p.tipo_persona=1";
-            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
-            SqlCommand cmd = new SqlCommand(query, con);
-            con.Open();
+            this.OpenConnection();
+            SqlCommand cmd = new SqlCommand(query, sqlConn);
+          
             var dr = cmd.ExecuteReader();
 
             List<Menu_profesoress> mp = new List<Menu_profesoress>();
@@ -106,7 +103,7 @@ namespace Datos2
             //SqlDataAdapter da = new SqlDataAdapter(query, con);
             //var dt = new System.Data.DataTable();
             //da.Fill(dt);
-            con.Close();
+            this.CloseConnection();
             return mp;
 
         }

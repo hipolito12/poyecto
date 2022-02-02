@@ -70,6 +70,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapter.cs" />
     <Compile Include="alumnos_inscripciones.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -161,7 +162,6 @@
     <Compile Include="_Login.cs" />
     <Compile Include="Materia_.cs" />
     <Compile Include="modulo.cs" />
-    <Compile Include="conexioncs.cs" />
     <Compile Include="Personas_.cs" />
     <Compile Include="Plan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -221,6 +221,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

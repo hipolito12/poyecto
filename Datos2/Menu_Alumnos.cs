@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Datos2
 {
-    public class NotasAlumnos
+    public class NotasAlumnos:Adapter
     {
         public int Nota {get;set; }
         public string situacion { get; set; }
@@ -25,10 +25,10 @@ namespace Datos2
 
 
             Entidades en = new Entidades();
-           // list<mostrar_notas_result> l = new list<mostrar_notas_result>(en.mostrar_notas(idper, idcurso));
-            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
-            SqlCommand cmd = new SqlCommand(query, con);
-            con.Open();
+            // list<mostrar_notas_result> l = new list<mostrar_notas_result>(en.mostrar_notas(idper, idcurso));
+            this.OpenConnection();
+            SqlCommand cmd = new SqlCommand(query, sqlConn);
+        
             var dr = cmd.ExecuteReader();
 
             List<NotasAlumnos> a = new List<NotasAlumnos>();
@@ -54,6 +54,7 @@ namespace Datos2
             //dr.Dispose();
             //SqlDataAdapter da = new SqlDataAdapter(cmd);
             //da.Fill(dt);
+            this.CloseConnection();
 
             return a ;
         }
@@ -67,12 +68,12 @@ namespace Datos2
 
 
             Entidades en = new Entidades();
-            
-            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
-            SqlCommand cmd = new SqlCommand(query, con);
-            con.Open();
+
+            this.OpenConnection();
           
-                SqlDataAdapter da = new SqlDataAdapter(query, con);
+          
+          
+                SqlDataAdapter da = new SqlDataAdapter(query, sqlConn);
                 var dt = new DataTable();
                 da.Fill(dt);
 
@@ -81,7 +82,7 @@ namespace Datos2
             {
                 drl.Add(dr);
             }
-            
+
             // SqlDataReader dr = cmd.ExecuteReader();
 
             // List<NotasAlumnos> nal = new List<NotasAlumnos>();
@@ -96,7 +97,7 @@ namespace Datos2
 
 
             //}
-            con.Close();
+            this.CloseConnection();
 
             return drl;
         }
@@ -120,9 +121,9 @@ namespace Datos2
 
             string query = $" use tp2 " +
            "  select CONCAT(p.nombre , ' ', p.apellido) as nombres, m.desc_materia from   docentes_cursos dc inner join personas p on p.id_persona = dc.id_docente  join cursos c on c.id_curso = dc.id_curso join materias m on m.id_materia = c.id_materia where p.tipo_persona = 1";
-            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
-            SqlCommand cmd = new SqlCommand(query, con);
-            con.Open();
+            this.OpenConnection();
+            SqlCommand cmd = new SqlCommand(query, sqlConn);
+            
             var dr = cmd.ExecuteReader();
 
                     List<Menu_profesoress> mp = new List<Menu_profesoress>();
@@ -139,7 +140,7 @@ namespace Datos2
             //SqlDataAdapter da = new SqlDataAdapter(query, con);
             //var dt = new System.Data.DataTable();
             //da.Fill(dt);
-            con.Close();
+            this.CloseConnection();
             return mp;
         }
 

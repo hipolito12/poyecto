@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Datos2
 {
-    public class Menu_Admins
+    public class Menu_Admins:Adapter
     {
         public int cantidad { get; set; }
         public  string pepe{ get; set; }
@@ -30,12 +30,12 @@ namespace Datos2
 
             Entidades en = new Entidades();
             //List<mostrar_notas_Result> l = new List<mostrar_notas_Result>(en.mostrar_notas(idper,idcurso));
-            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
-            SqlCommand cmd = new SqlCommand(query, con);
-            con.Open();
+            this.OpenConnection();
+            SqlCommand cmd = new SqlCommand(query, sqlConn);
+            
 
            
-                SqlDataAdapter da = new SqlDataAdapter(query, con);
+                SqlDataAdapter da = new SqlDataAdapter(query, sqlConn);
                 //var dt = new System.Data.DataTable();
                 //da.Fill(dt);
 
@@ -56,7 +56,7 @@ namespace Datos2
                 ma = null;
 
             }
-            con.Close();
+            this.CloseConnection();
             return lma;
         }
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Datos2
 {
-    public class Inscripcion_Alumano_
+    public class Inscripcion_Alumano_:Adapter
     {
 
         public int idinscripcion { get; set; }
@@ -19,12 +19,13 @@ namespace Datos2
 
         public DataTable Listar()
         {
-            Entidades en = new Entidades();
+           
             string query = "select * from alumnos_inscripciones";
-            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            this.OpenConnection();
+            SqlDataAdapter da = new SqlDataAdapter(query, sqlConn);
             var dt = new DataTable();
             da.Fill(dt);
+            this.CloseConnection();
             return dt;
         }
         public void Registro(int alumno, int curso, string condicion, int nota)

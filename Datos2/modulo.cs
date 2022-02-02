@@ -6,7 +6,7 @@ using System.Linq;
 namespace Datos2
 {
 
-    public class modulo
+    public class modulo:Adapter
     {
         public int idmodulo { get; set; }
         public string desc_modulo { get; set; }
@@ -14,12 +14,13 @@ namespace Datos2
 
         public DataTable Listar()
         {
-            Entidades en = new Entidades();
+            
             string query = "select * from modulos";
-            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            this.OpenConnection();
+            SqlDataAdapter da = new SqlDataAdapter(query, this.sqlConn);
             var dt = new DataTable();
             da.Fill(dt);
+            this.CloseConnection();
             return dt;
         }
 

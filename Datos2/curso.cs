@@ -6,7 +6,7 @@ using System.Linq;
 namespace Datos2
 {
 
-    public class curso_
+    public class curso_:Adapter
     {
 
         public int idcurso { get; set; }
@@ -43,8 +43,8 @@ namespace Datos2
         {
             Entidades en = new Entidades();
             string query = "select * from cursos";
-            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            this.OpenConnection();
+            SqlDataAdapter da = new SqlDataAdapter(query, sqlConn);
             var dt = new DataTable();
             da.Fill(dt);
             return dt;
@@ -163,21 +163,22 @@ namespace Datos2
         public DataTable cargarcamposCursos()
         {
             Entidades ent = new Entidades();
-            SqlConnection con = new SqlConnection(ent.Database.Connection.ConnectionString);
+            this.OpenConnection();
             string query = $" select m.desc_materia,c.anio_calendario,c.cupo  from cursos c join materias m  on m.id_materia = c.id_materia where anio_calendario = {DateTime.Now.Year}";
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            SqlDataAdapter da = new SqlDataAdapter(query, sqlConn);
             var dt = new System.Data.DataTable();
             da.Fill(dt);
+            this.CloseConnection();
             return dt;
         }
 
         public List<curso_> cargarTodosLosCursos()
         {
             string query = "select id_curso from  cursos";
-            SqlConnection con = new SqlConnection(entidad.Database.Connection.ConnectionString);
+            this.OpenConnection();
             List<curso_> lc = new List<curso_>();
-            con.Open();
-            SqlCommand cmd = new SqlCommand(query,con );
+            
+            SqlCommand cmd = new SqlCommand(query,sqlConn );
             
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read()) 
@@ -187,7 +188,7 @@ namespace Datos2
                 lc.Add(c);
 
             }
-            con.Close();
+            this.CloseConnection();
             return lc;
 
         }

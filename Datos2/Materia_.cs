@@ -6,7 +6,7 @@ using System.Linq;
 using System.Configuration;
 namespace Datos2
 {
-    public class Materia_
+    public class Materia_:Adapter
     {
         public int idmateria { get; set; }
         public int id_plan { get; set; }
@@ -20,12 +20,13 @@ namespace Datos2
         //SqlCommand comando = new SqlCommand();
         public DataTable Listar()
         {
-            Entidades en = new Entidades();
+           
             string query = "select * from materias";
-            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            this.OpenConnection();
+            SqlDataAdapter da = new SqlDataAdapter(query, sqlConn);
             var dt = new DataTable();
             da.Fill(dt);
+            this.CloseConnection();
             return dt;
         }
 

@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Datos2
 {
-    public class Usuario
+    public class Usuario:Adapter
     {
 
         public int id_usuario { get; set; }
@@ -33,10 +33,11 @@ namespace Datos2
         {
             Entidades en = new Entidades();
             string query = "select * from usuarios";
-            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            this.OpenConnection();
+            SqlDataAdapter da = new SqlDataAdapter(query, sqlConn);
             var dt = new DataTable();
             da.Fill(dt);
+            this.CloseConnection();
             return dt;
         }
         public void ADDusuarios(int idper, string nombre, string nombreU, string apellido, string clave, bool cambia, bool habilit, string email)

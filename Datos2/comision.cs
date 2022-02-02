@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace Datos2
 {
-    public class comision
+    public class comision:Adapter
     {
         public int idplan { get; set; }
         public int anio { get; set; }
@@ -19,12 +19,14 @@ namespace Datos2
 
         public DataTable Listar() 
         {
-            Entidades en = new Entidades();
+           
             string query = "select * from comisiones";
-            SqlConnection con = new SqlConnection(en.Database.Connection.ConnectionString);
-             SqlDataAdapter da = new SqlDataAdapter(query,con);
+            this.OpenConnection();
+            
+             SqlDataAdapter da = new SqlDataAdapter(query,sqlConn);
             var dt = new DataTable();
             da.Fill(dt);
+            this.CloseConnection();
             return dt;
         } 
 
