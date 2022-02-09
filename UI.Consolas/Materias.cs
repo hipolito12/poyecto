@@ -48,6 +48,27 @@ namespace UI.Consolas
                             throw ex;
                         }
 
+                        Console.WriteLine(" ");
+                        Console.WriteLine(" ");
+                        
+                        Console.WriteLine("presione M  para ir al menu nuevamente  ");
+                       
+                        string opc = Console.ReadLine();
+
+                        if (opc != "m")
+                        {
+                            Console.WriteLine("presione M  para ir al menu nuevamente  ");
+
+                            opc = Console.ReadLine();
+                        }
+                        else 
+                        {
+                            this.Menu();
+                        }
+                        
+
+
+
                         break;
 
 

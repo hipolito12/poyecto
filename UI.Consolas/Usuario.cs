@@ -31,18 +31,27 @@ namespace UI.Consolas
                     Console.Clear();
                     foreach (var item in uc.list())
                     {
+                        Console.WriteLine(" ");
+                        Console.WriteLine(" ");
+
+                        
                         Console.WriteLine(
-                        $" Nombre completo :  {item.nombre} {item.apelldo} " +
-                             $"mail: {item.email}  " +
-                             $"clave: {item.clave}  " +
+                        $" Nombre completo :  {item.nombre} {item.apelldo} " + '\n' +
+                             $"mail: {item.email}  " +'\n' +
+                             $"clave: {item.clave}  " + '\n' +
                              $"estado:{item.habilitado }  " +
-                             $"cambio de clave :{item.cambia_clave} " +
+                             $"cambio de clave :{item.cambia_clave} " + '\n' +
                              $"persona: {item.id_persona} ");
                     }
                     Console.ReadLine();
-                    
-                    Console.Beep();
-                    Console.ReadKey();
+
+                    Console.WriteLine(" ");
+                    Console.WriteLine(" ");
+
+                   
+
+
+
                     break;
 
                 case 2:
@@ -52,11 +61,11 @@ namespace UI.Consolas
 
                     foreach (var i in uc.GetOne(idu)) 
                     {
-                        Console.Write($" Nombre completo :  {i.nombre} {i.apelldo} " +
-                            $"mail: {i.email}  " +
-                            $"clave: {i.clave}  " +
-                            $"estado:{i.habilitado }  " +
-                            $"cambio de clave :{i.cambia_clave} " +
+                        Console.Write($" Nombre completo :  {i.nombre} {i.apelldo} \n" +
+                            $"mail: {i.email} \n " +
+                            $"clave: {i.clave}  \n" +
+                            $"estado:{i.habilitado } \n " +
+                            $"cambio de clave :{i.cambia_clave} \n" +
                             $"persona: {i.id_persona}  ");
                     }
 
@@ -86,44 +95,61 @@ namespace UI.Consolas
 
                     uc.agregegarUsuarios(idpersona, nombre, nombreu, apellido, clave, Convert.ToBoolean(Convert.ToInt32( cambiaClave)), Convert.ToBoolean(Convert.ToInt32( habilitado)), email);
 
+                    Console.WriteLine("agregado!");
+                    Console.ReadLine();
+
                     break;
                 case 4:
+                    try
+                    {
 
-                    Console.Clear();
-                    Console.WriteLine("ingrese id de usuario a modificar");
-                    string idedit = Console.ReadLine();
+                        Console.Clear();
+                        Console.WriteLine("ingrese id de usuario a modificar");
+                        string idedit = Console.ReadLine();
 
-                    Console.WriteLine("ingrese los nuevos datos!");
+                        Console.WriteLine("ingrese los nuevos datos!");
 
-                    Console.Write("ingrese nombre Usuario");
-                    string nombreusu = Console.ReadLine();
-                    Console.Write("ingrese nombre");
-                    string Nombre = Console.ReadLine();
-                    Console.Write("ingrese apellido");
-                    string Apellido = Console.ReadLine();
-                    Console.Write("ingrese clave");
-                    string Clave = Console.ReadLine();
-                    Console.Write("ingrese nombre email");
-                    string Email = Console.ReadLine();
-                    Console.Write("ingrese 1 si esta habilitado 0 si no ");
-                    string Habilitado = Console.ReadLine();
-                    Console.Write("ingrese 1 si cambia clave y 0 si no ");
-                    string CambiaClave = Console.ReadLine();
-                    Console.Write("ingrese id de la persona");
-                    string Idpersona = Console.ReadLine();
-
-
-                    uc.editUsuarios(idedit, Idpersona, Nombre, nombreusu, Apellido, Clave, Convert.ToBoolean(CambiaClave), Convert.ToBoolean(Habilitado), Email);
+                        Console.Write("ingrese nombre Usuario: ");
+                        string nombreusu = Console.ReadLine();
+                        Console.Write("ingrese nombre:  ");
+                        string Nombre = Console.ReadLine();
+                        Console.Write("ingrese apellido:  ");
+                        string Apellido = Console.ReadLine();
+                        Console.Write("ingrese clave:  ");
+                        string Clave = Console.ReadLine();
+                        Console.Write("ingrese nombre email:  ");
+                        string Email = Console.ReadLine();
+                        Console.Write("ingrese 1 si esta habilitado 0 si no :  ");
+                        string Habilitado = Console.ReadLine();
+                        Console.Write("ingrese 1 si cambia clave y 0 si no :  ");
+                        string CambiaClave = Console.ReadLine();
+                        Console.Write("ingrese id de la persona:  ");
+                        string Idpersona = Console.ReadLine();
 
 
+                        uc.editUsuarios(idedit, Idpersona, Nombre, nombreusu, Apellido, Clave, Convert.ToBoolean(CambiaClave), Convert.ToBoolean(Habilitado), Email);
+
+
+                        Console.WriteLine("modificado!");
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Console.WriteLine("ha ocurrido un error" + ex.Message);
+                    }
                     break;
 
                 case 5:
-                    Console.Write("ingrese id del usuario");
+                    Console.Clear();
+                    Console.Write("ingrese id del usuario: ");
                     string id = Console.ReadLine();
 
                     uc.eliminarUsuarios(id);
 
+                    Console.WriteLine("Usuario Eliminado !");
+                    Console.ReadLine();
+                    
 
                     break;
                     

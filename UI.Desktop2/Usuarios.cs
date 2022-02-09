@@ -26,8 +26,9 @@ namespace UI.Desktop2
             try
             {
                 Usuario_ u_ = new Usuario_();
-                string id = dataGridView1.CurrentRow.Cells["idusuario"].Value.ToString();
+                string id = dataGridView1.CurrentRow.Cells["id_usuario"].Value.ToString();
                 u_.eliminarUsuarios(id);
+                MessageBox.Show("eliminado!");
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
         }
@@ -44,6 +45,7 @@ namespace UI.Desktop2
         {
             Usuarios_ingresodatos ui = new Usuarios_ingresodatos();
             ui.estado = true;
+            ui.ide = dataGridView1.CurrentRow.Cells["id_persona"].Value.ToString();
             ui.ShowDialog();
         }
 
@@ -57,7 +59,7 @@ namespace UI.Desktop2
             ui.txtemail.Text = dataGridView1.CurrentRow.Cells["email"].Value.ToString();
             ui.txtnombre.Text = dataGridView1.CurrentRow.Cells["nombre"].Value.ToString();
             ui.txtusuario.Text = dataGridView1.CurrentRow.Cells["nombre_usuario"].Value.ToString();
-            ui.txtid.Text = dataGridView1.CurrentRow.Cells["id_persona"].Value.ToString();
+            ui.ide = dataGridView1.CurrentRow.Cells["id_persona"].Value.ToString();
             ui.id = dataGridView1.CurrentRow.Cells["id_persona"].Value.ToString();
             ui.ShowDialog();
 

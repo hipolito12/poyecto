@@ -42,8 +42,6 @@ namespace UI.Desktop2
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtid = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // chkhabilitado
@@ -170,32 +168,11 @@ namespace UI.Desktop2
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(78, 242);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 20);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "ID";
-            // 
-            // txtid
-            // 
-            this.txtid.Location = new System.Drawing.Point(154, 237);
-            this.txtid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(148, 26);
-            this.txtid.TabIndex = 15;
-            this.txtid.TextChanged += new System.EventHandler(this.txtid_TextChanged);
-            // 
             // Usuarios_ingresodatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 331);
-            this.Controls.Add(this.txtid);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -228,12 +205,10 @@ namespace UI.Desktop2
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Label label6;
         public System.Windows.Forms.TextBox txtusuario;
         public System.Windows.Forms.TextBox txtnombre;
         public System.Windows.Forms.TextBox txtemail;
         public System.Windows.Forms.TextBox txtclave;
         public System.Windows.Forms.TextBox txtapelliod;
-        public System.Windows.Forms.TextBox txtid;
     }
 }

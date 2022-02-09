@@ -27,5 +27,11 @@ namespace UI.web_.Reportes
         {
             btnimprimir.Attributes.Add("onclick", "imprime()");
         }
+
+
+
+       
+
+
     }
 }

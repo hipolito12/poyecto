@@ -24,20 +24,22 @@ namespace UI.Desktop2
         private void Usuarios_ingresodatos_Load(object sender, EventArgs e)
         {
 
-        }
+        } 
+        public string ide;
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+           
 
             if (estado == true)
-            {
+            { 
                 try
                 {
 
 
                     Usuario_ u = new Usuario_();
                     // string ide = u.idpersona(txtnombre.Text);
-                    string ide = txtid.Text;
+                   
                     u.agregegarUsuarios(ide, txtnombre.Text, txtusuario.Text, txtapelliod.Text, txtclave.Text, chkcambiaclave.Checked, chkhabilitado.Checked, txtemail.Text);
                     MessageBox.Show("Agregado!");
                     this.Close();
@@ -52,7 +54,7 @@ namespace UI.Desktop2
                 {
                     Usuario_ u = new Usuario_();
 
-                    u.editUsuarios(idusuario, id, txtnombre.Text, txtusuario.Text, txtapelliod.Text, txtclave.Text, chkcambiaclave.Checked, chkhabilitado.Checked, txtemail.Text);
+                    u.editUsuarios(idusuario, ide, txtnombre.Text, txtusuario.Text, txtapelliod.Text, txtclave.Text, chkcambiaclave.Checked, chkhabilitado.Checked, txtemail.Text);
                     MessageBox.Show("Modificado!");
                     this.Close();
                 }
