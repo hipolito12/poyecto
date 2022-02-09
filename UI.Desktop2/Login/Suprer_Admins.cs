@@ -163,5 +163,18 @@ namespace UI.Desktop2.Login
             rc.reportViewer1.RefreshReport();
             rc.Show();
         }
+
+        private void cantidadDeCursosToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            ReporteDeCantidad rc = new ReporteDeCantidad();
+            Menu_Admin ad = new Menu_Admin();
+            rc.Menu_AdminsBindingSource.DataSource = ad.CantidadDeCursosEintegrantes();
+
+            ReportDataSource rd = new ReportDataSource("cantidades", ad.CantidadDeCursosEintegrantes());
+            rc.reportViewer1.LocalReport.DataSources.Clear();
+            rc.reportViewer1.LocalReport.DataSources.Add(rd);
+            rc.reportViewer1.RefreshReport();
+            rc.Show();
+        }
     }
 }

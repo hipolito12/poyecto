@@ -49,6 +49,8 @@ namespace UI.web_.Entidades
                 
                 
                 cargargv();
+                Error.Text = "se ha agregado un nuevo usuario!";
+                Error.Visible = true;
             }
             catch (Exception ex )
             {
@@ -81,6 +83,10 @@ namespace UI.web_.Entidades
                
                 
                 cargargv();
+
+                Error.Text = "se ha Modificado!";
+                Error.Visible = true;
+
             }
             catch (Exception ex)
             {
@@ -106,6 +112,8 @@ namespace UI.web_.Entidades
                 string id = GridView1.SelectedRow.Cells[1].Text;
                 us.eliminarUsuarios(id);
                 cargargv();
+                Error.Text = "se ha eliminado!";
+                Error.Visible = true;
             }
             catch (Exception)
             {

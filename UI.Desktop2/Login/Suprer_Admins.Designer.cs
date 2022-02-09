@@ -54,6 +54,7 @@ namespace UI.Desktop2.Login
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.docentesPorCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btncantidades = new System.Windows.Forms.Button();
+            this.cantidadDeCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -197,7 +198,6 @@ namespace UI.Desktop2.Login
             this.navegacionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(1107, 33);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
@@ -215,7 +215,8 @@ namespace UI.Desktop2.Login
             this.personasToolStripMenuItem,
             this.planesToolStripMenuItem,
             this.usuariosToolStripMenuItem,
-            this.docentesPorCursosToolStripMenuItem});
+            this.docentesPorCursosToolStripMenuItem,
+            this.cantidadDeCursosToolStripMenuItem});
             this.navegacionToolStripMenuItem.Name = "navegacionToolStripMenuItem";
             this.navegacionToolStripMenuItem.Size = new System.Drawing.Size(121, 29);
             this.navegacionToolStripMenuItem.Text = "Navegacion";
@@ -301,6 +302,13 @@ namespace UI.Desktop2.Login
             this.btncantidades.UseVisualStyleBackColor = false;
             this.btncantidades.Click += new System.EventHandler(this.btncantidades_Click);
             // 
+            // cantidadDeCursosToolStripMenuItem
+            // 
+            this.cantidadDeCursosToolStripMenuItem.Name = "cantidadDeCursosToolStripMenuItem";
+            this.cantidadDeCursosToolStripMenuItem.Size = new System.Drawing.Size(300, 34);
+            this.cantidadDeCursosToolStripMenuItem.Text = "cantidad de cursos";
+            this.cantidadDeCursosToolStripMenuItem.Click += new System.EventHandler(this.cantidadDeCursosToolStripMenuItem_Click);
+            // 
             // Suprer_Admins
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -358,5 +366,6 @@ namespace UI.Desktop2.Login
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem docentesPorCursosToolStripMenuItem;
         private System.Windows.Forms.Button btncantidades;
+        private System.Windows.Forms.ToolStripMenuItem cantidadDeCursosToolStripMenuItem;
     }
 }
