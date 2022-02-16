@@ -14,8 +14,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
         <link href="../Entidades/Estilos/Login_styles.css" rel="stylesheet" />
         <link href="../Entidades/Estilos/personas.css" rel="stylesheet" />
-    </head>
-    <body>
+    <body onload="deshabilitaRetroceso()">
         
  
             <div id="Login" style=" margin-bottom:10em !important;">
@@ -46,14 +45,14 @@
                     <asp:Label CssClass="superponer" ID="Mensaje_error" runat="server" Text="Constraseña o  Usuario incorrectos"></asp:Label>
                     <asp:Label CssClass="label_superpuesta" ID="Mensaje_campo_vacio" runat="server" Text="Veerifique su entrada"></asp:Label>
                     <asp:Label CssClass="label_superpuesta" ID="error" runat="server" Text="Ah ocurrdio un error,v"></asp:Label>
-        
+         <script src="../Entidades/Estilos/main.js"></script>
            </strong>
            </div>
      
        </form>
               
               
-       
+      
     </body>
     </html>
 

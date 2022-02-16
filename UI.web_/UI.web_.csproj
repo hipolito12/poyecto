@@ -101,6 +101,7 @@
     <Content Include="Entidades\Estilos\Menu-profesores.css" />
     <Content Include="Entidades\Estilos\Menu_Admins - Copia.css" />
     <Content Include="Entidades\Estilos\Menu_Alumnos.css" />
+    <Content Include="Entidades\Estilos\main.js" />
     <Content Include="Entidades\Estilos\Usuario.css" />
     <Content Include="Entidades\Estilos\personas.css" />
     <Content Include="Entidades\Estilos\Planes.css" />

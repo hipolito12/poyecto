@@ -53,8 +53,8 @@ namespace UI.Desktop2.Login
             this.planesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.docentesPorCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btncantidades = new System.Windows.Forms.Button();
             this.cantidadDeCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btncantidades = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,9 +129,9 @@ namespace UI.Desktop2.Login
             this.btnDocentesxcursos.Location = new System.Drawing.Point(362, 454);
             this.btnDocentesxcursos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDocentesxcursos.Name = "btnDocentesxcursos";
-            this.btnDocentesxcursos.Size = new System.Drawing.Size(374, 35);
+            this.btnDocentesxcursos.Size = new System.Drawing.Size(381, 35);
             this.btnDocentesxcursos.TabIndex = 7;
-            this.btnDocentesxcursos.Text = "Docentes por Cursos";
+            this.btnDocentesxcursos.Text = "Docentes de cada curso";
             this.btnDocentesxcursos.UseVisualStyleBackColor = true;
             this.btnDocentesxcursos.Click += new System.EventHandler(this.btnDocentesxcursos_Click);
             // 
@@ -291,6 +291,13 @@ namespace UI.Desktop2.Login
             this.docentesPorCursosToolStripMenuItem.Text = "Docentes por cursos";
             this.docentesPorCursosToolStripMenuItem.Click += new System.EventHandler(this.docentesPorCursosToolStripMenuItem_Click);
             // 
+            // cantidadDeCursosToolStripMenuItem
+            // 
+            this.cantidadDeCursosToolStripMenuItem.Name = "cantidadDeCursosToolStripMenuItem";
+            this.cantidadDeCursosToolStripMenuItem.Size = new System.Drawing.Size(300, 34);
+            this.cantidadDeCursosToolStripMenuItem.Text = "cantidad de cursos";
+            this.cantidadDeCursosToolStripMenuItem.Click += new System.EventHandler(this.cantidadDeCursosToolStripMenuItem_Click);
+            // 
             // btncantidades
             // 
             this.btncantidades.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -301,13 +308,6 @@ namespace UI.Desktop2.Login
             this.btncantidades.Text = "Cantidad de cursos";
             this.btncantidades.UseVisualStyleBackColor = false;
             this.btncantidades.Click += new System.EventHandler(this.btncantidades_Click);
-            // 
-            // cantidadDeCursosToolStripMenuItem
-            // 
-            this.cantidadDeCursosToolStripMenuItem.Name = "cantidadDeCursosToolStripMenuItem";
-            this.cantidadDeCursosToolStripMenuItem.Size = new System.Drawing.Size(300, 34);
-            this.cantidadDeCursosToolStripMenuItem.Text = "cantidad de cursos";
-            this.cantidadDeCursosToolStripMenuItem.Click += new System.EventHandler(this.cantidadDeCursosToolStripMenuItem_Click);
             // 
             // Suprer_Admins
             // 
@@ -331,7 +331,7 @@ namespace UI.Desktop2.Login
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Suprer_Admins";
-            this.Text = "Suprer_Admins";
+            this.Text = "Administradores";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

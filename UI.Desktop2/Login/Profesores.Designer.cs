@@ -65,7 +65,7 @@ namespace UI.Desktop2.Login
             this.btnPlanes.Name = "btnPlanes";
             this.btnPlanes.Size = new System.Drawing.Size(248, 35);
             this.btnPlanes.TabIndex = 1;
-            this.btnPlanes.Text = "Planes";
+            this.btnPlanes.Text = "Reporte de planes";
             this.btnPlanes.UseVisualStyleBackColor = false;
             this.btnPlanes.Click += new System.EventHandler(this.btnPlanes_Click);
             // 
@@ -203,6 +203,7 @@ namespace UI.Desktop2.Login
             this.Controls.Add(this.menuStrip1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Profesores";
+            this.Text = "Docentes";
             this.Load += new System.EventHandler(this.Profesores_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

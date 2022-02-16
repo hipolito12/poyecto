@@ -11,7 +11,20 @@ namespace UI.web_.Logins
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                if (Session["acceso"] == null)
+                {
+                    Response.Redirect("../Logins/Login.aspx");
+                }
+            }
+            else
+            {
+                if (Session["acceso"] == null)
+                {
+                    Response.Redirect("../Logins/Login.aspx");
+                }
+            }
         }
     }
 }

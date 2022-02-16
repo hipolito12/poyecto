@@ -32,10 +32,13 @@
 </div>
     <style>
 
+        table {
+            text-align:center;
+        }
      
         #mover 
         {
-            margin-left:30%;
+            margin-left:20%;
         }
 
            #mover > h1 

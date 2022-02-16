@@ -13,11 +13,27 @@ namespace UI.web_.Logins
         {
             if (!IsPostBack)
             {
-                if (Request.Cookies["niveldeacceso"].Value == null) { Response.Redirect("../Logins/Login.aspx"); }
+                if (Session["acceso"] == null)
+                {
+                    Response.Redirect("../Logins/Login.aspx");
+                }
             }
-            else { if (Request.Cookies["niveldeacceso"].Value == null) { Response.Redirect("../Logins/Login.aspx"); } }
-            if (Request.Cookies["niveldeacceso"].Value == null) { Response.Redirect("../Logins/Login.aspx"); }
+            else 
+            {
+                if (Session["acceso"] == null)
+                {
+                    Response.Redirect("../Logins/Login.aspx");
+                }
+            }
+
         }
+            
+
+           
+        
+
+            
+            
 
         
     }

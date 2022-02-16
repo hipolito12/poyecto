@@ -22,7 +22,7 @@ namespace UI.web_.Reportes
             _Inscripciones_Alumnos ia = new _Inscripciones_Alumnos();
             txtnota.Text = GridView1.SelectedRow.Cells[5].Text;
            
-          // k  = ia.buscarPerosnaParaCalificar(Convert.ToInt32(GridView1.SelectedRow.Cells[2].Text));
+           k  = ia.buscarPerosnaParaCalificar(Convert.ToInt32(GridView1.SelectedRow.Cells[2].Text));
             
         }
 
@@ -36,7 +36,7 @@ namespace UI.web_.Reportes
                     case "Aprobado":
 
 
-                        if (txtnota.Text != "" && Convert.ToInt32(txtnota.Text) <= 10 && Convert.ToInt32(txtnota.Text) > 6 && Regex.IsMatch(txtnota.Text, "[0-9]") == true)
+                        if (txtnota.Text != "" && Convert.ToInt32(txtnota.Text) <= 10 && Convert.ToInt32(txtnota.Text) >= 6 && Regex.IsMatch(txtnota.Text, "[0-9]") == true)
                         {
                             _Inscripciones_Alumnos ia = new _Inscripciones_Alumnos();
                             //metodo para tarer el idinscripcion
@@ -63,7 +63,7 @@ namespace UI.web_.Reportes
 
                     case "Libre":
 
-                        if (txtnota.Text != null && Convert.ToInt32(txtnota.Text) <= 0 && Convert.ToInt32(txtnota.Text) < 6
+                        if (txtnota.Text != "" && Convert.ToInt32(txtnota.Text) <= 0 && Convert.ToInt32(txtnota.Text) < 6
                             && Regex.IsMatch(txtnota.Text, "[0-9]")==true )
                         {
                             _Inscripciones_Alumnos ia = new _Inscripciones_Alumnos();
@@ -90,7 +90,7 @@ namespace UI.web_.Reportes
 
                     case "Aprobacion directa":
 
-                        if (txtnota.Text != null && Convert.ToInt32(txtnota.Text) <= 10 && Convert.ToInt32(txtnota.Text) > 7 && Regex.IsMatch(txtnota.Text, "[0-9]") == true)
+                        if (txtnota.Text != "" && Convert.ToInt32(txtnota.Text) <= 10 && Convert.ToInt32(txtnota.Text) > 7 && Regex.IsMatch(txtnota.Text, "[0-9]") == true)
                         {
                             _Inscripciones_Alumnos ia = new _Inscripciones_Alumnos();
                             //metodo para tarer el idinscripcion
@@ -128,6 +128,7 @@ namespace UI.web_.Reportes
         {
             _Inscripciones_Alumnos ia = new _Inscripciones_Alumnos();
             txtnota.Text = GridView1.SelectedRow.Cells[5].Text;
+            k = ia.buscarPerosnaParaCalificar(Convert.ToInt32(GridView1.SelectedRow.Cells[2].Text));
         }
     }
 }

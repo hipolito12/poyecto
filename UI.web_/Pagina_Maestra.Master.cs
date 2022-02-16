@@ -25,52 +25,54 @@ namespace UI.web_
 
         protected void btnmenu_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    var secion = Request.Cookies["niveldeacceso"].Value;
 
 
 
-            //    if (secion != null)
-            //    {
+            try
+            {
 
-            //        switch (secion)
-            //        {
-            //            case "0": Response.Redirect("../Logins/Menu-admins.aspx"); break;
 
-            //            case "1": Response.Redirect("../Logins/Menu_Profesores.aspx"); break;
 
-            //            case "2": Response.Redirect("../Logins/Menu_Alumno.aspx"); break;
-
-            //        }
-            //    }
-            //    else
-            //    {
-            //        Response.Redirect("../Logins/Login.aspx");
-            //    }
-            //}
-            //catch (Exception)
-            //{
 
                 
-            //}
+               
+
+                    switch ( Session["acceso"].ToString().Trim())
+                    {
+                        case "0": Response.Redirect("../Logins/Menu-admins.aspx"); break;
+
+                        case "1": Response.Redirect("../Logins/Menu_Profesores.aspx"); break;
+
+                        case "2": Response.Redirect("../Logins/Menu_Alumno.aspx"); break;
+
+                    }
+                
+                
+            }
+            catch (Exception)
+            {
+
+                if (Session["acceso"] == null) 
+                {
+                    Response.Redirect("../Logins/Login.aspx");
+                }
+
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-            //try
-            //{
-            //    Request.Cookies["niveldeacceso"].Value  = null;
+            try
+            {
+                Session["acceso"] = null;
+                Response.Redirect("../Logins/Login.aspx");
 
-            //    Request.Cookies.Remove("niveldeacceso");
-            //    Response.Redirect("../Logins/Login.aspx");
-            //}
-            //catch (Exception)
-            //{
-
-                
-            //}
+            }
+            catch (Exception ex) 
+            {
+                Response.Redirect("../Logins/Login.aspx");
+            }
         }
 
         void verificasecion() 

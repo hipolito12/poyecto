@@ -25,15 +25,31 @@ namespace UI.web_.Reportes
         {
             try
             {
-               
 
-                if (txtactual.Text == null || txtnuevamente.Text == null || txtnueva.Text == null || txtnuevamente.Text != txtnueva.Text || txtnuevamente.Text.Length < 8 
-                    || txtnueva.Text.Length < 8 
-                    || Regex.IsMatch(txtnueva.Text, "(?=[A - Za - z] +[0 - 9] |[0 - 9] +[A - Za - z])[A - Za - z0 - 9]{ 8,12}") == true ||
-                    Regex.IsMatch(txtnuevamente.Text, "(?=[A - Za - z] +[0 - 9] |[0 - 9] +[A - Za - z])[A - Za - z0 - 9]{ 8,12}") == true) 
-                    
+
+                if (txtactual.Text != "" && txtnuevamente.Text != "" && txtnueva.Text != "" && txtnuevamente.Text == txtnueva.Text && txtnuevamente.Text.Length >=8
+                    && txtnueva.Text.Length >= 8
+                    && Regex.IsMatch(txtnueva.Text, "[a-z,A-Z,0-9]{8,12}") == true &&
+                    Regex.IsMatch(txtnuevamente.Text, "[a-z,A-Z,0-9]{8,12}") == true)
+
 
                 {
+                    Notas n = new Notas();
+                    bool result = n.verifyActualPass(Convert.ToInt32(Session["usuario"]), txtactual.Text);
+                    lblinformar.Text = (result.ToString()); lblinformar.Visible = true;
+
+                    if (result == true)
+                    {
+                        n.cambiarContrasena(Convert.ToInt32(Session["usuario"]), txtnueva.Text);
+                        lblinformar.Text = ("Modificada!");
+                        lblinformar.Visible = true;
+                    }
+                    else { lblinformar.Text = ("contraseña actual invalida "); lblinformar.Visible = true; }
+
+                }
+                else
+                {
+
                     lblinformar.Text =
                         ("hay  un error , verifique su entrada intente con numero y letras");
                     lblinformar.Visible = true;
@@ -43,29 +59,19 @@ namespace UI.web_.Reportes
 
                 }
 
-                
 
 
 
-               /* Notas n = new Notas();
-                    bool result = n.verifyActualPass(Convert.ToInt32(Session["usuario"]), txtactual.Text);
-                lblinformar.Text = (result.ToString()); lblinformar.Visible = true;
 
-                if (result == true)
-                    {
-                        n.cambiarContrasena(Convert.ToInt32(Session["usuario"]), txtnueva.Text);
-                        lblinformar.Text = ("Modificada!");
-                        lblinformar.Visible = true;
-                    }
-                    else { lblinformar.Text = ("contraseña actual invalida "); lblinformar.Visible = true; }*/
-                
 
-                
+
+
+
             }
             catch (Exception ex)
             {
 
-                lblinformar.Text=("Ocurrio un error, intentelo nuevamente!");
+                lblinformar.Text = ("Ocurrio un error, intentelo nuevamente!");
                 lblinformar.Visible = true;
             }
         }

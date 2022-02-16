@@ -31,7 +31,7 @@ namespace UI.web_
             try
             {
                 Login_ lo = new Login_();
-                if (l.Text != "" && contrasena.Text != "" && l.Text != "" && contrasena.Text != "" && l.Text.Length < 8 && contrasena.Text.Length < 8 &&  Regex.IsMatch(l.Text,"[a-z,A-Z,0-9]" )==true && Regex.IsMatch(contrasena.Text, "[a-z,A-Z,0-9]") == true)
+                if (l.Text != "" && contrasena.Text != "" && l.Text != "" && contrasena.Text != "" && l.Text.Length >= 8 && contrasena.Text.Length >= 8 &&  Regex.IsMatch(l.Text,"[a-z,A-Z,0-9]" )==true && Regex.IsMatch(contrasena.Text, "[a-z,A-Z,0-9]") == true)
                 {
 
 
@@ -66,10 +66,12 @@ namespace UI.web_
 
                             //}
 
-                            switch (tup.Item2)
+                            switch (tup.Item2) //creo una sesion 
                             {
                                 case 0: Session["acceso"] = tup.Item2.ToString(); Response.Redirect("../Logins/Menu-admins.aspx"); break;
+                                    
                                 case 1: Session["acceso"] = tup.Item2.ToString(); Session["usuarioprofe"] = tup.Item3; Response.Redirect("../Logins/Menu_Profesores.aspx"); break;
+
                                 case 2: Session["acceso"] = tup.Item2.ToString(); Session["usuario"] = tup.Item3; Response.Redirect("../Logins/Menu_Alumno.aspx"); break;
                             }
 
