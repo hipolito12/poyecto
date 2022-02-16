@@ -50,9 +50,9 @@
 
     <div class=" botones">
 
-        <asp:Button ID="btnagregar" runat="server" Text="Agregar " OnClick="btnagregar_Click" CssClass="boton" />
+        <asp:Button ID="btnagregar" runat="server" Text="Agregar " OnClick="btnagregar_Click" CssClass="boton" Height="32px" />
         <asp:Button ID="btneditar" runat="server" Text="Modificar " OnClick="btneditar_Click" Style="height: 35px" CssClass="boton" />
-        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar " OnClick="btnEliminar_Click" />
+        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar " OnClick="btnEliminar_Click" Height="33px" />
 
 
     </div>

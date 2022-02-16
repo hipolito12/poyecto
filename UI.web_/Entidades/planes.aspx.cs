@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -26,16 +27,19 @@ namespace UI.web_.Entidades
         {
             try
             {
-                if (Txtplan.Text == null || Txtplan.Text == "")
+                if (Txtplan.Text != "" && true == Regex.IsMatch(Txtplan.Text, "[A-Z,a-z,0-9]{10,200}"))
                 {
-                    error.Text = "hay campos vacios";
+                   Plan_ pla = new Plan_();
+
+                  string especialidad = pla.cargargarcombos()[Ddlespecialidad.SelectedValue].ToString();
+                   pla.agregarplan(Txtplan.Text,especialidad);
+                   cargarGv();
+                    error.Text = "agregado!";
                     error.Visible = true;
                 }
-                Plan_ pla = new Plan_();
-
-                string especialidad = pla.cargargarcombos()[Ddlespecialidad.SelectedValue].ToString();
-                pla.agregarplan(Txtplan.Text,especialidad);
-                cargarGv();
+                else { error.Text = "hay campos vacios";
+                    error.Visible = true; }
+                
 
             }
             catch (Exception)
@@ -65,15 +69,23 @@ namespace UI.web_.Entidades
         {
             try
             {
-                if (Txtplan.Text == null || Txtplan.Text == "")
+                if (Txtplan.Text != "" && true == Regex.IsMatch(Txtplan.Text, "[A-Z,a-z,0-9]{10,200}"))
                 {
-                    error.Text = "hay campos vacios";
+                     Plan_ pla = new Plan_();
+                     var id = gv.SelectedRow.Cells[1].Text; 
+                     pla.editplan(id,Txtplan.Text, pla.cargargarcombos()[Ddlespecialidad.SelectedValue].ToString());
+                     cargarGv();
+                    error.Text = "Modificado!";
                     error.Visible = true;
                 }
-                Plan_ pla = new Plan_();
-                var id = gv.SelectedRow.Cells[1].Text; 
-                pla.editplan(id,Txtplan.Text, pla.cargargarcombos()[Ddlespecialidad.SelectedValue].ToString());
-                cargarGv();
+                else 
+                {
+                    
+                    error.Text = "hay campos vacios";
+                    error.Visible = true;
+
+                }
+               
 
             }
             catch (Exception)
@@ -96,15 +108,22 @@ namespace UI.web_.Entidades
         {
             try
             {
-                if (Txtplan.Text == null || Txtplan.Text == "")
+                if (Txtplan.Text != "" && true == Regex.IsMatch(Txtplan.Text, "[A-Z,a-z,0-9]{10,200}"))
+                {
+                     Plan_ pla = new Plan_();
+                   var id = gv.SelectedRow.Cells[1].Text; 
+                   pla.eliminaplan(id);
+                    cargarGv();
+                    error.Text = "Eliminar";
+                    error.Visible = true;
+                }
+                else 
                 {
                     error.Text = "hay campos vacios";
                     error.Visible = true;
+
                 }
-                Plan_ pla = new Plan_();
-                var id = gv.SelectedRow.Cells[1].Text; 
-                pla.eliminaplan(id);
-                cargarGv();
+               
 
             }
             catch (Exception)

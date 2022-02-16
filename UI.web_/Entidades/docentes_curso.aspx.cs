@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -27,52 +28,61 @@ namespace UI.web_.Entidades
 
         protected void btncarga_Click(object sender, EventArgs e)
         {
-            if (Txtcargo.Text == null || Txtcargo.Text == "")
+            if (true == Regex.IsMatch(Txtcargo.Text, "[0-9]") && Txtcargo.Text != "")
             {
-                error.Text = "Hay campos vacios!";
-                error.Visible = true;
+                docentes_cursos_CRUD dc = new docentes_cursos_CRUD();
+                var curso = dc.cargaDeCombos().Item2[ddlcurso.SelectedValue];
+                var docente = dc.cargaDeCombos().Item1[ddldocente.SelectedValue];
+
+                dc.ADDdocenteCURSO(Txtcargo.Text, curso.ToString(), docente.ToString());
+                cargagv();
 
             }
-            docentes_cursos_CRUD dc = new docentes_cursos_CRUD();
-            var curso = dc.cargaDeCombos().Item2[ddlcurso.SelectedValue];
-            var docente = dc.cargaDeCombos().Item1[ddldocente.SelectedValue];
-          
-            dc.ADDdocenteCURSO(Txtcargo.Text,curso.ToString(), docente.ToString());
-            cargagv();
+
+            else 
+            {
+                error.Text = "Hay campos vacios! o no cumplen el formato"; error.Visible = true;
+            }
+           
         }
         protected void btnmodificacion_Click(object sender, EventArgs e)
         {
-            if (Txtcargo.Text == null || Txtcargo.Text == "")
+            if (true == Regex.IsMatch(Txtcargo.Text, "[0-9]") && Txtcargo.Text != "")
             {
-                error.Text = "Hay campos vacios!";
-                error.Visible = true;
+                docentes_cursos_CRUD dc = new docentes_cursos_CRUD();
+                var curso = dc.cargaDeCombos().Item2[ddlcurso.SelectedValue];
+                var docente = dc.cargaDeCombos().Item1[ddldocente.SelectedValue];
+                string id = gv.SelectedRow.Cells[1].Text;
+                dc.EDITdoceneteCURSO(Txtcargo.Text, curso.ToString(), docente.ToString(), id);
+
+                cargagv();
 
             }
+            else
+            {
+                error.Text = "Hay campos vacios! o no cumplen el formato"; error.Visible = true;
+            }
 
-            docentes_cursos_CRUD dc = new docentes_cursos_CRUD();
-            var curso = dc.cargaDeCombos().Item2[ddlcurso.SelectedValue];
-            var docente = dc.cargaDeCombos().Item1[ddldocente.SelectedValue];
-            string id =  gv.SelectedRow.Cells[1].Text;
-            dc.EDITdoceneteCURSO(Txtcargo.Text, curso.ToString(), docente.ToString() ,id);
-
-            cargagv();
+           
         }
 
         protected void Btneliminar_Click(object sender, EventArgs e)
         {
-            if (Txtcargo.Text == null || Txtcargo.Text == "")
+            if (true == Regex.IsMatch(Txtcargo.Text, "[0-9]") && Txtcargo.Text != "")
             {
-                error.Text = "Hay campos vacios!";
-                error.Visible = true;
-
+                string id = Txtcargo.Text = gv.SelectedRow.Cells[1].Text;
+                docentes_cursos_CRUD dc = new docentes_cursos_CRUD();
+                var curso = dc.cargaDeCombos().Item2[ddlcurso.SelectedValue];
+                var docente = dc.cargaDeCombos().Item1[ddldocente.SelectedValue];
+                dc.DELETEdocentesCURSO(curso.ToString(), docente.ToString());
+                cargagv();
+            }
+            else
+            {
+                error.Text = "Hay campos vacios! o no cumplen el formato"; error.Visible = true;
             }
 
-            string id = Txtcargo.Text = gv.SelectedRow.Cells[1].Text;
-            docentes_cursos_CRUD dc = new docentes_cursos_CRUD();
-            var curso = dc.cargaDeCombos().Item2[ddlcurso.SelectedValue];
-            var docente = dc.cargaDeCombos().Item1[ddldocente.SelectedValue];
-            dc.DELETEdocentesCURSO( curso.ToString(), docente.ToString() );
-            cargagv();
+           
         }
 
         void cargagv() 

@@ -115,7 +115,7 @@ namespace UI.Desktop2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 692);
+            this.ClientSize = new System.Drawing.Size(1105, 532);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btbElimina);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -32,29 +33,35 @@ namespace UI.web_.Entidades
         {
             try
             {
-                if (txtclave.Text==null||Txtapellido.Text==null
-                    ||Txtemail.Text==null||Txtnombre.Text==null||TxtnombreUsuario.Text==null
-                    || txtclave.Text == "" || Txtapellido.Text == ""
-                    || Txtemail.Text == ""|| Txtnombre.Text == "" || TxtnombreUsuario.Text == "") 
+                if (
+                     txtclave.Text != "" && Txtapellido.Text != ""
+                    && Txtemail.Text != "" && Txtnombre.Text != "" && TxtnombreUsuario.Text != ""
+                    && Regex.IsMatch(Txtapellido.Text, "[A-z,a-z]{4,20}") == true
+                    && Regex.IsMatch(Txtnombre.Text, "[A-z,a-z]{4,20}") == true
+                    && Regex.IsMatch(Txtemail.Text, "[A-z,a-z,0-9]@[a-z]") == true
+                    && Regex.IsMatch(TxtnombreUsuario.Text, "[A-z,a-z]{4,20}") == true
+                    && Regex.IsMatch(txtclave.Text, "[A-z,a-z,0-9]{8,20}") == true
+                    )
                 {
-                    Error.Text = "Hay campos vacios!";
-                    Error.Visible = true;
-                }
-                Usuario_ us = new Usuario_();
-                int clave = int.Parse(Ddlcambiaclave.SelectedValue);
-                int cambia = Convert.ToInt32(Ddlhabilitado.SelectedValue);
+                    Usuario_ us = new Usuario_();
+                 int clave = int.Parse(Ddlcambiaclave.SelectedValue);
+                 int cambia = Convert.ToInt32(Ddlhabilitado.SelectedValue);
                
-                us.agregegarUsuarios(us.cargarcombo()[Ddlpersona.SelectedValue].ToString(), Txtnombre.Text,TxtnombreUsuario.Text
+                  us.agregegarUsuarios(us.cargarcombo()[Ddlpersona.SelectedValue].ToString(), Txtnombre.Text,TxtnombreUsuario.Text
                    , Txtapellido.Text,txtclave.Text, Convert.ToBoolean(clave),Convert.ToBoolean(cambia),Txtemail.Text  ) ;
                 
                 
-                cargargv();
-                Error.Text = "se ha agregado un nuevo usuario!";
-                Error.Visible = true;
+                  cargargv();
+                  Error.Text = "se ha agregado un nuevo usuario!";
+                  Error.Visible = true;
+                }
+                else {  Error.Text = "Hay campos vacios o no cumplen con la condicio!";
+                    Error.Visible = true;}
+               
             }
             catch (Exception ex )
             {
-                Error.Text = ex.ToString();
+                Error.Text = " Ah ocurrido un error intente nuevamente"; 
                 Error.Visible = true;
 
             }
@@ -64,16 +71,17 @@ namespace UI.web_.Entidades
         {
             try
             {
-
-                if (txtclave.Text == null || Txtapellido.Text == null
-                    || Txtemail.Text == null || Txtnombre.Text == null || TxtnombreUsuario.Text == null
-                    || txtclave.Text == "" || Txtapellido.Text == ""
-                    || Txtemail.Text == "" || Txtnombre.Text == "" || TxtnombreUsuario.Text == "")
+                if (
+                          txtclave.Text != "" && Txtapellido.Text != ""
+                    && Txtemail.Text != "" && Txtnombre.Text != "" && TxtnombreUsuario.Text != ""
+                    && Regex.IsMatch(Txtapellido.Text, "[A-z,a-z]{4,20}") == true
+                    && Regex.IsMatch(Txtnombre.Text, "[A-z,a-z]{4,20}") == true
+                    && Regex.IsMatch(Txtemail.Text, "[A-z,a-z,0-9]@[a-z]") == true
+                    && Regex.IsMatch(TxtnombreUsuario.Text, "[A-z,a-z]{4,20}") == true
+                    && Regex.IsMatch(txtclave.Text, "[A-z,a-z,0-9]{8,20}") == true
+                                    )
                 {
-                    Error.Text = "Hay campos vacios!";
-                    Error.Visible = true;
-                }
-                Usuario_ us = new Usuario_();
+                    Usuario_ us = new Usuario_();
                 int clave = int.Parse(Ddlcambiaclave.SelectedValue);
                 int cambia = Convert.ToInt32(Ddlhabilitado.SelectedValue);
                 string id = GridView1.SelectedRow.Cells[1].Text;
@@ -87,10 +95,18 @@ namespace UI.web_.Entidades
                 Error.Text = "se ha Modificado!";
                 Error.Visible = true;
 
+                }
+                else 
+                { 
+                    Error.Text = "Hay campos vacios o no cumplen el formtai necesario! ";
+                    Error.Visible = true;
+
+                }
+               
             }
             catch (Exception ex)
             {
-                Error.Text = ex.ToString();
+                Error.Text = " Ah ocurrido un error intente nuevamente"; 
                 Error.Visible = true;
             }
         }
@@ -100,20 +116,27 @@ namespace UI.web_.Entidades
             try
             {
 
-                if (txtclave.Text == null || Txtapellido.Text == null
-                    || Txtemail.Text == null || Txtnombre.Text == null || TxtnombreUsuario.Text == null
-                    || txtclave.Text == "" || Txtapellido.Text == ""
-                    || Txtemail.Text == "" || Txtnombre.Text == "" || TxtnombreUsuario.Text == "")
+                if (
+                     txtclave.Text != "" 
+                     && Txtapellido.Text != ""
+                    && Txtemail.Text != "" && Txtnombre.Text != "" && TxtnombreUsuario.Text != ""
+                    && Regex.IsMatch(Txtapellido.Text, "[A-z,a-z]{4,20}") == true
+                    && Regex.IsMatch(Txtnombre.Text, "[A-z,a-z]{4,20}") == true
+                    && Regex.IsMatch(Txtemail.Text, "[A-z,a-z,0-9]@[a-z]") == true
+                    && Regex.IsMatch(TxtnombreUsuario.Text, "[A-z,a-z]{4,20}") == true
+                    && Regex.IsMatch(txtclave.Text, "[A-z,a-z,0-9]{4,20}") == true
+                    )
                 {
-                    Error.Text = "Hay campos vacios!";
-                    Error.Visible = true;
-                }
-                Usuario_ us = new Usuario_();
+                    Usuario_ us = new Usuario_();
                 string id = GridView1.SelectedRow.Cells[1].Text;
                 us.eliminarUsuarios(id);
                 cargargv();
                 Error.Text = "se ha eliminado!";
                 Error.Visible = true;
+                }
+                else {Error.Text = "Hay campos vacios!";
+                    Error.Visible = true; }
+                
             }
             catch (Exception)
             {

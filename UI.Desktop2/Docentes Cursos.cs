@@ -71,10 +71,11 @@ namespace UI.Desktop2
                     var idd = dataGridView1.CurrentRow.Cells["id_docente"].Value.ToString();
                     dcc.DELETEdocentesCURSO(idc, idd);
                     this.docentes_cursosTableAdapter1.Fill(this.tp2DataSet.docentes_cursos);
+                    MessageBox.Show("Eliminado!");
                 }
                 else { MessageBox.Show("selecciona fila"); }
             }
-            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
+            catch (Exception ex) { MessageBox.Show("Ha ocurrido un error, verifique los campos y los datos"); }
 
         }
     }

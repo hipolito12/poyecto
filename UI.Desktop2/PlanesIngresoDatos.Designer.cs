@@ -40,26 +40,29 @@ namespace UI.Desktop2
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(103, 25);
+            this.label1.Location = new System.Drawing.Point(154, 38);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 24);
+            this.label1.Size = new System.Drawing.Size(248, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Descripcion plan";
             // 
             // comboespecialidad
             // 
             this.comboespecialidad.AutoSize = true;
-            this.comboespecialidad.Location = new System.Drawing.Point(-1, 135);
+            this.comboespecialidad.Location = new System.Drawing.Point(-2, 208);
+            this.comboespecialidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.comboespecialidad.Name = "comboespecialidad";
-            this.comboespecialidad.Size = new System.Drawing.Size(73, 13);
+            this.comboespecialidad.Size = new System.Drawing.Size(107, 20);
             this.comboespecialidad.TabIndex = 2;
             this.comboespecialidad.Text = "Especialidad :";
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(134, 187);
+            this.btnAceptar.Location = new System.Drawing.Point(201, 288);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(106, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(159, 35);
             this.btnAceptar.TabIndex = 3;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -68,31 +71,34 @@ namespace UI.Desktop2
             // comboespecialdad
             // 
             this.comboespecialdad.FormattingEnabled = true;
-            this.comboespecialdad.Location = new System.Drawing.Point(96, 127);
+            this.comboespecialdad.Location = new System.Drawing.Point(144, 195);
+            this.comboespecialdad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboespecialdad.Name = "comboespecialdad";
-            this.comboespecialdad.Size = new System.Drawing.Size(174, 21);
+            this.comboespecialdad.Size = new System.Drawing.Size(259, 28);
             this.comboespecialdad.TabIndex = 4;
             // 
             // richdescripcion
             // 
-            this.richdescripcion.Location = new System.Drawing.Point(49, 52);
+            this.richdescripcion.Location = new System.Drawing.Point(74, 80);
+            this.richdescripcion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.richdescripcion.Name = "richdescripcion";
-            this.richdescripcion.Size = new System.Drawing.Size(281, 48);
+            this.richdescripcion.Size = new System.Drawing.Size(420, 72);
             this.richdescripcion.TabIndex = 5;
             this.richdescripcion.Text = "";
             // 
             // PlanesIngresoDatos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 239);
+            this.ClientSize = new System.Drawing.Size(576, 368);
             this.Controls.Add(this.richdescripcion);
             this.Controls.Add(this.comboespecialdad);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.comboespecialidad);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PlanesIngresoDatos";
-            this.Text = "PlanesIngresoDatos";
+            this.Text = "planes";
             this.Load += new System.EventHandler(this.PlanesIngresoDatos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

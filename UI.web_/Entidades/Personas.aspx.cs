@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -22,10 +23,10 @@ namespace UI.web_.Entidades
             }
         }
 
-        private Dictionary<string,int> cargartipo()
+        private Dictionary<string, int> cargartipo()
         {
             Dictionary<string, int> dic = new Dictionary<string, int>();
-            dic.Add("Profesor",1);
+            dic.Add("Profesor", 1);
             dic.Add("Alumno", 2);
             dic.Add("Administrador", 0);
 
@@ -34,7 +35,7 @@ namespace UI.web_.Entidades
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           Txtnombre.Text= GridView1.SelectedRow.Cells[2].Text;
+            Txtnombre.Text = GridView1.SelectedRow.Cells[2].Text;
             Txtapellido.Text = GridView1.SelectedRow.Cells[3].Text;
             Txtdireccion.Text = GridView1.SelectedRow.Cells[4].Text;
             Txtemail.Text = GridView1.SelectedRow.Cells[5].Text;
@@ -47,39 +48,57 @@ namespace UI.web_.Entidades
         {
             try
             {
-                if (Txtapellido.Text==null||
-                    Txtnombre.Text==null|| Txtemail.Text==null|| Txtlegajo.Text==null||
-                    Txtnacimiento.Text==null|| Txttelefono.Text==null||Txtdireccion.Text==null) 
+                if (
+                    Txtapellido.Text != "" &&
+                    Txtnombre.Text != "" && Txtemail.Text != "" && Txtlegajo.Text != "" &&
+                    Txtnacimiento.Text != "" && Txttelefono.Text != "" && Txtdireccion.Text != ""
+                    &&
+                     Regex.IsMatch(Txtemail.Text, "[a-z,A-Z,0-9]@[a-z]{10,30}") != false
+                    && Regex.IsMatch(Txtlegajo.Text, "[0-9]{5-12}") != false
+                    && Regex.IsMatch(Txtnacimiento.Text, "[0-9]/[0-9]/[0-9]") != false
+                    && Regex.IsMatch(Txttelefono.Text, "[0-9]{1,10}") != false
+                    && Regex.IsMatch(Txtapellido.Text, "[A-z,a-z]{5,50}") != false
+                    && Regex.IsMatch(Txtnombre.Text, "[A-z,a-z]{5,50}") != false)
                 {
-                    Error.Text = "hay campos vacios";
+                    Persona p = new Persona();
+
+                    string tipopersona = ddltipo.SelectedValue;
+                    var Plan = p.cargar()[Ddlplan.SelectedItem.Text];
+                   
+                    p.addpersonas(
+
+                        Txtnombre.Text,
+                        Txtapellido.Text,
+                        Txtdireccion.Text
+                        , Txtemail.Text
+                        , Txttelefono.Text,
+                        Txtnacimiento.Text,
+                        Txtlegajo.Text,
+                        tipopersona,
+                        Plan.ToString()
+                        );
+                    cargargv();
+
+                    Error.Text = "Agregado";
                     Error.Visible = true;
+
                 }
-                Persona p = new Persona();
+                else 
+                {
+                    Error.Text = "hay campos vacios o no cumplen el formato necesario";
+                    Error.Visible = true;
 
-                string tipopersona = ddltipo.SelectedValue;
-               var Plan= p.cargar()[Ddlplan.SelectedValue];
-
-                p.addpersonas(
-                    Txtnombre.Text,
-                    Txtapellido.Text,
-                    Txtdireccion.Text
-                    ,Txtemail.Text
-                    ,Txttelefono.Text,
-                    Txtnacimiento.Text,
-                    Txtlegajo.Text,
-                    tipopersona,
-                    Plan.ToString()
-                    );
-                cargargv();
+                }
+                
             }
             catch (Exception ex)
             {
                 Persona p = new Persona();
-                Error.Text = ex.ToString();
-                
+                Error.Text = " Ah ocurrido un error intente nuevamente" + ex.Message;
+
 
                 Error.Visible = true;
-                
+
             }
         }
 
@@ -88,25 +107,40 @@ namespace UI.web_.Entidades
             try
             {
 
-                if (Txtapellido.Text == null ||
-                    Txtnombre.Text == null || Txtemail.Text == null || Txtlegajo.Text == null ||
-                    Txtnacimiento.Text == null || Txttelefono.Text == null || Txtdireccion.Text == null)
+                if (Txtapellido.Text != "" &&
+                    Txtnombre.Text != "" && Txtemail.Text != "" && Txtlegajo.Text != "" &&
+                    Txtnacimiento.Text != "" && Txttelefono.Text != "" && Txtdireccion.Text != ""
+                    &&
+                     Regex.IsMatch(Txtemail.Text, "[a-z,A-Z,0-9]@[a-z]{10,30}") != false
+                    && Regex.IsMatch(Txtlegajo.Text, "[0-9]{5-12}") != false
+                    && Regex.IsMatch(Txtnacimiento.Text, "[0-9]/[0-9]/[0-9]") != false
+                    && Regex.IsMatch(Txttelefono.Text, "[0-9]{1,10}") != false
+                    && Regex.IsMatch(Txtapellido.Text, "[A-z,a-z]{5,50}") != false
+                    && Regex.IsMatch(Txtnombre.Text, "[A-z,a-z]{5,50}") != false)
                 {
-                    Error.Text = "hay campos vacios";
+                    Persona p = new Persona();
+                    string tipopersona = ddltipo.SelectedValue;
+                    var Plan = p.cargar()[Ddlplan.SelectedItem.Text];
+                    var id = GridView1.SelectedRow.Cells[1].Text;
+                    p.modifypersonas(id, Txtnombre.Text, Txtapellido.Text, Txtdireccion.Text, Txtemail.Text
+                        , Txttelefono.Text, Txtnacimiento.Text, Txtlegajo.Text, tipopersona, Plan.ToString());
+
+                    cargargv();
+                    Error.Text = "modificado";
                     Error.Visible = true;
                 }
+                else 
+                
+                { Error.Text = "hay campos vacios o no cumplen con el formato necesario";
+                    Error.Visible = true;
 
-                Persona p = new Persona();
-                string tipopersona = ddltipo.SelectedValue;
-                var Plan = p.cargar()[Ddlplan.SelectedValue];
-                var id= GridView1.SelectedRow.Cells[1].Text;
-                p.modifypersonas(id,Txtnombre.Text, Txtapellido.Text, Txtdireccion.Text, Txtemail.Text
-                    , Txttelefono.Text, Txtnacimiento.Text, Txtlegajo.Text, tipopersona, Plan.ToString());
-                cargargv();
+                }
+
+               
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
-                Error.Text =  ex.ToString();
+                Error.Text = " Ah ocurrido un error intente nuevamente";
 
                 Error.Visible = true;
 
@@ -118,17 +152,31 @@ namespace UI.web_.Entidades
             try
             {
 
-                if (Txtapellido.Text == null ||
-                    Txtnombre.Text == null || Txtemail.Text == null || Txtlegajo.Text == null ||
-                    Txtnacimiento.Text == null || Txttelefono.Text == null || Txtdireccion.Text == null)
+                if (Txtapellido.Text != "" &&
+                    Txtnombre.Text != "" && Txtemail.Text != "" && Txtlegajo.Text != "" &&
+                    Txtnacimiento.Text != "" && Txttelefono.Text != "" && Txtdireccion.Text != ""
+                    &&
+                     Regex.IsMatch(Txtemail.Text, "[a-z,A-Z,0-9]@[a-z]{10,30}") != false
+                    && Regex.IsMatch(Txtlegajo.Text, "[0-9]{5-12}") != false
+                    && Regex.IsMatch(Txtnacimiento.Text, "[0-9]/[0-9]/[0-9]") != false
+                    && Regex.IsMatch(Txttelefono.Text, "[0-9]{1,10}") != false
+                    && Regex.IsMatch(Txtapellido.Text, "[A-z,a-z]{5,50}") != false
+                    && Regex.IsMatch(Txtnombre.Text, "[A-z,a-z]{5,50}") != false)
                 {
-                    Error.Text = "hay campos vacios";
+                   Persona p = new Persona();
+                   var id = GridView1.SelectedRow.Cells[1].Text;
+                   p.deletepersonas(id);
+                       cargargv();
+                    Error.Text = "Eliminada";
                     Error.Visible = true;
                 }
-                Persona p = new Persona();
-                var id = GridView1.SelectedRow.Cells[1].Text;
-                p.deletepersonas(id);
-                cargargv();
+                else 
+                { 
+                    Error.Text = "hay campos vacios o no cumplen con el formato necesario";
+                    Error.Visible = true;
+
+                }
+                
             }
             catch (Exception)
             {
@@ -138,19 +186,24 @@ namespace UI.web_.Entidades
             }
         }
 
-        void cargargv() 
+        void cargargv()
         {
             Persona p = new Persona();
             GridView1.DataSource = p.cargargv();
             GridView1.DataBind();
         }
-        void cargarcombo() 
+        void cargarcombo()
         {
             Persona p = new Persona();
-            foreach (var k in p.cargar().Keys) 
+            foreach (var k in p.cargar().Keys)
             {
                 Ddlplan.Items.Add(k);
             }
+        }
+
+        protected void Txtnacimiento_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

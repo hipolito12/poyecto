@@ -24,13 +24,13 @@ namespace UI.web_.Entidades
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Control Txtalumno.
+        /// Control ddlestado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Txtalumno;
+        protected global::System.Web.UI.WebControls.DropDownList ddlestado;
 
         /// <summary>
         /// Control Label5.
@@ -67,6 +67,24 @@ namespace UI.web_.Entidades
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlcurso;
+
+        /// <summary>
+        /// Control SqlDataSource2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+
+        /// <summary>
+        /// Control SqlDataSource1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
 
         /// <summary>
         /// Control Label4.

@@ -15,11 +15,12 @@
 <body>
     <div id="formulario">
             <asp:Label ID="Label1" runat="server" Text="Seleccione materias:   "></asp:Label > <asp:DropDownList ID="comboidmateria" runat="server" Height="25px" Width="211px" AutoPostBack="True" OnSelectedIndexChanged="comboidmateria_SelectedIndexChanged">
-                   <asp:ListItem>prubea</asp:ListItem>
                </asp:DropDownList> <br />
                <br />
-               <asp:Label ID="Label2" runat="server" Text="Seleccione comisiones:   ">         </asp:Label> <asp:DropDownList ID="comboComision" runat="server" Height="39px" Width="195px" AutoPostBack="True">
-               </asp:DropDownList> <br />
+               <asp:Label ID="Label2" runat="server" Text="Seleccione comisiones:   ">         </asp:Label> 
+            <asp:DropDownList ID="comboComision" runat="server" Width="207px">
+            </asp:DropDownList>
+            <br />
                <br />
                <asp:Label ID="Label3" runat="server" Text="ingrese Año calendario:  ">        </asp:Label> <asp:TextBox ID="TxtAnio" runat="server"  CssClass="input_calendario" ></asp:TextBox> <br />
                <br />

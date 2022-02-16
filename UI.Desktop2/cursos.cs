@@ -56,11 +56,11 @@ namespace UI.Desktop2
                     CursosCRUD curses = new CursosCRUD();
                     string idcurso = dataGridView1.CurrentRow.Cells["id_curso"].Value.ToString();
                     curses.elimminarcurso(idcurso);
-
+                    MessageBox.Show("eliminado!");
                 }
                 else { MessageBox.Show("seleccione columna"); }
             }
-            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
+            catch (Exception ex) { MessageBox.Show("Ha ocurrido un error, los datos estan siendo utilizado en otro proceso"); }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

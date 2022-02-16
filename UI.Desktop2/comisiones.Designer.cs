@@ -141,8 +141,6 @@ namespace UI.Desktop2
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource tp2DataSetBindingSource;
         private tp2DataSet tp2DataSet;
         private System.Windows.Forms.BindingSource comisionesBindingSource;
@@ -151,5 +149,6 @@ namespace UI.Desktop2
         public System.Windows.Forms.Button btnaceptar;
         public System.Windows.Forms.Button btneliminar;
         public System.Windows.Forms.Button btnmodificar;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }

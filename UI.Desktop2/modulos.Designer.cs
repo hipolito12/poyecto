@@ -170,7 +170,7 @@ namespace UI.Desktop2
             this.Controls.Add(this.btnAlta);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "modulos";
-            this.Text = "Form1";
+            this.Text = "Modulos";
             this.Load += new System.EventHandler(this.modulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modulosBindingSource)).EndInit();

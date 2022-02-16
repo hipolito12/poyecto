@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -27,42 +28,61 @@ namespace UI.web_.Entidades
         {
             try 
             {
-                if (Txtdescripcion.Text== null || Txtdescripcion.Text == " ")
-                { error.Text ="Hay campos vacios!"; error.Visible = true; }
-                Especialidad esp = new Especialidad();
-                esp.addEspecialidad(Txtdescripcion.Text);
-                cargarGridview();
+                if (Txtdescripcion.Text != "" && true == Regex.IsMatch(Txtdescripcion.Text, "[A-Z,a-z,0-9]"))
+                {
+                    Especialidad esp = new Especialidad();
+                    esp.addEspecialidad(Txtdescripcion.Text);
+                    cargarGridview();
+                }
+                else 
+                {
+                    error.Text = "Hay campos vacios! o no cumplen el formato"; error.Visible = true; 
+
+                }
+                
             }
-            catch (Exception ex) { error.Text = ex.ToString(); error.Visible = true;  }
+            catch (Exception ex) { error.Text = " Ah ocurrido un error intente nuevamente"; ; error.Visible = true;  }
         }
 
         protected void txtmodificacion_Click(object sender, EventArgs e)
         {
             try
             {
-                if (Txtdescripcion.Text == null || Txtdescripcion.Text == " ")
-                { error.Text = "Hay campos vacios!"; error.Visible = true; }
-                Especialidad esp = new Especialidad();
-               string id = especialidadgv.SelectedRow.Cells[1].Text; 
-                esp.Editespecialidades( id ,Txtdescripcion.Text);
-                cargarGridview();
+                if (Txtdescripcion.Text != "" && true == Regex.IsMatch(Txtdescripcion.Text, "[A-Z,a-z,0-9]"))
+                {
+                    Especialidad esp = new Especialidad();
+                    string id = especialidadgv.SelectedRow.Cells[1].Text;
+                    esp.Editespecialidades(id, Txtdescripcion.Text);
+                    cargarGridview();
+                }
+                else 
+                {
+                    error.Text = "Hay campos vacios! o no cumplen el formato"; error.Visible = true;
+                }
+               
             }
-            catch (Exception ex) { error.Text = ex.ToString(); error.Visible = true; }
+            catch (Exception ex) { error.Text = " Ah ocurrido un error intente nuevamente"; error.Visible = true; }
         }
 
         protected void txteliminar_Click(object sender, EventArgs e)
         {
             try
             {
-                if (Txtdescripcion.Text == null || Txtdescripcion.Text == " ")
-                { error.Text = "Hay campos vacios!"; error.Visible = true; }
-                Especialidad esp = new Especialidad();
-                string id = especialidadgv.SelectedRow.Cells[1].Text;
-                esp.delete_especialidad(id);
-                cargarGridview();
+                if (Txtdescripcion.Text != "" && true == Regex.IsMatch(Txtdescripcion.Text, "[A-Z,a-z,0-9]"))
+                {
+                    Especialidad esp = new Especialidad();
+                    string id = especialidadgv.SelectedRow.Cells[1].Text;
+                    esp.delete_especialidad(id);
+                    cargarGridview();
+                }
+                else
+                {
+                    error.Text = "Hay campos vacios! o no cumplen el formato"; error.Visible = true;
+                }
+               
 
             }
-            catch (Exception ex) { error.Text = ex.ToString(); error.Visible = true; }
+            catch (Exception ex) { error.Text = " Ah ocurrido un error intente nuevamente"; error.Visible = true; }
         }
     
     

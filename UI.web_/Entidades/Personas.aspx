@@ -15,12 +15,12 @@
             <asp:Label ID="Label3" runat="server" Text="Ingrese direccion :" CssClass="separar"></asp:Label>
             <asp:TextBox ID="Txtdireccion" runat="server"></asp:TextBox>
             <asp:Label ID="Label4" runat="server" Text="Ingrese email : " CssClass="separar"></asp:Label>
-            <asp:TextBox ID="Txtemail" runat="server" Width="246px"></asp:TextBox>
+            <asp:TextBox ID="Txtemail" runat="server" Width="246px" TextMode="Email"></asp:TextBox>
             <br />
             <asp:Label ID="Label5" runat="server" Text="Ingrese telefono" CssClass="separar"></asp:Label>
             <asp:TextBox ID="Txttelefono" runat="server"></asp:TextBox>
             <asp:Label ID="Label6" runat="server" Text="Ingreso fecha de nacimiento :" CssClass="separar"></asp:Label>
-            <asp:TextBox ID="Txtnacimiento" runat="server"></asp:TextBox>
+            <asp:TextBox ID="Txtnacimiento" runat="server" TextMode="Date"></asp:TextBox>
             <br />
             <asp:Label ID="Label7" runat="server" Text="Ingrese su Legajo" CssClass="separar"></asp:Label>
             <asp:TextBox ID="Txtlegajo" runat="server"></asp:TextBox>
@@ -44,9 +44,9 @@
 
         <div class=" botones">
 
-            <asp:Button ID="btnagregar" runat="server" Text="Agregar " OnClick="btnagregar_Click" CssClass="boton" />
-            <asp:Button ID="btneditar" runat="server" Text="Modificar " OnClick="btneditar_Click" CssClass="boton" Height="45px" />
-            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar " OnClick="btnEliminar_Click" />
+            <asp:Button ID="btnagregar" runat="server" Text="Agregar " OnClick="btnagregar_Click" CssClass="boton" Height="36px" />
+            <asp:Button ID="btneditar" runat="server" Text="Modificar " OnClick="btneditar_Click" CssClass="boton" Height="34px" />
+            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar " OnClick="btnEliminar_Click" Height="33px" />
 
 
         </div>

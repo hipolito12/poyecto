@@ -63,8 +63,10 @@ namespace Datos2
         
         {
 
-            string query = "use[tp2]"
-                + $"select distinct   c.anio_calendario from alumnos_inscripciones  ai  inner join cursos c on c.id_curso = ai.id_curso where ai.id_alumno = {idalumno} ;";
+            string query = "use[tp2]" +
+                 $" select distinct concat( 'Notas ciclo lectivo: ',c.anio_calendario ) from alumnos_inscripciones ai  inner join cursos c on c.id_curso = ai.id_curso  where ai.id_alumno = {idalumno}";
+
+
 
 
             Entidades en = new Entidades();
@@ -150,14 +152,14 @@ namespace Datos2
             try
             {
 
-                bool result = false;
+                bool result = true;
 
                 Entidades En = new Entidades();
                 usuarios u = En.usuarios.Where(us => us.id_persona == id).FirstOrDefault();
 
-                if (u.clave == pass)
+                if ( u== null)
                 {
-                    result = true;
+                   return result = false;
                 }
 
                 return result;

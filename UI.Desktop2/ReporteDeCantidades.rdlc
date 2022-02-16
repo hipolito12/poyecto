@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.44028cm</Width>
+              <Width>10.80792cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -22,11 +22,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>cantidad</Value>
-                              <Style />
+                              <Value>Informe de personal  y servicios</Value>
+                              <Style>
+                                <FontSize>16pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox3</rd:DefaultName>
@@ -35,6 +39,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>Orange</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -57,11 +62,19 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Curso.Value</Value>
+                              <Value>Cantidad de </Value>
                               <Style />
                             </TextRun>
+                            <TextRun>
+                              <Value>=Fields!Curso.Value</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Curso</rd:DefaultName>
@@ -92,11 +105,19 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Docentes.Value</Value>
+                              <Value>Cantidad de  </Value>
                               <Style />
                             </TextRun>
+                            <TextRun>
+                              <Value>=Fields!Docentes.Value</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Docentes</rd:DefaultName>
@@ -127,11 +148,21 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
+                              <Value>cantidad de  </Value>
+                              <Style>
+                                <FontWeight>Normal</FontWeight>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
                               <Value>=Fields!Estudiantes.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Estudiantes</rd:DefaultName>
@@ -162,11 +193,21 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
+                              <Value>cantidad de</Value>
+                              <Style>
+                                <FontWeight>Normal</FontWeight>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
                               <Value>=Fields!pepe.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>pepe</rd:DefaultName>
@@ -215,10 +256,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>cantidades</DataSetName>
-        <Top>1.21708cm</Top>
-        <Left>1.69898cm</Left>
+        <Top>2.16958cm</Top>
+        <Left>1.62842cm</Left>
         <Height>4.85208cm</Height>
-        <Width>4.44028cm</Width>
+        <Width>10.80792cm</Width>
         <Style>
           <Border>
             <Style>None</Style>

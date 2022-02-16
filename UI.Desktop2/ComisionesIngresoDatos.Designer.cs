@@ -40,9 +40,10 @@ namespace UI.Desktop2
             // 
             // btnaceptar
             // 
-            this.btnaceptar.Location = new System.Drawing.Point(12, 278);
+            this.btnaceptar.Location = new System.Drawing.Point(18, 428);
+            this.btnaceptar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnaceptar.Name = "btnaceptar";
-            this.btnaceptar.Size = new System.Drawing.Size(309, 23);
+            this.btnaceptar.Size = new System.Drawing.Size(464, 35);
             this.btnaceptar.TabIndex = 0;
             this.btnaceptar.Text = "Aceptar";
             this.btnaceptar.UseVisualStyleBackColor = true;
@@ -51,57 +52,63 @@ namespace UI.Desktop2
             // comboidpan
             // 
             this.comboidpan.FormattingEnabled = true;
-            this.comboidpan.Location = new System.Drawing.Point(120, 169);
+            this.comboidpan.Location = new System.Drawing.Point(180, 260);
+            this.comboidpan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboidpan.Name = "comboidpan";
-            this.comboidpan.Size = new System.Drawing.Size(171, 21);
+            this.comboidpan.Size = new System.Drawing.Size(254, 28);
             this.comboidpan.TabIndex = 2;
             // 
             // lblplan
             // 
             this.lblplan.AutoSize = true;
-            this.lblplan.Location = new System.Drawing.Point(40, 172);
+            this.lblplan.Location = new System.Drawing.Point(60, 265);
+            this.lblplan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblplan.Name = "lblplan";
-            this.lblplan.Size = new System.Drawing.Size(41, 13);
+            this.lblplan.Size = new System.Drawing.Size(60, 20);
             this.lblplan.TabIndex = 4;
             this.lblplan.Text = "ID plan";
             // 
             // lblanio
             // 
             this.lblanio.AutoSize = true;
-            this.lblanio.Location = new System.Drawing.Point(40, 133);
+            this.lblanio.Location = new System.Drawing.Point(60, 205);
+            this.lblanio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblanio.Name = "lblanio";
-            this.lblanio.Size = new System.Drawing.Size(28, 13);
+            this.lblanio.Size = new System.Drawing.Size(41, 20);
             this.lblanio.TabIndex = 5;
             this.lblanio.Text = "Anio";
             // 
             // lbldescripcion
             // 
             this.lbldescripcion.AutoSize = true;
-            this.lbldescripcion.Location = new System.Drawing.Point(22, 98);
+            this.lbldescripcion.Location = new System.Drawing.Point(33, 151);
+            this.lbldescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbldescripcion.Name = "lbldescripcion";
-            this.lbldescripcion.Size = new System.Drawing.Size(63, 13);
+            this.lbldescripcion.Size = new System.Drawing.Size(92, 20);
             this.lbldescripcion.TabIndex = 6;
             this.lbldescripcion.Text = "Descripcion";
             // 
             // txtdescripcion
             // 
-            this.txtdescripcion.Location = new System.Drawing.Point(120, 95);
+            this.txtdescripcion.Location = new System.Drawing.Point(180, 146);
+            this.txtdescripcion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtdescripcion.Name = "txtdescripcion";
-            this.txtdescripcion.Size = new System.Drawing.Size(171, 20);
+            this.txtdescripcion.Size = new System.Drawing.Size(254, 26);
             this.txtdescripcion.TabIndex = 7;
             // 
             // textanio
             // 
-            this.textanio.Location = new System.Drawing.Point(120, 133);
+            this.textanio.Location = new System.Drawing.Point(180, 205);
+            this.textanio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textanio.Name = "textanio";
-            this.textanio.Size = new System.Drawing.Size(171, 20);
+            this.textanio.Size = new System.Drawing.Size(254, 26);
             this.textanio.TabIndex = 8;
             // 
             // Comisiones_1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(354, 363);
+            this.ClientSize = new System.Drawing.Size(531, 558);
             this.Controls.Add(this.textanio);
             this.Controls.Add(this.txtdescripcion);
             this.Controls.Add(this.lbldescripcion);
@@ -109,8 +116,9 @@ namespace UI.Desktop2
             this.Controls.Add(this.lblplan);
             this.Controls.Add(this.comboidpan);
             this.Controls.Add(this.btnaceptar);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Comisiones_1";
-            this.Text = "Comisiones_1";
+            this.Text = "Comisiones";
             this.Load += new System.EventHandler(this.Comisiones_1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

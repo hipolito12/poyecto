@@ -30,7 +30,7 @@ namespace UI.web_.Entidades
             try
             {
 
-                if (txtejecuta.Text == null || txtejecuta.Text == "" || txtdescripcion.Text == null || txtdescripcion.Text == "")
+                if (txtejecuta.Text != null || txtejecuta.Text != "" || txtdescripcion.Text != null || txtdescripcion.Text != "")
                 {
                     error.Text = "ah ocurrido un error!";
                     error.Visible = true;
@@ -51,7 +51,7 @@ namespace UI.web_.Entidades
             try
             {
 
-                if (txtejecuta.Text == null || txtejecuta.Text == "" || txtdescripcion.Text == null || txtdescripcion.Text == "")
+                if (txtejecuta.Text != null || txtejecuta.Text != "" || txtdescripcion.Text != null || txtdescripcion.Text != "")
                 {
                     error.Text = "ah ocurrido un error!";
                     error.Visible = true;
@@ -73,7 +73,7 @@ namespace UI.web_.Entidades
             try
             {
 
-                if (txtejecuta.Text == null || txtejecuta.Text == "" || txtdescripcion.Text == null || txtdescripcion.Text == "")
+                if (txtejecuta.Text != null || txtejecuta.Text != "" || txtdescripcion.Text != null || txtdescripcion.Text != "")
                 {
                     error.Text = "ah ocurrido un error!";
                     error.Visible = true;

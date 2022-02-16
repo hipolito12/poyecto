@@ -56,5 +56,10 @@ namespace UI.web_.Reportes
                 btnAceptar.Attributes.Add("onclick", "imprime()");
             
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

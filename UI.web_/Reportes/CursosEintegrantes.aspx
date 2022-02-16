@@ -21,10 +21,18 @@
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
             <br />
-            <asp:Button ID="btnImprime" runat="server" Text="Imprimir" OnClick="btnImprime_Click" />
+             <asp:Button ID="btnImprime" runat="server" Text="Imprimir" OnClick="btnImprime_Click"  CssClass="margen"/> 
         </center></div>
 
     <style>
+        * {
+            margin:0;
+            
+        }
+        #desaparecer {
+            text-align:center;
+            margin-left:20em;
+        }
         #desaparecer th:nth-child(1) 
         {
             display:none;
@@ -34,7 +42,29 @@
         {
             display:none;
         }
+        #desaparecer th:nth-child(2) {
+        
+          visibility:hidden;
+        }
+            #desaparecer th:nth-child(2)::after 
+            {
+                margin:0;
+                content:"materias";
+                visibility:visible;
+                background-color:cornflowerblue;
+                width:8em;
+                padding-left : 1.4em;
+                padding-right :4em;
+                padding-top:0.5em;
+                 padding-bottom:0.4em;
+                margin-right:2em;
+            }
 
+            #desaparecer th:nth-child(3) {
+            }
+
+        .margen {
+        margin-right:10em;}
     </style>
 
     <script src="CodigoParaImprimir.js"></script>

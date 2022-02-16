@@ -27,7 +27,7 @@ namespace UI.web_.Reportes
                 lblestado.Text = "registrado!";
 
                 lblestado.Visible = true;
-
+                GridView1.DataBind();
             }
             else
             {

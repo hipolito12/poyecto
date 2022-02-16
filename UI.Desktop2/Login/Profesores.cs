@@ -205,6 +205,11 @@ namespace UI.Desktop2.Login
             c.btnaceptar.Visible = false;
             c.btneliminar.Visible = false;
             c.btnmodificar.Visible = false;
+            c.dataGridView1.Columns[1].HeaderText = "descripcion comision";
+            c.dataGridView1.Columns[2].HeaderText = "Anio lectivo";
+
+           c.dataGridView1.Columns[0].Visible = false;
+            c.dataGridView1.Columns[3].Visible = false;
             c.Show();
             
         }

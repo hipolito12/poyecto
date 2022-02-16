@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocios;
@@ -23,19 +24,26 @@ namespace UI.Desktop2
         {
             try
             {
-                if (txtactual.Text == null || txtconfirmar.Text == null || txtnueva.Text == null || txtconfirmar.Text != txtnueva.Text || txtconfirmar.Text.Length < 8 || txtnueva.Text.Length < 8)
+                if (
+                    txtactual.Text != "" && txtconfirmar.Text != "" && txtnueva.Text != ""
+                    && txtconfirmar.Text == txtnueva.Text && txtconfirmar.Text.Length >= 8
+                    && txtnueva.Text.Length >= 8 && Regex.IsMatch(txtactual.Text, "[A-Z,a-z,0-9]{1,8}") == true
+                    && Regex.IsMatch(txtconfirmar.Text, "[A-Z,a-z,0-9]{1,8}") == true
+                    && Regex.IsMatch(txtnueva.Text, "[A-Z,a-z,0-9]{1,8}") == true
+                    )
                 {
-                    MessageBox.Show("hay  un error , verifique su entrada");
-                }
-                Notas n = new Notas();
-                bool result = n.verifyActualPass(id, txtactual.Text);
+                    Notas n = new Notas();
+                    bool result = n.verifyActualPass(id, txtactual.Text);
 
-                if (result == true)
-                {
-                    n.cambiarContrasena(id, txtnueva.Text);
-                    MessageBox.Show("Modificada!");
+                    if (result == true)
+                    {
+                        n.cambiarContrasena(id, txtnueva.Text);
+                        MessageBox.Show("Modificada!");
+                    }
+                    else { MessageBox.Show("contraseña actual invalida "); }
                 }
-                else { MessageBox.Show("contraseña actual invalida "); }
+                else { MessageBox.Show("hay  un error , verifique su entrada"); }
+
             }
             catch (Exception ex)
             {

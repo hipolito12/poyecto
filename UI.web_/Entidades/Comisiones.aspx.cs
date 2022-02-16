@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -44,7 +45,7 @@ namespace UI.web_.Entidades
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtDesc_Comision.Text = GridView1.SelectedRow.Cells[2].Text;
-            txt_IdPlan.Text = GridView1.SelectedRow.Cells[4].Text;
+            ddlplan.SelectedValue = GridView1.SelectedRow.Cells[4].Text;
             txtAnio.Text = GridView1.SelectedRow.Cells[3].Text;
 
         }
@@ -56,20 +57,27 @@ namespace UI.web_.Entidades
             try
             {
                 Comision com = new Comision();
-                if (txtDesc_Comision.Text == null || txtAnio.Text == null || txt_IdPlan.Text == null|| int.Parse(txt_IdPlan.Text) < 0 || int.Parse(txtAnio.Text) < 0)
+                if (txtDesc_Comision.Text != "" && txtAnio.Text != "" && int.Parse(txtAnio.Text) > 0
+                    && Regex.IsMatch(txtDesc_Comision.Text, "[a-z,A-Z]{10,500}") == true &&
+                    Regex.IsMatch(txtAnio.Text, "[0-9]") == true)
                 {
-                    error.Visible = true;
+                    string id = GridView1.SelectedRow.Cells[1].Text;
+
+
+                     com.eliminar_comision(id);
+                   GridView1.DataSource = com.cargargrid();
+                    GridView1.DataBind();
+                    error.Text = "Eliminado!"; error.Visible = true;
+                }
+                else 
+                { error.Visible = true;
                     GridView1.CssClass = "gridStyles";
+
                 }
 
-                string id = GridView1.SelectedRow.Cells[1].Text;
-
-
-                com.eliminar_comision(id);
-                GridView1.DataSource = com.cargargrid();
-                GridView1.DataBind();
+               
             }
-            catch (Exception ex) { error.Text = $"{ex}"; error.Visible = true; }
+            catch (Exception ex) { error.Text = $"Ha ocurrdio un error, intentelo nuevamente!"; error.Visible = true; }
         }
 
 
@@ -79,16 +87,25 @@ namespace UI.web_.Entidades
             try
             {
                 Comision com = new Comision();
-                if (txtDesc_Comision.Text == null || txtAnio.Text == null || txt_IdPlan.Text == null || int.Parse(txt_IdPlan.Text) < 0 || int.Parse(txtAnio.Text) < 0)
+                if (txtDesc_Comision.Text != "" && txtAnio.Text != "" && int.Parse(txtAnio.Text) > 0
+                    && Regex.IsMatch(txtDesc_Comision.Text, "[a-z,A-Z]{10,500}") == true &&
+                    Regex.IsMatch(txtAnio.Text, "[0-9]") == true)
+                {
+                    com.agregar_comisiones(txtDesc_Comision.Text, txtAnio.Text, ddlplan.SelectedValue.ToString());
+                    GridView1.DataSource = com.cargargrid();
+                    GridView1.DataBind();
+                    error.Text = "agregado"; error.Visible = true;
+                }
+                else
                 {
                     error.Visible = true;
+                    GridView1.CssClass = "gridStyles";
+
                 }
 
-                com.agregar_comisiones(txtDesc_Comision.Text, txtAnio.Text, txt_IdPlan.Text);
-                GridView1.DataSource = com.cargargrid();
-                GridView1.DataBind();
+               
             }
-            catch (Exception ex) { error.Text = $"{ex}"; error.Visible = true; }
+            catch (Exception ex) { error.Text = $"Ha ocurrdio un error, intentelo nuevamente!"; error.Visible = true; }
 
         }
 
@@ -98,17 +115,26 @@ namespace UI.web_.Entidades
             try
             {
                 Comision com = new Comision();
-                if (txtDesc_Comision.Text == null || txtAnio.Text == null || txt_IdPlan.Text == null || int.Parse(txt_IdPlan.Text) < 0 || int.Parse(txtAnio.Text) < 0)
+                if (txtDesc_Comision.Text != "" && txtAnio.Text != "" && int.Parse(txtAnio.Text) > 0
+                     && Regex.IsMatch(txtDesc_Comision.Text, "[a-z,A-Z]{10,500}") == true &&
+                     Regex.IsMatch(txtAnio.Text, "[0-9]") == true)
+                {
+                    string id = GridView1.SelectedRow.Cells[1].Text;
+                    com.editar_comision(txtDesc_Comision.Text, txtAnio.Text, ddlplan.SelectedValue.ToString(), id);
+                    GridView1.DataSource = com.cargargrid();
+                    GridView1.DataBind();
+                    error.Text = "modificado!"; error.Visible = true;
+                }
+                else
                 {
                     error.Visible = true;
+                    GridView1.CssClass = "gridStyles";
+
                 }
 
-                string id = GridView1.SelectedRow.Cells[1].Text;
-                com.editar_comision(txtDesc_Comision.Text, txtAnio.Text, txt_IdPlan.Text, id);
-                GridView1.DataSource = com.cargargrid();
-                GridView1.DataBind();
+                
             }
-            catch (Exception ex) { error.Text = $"{ex}"; error.Visible = true; }
+            catch (Exception ex) { error.Text = $"Ha ocurrdio un error, intentelo nuevamente!"; error.Visible = true; }
         }
     }
 }

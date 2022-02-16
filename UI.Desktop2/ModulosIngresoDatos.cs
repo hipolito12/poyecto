@@ -1,6 +1,7 @@
 ﻿using CapaNegocios;
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace UI.Desktop2
@@ -33,23 +34,32 @@ namespace UI.Desktop2
         {
             try
             {
-                if (estado == true)
+                if (txtdesc.Text !="" && txtEjecuta.Text != "" &&  Regex.IsMatch(txtdesc.Text,"[a-z,A-Z,0-9]{10,100}")==true   && Regex.IsMatch(txtEjecuta.Text, "[a-z,A-Z,0-9]{10,100}") == true)
                 {
-                    ModulosCRUD mc = new ModulosCRUD();
+                    if (estado == true)
+                    {
+                        ModulosCRUD mc = new ModulosCRUD();
 
-                    mc.ADDmodulo(txtdesc.Text, txtEjecuta.Text);
-                    Limpia();
-                    this.Close();
+                        mc.ADDmodulo(txtdesc.Text, txtEjecuta.Text);
+                        Limpia();
+                        this.Close();
+                    }
+                    if (estado == false)
+                    {
+                        ModulosCRUD mc = new ModulosCRUD();
+                        //int n = mc.cargador()[txtdesc.Text];
+                        mc.Updatemodulo(txtdesc.Text, id.ToString(), txtEjecuta.Text);
+                    }
+
                 }
-                if (estado == false)
+                else
                 {
-                    ModulosCRUD mc = new ModulosCRUD();
-                    //int n = mc.cargador()[txtdesc.Text];
-                    mc.Updatemodulo(txtdesc.Text, id.ToString(), txtEjecuta.Text);
+                    MessageBox.Show("Ha ocurrido un error, verifique los campos y los datos");
                 }
+
 
             }
-            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
+            catch (Exception ex) { MessageBox.Show("Ha ocurrido un error, verifique los campos y los datos"); }
 
         }
 

@@ -22,6 +22,6 @@
         <br />
         <asp:Button ID="btncambiar" runat="server" OnClick="btncambiar_Click" Text="Cambiar" />
         <br />
-        <asp:Label ID="lblinformar" runat="server" Text="Label" Visible="False"></asp:Label>
+        <asp:Label ID="lblinformar" runat="server" Text="Label" Visible="False" Font-Size="Larger"></asp:Label>
     <br /> </center>  
 </asp:Content>

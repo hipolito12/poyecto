@@ -30,7 +30,6 @@ namespace UI.Desktop2
         private void InitializeComponent()
         {
             this.Combocurso = new System.Windows.Forms.ComboBox();
-            this.combocondicionalu = new System.Windows.Forms.TextBox();
             this.lblestado = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.lblCurso = new System.Windows.Forms.Label();
@@ -41,25 +40,18 @@ namespace UI.Desktop2
             this.txtauxalumno = new System.Windows.Forms.TextBox();
             this.txtauxcurso = new System.Windows.Forms.TextBox();
             this.combocursoaux = new System.Windows.Forms.ComboBox();
+            this.combocondicion = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // Combocurso
             // 
             this.Combocurso.FormattingEnabled = true;
-            this.Combocurso.Location = new System.Drawing.Point(151, 247);
+            this.Combocurso.Location = new System.Drawing.Point(158, 259);
             this.Combocurso.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Combocurso.Name = "Combocurso";
             this.Combocurso.Size = new System.Drawing.Size(292, 28);
             this.Combocurso.TabIndex = 0;
             this.Combocurso.SelectedIndexChanged += new System.EventHandler(this.Combocurso_SelectedIndexChanged);
-            // 
-            // combocondicionalu
-            // 
-            this.combocondicionalu.Location = new System.Drawing.Point(159, 57);
-            this.combocondicionalu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.combocondicionalu.Name = "combocondicionalu";
-            this.combocondicionalu.Size = new System.Drawing.Size(292, 26);
-            this.combocondicionalu.TabIndex = 1;
             // 
             // lblestado
             // 
@@ -124,7 +116,7 @@ namespace UI.Desktop2
             // Comboalumno
             // 
             this.Comboalumno.FormattingEnabled = true;
-            this.Comboalumno.Location = new System.Drawing.Point(160, 211);
+            this.Comboalumno.Location = new System.Drawing.Point(160, 185);
             this.Comboalumno.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Comboalumno.Name = "Comboalumno";
             this.Comboalumno.Size = new System.Drawing.Size(292, 28);
@@ -140,7 +132,7 @@ namespace UI.Desktop2
             // 
             // txtauxcurso
             // 
-            this.txtauxcurso.Location = new System.Drawing.Point(149, 247);
+            this.txtauxcurso.Location = new System.Drawing.Point(158, 259);
             this.txtauxcurso.Name = "txtauxcurso";
             this.txtauxcurso.Size = new System.Drawing.Size(292, 26);
             this.txtauxcurso.TabIndex = 10;
@@ -149,17 +141,34 @@ namespace UI.Desktop2
             // combocursoaux
             // 
             this.combocursoaux.FormattingEnabled = true;
-            this.combocursoaux.Location = new System.Drawing.Point(151, 248);
+            this.combocursoaux.Location = new System.Drawing.Point(159, 259);
             this.combocursoaux.Name = "combocursoaux";
             this.combocursoaux.Size = new System.Drawing.Size(291, 28);
             this.combocursoaux.TabIndex = 11;
             this.combocursoaux.SelectedIndexChanged += new System.EventHandler(this.combocursoaux_SelectedIndexChanged);
             // 
+            // combocondicion
+            // 
+            this.combocondicion.AutoCompleteCustomSource.AddRange(new string[] {
+            "Aprobado",
+            "Aprobacion directa",
+            "Libre"});
+            this.combocondicion.FormattingEnabled = true;
+            this.combocondicion.Items.AddRange(new object[] {
+            "Libre",
+            "Aprobado",
+            "Aprobacion directa"});
+            this.combocondicion.Location = new System.Drawing.Point(160, 49);
+            this.combocondicion.Name = "combocondicion";
+            this.combocondicion.Size = new System.Drawing.Size(290, 28);
+            this.combocondicion.TabIndex = 12;
+            // 
             // inscripciones_alumno1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 448);
+            this.ClientSize = new System.Drawing.Size(550, 428);
+            this.Controls.Add(this.combocondicion);
             this.Controls.Add(this.Comboalumno);
             this.Controls.Add(this.txtnota);
             this.Controls.Add(this.lblnota);
@@ -167,7 +176,6 @@ namespace UI.Desktop2
             this.Controls.Add(this.lblCurso);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblestado);
-            this.Controls.Add(this.combocondicionalu);
             this.Controls.Add(this.Combocurso);
             this.Controls.Add(this.txtauxcurso);
             this.Controls.Add(this.txtauxalumno);
@@ -184,7 +192,6 @@ namespace UI.Desktop2
         #endregion
         private System.Windows.Forms.Label lblCurso;
         public System.Windows.Forms.ComboBox Combocurso;
-        public System.Windows.Forms.TextBox combocondicionalu;
         public System.Windows.Forms.TextBox txtnota;
         public System.Windows.Forms.Label lblestado;
         public System.Windows.Forms.Label lblnota;
@@ -194,5 +201,6 @@ namespace UI.Desktop2
         public System.Windows.Forms.TextBox txtauxalumno;
         public System.Windows.Forms.TextBox txtauxcurso;
         private System.Windows.Forms.ComboBox combocursoaux;
+        public System.Windows.Forms.ComboBox combocondicion;
     }
 }

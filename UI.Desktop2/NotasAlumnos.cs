@@ -86,14 +86,17 @@ namespace UI.Desktop2
             try
             {
                 string campo = comboBox1.SelectedItem.ToString()  ;
-                int fecha = Convert.ToInt32(campo);
-                alg(fecha ,idpersonacp);
+                string[] campos = campo.Split(':'); 
+                int fecha = Convert.ToInt32(campos[1].Trim());
+                
+                alg(fecha,idpersonacp);
+               
                 reportViewer1.Visible = true;
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.ToString()); 
+                MessageBox.Show("Ha ocurrido un error, verifique los campos y los datos "+ex.Message); 
             }
         }
 

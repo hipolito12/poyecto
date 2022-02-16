@@ -30,7 +30,7 @@ namespace UI.Desktop2
                 u_.eliminarUsuarios(id);
                 MessageBox.Show("eliminado!");
             }
-            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
+            catch (Exception ex) { MessageBox.Show("Ha ocurrido un error, verifique los campos y los datos"); }
         }
 
         private void btnRefressh_Click(object sender, EventArgs e)

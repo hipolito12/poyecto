@@ -16,10 +16,10 @@
     <asp:Label ID="Label2" runat="server" Text="Ingrese decripcion de la materia : "></asp:Label><asp:TextBox ID="Txtdescripcion" runat="server"></asp:TextBox>
     <br />
     <br />
-    <asp:Label ID="Label5" runat="server" Text="Ingrese Hs semanales : "></asp:Label><asp:TextBox ID="Txtsemanales" runat="server" Width="152px"></asp:TextBox>
+    <asp:Label ID="Label5" runat="server" Text="Ingrese Hs semanales : "></asp:Label><asp:TextBox ID="Txtsemanales" runat="server" Width="171px" Height="20px"></asp:TextBox>
     <br />
     <br />
-    <asp:Label ID="Label3" runat="server" Text="Ingrese Hs totales : "></asp:Label><asp:TextBox ID="Txttotales" runat="server" Width="196px"></asp:TextBox>
+    <asp:Label ID="Label3" runat="server" Text="Ingrese Hs totales : "></asp:Label><asp:TextBox ID="Txttotales" runat="server" Width="196px" Height="25px"></asp:TextBox>
     <br />
     <br />
     <asp:Label ID="Label4" runat="server" Text="Seleccione el plan :   "></asp:Label> <asp:DropDownList ID="ddlplan" runat="server" Width="189px"></asp:DropDownList>

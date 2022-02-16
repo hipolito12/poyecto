@@ -125,7 +125,7 @@ namespace UI.Desktop2
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Docentes_Cursos";
-            this.Text = "Docentes_Cursos";
+            this.Text = "cursos y docentes";
             this.Load += new System.EventHandler(this.Docentes_Cursos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docentescursosBindingSource)).EndInit();

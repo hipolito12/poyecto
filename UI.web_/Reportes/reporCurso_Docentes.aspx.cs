@@ -13,10 +13,10 @@ namespace UI.web_.Reportes
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            cargarReporte();
+            //cargarReporte();
 
            
-            
+
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -24,25 +24,25 @@ namespace UI.web_.Reportes
 
         }
 
-        
-        public void cargarReporte() 
+
+        public void cargarReporte()
         {
             Notas n = new Notas();
-            gridview.DataSource = n.cargarInformeDocentesXcurso();
-            gridview.DataBind();
+           // gridview.DataSource = n.cargarInformeDocentesXcurso().Select(a => new  {materias =a.materias , docentes = a.docentes } );
+            //gridview.DataBind();
             
 
         }
 
         protected void GridView1_PageIndexChanged(object sender, GridViewPageEventArgs  e)
         {
-            gridview.PageIndex = e.NewPageIndex;
+            
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            gridview.Attributes.Add("onclick", "imprime()");
-            
+            GridView1.Attributes.Add("onclick", "imprime()");
+           
 
         }
 

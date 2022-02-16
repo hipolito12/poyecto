@@ -45,11 +45,11 @@ namespace UI.Desktop2.Login
             ins1.estado = true;
             ins1.idalumno = algo;
             ins1.txtauxalumno.Visible = false;
-            ins1.combocondicionalu.Text = "   ";
+            
             ins1.txtnota.Visible = false;
             ins1.lblalumno.Visible = false;
             ins1.Comboalumno.Visible = false;
-            ins1.combocondicionalu.Visible = false;
+            ins1.combocondicion.Visible = false;
             ins1.btnAceptar.Text = "Inscribirse";
             ins1.Show();
 
@@ -111,10 +111,10 @@ namespace UI.Desktop2.Login
             ins1.lblnota.Visible = false;
             ins1.txtnota.Text = "0";
             ins1.estado = true;
-            ins1.combocondicionalu.Text = "   ";
+           
             ins1.txtnota.Visible = false;
             ins1.lblalumno.Text = "Legajo de alumno";
-            ins1.combocondicionalu.Visible = false;
+            ins1.combocondicion.Visible = false;
             ins1.btnAceptar.Text = "Inscribirse";
             ins1.Show();
         }

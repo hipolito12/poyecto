@@ -44,18 +44,18 @@ namespace UI.Desktop2
             this.txtdireccion = new System.Windows.Forms.TextBox();
             this.txtemail = new System.Windows.Forms.TextBox();
             this.txttelefono = new System.Windows.Forms.TextBox();
-            this.txtfechan = new System.Windows.Forms.TextBox();
             this.txtlegajo = new System.Windows.Forms.TextBox();
-            this.txttipo = new System.Windows.Forms.TextBox();
             this.comboidplan = new System.Windows.Forms.ComboBox();
+            this.comboTipos = new System.Windows.Forms.ComboBox();
+            this.dtpnacimiento = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // btnacept
             // 
-            this.btnacept.Location = new System.Drawing.Point(482, 449);
+            this.btnacept.Location = new System.Drawing.Point(465, 431);
             this.btnacept.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnacept.Name = "btnacept";
-            this.btnacept.Size = new System.Drawing.Size(202, 35);
+            this.btnacept.Size = new System.Drawing.Size(234, 58);
             this.btnacept.TabIndex = 0;
             this.btnacept.Text = "Aceptar";
             this.btnacept.UseVisualStyleBackColor = true;
@@ -193,14 +193,6 @@ namespace UI.Desktop2
             this.txttelefono.Size = new System.Drawing.Size(229, 26);
             this.txttelefono.TabIndex = 14;
             // 
-            // txtfechan
-            // 
-            this.txtfechan.Location = new System.Drawing.Point(638, 303);
-            this.txtfechan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtfechan.Name = "txtfechan";
-            this.txtfechan.Size = new System.Drawing.Size(229, 26);
-            this.txtfechan.TabIndex = 15;
-            // 
             // txtlegajo
             // 
             this.txtlegajo.Location = new System.Drawing.Point(1022, 77);
@@ -208,14 +200,6 @@ namespace UI.Desktop2
             this.txtlegajo.Name = "txtlegajo";
             this.txtlegajo.Size = new System.Drawing.Size(229, 26);
             this.txtlegajo.TabIndex = 16;
-            // 
-            // txttipo
-            // 
-            this.txttipo.Location = new System.Drawing.Point(1022, 191);
-            this.txttipo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txttipo.Name = "txttipo";
-            this.txttipo.Size = new System.Drawing.Size(229, 26);
-            this.txttipo.TabIndex = 17;
             // 
             // comboidplan
             // 
@@ -227,15 +211,34 @@ namespace UI.Desktop2
             this.comboidplan.TabIndex = 18;
             this.comboidplan.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // comboTipos
+            // 
+            this.comboTipos.FormattingEnabled = true;
+            this.comboTipos.Items.AddRange(new object[] {
+            "Profesor ",
+            "Alumno",
+            "Administrador"});
+            this.comboTipos.Location = new System.Drawing.Point(1022, 188);
+            this.comboTipos.Name = "comboTipos";
+            this.comboTipos.Size = new System.Drawing.Size(229, 28);
+            this.comboTipos.TabIndex = 19;
+            // 
+            // dtpnacimiento
+            // 
+            this.dtpnacimiento.Location = new System.Drawing.Point(638, 302);
+            this.dtpnacimiento.Name = "dtpnacimiento";
+            this.dtpnacimiento.Size = new System.Drawing.Size(229, 26);
+            this.dtpnacimiento.TabIndex = 20;
+            // 
             // personas1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1284, 503);
+            this.Controls.Add(this.dtpnacimiento);
+            this.Controls.Add(this.comboTipos);
             this.Controls.Add(this.comboidplan);
-            this.Controls.Add(this.txttipo);
             this.Controls.Add(this.txtlegajo);
-            this.Controls.Add(this.txtfechan);
             this.Controls.Add(this.txttelefono);
             this.Controls.Add(this.txtemail);
             this.Controls.Add(this.txtdireccion);
@@ -253,7 +256,7 @@ namespace UI.Desktop2
             this.Controls.Add(this.btnacept);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "personas1";
-            this.Text = "personas1";
+            this.Text = "Personas";
             this.Load += new System.EventHandler(this.personas1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -277,9 +280,9 @@ namespace UI.Desktop2
         public System.Windows.Forms.TextBox txtdireccion;
         public System.Windows.Forms.TextBox txtemail;
         public System.Windows.Forms.TextBox txttelefono;
-        public System.Windows.Forms.TextBox txtfechan;
         public System.Windows.Forms.TextBox txtlegajo;
-        public System.Windows.Forms.TextBox txttipo;
         public System.Windows.Forms.ComboBox comboidplan;
+        private System.Windows.Forms.ComboBox comboTipos;
+        private System.Windows.Forms.DateTimePicker dtpnacimiento;
     }
 }

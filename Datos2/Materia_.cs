@@ -97,16 +97,24 @@ namespace Datos2
 
 
 
-            Entidades enti = new Entidades();
-            materias mate = new materias();
-            materias m = enti.materias.Find(idmateria);
-            m.desc_materia = descmat;
-            m.hs_semanales = hssemanales;
-            m.hs_totales = hstotales;
-            m.id_plan = idplan;
-            enti.Entry(m).State = System.Data.Entity.EntityState.Modified;
-            
-            enti.SaveChanges();
+            try
+            {
+                Entidades enti = new Entidades();
+
+                materias m = enti.materias.Find(idmateria);
+                m.desc_materia = descmat;
+                m.hs_semanales = hssemanales;
+                m.hs_totales = hstotales;
+                m.id_plan = idplan;
+                enti.Entry(m).State = System.Data.Entity.EntityState.Modified;
+
+                enti.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
 
             /*comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "update";

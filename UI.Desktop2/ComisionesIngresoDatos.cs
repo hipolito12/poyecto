@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocios;
@@ -30,28 +31,42 @@ namespace UI.Desktop2
             try
             {
                 Comision c = new Comision();
-                if (txtdescripcion.Text =="" || comboidpan.Text == ""|| textanio.Text == "")
+                if (txtdescripcion.Text != "" && comboidpan.Text != "" && textanio.Text != ""
+                    && Regex.IsMatch(txtdescripcion.Text, "[A-Z,a-z,0-9]{5,300}") == true
+                    && Regex.IsMatch(textanio.Text, "[0-9]") == true)
+
+                    
+                {
+
+                    if (estado == true)
+                    {
+                        int idplan = c.cargarcombo()[comboidpan.Text];
+
+                        c.agregar_comisiones(txtdescripcion.Text, textanio.Text, idplan.ToString());
+                        MessageBox.Show("Agregado!");
+                        txtdescripcion.Clear();
+                    }
+
+                    if (estado == false)
+                    {
+                        int idplan = c.cargarcombo()[comboidpan.Text];
+                        c.editar_comision(txtdescripcion.Text, textanio.Text, idplan.ToString(), id);
+                        MessageBox.Show("Modificado");
+                    }
+                }
+                else 
+                
                 {
                     MessageBox.Show("Hay campos vacios , verifique su entrada");
 
+
                 }
 
 
 
-                if (estado == true)
-                {
-                   int idplan= c.cargarcombo()[comboidpan.Text];
-                    
-                    c.agregar_comisiones(txtdescripcion.Text, textanio.Text, idplan.ToString());
-                }
-
-                if (estado == false)
-                {
-                    int idplan = c.cargarcombo()[comboidpan.Text];
-                    c.editar_comision(txtdescripcion.Text, textanio.Text, idplan.ToString(), id);
-                }
+               
             }
-            catch (Exception ex) { MessageBox.Show("error:" + ex); }
+            catch (Exception ex) { MessageBox.Show("Ha ocurrido un error, verifique los campos y los datos"); }
         }
     
     

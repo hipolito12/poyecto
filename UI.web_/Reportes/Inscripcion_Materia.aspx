@@ -4,9 +4,18 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="aa" runat="server">
     <center>  
         <h1>Selecione el curso  para registrarse </h1>
-    <asp:DropDownList ID="DropDownList1" runat="server" Width="442px" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="id_curso" DataValueField="id_curso">
-    </asp:DropDownList>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:tp2ConnectionString %>" SelectCommand="SELECT [id_curso] FROM [cursos]"></asp:SqlDataSource>
+        <h1>
+            <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="desc_materia" DataValueField="id_curso" Font-Size="Medium" Height="16px" Width="337px">
+            </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:thetrueconextion %>" SelectCommand="
+use tp2
+SELECT distinct  m.desc_materia, c.id_curso from  alumnos_inscripciones ai 
+join personas p on ai.id_alumno = p.id_persona
+join cursos c on c.id_curso = ai.id_curso
+join materias m on m.id_materia = c.id_materia 
+join comisiones com on com.id_comision = p.id_plan
+where p.tipo_persona=2"></asp:SqlDataSource>
+        </h1>
         <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
@@ -24,12 +33,9 @@
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:tp2ConnectionString %>" SelectCommand="
-
-select   concat( 'Cupos restantes: ',c.cupo - (select count(ai.id_alumno)  from alumnos_inscripciones ai where ai.id_curso =@param))as 'cupos restantes' from cursos c 
-
-
-
-where c.id_curso =@param ;">
+use tp2
+select  c.cupo as 'cupos restantes' from cursos c where c.id_curso = @param
+">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList1" DefaultValue="0" Name="param" PropertyName="SelectedValue" />
             </SelectParameters>

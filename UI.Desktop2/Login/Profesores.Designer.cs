@@ -89,7 +89,7 @@ namespace UI.Desktop2.Login
             this.btncursos.Name = "btncursos";
             this.btncursos.Size = new System.Drawing.Size(248, 35);
             this.btncursos.TabIndex = 5;
-            this.btncursos.Text = "Docentes Cursos";
+            this.btncursos.Text = "Curso que dicta cada docente";
             this.btncursos.UseVisualStyleBackColor = false;
             this.btncursos.Click += new System.EventHandler(this.btncursos_Click);
             // 
@@ -125,7 +125,6 @@ namespace UI.Desktop2.Login
             this.navegacionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(710, 33);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
@@ -145,7 +144,7 @@ namespace UI.Desktop2.Login
             // cursosToolStripMenuItem
             // 
             this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
-            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(275, 34);
+            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(285, 34);
             this.cursosToolStripMenuItem.Text = "docentes cursos";
             this.cursosToolStripMenuItem.Click += new System.EventHandler(this.cursosToolStripMenuItem_Click);
             // 
@@ -166,7 +165,7 @@ namespace UI.Desktop2.Login
             // planesToolStripMenuItem
             // 
             this.planesToolStripMenuItem.Name = "planesToolStripMenuItem";
-            this.planesToolStripMenuItem.Size = new System.Drawing.Size(275, 34);
+            this.planesToolStripMenuItem.Size = new System.Drawing.Size(285, 34);
             this.planesToolStripMenuItem.Text = "Planes";
             this.planesToolStripMenuItem.Click += new System.EventHandler(this.planesToolStripMenuItem_Click);
             // 

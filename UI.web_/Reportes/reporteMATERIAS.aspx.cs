@@ -12,9 +12,9 @@ namespace UI.web_.Reportes
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack) { cargargridView();}
-            
-            
-            
+
+           
+
         }
         void cargargridView()
         {
@@ -28,9 +28,10 @@ namespace UI.web_.Reportes
             btnimprimir.Attributes.Add("onclick", "imprime()");
         }
 
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
 
-
-       
 
 
     }

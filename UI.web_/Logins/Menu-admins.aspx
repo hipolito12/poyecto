@@ -14,12 +14,12 @@
             <li><a href="../Entidades/Materias.aspx">Materia</a></li>
             <li><a href="../Entidades/Modulos.aspx">Modulos</a></li>
             <li><a href="../Entidades/alumnos_inscripcioness.aspx">Alumnos e inscripciones</a></li>
-            <li><a href="../Entidades/docentes_curso.aspx">Docente y cursos</a></li>
+            <li><a href="../Entidades/docentes_curso.aspx">Docente de cada cursos</a></li>
             <li><a href="../Entidades/Especialidades.aspx">Especialdiades</a></li>
             <li><a href="../Entidades/Personas.aspx">Personas</a> </li>
             <li><a href="../Entidades/Usuario.aspx">Usuarios</a></li>
              <li><a href="../Entidades/planes.aspx">Planes</a></li>
-            <li><a href="../Reportes/CursosEintegrantes.aspx">reporte de Cursos e integrantes</a></li>
+            <li><a href="../Reportes/CursosEintegrantes.aspx">Reporte de Cursos e integrantes</a></li>
                        
         </ul>
 

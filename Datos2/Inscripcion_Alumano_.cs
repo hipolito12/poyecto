@@ -38,6 +38,9 @@ namespace Datos2
             ia.id_alumno = alumno;
             ia.nota = nota;
             en.alumnos_inscripciones.Add(ia);
+            cursos curs = en.cursos.Where(c => c.id_curso == curso).FirstOrDefault();
+            curs.cupo = curs.cupo - 1;
+            en.Entry(curs).State = System.Data.Entity.EntityState.Modified;
             en.SaveChanges();
 
         }
@@ -67,7 +70,7 @@ namespace Datos2
             en.SaveChanges();
         }
 
-        public (Dictionary<string ,int>, Dictionary<string, int >, Dictionary<string, int>) comboalumno()
+        public (Dictionary<string ,int>, Dictionary<string, int>) comboalumno()
         {
             Entidades en = new Entidades();
 
@@ -79,17 +82,13 @@ namespace Datos2
                     .SqlQuery("Select * from materias ")
                     .ToDictionary(t => t.id_materia  ,t=>t.desc_materia);
 
-            var diccionariocursos = en.cursos
-                   .SqlQuery($" select * from cursos  where anio_calendario = { DateTime.Now.Year}")
             
-                   .ToDictionary(t => $" anio : {t.anio_calendario} curso: {auxiliar[t.id_materia]}" , t => t.id_curso  );
-
             var diccionarioDeTodosLosCursos = en.cursos
-                  .SqlQuery($" select * from cursos  ")
+                  .SqlQuery($" use tp2  select  * from cursos  ")
 
-                  .ToDictionary(t => $" anio : {t.anio_calendario} curso: {auxiliar[t.id_materia]}", t => t.id_curso);
+                  .ToDictionary(t => $" curso: {auxiliar[t.id_materia]}", t => t.id_curso);
 
-            return (diccionariopersona,diccionariocursos,diccionarioDeTodosLosCursos);
+            return (diccionariopersona,diccionarioDeTodosLosCursos);
 
         }
 
@@ -130,20 +129,61 @@ namespace Datos2
             }
             return verifica =true;
         }
+        public Dictionary<string, int> cargadorDeCombocursos() 
+        {
+            string query = "select distinct  m.desc_materia, c.id_curso  from cursos c " +
+                "join alumnos_inscripciones ai on c.id_curso = ai.id_curso " +
+                "join materias m on m.id_materia = c.id_materia " 
+               ;
+            Dictionary<string, int> dic = new Dictionary<string, int>();
+            OpenConnection();
+            SqlCommand cmd =  new SqlCommand(query, sqlConn);
+            SqlDataReader dr = cmd.ExecuteReader();
 
+            while (dr.Read()) 
+            {
+                string mate = dr.GetString(0);
+                int id = dr.GetInt32(1);
+                dic.Add(mate, id);
+            }
+            CloseConnection();
+            return dic;
+           
+        }
 
-        //public bool verificarInscripcion(int alumno) 
-        //{
-        //    bool x = false;
-        //    Entidades en = new Entidades();
-        //    alumnos_inscripciones ai = en.alumnos_inscripciones.Where(a => a.id_alumno == 15).FirstOrDefault();
-        //    if (ai != null)
-        //    {
-        //        x = true;
-        //        return x;
-        //    }
-        //    else { return x; }
-        //}
+        public Dictionary<string, int> cargadorDeComboscursosdelAno()
+        {
+            string query = "select distinct  m.desc_materia, c.id_curso  from cursos c " +
+                "join alumnos_inscripciones ai on c.id_curso = ai.id_curso " +
+                "join materias m on m.id_materia = c.id_materia " +
+                " where c.anio_calendario = YEAR(GETDATE())";
+            Dictionary<string, int> dic = new Dictionary<string, int>();
+            OpenConnection();
+            SqlCommand cmd = new SqlCommand(query, sqlConn);
+            SqlDataReader dr = cmd.ExecuteReader();
 
-    }
+            while (dr.Read())
+            {
+                string mate = dr.GetString(0);
+                int id = dr.GetInt32(1);
+                dic.Add(mate, id);
+            }
+            CloseConnection();
+            return dic;
+        }
+
+            //public bool verificarInscripcion(int alumno) 
+            //{
+            //    bool x = false;
+            //    Entidades en = new Entidades();
+            //    alumnos_inscripciones ai = en.alumnos_inscripciones.Where(a => a.id_alumno == 15).FirstOrDefault();
+            //    if (ai != null)
+            //    {
+            //        x = true;
+            //        return x;
+            //    }
+            //    else { return x; }
+            //}
+
+        }
 }

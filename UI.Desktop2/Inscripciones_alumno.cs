@@ -50,9 +50,12 @@ namespace UI.Desktop2
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
-            _Inscripciones_Alumnos ia = new _Inscripciones_Alumnos();
-            string ide = dataGridView1.CurrentRow.Cells["id_inscripcion"].Value.ToString();
-            ia.eliminar(ide);
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                _Inscripciones_Alumnos ia = new _Inscripciones_Alumnos();
+                string ide = dataGridView1.CurrentRow.Cells["id_inscripcion"].Value.ToString();
+                ia.eliminar(ide);
+            }
         }
 
         private void btnmodificar_Click(object sender, EventArgs e)
@@ -65,7 +68,6 @@ namespace UI.Desktop2
 
                 ia1.ide = dataGridView1.CurrentRow.Cells["id_inscripcion"].Value.ToString();
                 ia1.txtnota.Text = dataGridView1.CurrentRow.Cells["nota"].Value.ToString();
-                ia1.combocondicionalu.Text = dataGridView1.CurrentRow.Cells["condicion"].Value.ToString();
 
                 ia1.txtauxalumno.Text = dataGridView1.CurrentRow.Cells["id_alumno"].Value.ToString();
                 //ia1.txtauxcurso.Text = dataGridView1.CurrentRow.Cells["id_curso"].Value.ToString();
@@ -96,6 +98,8 @@ namespace UI.Desktop2
         {
             inscripciones_alumno1 ia1 = new inscripciones_alumno1();
             ia1.estado = true;
+            ia1.txtnota.Enabled = false;
+            ia1.combocondicion.Enabled = false;
             
             ia1.Show();
         }

@@ -8,9 +8,9 @@
         <ul>
             
              <li><a href="../Entidades/planes.aspx">Planes</a></li>
-             <li><a href="../Reportes/Calificar_alumnos.aspx">colocar notas</a></li>
-              <li><a href="../Reportes/DocentesXcursos.aspx">docentes de cada curso</a></li>
-              <li><a href="../Reportes/ListadDeComisions.aspx">Listado de Comisiones</a></li>
+             <li><a href="../Reportes/Calificar_alumnos.aspx">Colocar notas</a></li>
+              <li><a href="../Reportes/DocentesXcursos.aspx">Docentes de cada curso</a></li>
+              <li><a href="../Reportes/ListadDeComisions.aspx">Listado de comisiones</a></li>
             <li><a href="../Reportes/CantidadAlumnosXcurso.aspx">Cantidad de alumnos en comisiones</a></li>
 
 

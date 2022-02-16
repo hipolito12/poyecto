@@ -188,7 +188,7 @@ namespace UI.Desktop2
             this.Controls.Add(this.chkhabilitado);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Usuarios_ingresodatos";
-            this.Text = "Usuarios_ingresodatos";
+            this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.Usuarios_ingresodatos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

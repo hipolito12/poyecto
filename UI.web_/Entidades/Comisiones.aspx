@@ -32,7 +32,10 @@
 
             <br />
             <asp:Label ID="lblEliminar" runat="server" Text="Ingrese ID del plan: ">   </asp:Label>
-            <asp:TextBox ID="txt_IdPlan" runat="server" OnTextChanged="TextBox1_TextChanged" CssClass="mover "> </asp:TextBox>
+            <asp:DropDownList ID="ddlplan" runat="server" DataSourceID="SqlDataSource1" DataTextField="descripcion del plan " DataValueField="id_plan" Width="221px">
+            </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:thetrueconextion %>" SelectCommand="use tp2
+select p.desc_plan as'descripcion del plan ',p.id_plan from planes p"></asp:SqlDataSource>
 
             <div id="gridView">
                 <br />
@@ -41,7 +44,7 @@
                  </asp:GridView>
             </div>
             <br />
-                <asp:Label ID="error" runat="server" Text=" Hay campos vacios, verifique su entrada" CssClass="animate__bounceInRight" />
+                <asp:Label ID="error" runat="server" Text=" Hay campos vacios o no cumplen el formato , verifique su entrada" CssClass="animate__bounceInRight" />
             <div id="Botones">
                 <asp:Button ID="btnagregar" runat="server" Text="Agregar" CssClass="btnagrega" OnClick="btnagregar_Click" />
                 <asp:Button ID="btnModificar" runat="server" Text="Modificar" CssClass="btnmodificar" OnClick="btnModificar_Click" />

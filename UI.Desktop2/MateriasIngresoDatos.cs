@@ -1,5 +1,6 @@
 ﻿using CapaNegocios;
 using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 
@@ -41,29 +42,37 @@ namespace UI.Desktop2
         {
             try
             {
-                if (txtdescripcion.Text == null || comboidplan.Text == null || txtdescripcion.Text == null || txtHs_Semanales.Text == null)
+                if (txtdescripcion.Text != "" && comboidplan.Text != "" && txtdescripcion.Text != "" && txtHs_Semanales.Text != "" &&
+                    Regex.IsMatch(txtdescripcion.Text, "[a-z,A-Z,0-1]{10,300}") == true &&
+                    Regex.IsMatch(TXTHs_Totales.Text, "[0-9]") == true
+                    && Regex.IsMatch(txtHs_Semanales.Text, "[0-9]") == true)
+                {
+
+                    Materia_n ma = new Materia_n();
+                    if (estado == true)//Agrega
+                    {
+                        int ID = buscaid(comboidplan.Text);
+                        ma.agregarmateria(txtdescripcion.Text, txtHs_Semanales.Text, TXTHs_Totales.Text, ID.ToString());
+                        MessageBox.Show($"agregado!");
+                    }
+                    if (estado == false)//edita
+                    {
+
+
+                        int ID = buscaid(comboidplan.Text);
+                        ma.EditarMaterias(txtdescripcion.Text, IDmateria, txtHs_Semanales.Text, TXTHs_Totales.Text, ID.ToString());
+                        MessageBox.Show($"Modificado!");
+                    }
+                }
+                else 
                 {
                     MessageBox.Show($"error:hay campos vacios, verifiquelos!");
 
                 }
                 //string mid = txtidmateria.Text;
-                Materia_n ma = new Materia_n();
-                if (estado == true)//Agrega
-                {
-                    int ID = buscaid(comboidplan.Text);
-                    ma.agregarmateria(txtdescripcion.Text, txtHs_Semanales.Text, TXTHs_Totales.Text, ID.ToString());
-
-                }
-                if (estado == false)//edita
-                {
-
-
-                    int ID = buscaid(comboidplan.Text);
-                    ma.EditarMaterias(txtdescripcion.Text, IDmateria, txtHs_Semanales.Text, TXTHs_Totales.Text, ID.ToString());
-
-                }
+               
             }
-            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
+            catch (Exception ex) { MessageBox.Show("Ha ocurrido un error, verifique los campos y los datos ingresados"); }
         }
 
         private int buscaid(string desc)

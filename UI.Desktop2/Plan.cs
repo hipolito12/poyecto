@@ -33,7 +33,7 @@ namespace UI.Desktop2
                 }
                 else { MessageBox.Show($"seleccionar una fila"); }
             }
-            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
+            catch (Exception ex) { MessageBox.Show("Ha ocurrido un error , este campo esta siendo utilizado para otras actividades" ); }
         }
 
         private void button1_Click(object sender, EventArgs e)

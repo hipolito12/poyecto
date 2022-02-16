@@ -31,11 +31,15 @@ namespace UI.Desktop2
         {
             try
             {
-                Comision c = new Comision();
-                string id = dataGridView1.CurrentRow.Cells["id_comision"].Value.ToString();
-                c.eliminar_comision(id);
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    Comision c = new Comision();
+                    string id = dataGridView1.CurrentRow.Cells["id_comision"].Value.ToString();
+                    c.eliminar_comision(id);
+                }
+                else { MessageBox.Show("selecione una fila"); }
             }
-            catch (Exception ex) { MessageBox.Show("error "+ ex); }
+            catch (Exception ex) { MessageBox.Show("Ha ocurrido un error, los datos estan siendo utilizado en otro proceso"); }
             
         }
 

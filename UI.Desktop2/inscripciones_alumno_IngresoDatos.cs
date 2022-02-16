@@ -52,7 +52,7 @@ namespace UI.Desktop2
                     if (idalumno != 0)
                     {
                        
-                        int curso = ia.cargacombos().Item2[Combocurso.SelectedItem.ToString()];
+                        int curso = ia.cargadorDeCombos()[Combocurso.SelectedItem.ToString()];
                         bool x = ia.VerificarInscripcion(idalumno, curso);
                         if (x == false)
                         {
@@ -69,21 +69,24 @@ namespace UI.Desktop2
                     else
                     {
 
-                        if (Comboalumno.Text == "" || Combocurso.Text == "" || combocondicionalu.Text == "" || txtnota.Text == "")
-                        { MessageBox.Show("Hay campos vacios , verifique su entrada"); }
-
-                        int alumnoid = ia.cargacombos().Item1[Comboalumno.SelectedItem.ToString()];
-                        int curso = ia.cargacombos().Item2[Combocurso.SelectedItem.ToString()];
-                        //verificar que ya este inscripto
-                        bool x = ia.VerificarInscripcion(alumnoid, curso);
-                        if (x == false)
+                        if (true==true)
                         {
-                            ia.agregar(alumnoid.ToString(), curso.ToString(), combocondicionalu.Text, txtnota.Text);
+                            int alumnoid = ia.cargacombos().Item1[Comboalumno.SelectedItem.ToString()];
+                            int curso = ia.cargadorDeCombos()[Combocurso.SelectedItem.ToString()];
+                            //verificar que ya este inscripto
+                            bool x = ia.VerificarInscripcion(alumnoid, curso);
+                            if (x == false)
+                            {
+                                ia.agregar(alumnoid.ToString(), curso.ToString(), " ","-1");
 
 
-                            MessageBox.Show("Carga realizada!");
+                                MessageBox.Show("Carga realizada!");
+                            }
+                            else { MessageBox.Show(" error en la Carga!"); }
                         }
-                        else { MessageBox.Show(" error en la Carga!"); }
+                       
+
+                       
                     }
                 }
                 if(estado == false) 
@@ -96,14 +99,22 @@ namespace UI.Desktop2
 
                     if (activarmodis != true)
                     {
-                        if (txtauxalumno.Text == "" || txtauxcurso.Text == "" || combocondicionalu.Text == "" || txtnota.Text == "")
-                        { MessageBox.Show("Hay campos vacios , verifique su entrada"); }
+                        if (Comboalumno.Text != "" && Combocurso.Text != ""  && txtnota.Text != "")
+                        {
+                            if (validador(combocondicion.SelectedItem.ToString(), Convert.ToInt32(txtnota.Text)) == true) 
+                            {
+                                ia.modificar( txtauxalumno.Text , txtauxcurso.Text, combocondicion.SelectedItem.ToString(), txtnota.Text, ide);
+                                MessageBox.Show("Modificado!");
+                                this.Close();
+
+                            }
+                               
+                        }
+                        else {MessageBox.Show("Hay campos vacios , verifique su entrada"); }
                        
                        
 
-                        ia.modificar( txtauxalumno.Text , txtauxcurso.Text, combocondicionalu.Text, txtnota.Text, ide);
-                        MessageBox.Show("Modificado!");
-                        this.Close();
+                        
                     }
                     else 
                     {
@@ -112,27 +123,40 @@ namespace UI.Desktop2
                         if (Comboalumno.SelectedItem != null && Combocurso.SelectedItem != null)
                         {
 
-                            if (Comboalumno.Text == "" || Combocurso.Text == "" || combocondicionalu.Text == "" || txtnota.Text == "")
-                            { MessageBox.Show("Hay campos vacios , verifique su entrada"); }
+                            if (Comboalumno.Text != "" && Combocurso.Text != "" && txtnota.Text != "")
+                            {
+                                if (validador(combocondicion.SelectedItem.ToString(), Convert.ToInt32(txtnota.Text)) == true)
+                                {
+                                    alumnoid = ia.cargacombos().Item1[Comboalumno.SelectedItem.ToString()].ToString();
+                                    curso = ia.cargadorDeCombos()[Combocurso.SelectedItem.ToString()].ToString();
+                                    ia.modificar(alumnoid, curso, combocondicion.SelectedItem.ToString(), txtnota.Text, ide);
+                                    MessageBox.Show("Modificado!");
+                                    this.Close();
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Hay campos vacios , verifique su entrada");
 
-                            alumnoid = ia.cargacombos().Item1[Comboalumno.SelectedItem.ToString()].ToString();
-                            curso = ia.cargacombos().Item2[Combocurso.SelectedItem.ToString()].ToString();
-                            ia.modificar(alumnoid, curso, combocondicionalu.Text, txtnota.Text, ide);
-                            MessageBox.Show("Modificado!");
-                            this.Close();
+                            }
+
+                           
                         }
                         else 
                         {
 
-                            if (txtauxalumno.Text == "" || /*combocursoaux.Text == "" ||*/ combocondicionalu.Text == "" || txtnota.Text == "")
-                            { MessageBox.Show("Hay campos vacios , verifique su entrada"); }
-                            alumnoid = txtauxalumno.Text;
+                            if (txtauxalumno.Text != "" && /*combocursoaux.Text == "" ||*/   txtnota.Text != "")
+                            {
+                               alumnoid = txtauxalumno.Text;
                             string cursoAbuscar;
-                            if (combocursoaux.SelectedItem == null) { curso = txtauxcurso.Text; } else { curso = ia.cargacombos().Item3[combocursoaux.SelectedItem.ToString()].ToString(); }
+                            if (combocursoaux.SelectedItem == null) { curso = txtauxcurso.Text; } else { curso = ia.cargadorDeComboscursosdelAno()[combocursoaux.SelectedItem.ToString()].ToString() ; }
                            
-                            ia.modificar(alumnoid, curso, combocondicionalu.Text, txtnota.Text, ide);
+                            ia.modificar(alumnoid, curso, combocondicion.SelectedItem.ToString(), txtnota.Text, ide);
                             MessageBox.Show("Modificado!");
                             this.Close();
+                            }
+                            else {  MessageBox.Show("Hay campos vacios , verifique su entrada");}
+                            
                         }
 
 
@@ -148,7 +172,7 @@ namespace UI.Desktop2
 
                 }
             }
-            catch(Exception ex) { MessageBox.Show("error " + ex); }
+            catch(Exception ex) { MessageBox.Show("Ha ocurrido un error, verifique los campos y los datos"); }
         }
 
 
@@ -164,17 +188,17 @@ namespace UI.Desktop2
                 {
                     Comboalumno.Items.Add(k);
                 }
-
-                foreach (var k1 in ia.cargacombos().Item2.Keys)
+           
+                foreach (var k1 in ia.cargadorDeCombos().Keys)
                 {
                     Combocurso.Items.Add(k1);
                 }
 
-
-            foreach (var k2 in ia.cargacombos().Item3.Keys)
+            foreach (var k2 in ia.cargadorDeComboscursosdelAno().Keys) 
             {
                 combocursoaux.Items.Add(k2);
             }
+          
 
 
         }
@@ -207,6 +231,23 @@ namespace UI.Desktop2
         private void button1_Click(object sender, EventArgs e)
         {
            
+        }
+
+      bool validador( string estado , int nota ) 
+        {
+            switch (estado) 
+            {
+
+                case "Aprobado": if (nota >= 6 && nota <= 10) { return true; } else { MessageBox.Show("para un aprobado la nota tiene que ser mayor a 6 y menor a 10" ); return false; }      break;
+
+                case "Libre": if (nota >= 0 && nota < 6) { return true; } else { MessageBox.Show("para un Libre la nota tiene que ser mayor a 0 y menor a 6"); return false; } break;
+
+                case "Aprobacion directa":
+                    if (nota >= 7 && nota <= 10) { return true; } else { MessageBox.Show("para un aprobado directo la nota tiene que ser mayor a 7 y menor a 10"); return false; }
+                    break;
+
+            }
+            return false;
         }
     }
 }

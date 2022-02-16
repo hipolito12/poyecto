@@ -123,7 +123,7 @@ namespace UI.Desktop2
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "_Plan_";
-            this.Text = "_Plan_";
+            this.Text = "Plan";
             this.Load += new System.EventHandler(this._Plan__Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.planesBindingSource)).EndInit();

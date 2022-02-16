@@ -1,6 +1,7 @@
 ﻿using CapaNegocios;
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 namespace UI.Desktop2
 {
@@ -24,40 +25,44 @@ namespace UI.Desktop2
             try
             {
                 
-                if (txtanio.Text == null || txtCupo.Text == null || comboComision.Text == null || ComboMateria.Text == null)
+                if (txtanio.Text != "" && txtCupo.Text != "" && comboComision.Text != "" && ComboMateria.Text != ""  
+                    && Regex.IsMatch(txtanio.Text,"[0-9]")==true && Regex.IsMatch(txtCupo.Text, "[0-9]") == true
+                    &&  Convert.ToInt32(txtCupo.Text) > 0 && Convert.ToInt32(txtCupo.Text) < 100  )
                 {
-                    MessageBox.Show("campos vacios, verifique los campos");
+                    if (estado == true)
+                    {
+
+
+                        CursosCRUD curses = new CursosCRUD();
+                        int idmat = curses.devuelv_combo().Item1[ComboMateria.Text];
+
+                        int idcom = curses.devuelv_combo().Item2[comboComision.Text];
+
+                        curses.agregarCurso(idmat.ToString(), idcom.ToString(), txtCupo.Text, txtanio.Text);
+                        limpiacampos();
+                        MessageBox.Show("Agregado!");
+
+                    }
+
+                    if (estado == false)
+                    {
+
+
+                        CursosCRUD curses = new CursosCRUD();
+                        int idmat = curses.devuelv_combo().Item1[ComboMateria.Text];
+
+                        int idcom = curses.devuelv_combo().Item2[comboComision.Text];
+
+
+                        curses.EditarCurso(idcurso, idcom.ToString(), txtCupo.Text, txtanio.Text, idmat.ToString());
+                        this.Close();
+                        MessageBox.Show("Modificado con exito");
+                    }
                 }
-                if (estado == true)
-                {
-                    
-                    
-                    CursosCRUD curses = new CursosCRUD();
-                    int idmat = curses.devuelv_combo().Item1[ComboMateria.Text];
-
-                    int idcom = curses.devuelv_combo().Item2[comboComision.Text];
-
-                    curses.agregarCurso(idmat.ToString(), idcom.ToString(), txtCupo.Text, txtanio.Text);
-                    limpiacampos();
-
-                }
-
-                if (estado == false)
-                {
-
-                    
-                    CursosCRUD curses = new CursosCRUD();
-                    int idmat = curses.devuelv_combo().Item1[ComboMateria.Text];
-
-                    int idcom = curses.devuelv_combo().Item2[comboComision.Text];
-                    
-
-                   curses.EditarCurso(idcurso, idcom.ToString(), txtCupo.Text, txtanio.Text, idmat.ToString());
-                    this.Close();
-                    MessageBox.Show("Modificado con exito");
-                }
+                else { MessageBox.Show("campos vacios, verifique los campos"); }
+               
             }
-            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
+            catch (Exception ex) { MessageBox.Show("Ha ocurrido un error, verifique los campos y los datos"); }
 
 
         }

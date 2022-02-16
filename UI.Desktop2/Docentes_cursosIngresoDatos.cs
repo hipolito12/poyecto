@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace UI.Desktop2
 {
@@ -29,34 +30,40 @@ namespace UI.Desktop2
         {
             try
             {
-                if (txtcargos.Text == null || Combo_id_docente.Text == null ||combo_id_Curso.Text == null)
+                if (txtcargos.Text != "" && Combo_id_docente.Text != "" && combo_id_Curso.Text != ""
+                    && Regex.IsMatch(txtcargos.Text, "[0-9]") == true)
+                {
+
+                    if (estado == true)
+                    {
+                        docentes_cursos_CRUD dcc = new docentes_cursos_CRUD();
+                        int id_docente = dcc.cargaDeCombos().Item1[Combo_id_docente.Text];
+                        int id_curso = dcc.cargaDeCombos().Item2[combo_id_Curso.Text];
+                        dcc.ADDdocenteCURSO(txtcargos.Text, id_curso.ToString(), id_docente.ToString());
+                        MessageBox.Show("agregado!");
+                        this.Close();
+                        limpiar();
+                    }
+                    if (estado == false)
+                    {
+
+                        docentes_cursos_CRUD dcc = new docentes_cursos_CRUD();
+                        int id_docente = dcc.cargaDeCombos().Item1[Combo_id_docente.Text];
+                        int id_curso = dcc.cargaDeCombos().Item2[combo_id_Curso.Text];
+
+                        dcc.EDITdoceneteCURSO(txtcargos.Text, id_curso.ToString(), id_docente.ToString(), id.ToString());
+                        MessageBox.Show("Editado!");
+                        this.Close();
+                    }
+                }
+                else 
                 {
                     MessageBox.Show("campos vacios , verifique los campos");
 
                 }
-                if (estado == true)
-                {     
-                    docentes_cursos_CRUD dcc = new docentes_cursos_CRUD();
-                    int id_docente = dcc.cargaDeCombos().Item1[Combo_id_docente.Text];
-                    int id_curso = dcc.cargaDeCombos().Item2[combo_id_Curso.Text];
-                    dcc.ADDdocenteCURSO(txtcargos.Text,id_curso.ToString(), id_docente.ToString());
-                    MessageBox.Show("agregado!");
-                    this.Close();
-                    limpiar();
-                }
-                if (estado == false)
-                {
-                    
-                    docentes_cursos_CRUD dcc = new docentes_cursos_CRUD();
-                    int id_docente = dcc.cargaDeCombos().Item1[Combo_id_docente.Text];
-                    int id_curso = dcc.cargaDeCombos().Item2[combo_id_Curso.Text];
-
-                    dcc.EDITdoceneteCURSO(txtcargos.Text, id_curso.ToString() , id_docente.ToString(), id.ToString());
-                    MessageBox.Show("Editado!");
-                    this.Close();
-                }
+               
             }
-            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
+            catch (Exception ex) { MessageBox.Show("Ha ocurrido un error, verifique los campos y los datos"); }
         }
 
         private void btnEDT_Click(object sender, EventArgs e)

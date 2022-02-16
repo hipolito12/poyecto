@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -11,11 +12,18 @@ namespace UI.web_.Entidades
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) 
-            { 
-                cargarcombos();
+            if (!IsPostBack)
+            {
+                // cargarcombos();
                 cargargv();
-              error.Visible = false;
+                error.Visible = false;
+                Txtnota.Enabled = false;
+                ddlestado.Enabled = false;
+            }
+            else
+            {
+                Txtnota.Enabled = false;
+                ddlestado.Enabled = false;
             }
         }
 
@@ -24,15 +32,17 @@ namespace UI.web_.Entidades
 
             try
             {
-                if (Txtalumno.Text == null || Txtnota.Text == null || Txtalumno.Text == "" || Txtnota.Text == "")
-                {
-                    error.Text = "hay campos vacios";
-                    error.Visible = true;
-                }
-                _Inscripciones_Alumnos ai = new _Inscripciones_Alumnos();
-                ai.agregar(ai.cargacombos().Item1[ddlalumno.SelectedValue].ToString(),
-                    ai.cargacombos().Item2[ddlcurso.SelectedValue].ToString(), Txtalumno.Text, Txtnota.Text);
-                cargargv();
+                
+                             
+                
+                    _Inscripciones_Alumnos ai = new _Inscripciones_Alumnos();
+                    ai.agregar(ddlalumno.SelectedValue.ToString(),
+                       ddlcurso.SelectedValue.ToString(), " ", "-1");
+                       cargargv();
+                    error.Text = "agregado"; error.Visible = true;
+                
+                
+                
             }
             catch (Exception)
             {
@@ -45,16 +55,22 @@ namespace UI.web_.Entidades
         {
             try
             {
-                if (Txtalumno.Text == null || Txtnota.Text == null || Txtalumno.Text == "" || Txtnota.Text == "")
+                if (Txtnota.Text != "" && Regex.IsMatch(Txtnota.Text, "[0-9]{1,2}") == true)
                 {
-                    error.Text = "hay campos vacios";
-                    error.Visible = true;
+                    _Inscripciones_Alumnos ai = new _Inscripciones_Alumnos();
+                    var id = GridView1.SelectedRow.Cells[1].Text;
+                    ai.modificar(ddlalumno.SelectedValue,
+                      ddlcurso.SelectedValue, ddlestado.SelectedValue, Txtnota.Text, id);
+                    cargargv();
+                    error.Text = "Modificado!"; error.Visible = true;
                 }
-                _Inscripciones_Alumnos ai = new _Inscripciones_Alumnos();
-                var id = GridView1.SelectedRow.Cells[1].Text;
-                ai.modificar(ai.cargacombos().Item1[ddlalumno.SelectedValue].ToString(),
-                    ai.cargacombos().Item2[ddlcurso.SelectedValue].ToString(), Txtalumno.Text, Txtnota.Text, id);
-                cargargv();
+                else
+                {
+                    error.Text = "hay campos vacios o no cumplen el formato necesario (nota entre 0 y 10)";
+                    error.Visible = true;
+
+                }
+                
             }
             catch (Exception)
             {
@@ -78,25 +94,28 @@ namespace UI.web_.Entidades
                 ddlalumno.Items.Add(k);
             }
 
-            foreach (var k in ai.cargacombos().Item2.Keys)
-            {
-                ddlcurso.Items.Add(k);
-            }
+
         }
 
         protected void Btneliminar_Click(object sender, EventArgs e)
         {
             try
             {
-                if (Txtalumno.Text == null || Txtnota.Text == null || Txtalumno.Text == "" || Txtnota.Text == "")
+                if (Txtnota.Text != "" && Regex.IsMatch(Txtnota.Text, "[0-9]{1,2}") == true)
                 {
-                    error.Text = "hay campos vacios";
-                    error.Visible = true;
+                    _Inscripciones_Alumnos ai = new _Inscripciones_Alumnos();
+                   var id = GridView1.SelectedRow.Cells[1].Text;
+                   ai.eliminar(id);
+                   cargargv();
+                    error.Text = "Eliminado"; error.Visible = true;
                 }
-                _Inscripciones_Alumnos ai = new _Inscripciones_Alumnos();
-                var id = GridView1.SelectedRow.Cells[1].Text;
-                ai.eliminar(id);
-                cargargv();
+                else 
+                {
+                    error.Text = "hay campos vacios o no cumplen el formato necesario (nota entre 0 y 10)";
+                    error.Visible = true;
+
+                }
+                
             }
             catch (Exception)
             {
@@ -108,8 +127,10 @@ namespace UI.web_.Entidades
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            Txtalumno.Text = GridView1.SelectedRow.Cells[4].Text;
+           
             Txtnota.Text = GridView1.SelectedRow.Cells[5].Text;
+            Txtnota.Enabled = true;
+            ddlestado.Enabled = true;
         }
     }
 }

@@ -1,5 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pagina_Maestra.Master" AutoEventWireup="true" CodeBehind="planes.aspx.cs" Inherits="UI.web_.Entidades.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .descripcion_titulo {
+            font-weight: 700;
+            font-size: x-large;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="aa" runat="server">
     <!DOCTYPE html>
@@ -18,7 +24,7 @@
     <asp:TextBox ID="Txtplan" CssClass="descripcion"  runat ="server" Height="152px" Width="526px"></asp:TextBox>
     <br />
     <br />
-<asp:Label ID="Label2" runat="server" Text="Selecione una especialidad :  "></asp:Label>    <asp:DropDownList ID="Ddlespecialidad" runat="server" Width="210px" AutoPostBack="True"></asp:DropDownList>
+<asp:Label ID="Label2" runat="server" Text="Selecione una especialidad :  " style="font-weight: 700"></asp:Label>    <asp:DropDownList ID="Ddlespecialidad" runat="server" Width="210px" AutoPostBack="True" Height="42px"></asp:DropDownList>
     <br />
     <br />
 </div>

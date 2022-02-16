@@ -73,16 +73,25 @@ namespace UI.Desktop2
                     md1.Show();
                 }
             }
-            catch (Exception ex) { MessageBox.Show($"Error: {ex}"); }
+            catch (Exception ex) { MessageBox.Show("Ha ocurrido un error, verifique los campos y los datos"); }
 
         }
 
         private void btnBAJA_Click(object sender, EventArgs e)
         {
-            ModulosCRUD mcd = new ModulosCRUD();
 
-            string id = textBox2.Text;
-            mcd.Deletemodulo(id);
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                 ModulosCRUD mcd = new ModulosCRUD();
+                string id = dataGridView1.CurrentRow.Cells["id_modulo"].Value.ToString();
+                mcd.Deletemodulo(id);
+                
+            }
+
+           
+
+            
+            
 
 
 

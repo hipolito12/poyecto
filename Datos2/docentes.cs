@@ -77,17 +77,20 @@ namespace Datos2
                     .SqlQuery("Select * from personas where tipo_persona=1")
                     .ToDictionary(t => $"{t.nombre}  {t.apellido}" , t => t.id_persona);
 
-            foreach (var cu in curso) 
-            {
-                cursos curaux = en.cursos.Where(cs => cs.id_curso == cu.id_curso).FirstOrDefault();
+            var auxiliar = en.materias
+                   .SqlQuery("Select * from materias ")
+                   .ToDictionary(t => t.id_materia, t => t.desc_materia);
 
-                materias mat = en.materias.Where(m => curaux.id_materia == m.id_materia ).FirstOrDefault();
+            var auxiliar1 = en.comisiones
+                  .SqlQuery("Select * from comisiones")
+                  .ToDictionary(t => t.id_comision, t => t.desc_comision);
 
-                string descripcion = $" materia:{mat.desc_materia}  año : {curaux.anio_calendario } ";
-                cursosDictionary.Add(descripcion, curaux.id_curso);
-            }
+            var diccionarioDeTodosLosCursos = en.cursos
+                  .SqlQuery($" use tp2 select distinct  * from cursos c  where c.anio_calendario=YEAR(GETDATE()); ")
 
-                return (diccionariopersona,cursosDictionary);
+                  .ToDictionary(t => $" anio : {t.anio_calendario} curso: {auxiliar[t.id_materia]}  comision:{auxiliar1[t.id_comision]} ", t => t.id_curso);
+
+            return (diccionariopersona, diccionarioDeTodosLosCursos);
         }
 
         public List<docentes_cursos> cargagv() 

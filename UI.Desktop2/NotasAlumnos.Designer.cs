@@ -30,7 +30,7 @@ namespace UI.Desktop2
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.tetsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mostrar_notasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tp2DataSet2 = new UI.Desktop2.tp2DataSet2();
@@ -65,14 +65,14 @@ namespace UI.Desktop2
             // 
             // reportViewer1
             // 
-            reportDataSource2.Name = "Prueba";
-            reportDataSource2.Value = this.tetsBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "Prueba";
+            reportDataSource1.Value = this.tetsBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "UI.Desktop2.ReporteNotas.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(297, 12);
+            this.reportViewer1.Location = new System.Drawing.Point(313, 12);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(833, 436);
+            this.reportViewer1.Size = new System.Drawing.Size(891, 455);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
@@ -85,14 +85,14 @@ namespace UI.Desktop2
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(58, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 20);
+            this.label1.Size = new System.Drawing.Size(170, 20);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Seleccione Año de   curso ";
+            this.label1.Text = "Seleccione ciclo lectivo";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(63, 105);
+            this.button1.Location = new System.Drawing.Point(79, 107);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(176, 42);
             this.button1.TabIndex = 3;
@@ -125,7 +125,7 @@ namespace UI.Desktop2
             this.comboBox1.Location = new System.Drawing.Point(13, 60);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(277, 28);
+            this.comboBox1.Size = new System.Drawing.Size(273, 28);
             this.comboBox1.TabIndex = 6;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
@@ -138,13 +138,13 @@ namespace UI.Desktop2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1142, 652);
+            this.ClientSize = new System.Drawing.Size(1216, 486);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.reportViewer1);
             this.Name = "NotasAlumnos";
-            this.Text = "Pruebas";
+            this.Text = "Notas de los alumnos";
             this.Load += new System.EventHandler(this.Pruebas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tetsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mostrar_notasBindingSource)).EndInit();

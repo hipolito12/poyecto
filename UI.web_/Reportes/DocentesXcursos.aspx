@@ -2,15 +2,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="aa" runat="server">
-   <center>  
+    <center>  
 
        <h1>Docentes de cada Curso</h1>
-
-       <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+         <center>
+       <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="margen"  CellPadding ="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Width="266px">
            <AlternatingRowStyle BackColor="White" />
            <Columns>
                <asp:BoundField DataField="nombres" HeaderText="nombres" ReadOnly="True" SortExpression="nombres" />
-               <asp:BoundField DataField="id_curso" HeaderText="id_curso" SortExpression="id_curso" />
+               <asp:BoundField DataField="curso" HeaderText="curso" SortExpression="curso" />
            </Columns>
            <EditRowStyle BackColor="#2461BF" />
            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -24,7 +24,11 @@
            <SortedDescendingHeaderStyle BackColor="#4870BE" />
        </asp:GridView>
 
-       <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:tp2ConnectionString %>" SelectCommand="select   CONCAT( p.nombre , p.apellido) as nombres, dc.id_curso from   docentes_cursos dc inner join personas p on p.id_persona = dc.id_docente "></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:thetrueconextion %>" SelectCommand="use[tp2] 
+     select   CONCAT( p.nombre , p.apellido) as nombres,m.desc_materia as &quot;curso&quot; from  
+	 docentes_cursos dc inner join personas p on p.id_persona = dc.id_docente 
+	 join cursos cur on cur.id_curso = dc.id_curso
+	 join materias m on m.id_materia = cur.id_materia;"></asp:SqlDataSource>
 
        <br />
        <br />
@@ -32,4 +36,16 @@
        <asp:Button ID="btnImprimir" runat="server" Text="Imprimir"  OnClick="btnImprimir_Click"  />
        <script src="CodigoParaImprimir.js"></script>
    </center>
+
+    <style>
+        * {
+            text-align:center;
+        }
+
+        .margen {
+
+            margin-left:40%;
+        }
+    </style>
+
 </asp:Content>

@@ -6,11 +6,11 @@
         <h1> Alumnos en cada curso </h1>
         <br />
 
-        <asp:GridView runat="server" ID="galumnosXcursos" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id_curso" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+        <asp:GridView runat="server" ID="galumnosXcursos" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:BoundField DataField="id_curso" HeaderText="id_curso" InsertVisible="False" ReadOnly="True" SortExpression="id_curso" />
-                <asp:BoundField DataField="alumnos" HeaderText="alumnos" ReadOnly="True" SortExpression="alumnos" />
+                <asp:BoundField DataField="masteria" HeaderText="masteria" SortExpression="masteria" />
+                <asp:BoundField DataField="cantidad de inscriptos" HeaderText="cantidad de inscriptos" ReadOnly="True" SortExpression="cantidad de inscriptos" />
             </Columns>
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -23,13 +23,21 @@
             <SortedDescendingCellStyle BackColor="#E9EBEF" />
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:tp2ConnectionString %>" SelectCommand="use[tp2] 
-              select c.id_curso,  count (ai.id_alumno)as alumnos from alumnos_inscripciones ai 
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:tp2ConnectionString2 %>" SelectCommand="use[tp2] 
+              select m.desc_materia as masteria,  count (ai.id_alumno)as &quot;cantidad de inscriptos&quot; from alumnos_inscripciones ai 
                 join cursos c on c.id_curso = ai.id_curso
-              
-                 group by c.id_curso  ;"></asp:SqlDataSource>
+				join materias m  on m.id_materia =c.id_materia
+                 group by m.desc_materia  ;"></asp:SqlDataSource>
         <br />
         <asp:Button runat="server" Text="Imprimir" ID="btnImprimir" OnClick="btnImprimir_Click" onclientClick="imprime()"  />
         <script src="CodigoParaImprimir.js"></script>
+
+
+
     </center>
+
+    <style> table {text-align:center;}
+
+    </style>
+
 </asp:Content>

@@ -1,5 +1,6 @@
 ﻿using CapaNegocios;
 using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace UI.Desktop2
@@ -22,22 +23,27 @@ namespace UI.Desktop2
 
         private void btnaceptar_Click(object sender, EventArgs e)
         {
-            if (richdescripcion.Text == null)
+            if (richdescripcion.Text != "" && Regex.IsMatch(richdescripcion.Text, "[a-z,A-Z,0-9]") == true)
+            {
+                if (estado == true)
+                {
+                    es.addEspecialidad(richdescripcion.Text);
+                    this.Close();
+                }
+
+                if (estado == false)
+                {
+
+                    es.Editespecialidades(id, richdescripcion.Text);
+                    this.Close();
+                }
+            }
+            else 
             {
                 MessageBox.Show($"hay campos vacios , verifiquelos");
-            }
-            if (estado == true)
-            {
-                es.addEspecialidad(richdescripcion.Text);
-                this.Close();
-            }
 
-            if (estado == false)
-            {
-
-                es.Editespecialidades(id, richdescripcion.Text);
-                this.Close();
             }
+           
         }
 
         private void Especialidades1_Load(object sender, EventArgs e)

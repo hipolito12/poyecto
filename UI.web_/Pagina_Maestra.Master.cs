@@ -25,57 +25,57 @@ namespace UI.web_
 
         protected void btnmenu_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var secion = Request.Cookies["niveldeacceso"].Value;
+            //try
+            //{
+            //    var secion = Request.Cookies["niveldeacceso"].Value;
 
 
 
-                if (secion != null)
-                {
+            //    if (secion != null)
+            //    {
 
-                    switch (secion)
-                    {
-                        case "0": Response.Redirect("../Logins/Menu-admins.aspx"); break;
+            //        switch (secion)
+            //        {
+            //            case "0": Response.Redirect("../Logins/Menu-admins.aspx"); break;
 
-                        case "1": Response.Redirect("../Logins/Menu_Profesores.aspx"); break;
+            //            case "1": Response.Redirect("../Logins/Menu_Profesores.aspx"); break;
 
-                        case "2": Response.Redirect("../Logins/Menu_Alumno.aspx"); break;
+            //            case "2": Response.Redirect("../Logins/Menu_Alumno.aspx"); break;
 
-                    }
-                }
-                else
-                {
-                    Response.Redirect("../Logins/Login.aspx");
-                }
-            }
-            catch (Exception)
-            {
+            //        }
+            //    }
+            //    else
+            //    {
+            //        Response.Redirect("../Logins/Login.aspx");
+            //    }
+            //}
+            //catch (Exception)
+            //{
 
                 
-            }
+            //}
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-            try
-            {
-                Request.Cookies["niveldeacceso"].Value  = null;
+            //try
+            //{
+            //    Request.Cookies["niveldeacceso"].Value  = null;
 
-                Request.Cookies.Remove("niveldeacceso");
-                Response.Redirect("../Logins/Login.aspx");
-            }
-            catch (Exception)
-            {
+            //    Request.Cookies.Remove("niveldeacceso");
+            //    Response.Redirect("../Logins/Login.aspx");
+            //}
+            //catch (Exception)
+            //{
 
                 
-            }
+            //}
         }
 
         void verificasecion() 
         {
-            if (Request.Cookies["niveldeacceso"].Value == null) { Response.Redirect("../Logins/Login.aspx"); }
+            //if (Request.Cookies["niveldeacceso"].Value == null) { Response.Redirect("../Logins/Login.aspx"); }
         }
         protected void Button2_Click(object sender, EventArgs e)
         {

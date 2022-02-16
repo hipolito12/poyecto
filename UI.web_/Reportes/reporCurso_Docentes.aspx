@@ -12,12 +12,32 @@
         <hr />
        <center> <h1>Profesores de cada curso</h1></center>
         <div>
-    <center> <asp:GridView ID="gridview" CssClass="print"  runat="server"  OnPageIndexChanged="GridView1_SelectedIndexChanged">
-    </asp:GridView> 
-      
-            </center>
+            <center>
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <AlternatingRowStyle BackColor="White" />
+                <Columns>
+                    <asp:BoundField DataField="desc_materia" HeaderText="materia" SortExpression="desc_materia" />
+                    <asp:BoundField DataField="nombre" HeaderText="nombre" SortExpression="nombre" />
+                </Columns>
+                <EditRowStyle BackColor="#2461BF" />
+                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#EFF3FB" />
+                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+            </asp:GridView>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:thetrueconextion %>" SelectCommand="use[tp2] 
+           select m.desc_materia,p.nombre from   personas p join 
+		   docentes_cursos dc on dc.id_docente = p.id_persona
+		   join cursos c on c.id_curso = dc.id_curso
+		   join materias m on m.id_materia = c.id_materia
+		  "></asp:SqlDataSource>
 
-     </div>
+     </div></center>
         <br />
         
         
@@ -26,6 +46,7 @@
         <hr />
         <script src="CodigoParaImprimir.js"></script>
           
+       
 
     </body>
     </html>
